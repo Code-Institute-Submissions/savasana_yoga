@@ -1,0 +1,58 @@
+html {
+    height: 100%;
+}
+
+body {
+    background: url('/media/homepage_background.jpg') no-repeat center center fixed;
+    background-size: cover;
+    height: calc(100vh - 164px);
+    color: #555;
+}
+
+/* from Bulma and Code Institue Boutique Ado */
+.icon {
+    align-items: center;
+    display: inline-flex;
+    justify-content: center;
+    height: 1.5rem;
+    width: 1.5rem;
+}
+
+.logo-font {
+    text-transform: uppercase;
+    color: #212529;
+}
+
+.book-today-btn {
+    background: #68B0AB;
+    color: white;
+}
+
+.book-today-btn:hover,
+.book-today-btn:active,
+.book-today-btn:focus {
+    background: #F2CC8F;
+    color: #000;
+}
+
+#topnav {
+    background-color: #f7f2ee;
+}
+
+
+/* Media Queries */
+
+/* fixed top navbar only on medium and up */
+@media (min-width: 992px) {
+    .fixed-top-desktop-only {
+        position: fixed;
+        top: 0;
+        right: 0;
+        left: 0;
+        z-index: 1030;
+    }
+
+    .header-container {
+        padding-top: 164px;
+    }
+}
