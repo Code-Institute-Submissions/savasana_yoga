@@ -2,27 +2,25 @@ html {
     height: 100%;
 }
 
+.container-fluid {
+    padding: 0px;
+    margin: 0px;
+}
 /* body {
     height: calc(100vh - 164px);
     color: #555;
 } */
 
-.home-image-container {
-    height: 100vh;
+.homepage_background_image {
+    height: 600px;
     max-width: 100%;
 
-    background: url('/media/homepage_background.jpg') no-repeat center center fixed;
+    background: url('/media/homepage_background_image.png') no-repeat bottom;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
-    background-attachment: scroll;
     
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    position: relative;
 }
 
 /* from Bulma and Code Institue Boutique Ado */
@@ -35,7 +33,6 @@ html {
 }
 
 .logo-font {
-    text-transform: uppercase;
     color: #212529;
     font-size: 28px;
 }
@@ -91,4 +88,11 @@ a.navbar-brand:focus {
     /* .header-container {
         padding-top: 164px;
     } */
+}
+
+
+.call-to-action {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
