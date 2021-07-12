@@ -37,6 +37,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.sites',  # creates proper callback urls when logging in via social media
+    'allauth',
+    'allauth.account',  # allows basic user accounts - log in, log out etc
+    'allauth.socialaccount',  # allows log in via social media
 ]
 
 MIDDLEWARE = [
@@ -60,12 +64,32 @@ TEMPLATES = [
             'context_processors': [
                 'django.template.context_processors.debug',
                 'django.template.context_processors.request',
-                'django.contrib.auth.context_processors.auth',
+                'django.contrib.auth.context_processors.auth',  # required by allauth - allows access to http objects in templates
                 'django.contrib.messages.context_processors.messages',
             ],
         },
     },
 ]
+
+AUTHENTICATION_BACKENDS = [
+    # Needed to login by username in Django admin, regardless of `allauth`
+    'django.contrib.auth.backends.ModelBackend',
+
+    # `allauth` specific authentication methods, such as login by e-mail
+    'allauth.account.auth_backends.AuthenticationBackend',
+]
+
+SITE_ID = 1
+
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
+ACCOUNT_AUTHENTICATION_METHOD = 'username_email'  # allows authentication by email or username
+ACCOUNT_EMAIL_REQUIRED = True  # requires email to register for the website
+ACCOUNT_EMAIL_VERIFICATION = 'mandatory'  # enables email verification to register to the website
+ACCOUNT_SIGNUP_EMAIL_ENTER_TWICE = True  # ensures that user enters their email twice when registering
+ACCOUNT_USERNAME_MIN_LENGTH = 4  # sets the min length of a username
+LOGIN_URL = '/accounts/login/'
+LOGIN_REDIRECT_URL = '/'
 
 WSGI_APPLICATION = 'savasana_yoga.wsgi.application'
 
