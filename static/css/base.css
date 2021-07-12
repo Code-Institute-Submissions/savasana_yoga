@@ -96,3 +96,11 @@ a.navbar-brand:focus {
     flex-direction: column;
     align-items: center;
 }
+
+.dropdown-menu {
+    background-color: #FAF9F9;
+}
+
+.mobile-header-icons {
+    margin-bottom: 0px;
+}
