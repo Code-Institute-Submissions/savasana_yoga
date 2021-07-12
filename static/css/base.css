@@ -21,6 +21,7 @@ body {
 .logo-font {
     text-transform: uppercase;
     color: #212529;
+    font-size: 28px;
 }
 
 .book-today-btn {
@@ -35,8 +36,8 @@ body {
     color: #000;
 }
 
-#topnav {
-    background-color: #f7f2ee;
+.navbar-custom {
+    background-color: #FAF9F9;
 }
 
 
