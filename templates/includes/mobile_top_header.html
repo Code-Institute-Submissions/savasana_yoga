@@ -1,0 +1,31 @@
+<ul class="list-inline list-unstyled d-block d-lg-none mobile-header-icons">
+    <li class="list-inline-item dropdown py-auto">
+        <button class="btn btn-sm profile-btn dropdown-toggle d-block d-lg-none" type="button" 
+        id="dropdownProfileBtn" data-bs-toggle="dropdown" aria-expanded="false">
+            <i class="far fa-user"></i> My Account
+        </button>
+
+        
+        <div class="dropdown-menu border-0" aria-labelledby="dropdownProfileBtn">
+                {% if request.user.is_authenticated %}
+                    {% if request.user.is_superuser %}
+                        <a href="" class="dropdown-item">Product Management</a>
+                    {% endif %}
+                    <a href="" class="dropdown-item">My Profile</a>
+                    <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
+                {% else %}
+                    <a href="{% url 'account_signup' %}" class="dropdown-item">Register</a>
+                    <a href="{% url 'account_login' %}" class="dropdown-item">Login</a>
+                {% endif %}
+            </div>
+        </li>
+    </li>
+    <li class="list-inline-item py-auto ">
+            <a class="nav-link d-block d-lg-none" href="">
+                <div class="text-center">
+                    <div><i class="fas fa-shopping-cart"></i></div>
+                    
+                </div>
+            </a>
+    </li>
+  </ul>
