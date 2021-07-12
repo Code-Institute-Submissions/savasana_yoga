@@ -36,7 +36,69 @@
     </head>
 
         <body>
-            <header class="container-fluid fixed-top"></header>
+            <header class="container-fluid fixed-top">
+                <div class="row">
+                    <div class="col-12 col-lg-3 my-auto py-1 py-lg-0">
+                        <form method="GET" action="">
+                            <div class="input-group w-50 ms-auto my-auto border-bottom border-dark">
+                                <input class="form-control search-bar" type="text" name="query" placeholder="Search">
+                                <div class="input-group-append">
+                                    <button class="form-control btn btn-search" type="submit">
+                                        <span class="icon search-icon">
+                                            <i class="fas fa-search"></i>
+                                        </span>
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="col-12 col-lg-6 my-auto my-auto py-lg-0 text-center">
+                        <a href="{% url 'home' %}" class="nav-link nav-brand-link">
+                            <h2 class="logo-font my-auto">
+                                Savasana Yoga
+                            </h2>
+                        </a>
+                    </div>
+                    <div class="col-12 col-lg-3 my-auto py-1 py-lg-0">
+                        <ul class="list-inline list-unstyled">
+                            <li class="list-inline-item dropdown">
+                                <button class="btn btn-sm profile-btn dropdown-toggle" type="button" 
+                                id="dropdownProfileBtn" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <i class="far fa-user"></i> My Account
+                                </button>
+
+                                
+                                <div class="dropdown-menu border-0" aria-labelledby="dropdownProfileBtn">
+                                        {% if request.user.is_authenticated %}
+                                            {% if request.user.is_superuser %}
+                                                <a href="" class="dropdown-item">Product Management</a>
+                                            {% endif %}
+                                            <a href="" class="dropdown-item">My Profile</a>
+                                            <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
+                                        {% else %}
+                                            <a href="{% url 'account_signup' %}" class="dropdown-item">Register</a>
+                                            <a href="{% url 'account_login' %}" class="dropdown-item">Login</a>
+                                        {% endif %}
+                                    </div>
+                                </li>
+                            </li>
+                            <li class="list-inline-item">
+                                <li class="list-inline-item">
+                                    <a class="nav-link" href="">
+                                        <div class="text-center">
+                                            <div><i class="fas fa-shopping-cart"></i></div>
+                                            
+                                        </div>
+                                    </a>
+                                </li>
+                            </li>
+                           
+                          </ul>
+                    </div>
+                </div>
+            </header>
+
+
         
             {% if messages %}
                 <div class="message-container"></div>
