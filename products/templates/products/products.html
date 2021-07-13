@@ -10,10 +10,81 @@
 {% endblock %}
 
 {% block content %}
-    <div class="container product-container">
+    <div class="container">
         <div class="row">
-            <div class="col">
-                {{ products }}
+            <div class="col-md-8 mx-auto my-auto text-center">
+                <h3 class="mt-2 pt-2 heading-text">All Products</h3>
+            </div>
+        </div>
+        <hr>
+        <div class="row">
+            <div class="product-container col my-2">
+                <div class="row">
+                    <!-- From Boutique Ado Project to display Product Images via Template Tags -->
+                    {% for product in products %}
+                        <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
+                            <div class="card border-0">
+                            {% if product.image %}
+                                <a href="">
+                                    <img src="{{ product.image.url }}" class="img-fluid card-img-top card-img" alt="{{ product.name }}">
+                                </a>
+                            {% else %}
+                                <a href="">
+                                    <img src="{{ MEDIA_URL }}noimage.png" class="img-fluid card-img-top" alt="{{ product.name }}">
+                                </a>
+                            {% endif %}  
+                                <div class="card-body">
+                                  <p class="card-text">{{ product.name }}</p>
+                                </div>
+                                <div class="card-footer bg-transparent border-0">
+                                    <div class="row">
+                                        <div class="col">
+                                            {% if product.category %}
+                                                <p class="small">
+                                                    <a class="text-muted" href="{% url 'products' %}?category={{ product.category.name }}">
+                                                        {{ product.category.friendly_name }}
+                                                    </a>
+                                                </p>
+                                            {% endif %}
+                                            <p class="">€{{ product.price }}</p>
+                                            
+                                            {% if product.rating %}
+                                                <small>
+                                                    <i class="fas fa-star"> {{ product.rating}} / 5</i>
+                                                </small>
+                                            {% else %}
+                                                <small>
+                                                    No Rating
+                                                </small>
+                                            {% endif %}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- From Boutique Ado - Code Institute to create hr lines for each col size -->
+                        {% if forloop.counter|divisibleby:1 %}
+                            <div class="col-12 d-sm-none mb-5">
+                                <hr class="product-hr">
+                            </div>
+                        {% endif %}                        
+                        {% if forloop.counter|divisibleby:2 %}
+                            <div class="col-12 d-none d-sm-block d-md-block d-lg-none mb-5">
+                                <hr class="product-hr">
+                            </div>
+                        {% endif %}
+                        {% if forloop.counter|divisibleby:3 %}
+                            <div class="col-12 d-none d-lg-block d-xl-none mb-5">
+                                <hr class="product-hr">
+                            </div>
+                        {% endif %}
+                        {% if forloop.counter|divisibleby:4 %}
+                            <div class="col-12 d-none d-xl-block mb-5">
+                                <hr class="product-hr">
+                            </div>
+                        {% endif %}
+                    {% endfor %}
+                </div>
             </div>
         </div>
     </div>
