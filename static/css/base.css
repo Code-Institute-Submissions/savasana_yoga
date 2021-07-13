@@ -1,11 +1,10 @@
-html {
-    height: 100%;
-}
+
 
 .container-fluid {
     padding: 0px;
     margin: 0px;
 }
+
 /* body {
     height: calc(100vh - 164px);
     color: #555;
@@ -77,7 +76,7 @@ a.navbar-brand:focus {
 /* Media Queries */
 
 /* fixed top navbar only on medium and up */
-@media (min-width: 992px) {
+/* @media (min-width: 992px) {
     .fixed-top-desktop-only {
         position: fixed;
         top: 0;
@@ -86,10 +85,10 @@ a.navbar-brand:focus {
         z-index: 1030;
     }
 
-    /* .header-container {
+     .header-container {
         padding-top: 164px;
-    } */
-}
+    } 
+} */
 
 
 .call-to-action {
@@ -105,3 +104,17 @@ a.navbar-brand:focus {
 .mobile-header-icons {
     margin-bottom: 0px;
 }
+
+.product-container {
+    background-color: #000;
+}
+
+/* .navbar {
+    position: relative;
+}
+.navbar-brand {
+    position: absolute;
+    left: 50%;
+    margin-left: -50px !important; 
+    display: block;
+} */
