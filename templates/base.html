@@ -35,7 +35,7 @@
     <title>Savasana Yoga {% block extra_title %}{% endblock %}</title>
     </head>
             <header class="container-fluid fixed-top">
-                <div id="topnav" class="row py-2 navbar-custom">
+                <div id="topnav" class="row py-2 navbar-custom ">
                     <div class="col-12 col-lg-3 my-auto py-auto">
                         <nav class="navbar navbar-expand-lg bg-transparent w-100">
                             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#main-nav" aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">
@@ -45,39 +45,38 @@
                             {% include 'includes/main_nav.html' %}
                       </nav>
                     </div>
-                    <div class="col-12 col-lg-6 my-auto my-auto py-lg-0 text-center">
-                        <a href="{% url 'home' %}" class="nav-link navbar-brand d-none d-lg-block">
+                    <div class="col-12 col-lg-6 my-auto my-auto py-lg-0 text-center d-none d-lg-block">
+                        <a href="{% url 'home' %}" class="nav-link navbar-brand ">
                             Savasana Yoga
                         </a>
                     </div>
                     <div class="col-12 col-lg-3 my-auto py-auto py-lg-0 d-none d-lg-block">
-                        <ul class="list-inline list-unstyled my-auto py-auto">
-                            <li class="list-inline-item dropdown">
-                                <button class="btn btn-sm profile-btn dropdown-toggle" type="button" 
-                                id="dropdownProfileBtn" data-bs-toggle="dropdown" aria-expanded="false">
-                                    <i class="far fa-user"></i> My Account
-                                </button>
+                        <ul class="list-inline list-unstyled my-auto py-auto float-end me-2">
 
-                                
-                                <div class="dropdown-menu border-0" aria-labelledby="dropdownProfileBtn">
-                                        {% if request.user.is_authenticated %}
-                                            {% if request.user.is_superuser %}
-                                                <a href="" class="dropdown-item">Product Management</a>
+                           
+                            <li class="list-inline-item dropdown">
+                            <a href="#" class="nav-link  " id="user-profile" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <div class="text-center icon">
+                                    <i class="far fa-user"></i>
+                                </div>
+                            </a>
+                                <div class="dropdown-menu border-0" aria-labelledby="user-profile">
+                                            {% if request.user.is_authenticated %}
+                                                {% if request.user.is_superuser %}
+                                                    <a href="" class="dropdown-item">Product Management</a>
+                                                {% endif %}
+                                                <a href="" class="dropdown-item">My Profile</a>
+                                                <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
+                                            {% else %}
+                                                <a href="{% url 'account_signup' %}" class="dropdown-item">Register</a>
+                                                <a href="{% url 'account_login' %}" class="dropdown-item">Login</a>
                                             {% endif %}
-                                            <a href="" class="dropdown-item">My Profile</a>
-                                            <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
-                                        {% else %}
-                                            <a href="{% url 'account_signup' %}" class="dropdown-item">Register</a>
-                                            <a href="{% url 'account_login' %}" class="dropdown-item">Login</a>
-                                        {% endif %}
-                                    </div>
-                                </li>
+                                </div>
                             </li>
                             <li class="list-inline-item">
                                     <a class="nav-link" href="">
-                                        <div class="text-center">
-                                            <div><i class="fas fa-shopping-cart"></i></div>
-                                            
+                                        <div class="text-center icon">
+                                            <i class="fas fa-shopping-cart"></i>
                                         </div>
                                     </a>
                             </li>
