@@ -103,6 +103,8 @@ a.navbar-brand:focus {
 
 .mobile-header-icons {
     margin-bottom: 0px;
+    display: flex;
+    align-items: baseline;
 }
 
 .product-container {
@@ -136,7 +138,7 @@ a.navbar-brand:focus {
 
 
 .dropdown-menu {
-    width: 100%;
+    width: auto;
 }
 
 .dropdown-heading {
@@ -171,6 +173,7 @@ ul.dropdown-menu.products-dropdown-menu.show {
 }
 
 
-.search-dropdown {
+/* .search-dropdown {
     
-}
+    width: auto;
+} */

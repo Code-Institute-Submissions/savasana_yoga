@@ -1,5 +1,26 @@
 
-<ul class="list-inline list-unstyled  mobile-header-icons">
+<ul class="list-inline list-unstyled mobile-header-icons">
+    <li class="list-inline-item dropdown d-block d-lg-none">
+        <a href="#" class="nav-link " id="mobile-search-bar" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <div class="text-center icon">
+                <i class="fas fa-search"></i>
+            </div>
+        </a>
+        <div class="dropdown-menu search-dropdown border-0" aria-labelledby="mobile-search-bar">
+            <form method="GET" action="{% url 'products' %}">
+                <div class="input-group border-bottom border-dark ">
+                    <input class="form-control search-bar" type="text" name="query" placeholder="Search">
+                    <div class="input-group-append">
+                        <button class="form-control btn btn-search" type="submit">
+                            <span class="icon search-icon">
+                                <i class="fas fa-search"></i>
+                            </span>
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </li>
     <li class="list-inline-item dropdown py-auto">
         <button class="btn btn-sm profile-btn d-block d-lg-none" type="button" 
         id="dropdownProfileBtn" data-bs-toggle="dropdown" aria-expanded="false">
