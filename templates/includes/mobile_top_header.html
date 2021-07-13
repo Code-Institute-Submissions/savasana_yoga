@@ -1,12 +1,15 @@
-<ul class="list-inline list-unstyled d-block d-lg-none mobile-header-icons">
+<div>
+<ul class="list-inline list-unstyled  mobile-header-icons">
     <li class="list-inline-item dropdown py-auto">
-        <button class="btn btn-sm profile-btn dropdown-toggle d-block d-lg-none" type="button" 
+        <button class="btn btn-sm profile-btn d-block d-lg-none" type="button" 
         id="dropdownProfileBtn" data-bs-toggle="dropdown" aria-expanded="false">
-            <i class="far fa-user"></i> My Account
+        <div class="text-center icon">
+            <i class="far fa-user"></i>
+        </div>
         </button>
 
         
-        <div class="dropdown-menu border-0" aria-labelledby="dropdownProfileBtn">
+        <div class="dropdown-menu dropdown-menu-end border-0" aria-labelledby="dropdownProfileBtn">
                 {% if request.user.is_authenticated %}
                     {% if request.user.is_superuser %}
                         <a href="" class="dropdown-item">Product Management</a>
@@ -17,15 +20,15 @@
                     <a href="{% url 'account_signup' %}" class="dropdown-item">Register</a>
                     <a href="{% url 'account_login' %}" class="dropdown-item">Login</a>
                 {% endif %}
-            </div>
-        </li>
+        </div>
     </li>
+
     <li class="list-inline-item py-auto ">
             <a class="nav-link d-block d-lg-none" href="">
                 <div class="text-center">
-                    <div><i class="fas fa-shopping-cart"></i></div>
-                    
+                    <i class="fas fa-shopping-cart"></i>
                 </div>
             </a>
     </li>
   </ul>
+</div>
