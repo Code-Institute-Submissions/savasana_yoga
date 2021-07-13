@@ -1,31 +1,32 @@
+
+
+
 <div class="collapse navbar-collapse" id="navbarNavDropdown">
-    <ul class="navbar-nav me-auto py-auto mb-lg-0">
-      <li class="nav-item me-2">
-        <a class="nav-link" href="#">Home</a>
+  <ul class="navbar-nav mb-2 mb-lg-0 me-5 pe-5">
+    <li class="nav-item me-2">
+      <a class="nav-link" href="{% url 'home' %}">Home</a>
+    </li>
+      <li class="nav-item dropdown dropdown-nav-items position-static mx-2">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarNavDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Products 
+          </a>
+          <ul class="dropdown-menu mx-auto products-dropdown-menu" aria-labelledby="navbarNavDropdown">
+            <li><a href="{% url 'products' %}" class="dropdown-heading"><h4 class="dropdown-header ms-auto ">View All</h4></a></li>
+            <div class="classes-nav">
+              <li><a href="" class="dropdown-heading"><h6 class="dropdown-header ">Classes</h6></a></li>
+              <li><a class="dropdown-item dropdown-item-classes my-1" href="#">Beginner Classes</a></li>
+              <li><a class="dropdown-item dropdown-item-classes my-1" href="#">Intermediate Classes</a></li>
+              <li><a class="dropdown-item dropdown-item-classes my-1" href="#">Advanced Classes</a></li>
+            </div>
+           <div class="retreats-nav">
+              <li><a href="" class="dropdown-heading"><h6 class="dropdown-header ">Retreats</h6></a></li>
+              <li><a class="dropdown-item dropdown-item-retreats my-1" href="#">Yoga Retreats</a></li>
+              <li><a class="dropdown-item dropdown-item-retreats my-1" href="#">Meditation Retreats</a></li>
+           </div>
+          </ul>
+        </li>
+      <li class="nav-item mx-2">
+          <a class="nav-link" href="#">Blog</a>
       </li>
-      <li class="nav-item dropdown me-2">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarCourseDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-          Classes
-        </a>
-        <ul class="dropdown-menu" aria-labelledby="navbarCourseDropdown">
-          <li><a class="dropdown-item" href="#">Beginner Classes</a></li>
-          <li><a class="dropdown-item" href="#">Intermediate Classes</a></li>
-          <li><a class="dropdown-item" href="#">Advanced Classes</a></li>
-          <li><a class="dropdown-item" href="#">All Courses</a></li>
-        </ul>
-      </li>
-      <li class="nav-item dropdown me-2">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarRetreatDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-          Retreats
-        </a>
-        <ul class="dropdown-menu" aria-labelledby="navbarRetreatDropdown">
-          <li><a class="dropdown-item" href="#">Meditation Retreats</a></li>
-          <li><a class="dropdown-item" href="#">Yoga Retreats</a></li>
-          <li><a class="dropdown-item" href="#">All Retreats</a></li>
-        </ul>
-      </li>
-      <li class="nav-item me-2">
-        <a class="nav-link" href="#">Blog</a>
-      </li>
-    </ul>  
+  </ul>
 </div>
