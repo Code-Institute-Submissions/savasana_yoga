@@ -52,23 +52,20 @@
                 </a>
             </div>
             <div class="col-12 col-lg-3 my-auto py-auto py-lg-0 d-none d-lg-block">
+                <div class="nav-link-icons">
                 <ul class="list-inline list-unstyled my-auto py-auto float-end me-2">
-                    <li class="list-inline-item dropdown">
+                    <li class="list-inline-item dropstart position-static">
                         <a href="#" class="nav-link " id="search-bar" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <div class="text-center icon">
                                 <i class="fas fa-search"></i>
                             </div>
                         </a>
-                        <div class="dropdown-menu search-dropdown border-0" aria-labelledby="search-bar">
+                        <div class="dropdown-menu search-dropdown w-25 border-0 my-auto" aria-labelledby="search-bar">
                             <form method="GET" action="{% url 'products' %}">
                                 <div class="input-group border-bottom border-dark ">
                                     <input class="form-control search-bar" type="text" name="query" placeholder="Search">
                                     <div class="input-group-append">
-                                        <button class="form-control btn btn-search" type="submit">
-                                            <span class="icon search-icon">
-                                                <i class="fas fa-search"></i>
-                                            </span>
-                                        </button>
+                                        
                                     </div>
                                 </div>
                             </form>
@@ -103,6 +100,7 @@
                     </li>
                    
                   </ul>
+                </div>
             </div>
         </div>
     </header>

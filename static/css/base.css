@@ -169,11 +169,10 @@ ul.dropdown-menu.products-dropdown-menu.show {
 }
 
 .dropdown-nav-items {
-    width: 100%;
+    width: auto;
 }
 
 
-/* .search-dropdown {
-    
-    width: auto;
-} */
+.dropdown-menu.search-dropdown.show {
+    padding-top: 0px;
+}

@@ -1,21 +1,17 @@
 
 <ul class="list-inline list-unstyled mobile-header-icons">
-    <li class="list-inline-item dropdown d-block d-lg-none">
-        <a href="#" class="nav-link " id="mobile-search-bar" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    <li class="list-inline-item dropdown position-static d-block d-lg-none">
+        <a href="#" class="nav-link " id="search-bar" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             <div class="text-center icon">
                 <i class="fas fa-search"></i>
             </div>
         </a>
-        <div class="dropdown-menu search-dropdown border-0" aria-labelledby="mobile-search-bar">
+        <div class="dropdown-menu search-dropdown w-100 border-0 my-auto" aria-labelledby="search-bar">
             <form method="GET" action="{% url 'products' %}">
                 <div class="input-group border-bottom border-dark ">
                     <input class="form-control search-bar" type="text" name="query" placeholder="Search">
                     <div class="input-group-append">
-                        <button class="form-control btn btn-search" type="submit">
-                            <span class="icon search-icon">
-                                <i class="fas fa-search"></i>
-                            </span>
-                        </button>
+                        
                     </div>
                 </div>
             </form>
