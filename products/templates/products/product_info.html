@@ -14,6 +14,14 @@
         <div class="row">
             <div class="col-sm-10 offset-sm-1 col-md-8 offset-md-2 col-lg-6 offset-lg-3 text-center my-2">
                 <h4 class="text-black mt-2 pt-1">{{ product.name }}</h4>
+                <span><p class="small">{{ product.location }}</p></span>
+                {% if product.category %}
+                        <span><p class="small">
+                            <a class="text-muted" href="{% url 'products' %}?category={{ product.category.name }}">
+                                {{ product.category.friendly_name }}
+                            </a>
+                        </p></span>
+                    {% endif %}
                 <hr>
             </div>
         </div>
@@ -34,19 +42,9 @@
             </div>
             <div class="col-sm-12 col-md-6 col-lg-4">
                 <div class="product-info-container py-2">
-                    <h5 class="text-center my-1 py-1">{{ product.name }}</h5>
-                    <p class="small text-center">{{ product.location }}</p>
-                    <p class="product-description-text my-2 py-2">
+                    <p class="product-description-text my-1 py-1">
                         {{ product.description }}
                     </p>
-                    {% if product.category %}
-                        <p class="small">
-                            <a class="text-muted" href="{% url 'products' %}?category={{ product.category.name }}">
-                                {{ product.category.friendly_name }}
-                            </a>
-                        </p>
-                    {% endif %}
-                    <p class="my-1 pb-1">€{{ product.price }}</p>
                     {% if product.rating %}
                     <small>
                         <i class="fas fa-star"> {{ product.rating}} / 5</i>
@@ -56,9 +54,54 @@
                         No Rating
                     </small>
                     {% endif %}
+                    <p class="my-1 pb-1">€{{ product.price }}</p>
+                    
                 </div>
+                <!-- Form to add product to cart -->
+                <form class="form" action="" method="POST">
+                    {% csrf_token %}
+                    <div class="form-row">
+                        <div class="col-12 d-flex ">
+                            <p>Quantity:</p>
+                            
+                            <div class="form-group py-0 my-0 qty-adjust">
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <button class="decrement-qty btn btn-sm" 
+                                                data-item_id="{{ product.id }}" id="decrement-qty_{{ product.id }}">
+                                                <span class="icon">
+                                                    <i class="fas fa-minus fa-sm"></i>
+                                                </span>
+                                        </button>
+                                    </div>
+                                    <input class="form-control form-control-sm qty_input my-0 py-0" type="number"
+                                            name="quantity" value="1" min="1" max="99"
+                                            data-item_id="{{ product.id }}"
+                                            id="id_qty_{{ product.id }}">
+                                    <div class="input-group-append">
+                                        <button class="increment-qty btn btn-sm"
+                                                data-item_id="{{ product.id }}" id="increment-qty_{{ product.id }}">
+                                                <span class="icon">
+                                                    <i class="fas fa-plus fa-sm"></i>
+                                                </span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-12 cart-col-buttons">
+                            <a href="{% url 'products' %}" class="btn btn-primary rounded-1 mt-4">
+                                Keep Shopping
+                            </a>
+                            <input type="submit" class="btn btn-primary rounded-1 mt-4" value="Add to cart">
+                        </div>
+                        <input type="hidden" name="redirect_url" value="{{ request.path }}">
+                    </div>
+                </form>
             </div>
         </div>
+
         </div>
     </div>
 {% endblock %}
