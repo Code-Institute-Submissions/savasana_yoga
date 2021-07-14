@@ -16,8 +16,19 @@
                 <h3 class="mt-2 pt-2 heading-text">All Products</h3>
             </div>
         </div>
-        <div class="row">
-            <div class="col-6 my-auto">
+        <div class="row d-flex">
+            <div class="col-6 my-auto d-flex justify-content-start">
+                <p class="text-muted mt-3 ">
+                    <!-- From Boutique Ado Project to show number of products -->
+                    {% if search_term or current_categories or current_sorting != 'None_None' %}
+                    <span class="small"><a href="{% url 'products' %}">All Products</a> | </span>
+                    {% endif %}
+                    {{ products|length }} Products{% if search_term %} found for
+                    <strong>"{{ search_term }}"</strong>{% endif %}
+                </p>
+                
+            </div>
+            <div class="col-6 my-auto d-flex justify-content-end">
                 <!-- From Boutiwue Ado Project to display sort selector -->
                 <div class="sort-select-wrapper">
                     <select id="sort-selector" class="custom-select custom-select-sm rounded-0 border border-{% if current_sorting != 'None_None' %}info{% else %}black{% endif %}">
