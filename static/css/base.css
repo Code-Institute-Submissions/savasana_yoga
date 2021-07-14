@@ -176,3 +176,10 @@ ul.dropdown-menu.products-dropdown-menu.show {
 .dropdown-menu.search-dropdown.show {
     padding-top: 0px;
 }
+
+
+.empty-shopping-cart {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
