@@ -183,3 +183,8 @@ ul.dropdown-menu.products-dropdown-menu.show {
     flex-direction: column;
     align-items: center;
 }
+
+.update-link,
+.remove-item {
+    cursor: pointer;
+}
