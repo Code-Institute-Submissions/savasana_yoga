@@ -188,3 +188,8 @@ ul.dropdown-menu.products-dropdown-menu.show {
 .remove-item {
     cursor: pointer;
 }
+
+
+.product-card-list-item {
+    border: none;
+}

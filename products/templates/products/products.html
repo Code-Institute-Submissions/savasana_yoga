@@ -51,8 +51,8 @@
                 <div class="row">
                     <!-- From Boutique Ado Project to display Product Images via Template Tags -->
                     {% for product in products %}
-                        <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
-                            <div class="card border-0">
+                        <div class="col-sm-12 col-md-6 col-lg-4 col-xl-4 py-4 px-3">
+                            <div class="card border">
                             {% if product.image %}
                                 <a href="{% url 'product_info' product.id %}">
                                     <img src="{{ product.image.url }}" class="img-fluid card-img-top card-img" alt="{{ product.name }}">
@@ -62,23 +62,27 @@
                                     <img src="{{ MEDIA_URL }}noimage.png" class="img-fluid card-img-top" alt="{{ product.name }}">
                                 </a>
                             {% endif %}  
-                                <div class="card-body">
-                                  <p class="card-text">{{ product.name }}</p>
+                                <div class="card-body mb-0 pb-0">
+                                  <p class="card-text lead">{{ product.name }}</p>
+                                  <p class="card-text blockquote-footer mt-2"><em>This line rendered as italicized text.</em></p>
                                 </div>
                                 <div class="card-footer bg-transparent border-0">
-                                    <div class="row">
-                                        <div class="col">
+                                    <ul class="list-group list-group-flush">
+                                        <li class="list-group-item product-card-list-item">
                                             {% if product.category %}
-                                                <p class="small">
+                                                <small>
                                                     <a class="text-muted" href="{% url 'products' %}?category={{ product.category.name }}">
                                                         {{ product.category.friendly_name }}
                                                     </a>
-                                                </p>
+                                                </small>                                                
                                             {% endif %}
-                                            <p class="">€{{ product.price }}</p>
-                                            
+                                        </li>
+                                        <li class="list-group-item product-card-list-item">
+                                            <small>€{{ product.price }}</small> 
+                                        </li>
+                                        <li class="list-group-item product-card-list-item">
                                             {% if product.rating %}
-                                                <small>
+                                                <small class="text-secondary">
                                                     <i class="fas fa-star"> {{ product.rating}} / 5</i>
                                                 </small>
                                             {% else %}
@@ -86,32 +90,12 @@
                                                     No Rating
                                                 </small>
                                             {% endif %}
-                                        </div>
-                                    </div>
+                                        </li>
+                                    </ul>
                                 </div>
+                               
                             </div>
                         </div>
-                        <!-- From Boutique Ado - Code Institute to create hr lines for each col size -->
-                        {% if forloop.counter|divisibleby:1 %}
-                            <div class="col-12 d-sm-none mb-5">
-                                <hr class="product-hr">
-                            </div>
-                        {% endif %}                        
-                        {% if forloop.counter|divisibleby:2 %}
-                            <div class="col-12 d-none d-sm-block d-md-block d-lg-none mb-5">
-                                <hr class="product-hr">
-                            </div>
-                        {% endif %}
-                        {% if forloop.counter|divisibleby:3 %}
-                            <div class="col-12 d-none d-lg-block d-xl-none mb-5">
-                                <hr class="product-hr">
-                            </div>
-                        {% endif %}
-                        {% if forloop.counter|divisibleby:4 %}
-                            <div class="col-12 d-none d-xl-block mb-5">
-                                <hr class="product-hr">
-                            </div>
-                        {% endif %}
                     {% endfor %}
                 </div>
             </div>
