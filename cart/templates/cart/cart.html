@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% load static %}
+{% load cart_tools %}
 
 {% block page_header %}
     <div class="container header-container">
@@ -98,7 +99,7 @@
                             </td>
                             <td class="align-middle"
                                 ><p>
-                                    <strong>€{{ item.product.price }}</strong>
+                                    <strong>€{{ item.product.price | calc_subtotal:item.quantity }}</strong>
                                 </p>
                             </td> 
                         </tr>
@@ -157,7 +158,4 @@
          });
     })
 </script>
-{% endblock %}
-
-
 {% endblock %}
