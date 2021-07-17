@@ -64,7 +64,9 @@
                             {% endif %}  
                                 <div class="card-body mb-0 pb-0">
                                   <p class="card-text lead">{{ product.name }}</p>
-                                  <p class="card-text blockquote-footer mt-2"><em>{{ product.tagline }}</em></p>
+                                {% if product.tagline %}
+                                    <p class="card-text blockquote-footer mt-2"><em>{{ product.tagline }}</em></p>
+                                {% endif %}
                                 </div>
                                 <div class="card-footer bg-transparent border-0">
                                     <ul class="list-group list-group-flush">
