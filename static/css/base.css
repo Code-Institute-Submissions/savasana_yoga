@@ -256,3 +256,19 @@ ul.dropdown-menu.products-dropdown-menu.show {
 .muted-anchor-link:hover {
     color:#6c757d
 }
+
+.message-container {
+    position: fixed;
+    top: 72px;
+    right: 15px;
+    z-index: 99999999999;
+}
+
+.custom-toast {
+    overflow: visible;
+    background-color: #68B0AB;
+}
+
+.toast-capper {
+    height: 2px;
+}
