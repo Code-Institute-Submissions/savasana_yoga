@@ -16,19 +16,8 @@
                 <h3 class="mt-2 pt-2 heading-text">Classes and Courses</h3>
             </div>
         </div>
-        <div class="row d-flex">
-            <div class="col-6 my-auto d-flex justify-content-start">
-                <p class="text-muted mt-3 ">
-                    <!-- From Boutique Ado Project to show number of products -->
-                    {% if search_term or current_categories or current_sorting != 'None_None' %}
-                    <span class="small"><a href="{% url 'products' %}">All Class and Courses</a> | </span>
-                    {% endif %}
-                    {{ products|length }} Products{% if search_term %} found for
-                    <strong>"{{ search_term }}"</strong>{% endif %}
-                </p>
-                
-            </div>
-            <div class="col-6 my-auto d-flex justify-content-end">
+        <div class="row py-2">
+            <div class="col-12 col-md-4 my-auto order-md-last d-flex justify-content-center justify-content-md-end">
                 <!-- From Boutique Ado Project to display sort selector -->
                 <div class="sort-select-wrapper">
                     <select id="sort-selector" class="custom-select custom-select-sm rounded-0 border border-{% if current_sorting != 'None_None' %}info{% else %}black{% endif %}">
@@ -43,6 +32,30 @@
                         <option value="category_desc" {% if current_sorting == 'category_desc' %}selected{% endif %}>Category (Z-A)</option>
                     </select>
                 </div>
+            </div>
+            <div class="col-12 col-md-4 my-auto text-center">
+                <ul class="list-inline my-auto pt-2">
+                    <li class="list-inline-item mx-auto"><span><a href="{% url 'products' %}?category=beginner_course,intermediate_course,advanced_course" class="muted-anchor-link">Courses</a> | </span></li>
+                    <li class="list-inline-item mx-auto"><span><a href="{% url 'products' %}?category=yoga_class,meditation_class" class="muted-anchor-link">Classes</a></span></li>
+                </ul>
+            </div>
+            <div class="col-12 col-md-4 order-md-first ">
+                <p class="text-muted mt-3 text-center float-md-start">
+                    {% if search_term or current_categories or current_sorting != 'None_None' %}
+                        <span class="small"><a href="{% url 'products' %}" class="muted-anchor-link">All Events</a> | </span>
+                    {% endif %}
+                    {{ products|length }} Products{% if search_term %} found for
+                    <strong>"{{ search_term }}"</strong>{% endif %}
+                </p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col text-center">
+                {% for c in current_categories %}
+                    <a class="text-decoration-none" href="{% url 'products' %}?category={{ c.name }}">
+                        <span class="p-2 mt-2 badge category-badge border border-dark">{{ c.friendly_name }}</span>
+                    </a>
+                {% endfor %}
             </div>
         </div>
         <hr>

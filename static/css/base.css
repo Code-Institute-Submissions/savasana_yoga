@@ -238,3 +238,21 @@ ul.dropdown-menu.products-dropdown-menu.show {
       vertical-align: top;
       margin-left: -10px; 
 }
+
+.category-badge {
+    background: #68B0AB;
+    color: white;
+}
+
+.category-badge:active,
+.category-badge:focus {
+    box-shadow: 0px 0px 2px #212529;
+    outline: none;
+}
+
+.muted-anchor-link {
+    color:#212529
+}
+.muted-anchor-link:hover {
+    color:#6c757d
+}
