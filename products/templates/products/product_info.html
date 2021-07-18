@@ -14,8 +14,8 @@
         <div class="row">
             <div class="col-sm-10 offset-sm-1 col-md-8 offset-md-2 col-lg-6 offset-lg-3 text-center my-2">
                 <h4 class="text-black mt-2 pt-1">{{ product.name }}</h4>
-                {% if product.location %}
-                    <span><p class="small">{{ product.location }}</p></span>
+                {% if product.information %}
+                    <p class="text-muted information-text"><span class="me-2"><i class="far fa-calendar-alt fa-lg"></i></span>{{ product.information }}</p>
                 {% endif %}
                 {% if product.category %}
                         <span><p class="small">
@@ -36,7 +36,7 @@
                     </a>
                     {% else %}
                     <a href="">
-                        <img src="{{ MEDIA_URL }} noimage.jpg" class="img-fluid card-img-top" alt="{{ product.name }}">
+                        <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}noimage.jpg" alt="{{ product.name }}">
                     </a>
                     {% endif %}  
                 </div>

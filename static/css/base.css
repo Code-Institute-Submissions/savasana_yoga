@@ -193,3 +193,8 @@ ul.dropdown-menu.products-dropdown-menu.show {
 .product-card-list-item {
     border: none;
 }
+
+.information-text {
+    margin-top: 15px;
+    margin-bottom: 10px;
+}
