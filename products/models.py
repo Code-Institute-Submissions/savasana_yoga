@@ -20,10 +20,9 @@ class Category(models.Model):
 class Product(models.Model):
     category = models.ForeignKey('Category', null=True, blank=True, on_delete=models.SET_NULL)
     name = models.CharField(max_length=250)
-    sku = models.CharField(max_length=250, null=True, blank=True)
     description = models.TextField()
     tagline = models.CharField(max_length=250, null=True, blank=True)
-    location = models.CharField(max_length=250, null=True, blank=True)
+    information = models.CharField(max_length=250, null=True, blank=True)
     price = models.DecimalField(max_digits=6, decimal_places=2)
     number_of_sessions = models.IntegerField(validators=[MaxValueValidator(50), MinValueValidator(1)], default=10)
     rating = models.DecimalField(max_digits=6, decimal_places=2, null=True, blank=True)
