@@ -220,3 +220,21 @@ ul.dropdown-menu.products-dropdown-menu.show {
     height: 100%;
     
 }
+
+.badge {
+    padding-left: 9px;
+    padding-right: 9px;
+    -webkit-border-radius: 9px;
+    -moz-border-radius: 9px;
+    border-radius: 9px;
+}
+  
+
+#CartCounter {
+      font-size: 12px;
+      background: #68B0AB;
+      color: #fff;
+      padding: 0 5px;
+      vertical-align: top;
+      margin-left: -10px; 
+}
