@@ -266,9 +266,23 @@ ul.dropdown-menu.products-dropdown-menu.show {
 
 .custom-toast {
     overflow: visible;
-    background-color: #68B0AB;
+    background-color: #f7f7f7;
 }
 
 .toast-capper {
     height: 2px;
+}
+
+.cart-notification-wrapper {
+    height: 100px;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+
+@media (min-width:100px) and (max-width: 800px) {
+    .dropdown-menu.products-dropdown-menu.show {
+      display: flex;
+      flex-flow: column;
+    }
 }
