@@ -52,7 +52,7 @@
                     <!-- From Boutique Ado Project to display Product Images via Template Tags -->
                     {% for product in products %}
                         <div class="col-sm-12 col-md-6 col-lg-4 col-xl-4 py-4 px-3">
-                            <div class="card border">
+                            <div class="card product-card border">
                             {% if product.image %}
                                 <a href="{% url 'product_info' product.id %}">
                                     <img src="{{ product.image.url }}" class="img-fluid card-img-top card-img" alt="{{ product.name }}">
@@ -63,7 +63,10 @@
                                 </a>
                             {% endif %}  
                                 <div class="card-body mb-0 pb-0">
-                                  <p class="card-text lead">{{ product.name }}</p>
+                                    <a href="{% url 'product_info' product.id %}" class="product-heading-text-link">
+                                        <p class="card-text lead">{{ product.name }}</p>
+                                    </a>
+                                  
                                 {% if product.tagline %}
                                     <p class="card-text blockquote-footer mt-2"><em>{{ product.tagline }}</em></p>
                                 {% endif %}
@@ -130,5 +133,16 @@
                 window.location.replace(currentUrl);
             }
         })
+    </script>
+
+    <script>
+        $('.product-card').hover(
+            function () {
+                $(this).addClass("card-hover");
+            },
+            function () {
+                $(this).removeClass("card-hover");
+            }
+        );
     </script>
 {% endblock %}
