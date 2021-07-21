@@ -231,12 +231,13 @@ ul.dropdown-menu.products-dropdown-menu.show {
   
 
 #CartCounter {
-      font-size: 12px;
-      background: #68B0AB;
-      color: #fff;
-      padding: 0 5px;
-      vertical-align: top;
-      margin-left: -10px; 
+    font-size: 12px;
+    background: #68B0AB;
+    color: #fff;
+    padding: 0px 5px;
+    vertical-align: top;
+    margin-left: -3px;
+    margin-bottom: 7px;
 }
 
 .category-badge {
@@ -285,4 +286,9 @@ ul.dropdown-menu.products-dropdown-menu.show {
       display: flex;
       flex-flow: column;
     }
+}
+
+.nav-link-icons {
+    display: flex;
+    justify-content: flex-end;
 }
