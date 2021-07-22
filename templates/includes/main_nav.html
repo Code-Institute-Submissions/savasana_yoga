@@ -1,22 +1,26 @@
 <div class="collapse navbar-collapse" id="navbarNav">
-  <ul class="navbar-nav mb-2 mb-lg-0 me-5 pe-5">
-    <li class="nav-item mx-2">
-      <a class="nav-link" href="{% url 'home' %}">Home</a>
-    </li>
-      <li class="nav-item dropdown dropdown-nav-items position-static mx-2">
+  <ul class="navbar-nav mb-2 mb-lg-0 ms-2 pe-5">
+      <li class="nav-item dropdown dropdown-nav-items mx-2">
           <a class="nav-link dropdown-toggle" href="#" id="navbarNavDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Studio 
+            Courses 
           </a>
           <ul class="dropdown-menu mx-auto products-dropdown-menu" aria-labelledby="navbarNavDropdown">
-            <li><a href="{% url 'products' %}" class="dropdown-heading"><h4 class="dropdown-header ms-auto ">View All</h4></a></li>
             <div class="courses-nav">
-              <li><a class="dropdown-heading" href="{% url 'products' %}?category=beginner_course,intermediate_course,advanced_course"><h6 class="dropdown-header" >Courses</h6></a></li>
+              <li><a class="dropdown-heading" href="{% url 'products' %}?category=beginner_course,intermediate_course,advanced_course"><h6 class="dropdown-header" >All Courses</h6></a></li>
               <li><a class="dropdown-item dropdown-item-courses my-1" href="{% url 'products' %}?category=beginner_course">Beginner Courses</a></li>
               <li><a class="dropdown-item dropdown-item-courses my-1" href="{% url 'products' %}?category=intermediate_course">Intermediate Courses</a></li>
               <li><a class="dropdown-item dropdown-item-courses my-1" href="{% url 'products' %}?category=advanced_course">Advanced Courses</a></li>
             </div>
+          </ul>
+        </li>
+
+        <li class="nav-item dropdown dropdown-nav-items mx-2">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarNavDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Classes 
+          </a>
+          <ul class="dropdown-menu mx-auto products-dropdown-menu" aria-labelledby="navbarNavDropdown">
            <div class="classes-nav">
-              <li><a class="dropdown-heading" href="{% url 'products' %}?category=yoga_class,meditation_class"><h6 class="dropdown-header">Classes</h6></a></li>
+              <li><a class="dropdown-heading" href="{% url 'products' %}?category=yoga_class,meditation_class"><h6 class="dropdown-header">All Classes</h6></a></li>
               <li><a class="dropdown-item dropdown-item-classes my-1" href="{% url 'products' %}?category=yoga_class">Yoga Classes</a></li>
               <li><a class="dropdown-item dropdown-item-classes my-1" href="{% url 'products' %}?category=meditation_class">Meditation Classes</a></li>
            </div>
