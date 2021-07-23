@@ -120,8 +120,10 @@ a.navbar-brand:focus {
     align-items: baseline;
 }
 
-.product-container {
-
+.product-info-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .heading-text {

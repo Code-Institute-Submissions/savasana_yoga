@@ -28,8 +28,8 @@
                 <hr>
             </div>
         </div>
-        <div class="row py-2">
-            <div class="col-sm-12 col-md-6 col-lg-5 offset-lg-1 pt-3 ">
+        <div class="row py-2 d-flex">
+            <div class="col-sm-12 col-lg-6 pt-3 ">
                 <div class="product-image-container">
                     {% if product.image %}
                     <a href="{{ product.image.url }}" target="_blank">
@@ -43,25 +43,26 @@
                 </div>
 
             </div>
-            <div class="col-sm-12 col-md-6 col-lg-5 offset-lg-1 ">
-                <div class="product-info-container py-2">
-                    <p class="product-description-text my-1 py-1">
-                        {{ product.description }}
+            <div class="col-sm-12 col-lg-6 product-info-container ">
+                <div class="py-2 ms-2">
+                    <h6 class="mt-2">Class Description</h6>
+                    <p class="text-sm-start  my-1 py-1">
+                        {{ product.description|linebreaksbr }}
                     </p>
                     {% if product.difficulty %}
-                        <p class="">
-                            Level: {{ product.difficulty }}
+                        <p class="pt-2 text-sm-start">
+                           <em>Level: {{ product.difficulty }}</em> 
                         </p>
                     {% endif %}
                     
-                    <p class="my-1 pb-1">€{{ product.price }}</p>
+                    <p class="my-1 pb-1 text-sm-start">€{{ product.price }}</p>
                     
                 </div>
                 <!-- Form to add product to cart -->
                 <form class="form" action="{% url 'add_to_cart' product.id %}" method="POST">
                     {% csrf_token %}
                     <div class="form-row">
-                        <div class="col-12">
+                        <div class="col-12 text-sm-start ms-2">
                             
                             
                             <div class="form-group py-0 my-0 qty-adjust">
@@ -90,7 +91,7 @@
                             </div>
                         </div>
 
-                        <div class="col-12 cart-col-buttons">
+                        <div class="col-12 cart-col-buttons text-sm-start ms-2">
                             <a href="{% url 'products' %}" class="btn back-btn rounded-1 mt-4">
                                 All Classes
                             </a>
@@ -100,8 +101,6 @@
                     </div>
                 </form>
             </div>
-        </div>
-
         </div>
     </div>
 {% endblock %}
