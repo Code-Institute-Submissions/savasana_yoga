@@ -76,28 +76,31 @@
                                 {% endif %}
                                 </div>
                                 <div class="card-footer bg-transparent border-0">
-                                    
-                                    <ul class="list-group list-group-flush">
-                                        <li class="list-group-item product-card-list-item">
-                                            {% if product.category %}
+                                    <div class="d-flex flex-column mb-1 mt-1">
+                                        {% if product.category %}
+                                            <p class="">
                                                 <small>
                                                     <a class="text-muted" href="{% url 'products' %}?category={{ product.category.name }}">
                                                         {{ product.category.friendly_name }}
                                                     </a>
-                                                </small>                                                
-                                            {% endif %}
-                                        </li>
-                                        <li class="list-group-item product-card-list-item">
-                                            <small class="text-muted">
-                                                Level: {{ product.difficulty }}
-                                            </small>
-                                        </li>
-                                        <li class="list-group-item product-card-list-item">
-                                            <small>
-                                                €{{ product.price }}
-                                            </small> 
-                                        </li>
-                                    </ul>
+                                                </small>
+                                            </p>
+                                        {% endif %}
+                                            <p class="">
+                                                <small class="text-muted">
+                                                    Level: {{ product.difficulty }}
+                                                </small>
+                                            </p>
+                                            <p>
+                                                <small>
+                                                    €{{ product.price }}
+                                                </small> 
+                                            </p>
+                                    </div>
+                                   
+                                    
+
+                                   
                                 </div>
                                
                             </div>

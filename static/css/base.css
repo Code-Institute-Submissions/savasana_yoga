@@ -42,6 +42,19 @@
     color: white;
 }
 
+.back-btn {
+    background: #b0686d;
+    color: #FAF9F9;
+}
+
+.back-btn:hover,
+.back-btn:active,
+.back-btn:focus {
+    background: transparent;
+    color: #b0686d;
+    border-color: #b0686d;
+}
+
 .book-today-btn:hover,
 .book-today-btn:active,
 .book-today-btn:focus {
