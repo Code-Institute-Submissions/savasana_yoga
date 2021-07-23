@@ -13,7 +13,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-8 mx-auto my-auto text-center">
-                <h3 class="mt-2 pt-2 heading-text">Classes and Courses</h3>
+                <h3 class="mt-3 pt-3 heading-text">Classes</h3>
             </div>
         </div>
         <div class="row py-2">
@@ -33,14 +33,14 @@
             </div>
             <div class="col-12 col-md-4 my-auto text-center">
                 <ul class="list-inline my-auto pt-2">
-                    <li class="list-inline-item mx-auto"><span><a href="{% url 'products' %}?category=beginner_course,intermediate_course,advanced_course" class="muted-anchor-link">Courses</a> | </span></li>
-                    <li class="list-inline-item mx-auto"><span><a href="{% url 'products' %}?category=yoga_class,meditation_class" class="muted-anchor-link">Classes</a></span></li>
+                    <li class="list-inline-item mx-auto"><span><a href="{% url 'products' %}?category=yoga_class" class="muted-anchor-link">Yoga</a> | </span></li>
+                    <li class="list-inline-item mx-auto"><span><a href="{% url 'products' %}?category=meditation_class" class="muted-anchor-link">Meditation</a></span></li>
                 </ul>
             </div>
             <div class="col-12 col-md-4 order-md-first ">
                 <p class="text-muted mt-3 text-center float-md-start">
                     {% if search_term or current_categories or current_sorting != 'None_None' %}
-                        <span class="small"><a href="{% url 'products' %}" class="muted-anchor-link">All Events</a> | </span>
+                        <span class="small"><a href="{% url 'products' %}" class="muted-anchor-link">All Classes</a> | </span>
                     {% endif %}
                     {{ products|length }} Products{% if search_term %} found for
                     <strong>"{{ search_term }}"</strong>{% endif %}
@@ -48,13 +48,6 @@
             </div>
         </div>
         <div class="row">
-            <div class="col text-center">
-                {% for c in current_categories %}
-                    <a class="text-decoration-none" href="{% url 'products' %}?category={{ c.name }}">
-                        <span class="p-2 mt-2 badge category-badge border border-dark">{{ c.friendly_name }}</span>
-                    </a>
-                {% endfor %}
-            </div>
         </div>
         <hr>
         <div class="row">
@@ -83,6 +76,7 @@
                                 {% endif %}
                                 </div>
                                 <div class="card-footer bg-transparent border-0">
+                                    
                                     <ul class="list-group list-group-flush">
                                         <li class="list-group-item product-card-list-item">
                                             {% if product.category %}
@@ -94,7 +88,14 @@
                                             {% endif %}
                                         </li>
                                         <li class="list-group-item product-card-list-item">
-                                            <small>€{{ product.price }}</small> 
+                                            <small class="text-muted">
+                                                Level: {{ product.difficulty }}
+                                            </small>
+                                        </li>
+                                        <li class="list-group-item product-card-list-item">
+                                            <small>
+                                                €{{ product.price }}
+                                            </small> 
                                         </li>
                                     </ul>
                                 </div>

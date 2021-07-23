@@ -14,16 +14,17 @@
         <div class="row">
             <div class="col-sm-10 offset-sm-1 col-md-8 offset-md-2 col-lg-6 offset-lg-3 text-center my-2">
                 <h4 class="text-black mt-2 pt-1">{{ product.name }}</h4>
-                {% if product.information %}
-                    <p class="text-muted information-text"><span class="me-2"><i class="far fa-calendar-alt fa-lg"></i></span>{{ product.information }}</p>
+                {% if product.number_of_sessions %}
+                    <p class="text-muted information-text"><span class="me-2"></span> Number of classes: {{ product.number_of_sessions }}</p>
                 {% endif %}
+                
                 {% if product.category %}
                         <span><p class="small">
                             <a class="text-muted" href="{% url 'products' %}?category={{ product.category.name }}">
                                 {{ product.category.friendly_name }}
                             </a>
                         </p></span>
-                    {% endif %}
+                {% endif %}
                 <hr>
             </div>
         </div>
@@ -47,6 +48,12 @@
                     <p class="product-description-text my-1 py-1">
                         {{ product.description }}
                     </p>
+                    {% if product.difficulty %}
+                        <p class="">
+                            Level: {{ product.difficulty }}
+                        </p>
+                    {% endif %}
+                    
                     <p class="my-1 pb-1">€{{ product.price }}</p>
                     
                 </div>
