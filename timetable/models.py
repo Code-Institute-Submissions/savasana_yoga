@@ -6,7 +6,11 @@ from products.models import Product
 
 # Create your models here.
 
+
 class TimeTable(models.Model):
+
+    class Meta:
+        verbose_name_plural = 'Time Table'
 
     MON = 'Monday'
     TUE = 'Tuesday'
@@ -27,8 +31,19 @@ class TimeTable(models.Model):
     ]
 
     day = models.CharField(max_length=10, choices=DAYS_OF_THE_WEEK, default=MON)
-    product = models.ForeignKey(Product, null=True, blank=True, on_delete=models.SET_NULL)
-    time = models.TimeField(auto_now=False, auto_now_add=False, null=True, blank=True)
 
     def __str__(self):
         return self.day
+
+
+class TimeTableItems(models.Model):
+
+    class Meta:
+        verbose_name_plural = 'Time Table Items'
+
+    day = models.ForeignKey(TimeTable, null=True, blank=True, on_delete=models.SET_NULL)
+    product = models.ForeignKey(Product, null=True, blank=True, on_delete=models.CASCADE)
+    time = models.TimeField(auto_now=False, auto_now_add=False, null=True, blank=True)
+
+    def __str__(self):
+        return f'Name {self.product.name}'
