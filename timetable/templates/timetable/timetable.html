@@ -19,16 +19,38 @@
     </div>
 </div>
 <div class="container">
-    <div class="row">
-        <div class="col">
-            {% for timetable in timetables %}
-            <p>{{ timetable.product }}</p>
-            <p>{{ timetable.time }}</p>
-            <p>{{ timetable.day }}</p>
-            {% endfor %}
-        </div>
-    </div>
-               
 
-</div>
+
+
+    
+
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Days:</th>
+        {% for days in timetable  %}
+            <th scope="col">{{ days.get_day_display  }}</th> 
+        {% endfor %}
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="col">Classes:</th>
+        {% for classes in timetable %}
+            <td scope="col">{{ classes.product }}</td>
+        {% endfor %}
+      </tr>
+      <tr>
+        <th scope="col">Times:</th>
+        {% for times in timetable %}
+            <td scope="col">{{ times.time }}</td>
+        {% endfor %}
+      </tr>
+      
+    </tbody>
+    
+  </table>
+ 
+
+
 {% endblock %}
