@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect, reverse, HttpResponse, get_object_or_404
 
-from . models import TimeTable, TimeTableItems, Product
+from . models import TimeTable, Product
 
 # Create your views here.
 
@@ -8,10 +8,10 @@ from . models import TimeTable, TimeTableItems, Product
 def view_timetable(request):
     """ A view to renders the timetable page """
 
-    timetables = TimeTableItems.objects.all()
+    timetable = TimeTable.objects.all()
 
     context = {
-        'timetables': timetables,
+        'timetable': timetable,
     }
 
     return render(request, 'timetable/timetable.html', context)
