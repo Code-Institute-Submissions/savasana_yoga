@@ -21,7 +21,7 @@ class TimeTableItemsAdmin(admin.ModelAdmin):
         'time',
     )
 
-    ordering = ('product',)
+    ordering = ('day',)
 
 
 admin.site.register(TimeTable, TimeTableAdmin)
