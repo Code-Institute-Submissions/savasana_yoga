@@ -13,14 +13,22 @@
 <div class="container">
     <div class="row">
         <div class="col-sm-12">
-            <h2>Savasana Class Timetable</h2>
+            <h2 class="text-center my-3">Savasana Class Timetable</h2>
             <hr>
         </div>
     </div>
 </div>
 <div class="container">
     <div class="row">
+        <div class="col">
+            {% for timetable in timetables %}
+            <p>{{ timetable.product }}</p>
+            <p>{{ timetable.time }}</p>
+            <p>{{ timetable.day }}</p>
+            {% endfor %}
+        </div>
+    </div>
+               
 
-       
 </div>
 {% endblock %}
