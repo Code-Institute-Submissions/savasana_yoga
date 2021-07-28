@@ -1,9 +1,6 @@
 from django.contrib import admin
 
-# Register your models here.
-from .models import TimeTable
-
-# Register your models here.
+from .models import TimeTable, Day
 
 
 class TimeTableAdmin(admin.ModelAdmin):
@@ -16,4 +13,17 @@ class TimeTableAdmin(admin.ModelAdmin):
     ordering = ('day',)
 
 
+class DayAdmin(admin.ModelAdmin):
+    list_display = (
+        'day',
+    )
+
+    ordering = ('day',)
+
+admin.site.register(Day, DayAdmin)
 admin.site.register(TimeTable, TimeTableAdmin)
+
+
+
+	
+
