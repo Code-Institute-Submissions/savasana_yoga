@@ -20,37 +20,99 @@
 </div>
 <div class="container">
 
+ 
 
-
-    
-
-<table class="table">
+  <table class="table">
     <thead>
       <tr>
-        <th scope="col">Days:</th>
-        {% for days in timetable  %}
-            <th scope="col">{{ days.get_day_display  }}</th> 
+        <th scope="col">Day</th>
+        <th scope="col">Class</th>
+        <th scope="col">Time</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row">Monday</th>
+        {% for item in monday %}
+        <td>{{item.product}}</td>
+        <td>{{item.time}}</td>
+              {% endfor %}
+      </tr>
+      <tr>
+        <th scope="row">Tuesday</th>
+        {% for item in tuesday %}
+        <td>{{item.product}}</td>
+        <td>{{item.time}}</td>
+              {% endfor %}
+      </tr>
+      <tr>
+        <th scope="row">Wednesday</th>
+        {% for item in wednesday %}
+        <td>{{item.product}}</td>
+        <td>{{item.time}}</td>
+              {% endfor %}
+      </tr>
+      <tr>
+        <th scope="row">Thursday</th>
+        {% for item in thursday %}
+        <td>{{item.product}}</td>
+        <td>{{item.time}}</td>
+              {% endfor %}
+      </tr>
+      <tr>
+        <th scope="row">Friday</th>
+        {% for item in friday %}
+        <td>{{item.product}}</td>
+        <td>{{item.time}}</td>
+              {% endfor %}
+      </tr>
+      <tr>
+        <th scope="row">Saturday</th>
+        {% for item in saturday %}
+        <td>{{item.product}}</td>
+        <td>{{item.time}}</td>
+              {% endfor %}
+      </tr>
+      <tr>
+        <th scope="row">Sunday</th>
+        {% for item in sunday %}
+        <td>{{item.product}}</td>
+        <td>{{item.time}}</td>
+              {% endfor %}
+      </tr>
+    </tbody>
+  </table>
+
+
+  <table class="table">
+    <thead>
+      <tr>
+        {% for days in timetable%}
+        <th scope="col">{{ days.day }}</th>
         {% endfor %}
       </tr>
     </thead>
     <tbody>
       <tr>
-        <th scope="col">Classes:</th>
-        {% for classes in timetable %}
-            <td scope="col">{{ classes.product }}</td>
-        {% endfor %}
+        <th scope="row"></th>
+        <td>Mark</td>
+        <td>Otto</td>
+        <td>@mdo</td>
       </tr>
       <tr>
-        <th scope="col">Times:</th>
-        {% for times in timetable %}
-            <td scope="col">{{ times.time }}</td>
-        {% endfor %}
+        <th scope="row">2</th>
+        <td>Jacob</td>
+        <td>Thornton</td>
+        <td>@fat</td>
       </tr>
-      
+      <tr>
+        <th scope="row">3</th>
+        <td colspan="2">Larry the Bird</td>
+        <td>@twitter</td>
+      </tr>
     </tbody>
-    
   </table>
- 
+
 
 
 {% endblock %}
