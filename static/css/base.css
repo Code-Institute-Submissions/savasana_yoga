@@ -331,3 +331,15 @@ a.navbar-brand:focus {
     box-shadow: none;
     text-decoration: none;
 }
+
+
+
+.timetable-link {
+    text-decoration: none;
+    color: #212529;
+}
+
+.timetable-link:hover, .timetable-link:focus {
+    color: #212529;
+    text-decoration: underline;
+}
