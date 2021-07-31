@@ -6,11 +6,9 @@
       Classes
     </a>
     <div class="dropdown-menu" aria-labelledby="productDropdownMenu">
-      <a class="dropdown-heading" href="{% url 'products' %}?category=yoga_class, meditation_class">
-        <h6 class="dropdown-header">All Classes</h6>
-      </a>
-      <a class="dropdown-item my-1" href="{% url 'products' %}?category=yoga_class">Yoga</a>
-      <a class="dropdown-item  my-1" href="{% url 'products' %}?category=meditation_class">Meditation</a>
+      <a class="dropdown-item my-1" href="{% url 'products' %}?category=beginner_class, advanced_class">All Classes</a>
+      <a class="dropdown-item my-1" href="{% url 'products' %}?category=beginner_class">Beginner</a>
+      <a class="dropdown-item my-1" href="{% url 'products' %}?category=advanced_class">Advanced</a>
     </div>
 
   </div>

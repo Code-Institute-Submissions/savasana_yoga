@@ -83,10 +83,11 @@ a.navbar-brand:focus {
     color: #000;
 }
 
-.nav--icons {
+.nav-icons {
     display: flex;
     flex-flow: row;
 }
+
 
 
 /* Media Queries */
