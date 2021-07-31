@@ -1,0 +1,46 @@
+<hr>
+<div class="container-fluid footer-container pt-4 pb-4">
+    <div class="row pb-2">
+        <!-- Basic Site Map -->
+        <div class="col-lg-4 col-md-4 col-sm-4 site-map">
+            <h5 class="mb-2 mt-3">Site Map</h5>
+            <a class="footer-link" href="{% url 'home' %}">Home</a>
+            <a class="footer-link" href="{% url 'products' %}">Classes</a>
+            <a class="footer-link" href="{% url 'view_timetable' %}">Timetable</a>
+            <a class="footer-link" href="{% url 'view_blog' %}">Blog</a>
+        </div>
+        <!-- Social Media Links -->
+        <div class="col-lg-4 col-md-4 col-sm-4 social-media-icons">
+            <h5 class=" mb-2 mt-3">Social Media</h5>
+            <a class="social-media-link" target="_blank" href="https://www.instagram.com/">
+                <i class="icons fab fa-instagram fa-lg"></i>
+            </a>
+            <a class="social-media-link" target="_blank" href="https://twitter.com/?lang=en">
+                <i class="icons fab fa-twitter fa-lg"></i>
+            </a>
+            <a class="social-media-link" target="_blank" href="https://www.facebook.com/">
+                <i class="icons fab fa-facebook-square fa-lg"></i>
+            </a>
+            <a class="social-media-link" target="_blank" href="https://www.pinterest.com/">
+                <i class="icons fab fa-pinterest fa-lg"></i>
+            </a>
+        </div>
+        <!-- Search feature for Classes -->
+        <div class="col-lg-4 col-md-4 col-sm-12">
+            <h5 class="mb-2 mt-3">Browse Classes</h5>
+            
+            <form method="GET" action="{% url 'products' %}">
+                <div class="input-group">
+                    <input class="form-control search-bar" type="text" name="query" placeholder="Search Classes">
+                    <div class="input-group-append">
+                        <button class="form-control btn btn-search" type="submit">
+                            <span class="icon search-icon">
+                                <i class="fas fa-search"></i>
+                            </span>
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

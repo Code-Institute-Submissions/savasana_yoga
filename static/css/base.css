@@ -1,6 +1,11 @@
 
 
-.container-fluid {
+/* .container-fluid {
+    padding: 0px;
+    margin: 0px;
+} */
+
+.home-image-container {
     padding: 0px;
     margin: 0px;
 }
@@ -373,4 +378,68 @@ a.navbar-brand:focus {
 .timetable-link:hover, .timetable-link:focus {
     color: #212529;
     text-decoration: underline;
+}
+
+footer.custom-footer {
+    width: 100%;
+    background-color: #efefef;
+}
+
+.site-map {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+}
+
+.social-media-icons {
+    display: flex;
+    flex-flow: column;
+}
+
+.container.footer {
+    max-width: 100%;
+}
+
+@media (min-width: 1200px) {
+    .container {
+      max-width: 80%;
+    }
+  }
+
+.social-media-link {
+    width: fit-content;
+}
+
+.icons {
+    color: #212529;
+}
+
+.icons:hover {
+    transform: scale(1.2);
+}
+
+.footer-link {
+    color: #212529;
+    text-decoration: none;
+    width: fit-content;
+}
+.footer-link:hover {
+    color: #212529;
+    text-decoration: underline;
+}
+
+.btn-search {
+    border: 1px solid #212529;
+    background-color: #fff;
+}
+
+.btn-search:focus {
+    border: 1px solid #212529;
+    box-shadow: none;
+    outline: none;
+}
+
+.search-icon:hover,
+.search-icon:focus {
+    transform: scale(1.2);
 }
