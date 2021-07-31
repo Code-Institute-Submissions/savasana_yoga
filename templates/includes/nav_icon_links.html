@@ -21,7 +21,7 @@
         <div class="dropdown-menu dropdown-menu-center border-0 " aria-labelledby="dropdownProfileBtn">
             {% if request.user.is_authenticated %}
                 {% if request.user.is_superuser %}
-                    <a href="" class="dropdown-item">Product Management</a>
+                    <a href="" class="dropdown-item">Class Management</a>
             {% endif %}
                 <a href="" class="dropdown-item">My Profile</a>
                 <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
