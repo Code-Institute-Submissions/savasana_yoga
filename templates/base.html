@@ -35,100 +35,72 @@
     <title>Savasana Yoga {% block extra_title %}{% endblock %}</title>
     </head>
     <body>
-        <header class="container-fluid">
-        <div id="topnav" class="row py-2 navbar-custom g-0">
-            <div class="col-12 col-lg-3 my-auto py-auto">
-                <nav class="navbar navbar-expand-lg bg-transparent">
-                    <button class="navbar-toggler ms-2" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                        <i class="fas fa-bars"></i>
-                    </button>
-                    {% include 'includes/mobile_top_header.html' %}
-                    {% include 'includes/main_nav.html' %}
-              </nav>
+       
+
+    <nav class="navbar navbar-expand-lg navbar-custom">
+        <div class="container-fluid">
+            <a class="navbar-brand d-none d-lg-block" href="{% url 'home' %}">
+                <span class="ms-3">Savasana Yoga</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="fas fa-bars"></i>
+            </button>
+            <div class="d-flex order-lg-1 ms-auto">
+                {% include 'includes/nav_icon_links.html' %}   
             </div>
-            <div class="col-12 col-lg-6 my-auto my-auto py-lg-0 text-center d-none d-lg-block">
-                <a href="{% url 'home' %}" class="nav-link navbar-brand ">
-                    Savasana Yoga
-                </a>
+
+            
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                {% include 'includes/main_nav.html' %}
             </div>
-            <div class="col-12 col-lg-3 my-auto py-auto py-lg-0  d-none d-lg-block">
-                
-                <ul class="list-inline list-unstyled my-auto py-auto nav-link-icons">
-                
-                    <li class="list-inline-item dropdown">
-                    <a href="#" class="nav-link" id="user-profile" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <div class="text-center icon">
-                            <i class="far fa-user"></i>
-                        </div>
-                    </a>
-                        <div class="dropdown-menu border-0" aria-labelledby="user-profile">
-                                    {% if request.user.is_authenticated %}
-                                        {% if request.user.is_superuser %}
-                                            <a href="" class="dropdown-item">Product Management</a>
-                                        {% endif %}
-                                        <a href="" class="dropdown-item">My Profile</a>
-                                        <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
-                                    {% else %}
-                                        <a href="{% url 'account_signup' %}" class="dropdown-item">Register</a>
-                                        <a href="{% url 'account_login' %}" class="dropdown-item">Login</a>
-                                    {% endif %}
-                        </div>
-                    </li>
-                    <li class="list-inline-item">
-                            <a class="nav-link" href="{% url 'view_cart' %}">
-                                <div class="icon"><i class="fas fa-shopping-cart"></i>
-                                
-                                    <span class='badge cart-badge' id='CartCounter'>
-                                       
-                                        {{ product_count }}
-                                        
-                                    </span>
-                                </div>
-                            </a>
-                    </li>
-                   
-                  </ul>
-                </div>
-            </div>
+
+            
+
         </div>
-    </header>
+    </nav>
+
+        
+    {% if messages %}
+        <div class="message-container">
+            {% for message in messages %}
+                {% with message.level as level %}
+                    {% if level == 40 %}
+                        {% include 'includes/toasts/toast_error.html' %}
+                    {% elif level == 30 %}
+                        {% include 'includes/toasts/toast_warning.html' %}
+                    {% elif level == 25 %}
+                        {% include 'includes/toasts/toast_success.html' %}
+                    {% else %}
+                        {% include 'includes/toasts/toast_info.html' %}
+                    {% endif %}
+                {% endwith %}
+            {% endfor %}
+        </div>
+    {% endif %}
+
+    {% block page_header %}
+    {% endblock %}
+
+    {% block content %}
+    {% endblock %}
 
 
-        
-            {% if messages %}
-                <div class="message-container">
-                    {% for message in messages %}
-                        {% with message.level as level %}
-                            {% if level == 40 %}
-                                {% include 'includes/toasts/toast_error.html' %}
-                            {% elif level == 30 %}
-                                {% include 'includes/toasts/toast_warning.html' %}
-                            {% elif level == 25 %}
-                                {% include 'includes/toasts/toast_success.html' %}
-                            {% else %}
-                                {% include 'includes/toasts/toast_info.html' %}
-                            {% endif %}
-                        {% endwith %}
-                    {% endfor %}
-                </div>
-            {% endif %}
-        
-            {% block page_header %}
-            {% endblock %}
-        
-            {% block content %}
-            {% endblock %}
-        
-            {% block postloadjs %}
+    <footer class="custom-footer">
+        {% include 'includes/footer.html' %}
+    </footer>
 
-            <!-- From Bootstrap Documentation to Init and show Toasts -->
-            <script>
-                var toastElList = [].slice.call(document.querySelectorAll('.toast'));
-                var toastList = toastElList.map(function (toastEl) {
-                return new bootstrap.Toast(toastEl).show();
-                });
-            </script>
-            {% endblock %}
+    {% block postloadjs %}
+
+    <!-- From Bootstrap Documentation to Init and show Toasts -->
+    <script>
+        var toastElList = [].slice.call(document.querySelectorAll('.toast'));
+        var toastList = toastElList.map(function (toastEl) {
+        return new bootstrap.Toast(toastEl).show();
+        });
+    </script>
+    {% endblock %}
         
             
     </body>
