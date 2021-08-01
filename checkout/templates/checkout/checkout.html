@@ -67,7 +67,7 @@
 
         <div class="col-12 col-lg-6">
            <p>Please fill out the form to fufill your order</p>
-           <form action="{% url 'checkout' %}" method="POST" id="paymentForm">
+           <form action="{% url 'checkout' %}" method="POST" id="payment-form">
                {% csrf_token %}
                <fieldset class="mb-2">
                    <legend class="fieldset-label mb-1">Details</legend>
