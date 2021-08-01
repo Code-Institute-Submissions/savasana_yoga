@@ -1,0 +1,12 @@
+
+<ul class="navbar-nav flex-row">
+    <li class="nav-item cart-link">
+        <a class="nav-link py-auto " href="{% url 'view_cart' %}" aria-label="View Cart">
+            <i class="fas fa-shopping-cart fa-lg icon"></i>
+            <span class='badge cart-badge' id='CartCounter'>
+                {{ product_count }}
+            </span>
+        </a>
+    </li>
+</ul>
+

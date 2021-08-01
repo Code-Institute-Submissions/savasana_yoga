@@ -72,7 +72,8 @@
 }
 
 a.navbar-brand {
-    color:#000
+    color:#000;
+    margin-left: auto;
 }
 
 a.navbar-brand:hover,
@@ -339,8 +340,9 @@ a.navbar-brand:focus {
 
 
 .navbar-toggler {
-    margin-left: 15px;
+    margin-left: 5px;
 }
+
 
 
 
