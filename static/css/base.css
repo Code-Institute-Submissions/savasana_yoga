@@ -64,7 +64,7 @@
 .book-today-btn:active,
 .book-today-btn:focus {
     background: #F2CC8F;
-    color: #000;
+    color: #212529;
 }
 
 .navbar-custom {
@@ -72,21 +72,21 @@
 }
 
 a.navbar-brand {
-    color:#000;
+    color:#212529;
     margin-left: auto;
 }
 
 a.navbar-brand:hover,
 a.navbar-brand:focus {
-    color:#000
+    color:#212529
 }
 
 .navbar-nav .nav-link {
-    color: #000;
+    color: #212529;
+    margin-right: 10px;
 }
-
 .navbar-nav .nav-link:hover {
-    color: #000;
+    color: #212529;
 }
 
 .nav-icons {
@@ -370,7 +370,13 @@ a.navbar-brand:focus {
     text-decoration: none;
 }
 
+.category-link {
+    text-decoration: none;
+}
 
+.category-link:hover, .category-link:focus {
+    text-decoration: underline;
+}
 
 .timetable-link {
     text-decoration: none;
@@ -445,3 +451,5 @@ footer.custom-footer {
 .search-icon:focus {
     transform: scale(1.2);
 }
+
+

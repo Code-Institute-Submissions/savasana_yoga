@@ -49,13 +49,13 @@
                     <p class="text-sm-start  my-1 py-1">
                         {{ product.description|linebreaksbr }}
                     </p>
-                    {% if product.difficulty %}
-                        <p class="pt-2 text-sm-start">
-                           <em>Level: {{ product.difficulty }}</em> 
-                        </p>
-                    {% endif %}
-                    
                     <p class="my-1 pb-1 text-sm-start">€{{ product.price }}</p>
+                    <p>
+                        <i class="far fa-calendar-alt"></i>
+                        <a href="{% url 'view_timetable' %}" class="timetable-link">
+                            View Timetable
+                        </a>
+                    </p>
                     
                 </div>
                 <!-- Form to add product to cart -->
@@ -92,7 +92,7 @@
                         </div>
 
                         <div class="col-12 cart-col-buttons text-sm-start ms-2">
-                            <a href="{% url 'products' %}" class="btn back-btn rounded-1 mt-4">
+                            <a href="{% url 'products' %}" class="btn back-btn rounded-1 mt-4" role="button">
                                 All Classes
                             </a>
                             <input type="submit" class="btn book-today-btn rounded-1 mt-4" value="Add to cart">
