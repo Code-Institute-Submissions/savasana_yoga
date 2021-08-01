@@ -35,7 +35,8 @@ class TimeTable(models.Model):
 
     day = models.ForeignKey('Day', on_delete=models.CASCADE, blank=True, null=True)
     product = models.ForeignKey(Product, null=True, blank=True, on_delete=models.CASCADE)
-    time = models.TimeField(auto_now=False, auto_now_add=False, null=True, blank=True)
+    morning_time = models.TimeField(auto_now=False, auto_now_add=False, null=True, blank=True)
+    evening_time = models.TimeField(auto_now=False, auto_now_add=False, null=True, blank=True)
 
     def __str__(self):
-        return f'Name {self.product.name}'
+        return f'{self.product.name}'

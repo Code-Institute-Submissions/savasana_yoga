@@ -7,7 +7,8 @@ class TimeTableAdmin(admin.ModelAdmin):
     list_display = (
         'day',
         'product',
-        'time',
+        'morning_time',
+        'evening_time',
     )
 
     ordering = ('day',)
