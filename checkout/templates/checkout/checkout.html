@@ -6,14 +6,6 @@
     <link rel="stylesheet" href="{% static 'checkout/css/checkout.css' %}">
 {% endblock %}
 
-{% block page_header %}
-    <div class="container header-container">
-        <div class="row">
-            <div class="col"></div>
-        </div>
-    </div>
-{% endblock %}
-
 {% block content %}
 <div class="container checkout-container mt-3 mb-2">
     <div class="row">
@@ -131,6 +123,13 @@
            </form>
         </div>
     </div>
+</div>
+<div id="loading-overlay">
+    <h1 class="loading-spinner">
+        <span class="icon">
+            <i class="fas fa-3x fa-sync-alt fa-spin"></i>
+        </span>
+    </h1>
 </div>
 
 {% endblock %}
