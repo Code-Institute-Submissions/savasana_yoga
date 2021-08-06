@@ -1,0 +1,21 @@
+Hello {{ order.full_name }}!
+
+This is a confirmation of your order at Savasana Yoga. Your order information is below:
+
+Order Number: {{ order.order_number }}
+Order Date: {{ order.date }}
+
+Order Total: ${{ order.order_total }}
+Grand Total: ${{ order.grand_total }}
+
+You can attend the sessions at whichever time you suits you best. To view our timetable, please see here: link to timetable
+
+We've got your phone number on file as {{ order.phone_number }}.
+
+If you have any questions, feel free to contact us at {{ contact_email }}.
+
+We hope to see you soon!
+
+Namaste,
+
+Savasana Yoga
