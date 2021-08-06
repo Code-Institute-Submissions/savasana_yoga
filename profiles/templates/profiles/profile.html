@@ -5,14 +5,40 @@
     <link rel="stylesheet" href="{% static 'profiles/css/profile.css' %}">
 {% endblock %}
 
+{% block page_header %}
+    <div class="container header-container">
+        <div class="row">
+            <div class="col"></div>
+        </div>
+    </div>
+{% endblock %}
+
 {% block content %}
     <div class="container">
         <div class="row">
-            <div class="col">
-                <hr>
-                <h2 class="my-2">My Profile</h2>
+            <div class="col my-2">
+                <h2>My Profile</h2>
                 <hr>
             </div>
         </div>
+        <div class="row">
+            <div class="col-12 col-lg-6">
+                <p>Default Billing Information</p>
+                <form action="{% url 'profile' %}" method="POST" id="profile-update-form">
+                    {% csrf_token %}
+                    {{ form|crispy }}
+                    <button class="btn book-today-btn float-right">Update Information</button>
+                </form>
+            </div>
+            <div class="col-12 col-lg-6">
+                <p>Order History</p>
+                {{ orders }}
+            </div>
+        </div>
     </div>
+{% endblock %}
+
+{% block postloadjs %}
+    {{ block.super }}
+    <script type="text/javascript" src="{% static 'profiles/js/countryfield.js' %}"></script>
 {% endblock %}

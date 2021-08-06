@@ -509,3 +509,8 @@ footer.custom-footer {
 .allauth-form-inner-content a {
 	color: #17a2b8; /* text-info */
 }
+
+
+input[name='query']::placeholder {
+    color: #aab7c4;
+}
