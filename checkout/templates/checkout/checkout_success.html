@@ -175,11 +175,19 @@
         </div>
 
         <div class="row">
-			<div class="col-12 col-lg-8 text-start">
-                <p class="lead my-2">View the best time to go to your class!</p>
-				<a href="{% url 'view_timetable' %}" class="btn back-btn">
-					View Timetable
-				</a>
+			<div class="col-12 col-lg-7 text-right">
+                {% if from_profile %}
+                    <a href="{% url 'profile' %}" class="btn back-btn my-2">
+                        <span>Back to Profile</span>
+                    </a>
+                {% else %}
+                    <a href="{% url 'view_timetable' %}" class="btn back-btn my-2">
+                        View Timetable
+                    </a>
+                {% endif %}
+                <a href="{% url 'products' %}" class="btn book-today-btn my-2">
+                    <span>View Classes</span>
+                </a>
 			</div>
 		</div>
     </div>
