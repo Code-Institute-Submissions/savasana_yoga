@@ -1,102 +1,114 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# Savasana Yoga
 
-Welcome TomC2311,
+Savasana Yoga is a website to promote the benefits of yoga. The aim of this website is to promote, discover and book yoga classes offered by Savasana Yoga Studio. 
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use. The last update to this file was: **July 2, 2021**
+[You can view the live project here]()
 
-## Gitpod Reminders
+![Website Overview]()
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
+## Overview
 
-`python3 -m http.server`
+A website for people who wish to practice yoga, and book yoga classes. The website also offers people the opportunity to learn more about the benefits of practicing yoga via blog entry posts.
 
-A blue button should appear to click: _Make Public_,
+The website is built with django and has an e-commerce focus, to faciliate the booking of classes. The website maintains responsiveness across all devices; desktop, tablet, and mobile. 
 
-Another blue button should appear to click: _Open Browser_.
+The website was built with a mobile-first approach as most users now visit website via their mobile.
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
+The website features a fully functional e-commerce store, to allow users to purchase yoga classes. The website also features a register and login form, to allow users to create their own profile, which allows for a quicker booking process, and allow a user to view their order history. 
 
-A blue button should appear to click: _Make Public_,
 
-Another blue button should appear to click: _Open Browser_.
+The main goal of this website is to promote the practice of yoga, highlight it's benefits, and offer classes for both beginner and advanced yogis.
 
-In Gitpod you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
+The website also features a blog, which promotes the benefits of yoga, provides announcements for the yoga studio, and allows users to comment on blog posts. 
 
-To log into the Heroku toolbelt CLI:
+Finally, the website also provides admin features to manage the yoga classes, by editing, deleting and adding new classes, and blog posts.
 
-1. Log in to your Heroku account and go to *Account Settings* in the menu under your avatar.
-2. Scroll down to the *API Key* and click *Reveal*
-3. Copy the key
-4. In Gitpod, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
 
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with _Regenerate API Key_.
+## User Stories
 
-------
+* I want a website that allows me to book yoga classes.
+* I want to receive an email confirmation after booking a class.
+* I would like a blog to read more about the yoga studio, and yoga in general.
+* I would like the ability to comment on blog posts.  
+* I want the ability to filter classes between difficulty levels.
+* I want a website that is easily accessed on my mobile phone and tablet. 
+* I want a website that is easy to understand and navigate.
+* I want to have my own profile to store my information, and view my order history. 
+* I want my profile to be password protected.
+* I would like to be able to follow the website's social media accounts.
 
-## Release History
+## Project Goals
 
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
+* I want to promote the yoga classes offered by Savasana Yoga Studio.
+* I want to allow users to book yoga classes.
+* I want to grow the website's social media presence. 
+* I want users to be able to create their own profile, and view their order history.
+* I want users to understand and navigate the website upon their first visit. 
+* I want users to be able to filter classes based on difficulty level.
+* I want to promote the benefits of yoga, and the studio's classes via blog posts.
+* I want to allow users to comment on blog posts.
+* I want to be able to store all bookings in a database. 
+* I want to allow users to view the days and times for yoga classes.
 
-**July 2 2021:** Remove extensions that are not available in Open VSX.
 
-**June 30 2021:** Combined the P4 and P5 templates into one file, added the uptime script. See the FAQ at the end of this file.
+## UX 
 
-**June 10 2021:** Added: `font_fix` script and alias to fix the Terminal font issue
 
-**May 10 2021:** Added `heroku_config` script to allow Heroku API key to be stored as an environment variable.
+The practice of yoga can have many benefits, including stress management, relieiving anxiety, improving quality of sleep, fitness and flexibility. I created this website to help promote the practice of yoga, and facilitate a place where people can book yoga classes offered by Savasana Yoga Studio.
 
-**April 7 2021:** Upgraded the template for VS Code instead of Theia.
 
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
+## Strategy 
 
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
 
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
+The goal of this website it to offer accesible yoga classes for beginners and advanced yoga enthuastis. The website was built with a focus towards newcomers to yoga, in order to make yoga seem less intimiatding and showcase the variety of yoga classes offered.
 
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
+The secondary goal of the website, is to promote Savasana's Yoga Studo by driving users to the studio's social media accounts, and promoting the studio on the website via the blog.
 
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
 
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
+### Business Goals: 
 
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
+* Promote booking of variety of yoga classes offered.
+* A simple and easy to navigate website with a clear purpose.
+* Mobile-first design to increase ease of use for those without PCs.
+* Increase web-presence to grow the brand via blog and social media accounts.
 
-------
 
-## FAQ about the uptime script
+### User Goals: 
 
-**Why have you added this script?**
+* Searching for a yoga class to book.
+* Clear outlines of yoga class difficulty levels.
+* A profile to save my information and order history.
+* A blog to read about yoga, and comment to share my thoughts.
+* Mobile-friendly website as the majority of users browses via mobile. 
+* An easy-to-understand and navigate website. 
+* A website that allows me to filter yoga classes via difficulty.
+* A password protected profile.
+* To follow the website's social media accounts. 
+* To view the days and times for offered yoga classes.
 
-It will help us to calculate how many running workspaces there are at any one time, which greatly helps us with cost and capacity planning. It will help us decide on the future direction of our cloud-based IDE strategy.
 
-**How will this affect me?**
 
-For everyday usage of Gitpod, it doesn’t have any effect at all. The script only captures the following data:
+## Scope 
 
-- An ID that is randomly generated each time the workspace is started.
-- The current date and time
-- The workspace status of “started” or “running”, which is sent every 5 minutes.
+The Scope and features of this project were based on a personal interest in the practice of yoga. 
 
-It is not possible for us or anyone else to trace the random ID back to an individual, and no personal data is being captured. It will not slow down the workspace or affect your work.
+When I first became interested in yoga, I found it difficult to find a place with a number of different types of classes, flexible booking systems?? - and the ability to filter classes based on difficulty levels. 
 
-**So….?**
+This resulted in a feeling of being overwhelemed, and unsure what to book/attend. 
 
-We want to tell you this so that we are being completely transparent about the data we collect and what we do with it.
+As a result, I created Savasana Yoga to faciliate an easy-to-navigate and easy to understand website, that offers a wide variety of classes, promotes a flexible booking system, and allows the filtering of classes based on a user's experience level. 
 
-**Can I opt out?**
+With this in mind, I decided to forego a popular feature when it comes to booking classes: set time slots. Instead of the traditional booking system of 'You booked Example Class at 8pm'. Instead, a class is offered twice a day; in the morning, and in the evenings. Many people have changing schedules due to family commitments, and work. So, I wanted it to be possible for a user to book a class, and freely decide if they'll attend the morning class on week 1, and the evening class on week 2 etc. 
 
-Yes, you can. Since no personally identifiable information is being captured, we'd appreciate it if you let the script run; however if you are unhappy with the idea, simply run the following commands from the terminal window after creating the workspace, and this will remove the uptime script:
+I have reiterated this philosophy a number of times throughout the website, and also placed this information on the checkout_success page, as well as in the email booking confirmation.
 
-```
-pkill uptime.sh
-rm .vscode/uptime.sh
-```
 
-**Anything more?**
+## Structure 
 
-Yes! We'd strongly encourage you to look at the source code of the `uptime.sh` file so that you know what it's doing. As future software developers, it will be great practice to see how these shell scripts work.
+I feel its very important to provide users with a simple, and easy-to-navigate experience and interface. The goal of the website was to feel professional, approachable and promote a user's confidence when navigating throughout the website. 
 
----
+The home page features a large image, a blurb on the benefits of yoga, a call-to-action button to encourage users to book a class, and some information about the yoga studio itself. 
 
-Happy coding!
+I have also created a footer, which allows for quick navigation via a basic site map. I have also populated the footer with social media links, and a search bar to quickly search for yoga classes. 
+
+As there are a number of pages in this website, I have provided a summary of each page in the 'Features' section below.
