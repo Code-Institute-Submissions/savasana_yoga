@@ -8,32 +8,52 @@
     <div class="homepage_background_image"></div>
 </div>
 
-<div class="container">
+<div class="container-fluid site-features-container my-3 py-3">
     <div class="row">
         <div class="col-sm-12 call-to-action">
-            <h1 class="logo-font py-2 my-1"> <em>Keep your mind & body healthy</em> </h1>
+            <h1 class="mission-heading py-2 my-1"> <em>Keep your mind & body healthy</em> </h1>
             <p class="lead ">Embrace the practice of flow</p>
-            <a href="{% url 'products' %}" class="btn book-today-btn">Book Today</a>
         </div>
     </div>
-</div>
-<div class="container">
-    <div class="row">
 
+    <div class="row pt-2">
         <div class="col-lg-4">
-            <div class="site-mission">
-
+            <div class="site-mission mt-2">
+                <h4 class="mission-heading py-2 my-1">
+                    Manage Stress
+                </h4>
+                <p>Yoga is a fantastic way to ease stress, and improve relaxation.
+                    <br>
+                    Which leads to better quality of sleep and an improved quality of life.
+                </p>
+                
             </div>
         </div>
         <div class="col-lg-4">
-            <div class="site-mission">
-
+            <div class="site-mission mt-2">
+                <h4 class="mission-heading py-2 my-1">
+                    Relieves Anxiety
+                </h4>
+                <p>Yoga promotes a present state of mind, to focus on breathing, 
+                   <br> 
+                   and the importance of being mindful. Which can help to reduce anxiety.
+                </p>
             </div>
         </div>
         <div class="col-lg-4">
-            <div class="site-mission">
-
+            <div class="site-mission mt-2">
+                <h4 class="mission-heading py-2 my-1">
+                    Improve Fitness
+                </h4>
+                <p>Yoga is a fantastic form of exercise, which can improve
+                    <br> 
+                    flexibility, and balance.
+                    And also a way to manage chronic pain, and injuries.
+                </p>
             </div>
+        </div>
+        <div class="col-sm-12 text-center py-2 my-2">
+            <a href="{% url 'products' %}" class="btn book-today-btn">Book Today</a>
         </div>
     </div>
 </div>

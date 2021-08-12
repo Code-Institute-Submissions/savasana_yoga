@@ -514,3 +514,19 @@ footer.custom-footer {
 input[name='query']::placeholder {
     color: #aab7c4;
 }
+
+
+
+
+
+.site-mission {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+
+.mission-heading {
+
+}
