@@ -533,12 +533,12 @@ input[name='query']::placeholder {
 
 
 
-@media (min-width: 1200px) {
+/* @media (min-width: 1200px) {
     .home-page-images {
         max-width: 456px;
         max-height: 364px;
     }
-  }
+  } */
 
 
 .timetable-link {
