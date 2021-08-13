@@ -117,3 +117,28 @@ As there are a number of pages in this website, I have provided a summary of eac
 ## Skeleton 
 
 All wireframes were created using Balsamiq.
+
+
+## Surface 
+
+### Images
+
+There are two main aspects of image use throughout this app. Static and Dynamic images. 
+
+1. Static Images 
+- The first is by storing images in a static folder. I have stored the home page images here, as they will not be altered.
+
+I choose this landing page image, as the photo is quite zoomed out, and allows a lot of space, and breathing room on the left-hand and right-hand side of the person in the image. I also choose to use this image because it had a lot of white in it, and I wanted the home page to match the background colors of the website; greys and whites.  
+
+2. Dynmaic Images
+- All product images are stored via AWS. 
+
+Since a user with admin privileages can edit, add, and remove products, the images can be changed. I decided to use AWS to host the images, so each time an image is updated in the database it is reflected on Heroku. In addition, storing the images on AWS avoids the risk of the images being removed once the website is deployed and running on Heroku.
+
+
+
+
+
+
+
+
