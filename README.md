@@ -112,3 +112,8 @@ The home page features a large image, a blurb on the benefits of yoga, a call-to
 I have also created a footer, which allows for quick navigation via a basic site map. I have also populated the footer with social media links, and a search bar to quickly search for yoga classes. 
 
 As there are a number of pages in this website, I have provided a summary of each page in the 'Features' section below.
+
+
+## Skeleton 
+
+All wireframes were created using Balsamiq.
