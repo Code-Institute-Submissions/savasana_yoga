@@ -50,10 +50,16 @@
                         {{ product.description|linebreaksbr }}
                     </p>
                     <p class="my-1 pb-1 text-sm-start">€{{ product.price }}</p>
+                    <h6 class="mt-3"> Timetable Information</h6>
                     <p>
-                        <i class="far fa-calendar-alt"></i>
+                        
+                        Day: {{ product.get_day_display }}
+                        <br>
+                        Times: {{ product.morning_time}} | {{ product.evening_time}}
+                        <br>
+                        <br>
                         <a href="{% url 'view_timetable' %}" class="timetable-link">
-                            View Timetable
+                            <i class="far fa-calendar-alt"></i> View Timetables
                         </a>
                     </p>
                     
