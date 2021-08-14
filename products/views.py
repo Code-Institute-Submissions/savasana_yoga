@@ -74,7 +74,17 @@ def product_info(request, product_id):
 
 def add_product(request):
     """ Add a product to the store """
-    form = ProductForm()
+    if request.method == 'POST':
+        form = ProductForm(request.POST, request.FILES)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Successfully added product!')
+            return redirect(reverse('add_product'))
+        else:
+            messages.error(request, 'Failed to add product. Please ensure the form is valid.')
+    else:
+        form = ProductForm()
+        
     template = 'products/add_product.html'
     context = {
         'form': form,
@@ -87,25 +97,10 @@ def view_timetable(request,):
     """ A view to renders the timetable page """
 
     product = Product.objects.all()
-    monday = Product.objects.filter(day="1")
-    tuesday = Product.objects.filter(day="2")
-    wednesday = Product.objects.filter(day="3")
-    thursday = Product.objects.filter(day="4")
-    friday = Product.objects.filter(day="5")
-    saturday = Product.objects.filter(day="6")
-    sunday = Product.objects.filter(day="7")
-
-    template = 'products/timetable.html'
 
     context = {
         'product': product,
-        'monday': monday,
-        'tuesday': tuesday,
-        'wednesday': wednesday,
-        'thursday': thursday,
-        'friday': friday,
-        'saturday': saturday,
-        'sunday': sunday,
+
     }
     
-    return render(request, template, context)
+    return render(request, 'products/timetable.html', context)

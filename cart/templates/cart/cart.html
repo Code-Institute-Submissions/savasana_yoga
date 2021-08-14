@@ -50,7 +50,11 @@
                         {% for item in cart_items %}
                         <tr class="cart-row">
                             <th scope="row" class="w-25 cart-img">
-                                <img class="img-fluid" src="{{ item.product.image.url }}">
+                                {% if item.product.image %}
+                                    <img class="img-fluid rounded" src="{{ item.product.image.url }}" alt="{{ item.product.name }}">
+                                {% else %}
+                                    <img class="img-fluid rounded" src="{{ MEDIA_URL }}noimage.png" alt="{{ item.product.name }}">
+                                {% endif %}
                             </th>
                             <td class="align-middle">
                                 {{ item.product.name }}
