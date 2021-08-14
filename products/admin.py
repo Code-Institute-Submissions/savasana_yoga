@@ -7,12 +7,14 @@ from .models import Product, Category
 class ProductAdmin(admin.ModelAdmin):
     list_display = (
         'name',
+        'day',
+        'morning_time',
+        'evening_time',
         'category',
         'price',
         'image',
     )
-
-    ordering = ('name',)
+    ordering = ('day',)
 
 
 class CategoryAdmin(admin.ModelAdmin):
@@ -20,6 +22,7 @@ class CategoryAdmin(admin.ModelAdmin):
         'friendly_name',
         'name',
     )
+
 
 admin.site.register(Product, ProductAdmin)
 admin.site.register(Category, CategoryAdmin)

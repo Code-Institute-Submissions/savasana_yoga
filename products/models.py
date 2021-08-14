@@ -18,8 +18,22 @@ class Category(models.Model):
 
 
 class Product(models.Model):
+
+    DAYS_OF_THE_WEEK = [
+        ('1', 'Monday'),
+        ('2', 'Tuesday'),
+        ('3', 'Wednesday'),
+        ('4', 'Thursday'),
+        ('5', 'Friday'),
+        ('6', 'Saturday'),
+        ('7', 'Sunday')
+    ]
+
     category = models.ForeignKey('Category', null=True, blank=True, on_delete=models.SET_NULL)
     name = models.CharField(max_length=250)
+    day = models.CharField(max_length=10, choices=DAYS_OF_THE_WEEK, default='1')
+    morning_time = models.TimeField(auto_now=False, auto_now_add=False, null=True, blank=True)
+    evening_time = models.TimeField(auto_now=False, auto_now_add=False, null=True, blank=True)
     description = models.TextField()
     tagline = models.CharField(max_length=250, null=True, blank=True)
     price = models.DecimalField(max_digits=6, decimal_places=2)
