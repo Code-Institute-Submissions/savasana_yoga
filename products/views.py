@@ -83,10 +83,10 @@ def add_product(request):
     return render(request, template, context)
 
 
-def view_timetable(request):
+def view_timetable(request,):
     """ A view to renders the timetable page """
 
-    timetable = Product.objects.all()
+    product = Product.objects.all()
     monday = Product.objects.filter(day="1")
     tuesday = Product.objects.filter(day="2")
     wednesday = Product.objects.filter(day="3")
@@ -95,11 +95,10 @@ def view_timetable(request):
     saturday = Product.objects.filter(day="6")
     sunday = Product.objects.filter(day="7")
 
-
     template = 'products/timetable.html'
 
     context = {
-        'timetable': timetable,
+        'product': product,
         'monday': monday,
         'tuesday': tuesday,
         'wednesday': wednesday,

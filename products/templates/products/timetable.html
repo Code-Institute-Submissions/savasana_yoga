@@ -10,6 +10,85 @@
             <hr>
         </div>
     </div>
+    <div class="row">
+      <div class="table-responsive my-4">
+        <table class="table">
+          <thead>
+            <tr class="table-heading">
+              <th scope="col">Day</th>
+              <th scope="col">Class</th>
+              <th scope="col">Morning Time</th>
+              <th scope="col">Evening Time</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">Monday</th>
+              {% for item in monday %}
+                <td>{{ item.name }}</td>
+                <td>{{ item.morning_time }}</td>
+                <td>{{ item.evening_time }}</td>
+              {% endfor %}
+            </tr>
+            <tr>
+              <th scope="row">Tuesday</th>
+              {% for item in tuesday %}
+                <td>{{ item.name }}</td>
+                <td>{{ item.morning_time }}</td>
+                <td>{{ item.evening_time }}</td>
+              {% endfor %}
+            </tr>
+            <tr>
+              <th scope="row">Wednesday</th>
+              {% for item in wednesday %}
+                <td>{{ item.name }}</td>
+                <td>{{ item.morning_time }}</td>
+                <td>{{ item.evening_time }}</td>
+              {% endfor %}
+            </tr>
+            <tr>
+              <th scope="row">Thursday</th>
+              {% for item in thursday %}
+                <td>{{ item.name }}</td>
+                <td>{{ item.morning_time }}</td>
+                <td>{{ item.evening_time }}</td>
+              {% endfor %}
+            </tr>
+            <tr>
+              <th scope="row">Friday</th>
+              {% for item in friday %}
+                <td>{{ item.name }}</td>
+                <td>{{ item.morning_time }}</td>
+                <td>{{ item.evening_time }}</td>
+              {% endfor %}
+            </tr>
+            <tr>
+              <th scope="row">Saturday</th>
+              {% for item in saturday %}
+                <td>{{ item.name }}</td>
+                <td>{{ item.morning_time }}</td>
+                <td>{{ item.evening_time }}</td>
+              {% endfor %}
+            </tr>
+            <tr>
+              <th scope="row">Sunday</th>
+              {% for item in sunday %}
+                <td>{{ item.name }}</td>
+                <td>{{ item.morning_time }}</td>
+                <td>{{ item.evening_time }}</td>
+              {% endfor %}
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-12 text-center">
+        <a href="{% url 'products' %}" class="btn book-today-btn rounded-1">
+          View Classes
+        </a>
+      </div>
+    </div>
 </div>
 
 
