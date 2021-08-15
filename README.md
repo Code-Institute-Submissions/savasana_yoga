@@ -137,8 +137,28 @@ Since a user with admin privileages can edit, add, and remove products, the imag
 
 
 
+### Colours
+
+Yoga is a relaxing and sometimes viewed as an elegant form of excercise. I wanted to maintain that philosophy when developing the website. I personally felt that using very little color, was a way of achieving this. 
+
+I decided to keep the background-color and the navigation bar the same type of white (#).
+
+In order to split the screen space up, and offer a bit of diversity, while still maintaining the feel of a clean, relaxing and elegant look, I used an off-grey(#) for the footer. I felt this added some variety, and also complimented the white background-color. 
+
+For the buttons, I have decided to use two different kinds. 
+
+I opted to use a a light blue (#) for the booking and checkout buttons. And a red (#) for the back buttons. 
+I felt this colors were subtle, and warm without providing too much a contrast and boldness from the white background-color.
+
+
+### Font 
 
 
 
+### Icons 
+
+
+
+## Features
 
 
