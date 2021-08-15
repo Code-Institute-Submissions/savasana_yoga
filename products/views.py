@@ -84,7 +84,7 @@ def add_product(request):
             messages.error(request, 'Failed to add product. Please ensure the form is valid.')
     else:
         form = ProductForm()
-        
+     
     template = 'products/add_product.html'
     context = {
         'form': form,
@@ -96,11 +96,11 @@ def add_product(request):
 def view_timetable(request,):
     """ A view to renders the timetable page """
 
-    product = Product.objects.all()
+    products = Product.objects.all()
 
+    template = 'products/timetable.html'
     context = {
-        'product': product,
-
+        'products': products,
     }
-    
-    return render(request, 'products/timetable.html', context)
+  
+    return render(request, template, context)

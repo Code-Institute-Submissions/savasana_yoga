@@ -19,6 +19,9 @@ class Category(models.Model):
 
 class Product(models.Model):
 
+    class Meta:
+        ordering = ['day']
+
     DAYS_OF_THE_WEEK = [
         ('1', 'Monday'),
         ('2', 'Tuesday'),

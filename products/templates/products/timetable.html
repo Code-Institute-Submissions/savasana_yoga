@@ -16,68 +16,26 @@
           <thead>
             <tr class="table-heading">
               <th scope="col">Day</th>
+              <th scope="col"></th>
               <th scope="col">Class</th>
               <th scope="col">Morning Time</th>
               <th scope="col">Evening Time</th>
             </tr>
           </thead>
           <tbody>
+            {% for product in products %}
             <tr>
-              <th scope="row">Monday</th>
-              {% for item in monday %}
-                <td>{{ item.name }}</td>
-                <td>{{ item.morning_time }}</td>
-                <td>{{ item.evening_time }}</td>
-              {% endfor %}
+              <th cope="row">{{ product.get_day_display }}</th>
+              <td></td>
+              <td><a href="{% url 'product_info' product.id %}" class="timetable-link">{{ product.name }}</a></td>
+              <td>{{ product.morning_time }}</td>
+              <td>{{ product.evening_time }}</td>
             </tr>
+            {% empty %}
             <tr>
-              <th scope="row">Tuesday</th>
-              {% for item in tuesday %}
-                <td>{{ item.name }}</td>
-                <td>{{ item.morning_time }}</td>
-                <td>{{ item.evening_time }}</td>
-              {% endfor %}
+              <td>There are currently no classes</td>
             </tr>
-            <tr>
-              <th scope="row">Wednesday</th>
-              {% for item in wednesday %}
-                <td>{{ item.name }}</td>
-                <td>{{ item.morning_time }}</td>
-                <td>{{ item.evening_time }}</td>
-              {% endfor %}
-            </tr>
-            <tr>
-              <th scope="row">Thursday</th>
-              {% for item in thursday %}
-                <td>{{ item.name }}</td>
-                <td>{{ item.morning_time }}</td>
-                <td>{{ item.evening_time }}</td>
-              {% endfor %}
-            </tr>
-            <tr>
-              <th scope="row">Friday</th>
-              {% for item in friday %}
-                <td>{{ item.name }}</td>
-                <td>{{ item.morning_time }}</td>
-                <td>{{ item.evening_time }}</td>
-              {% endfor %}
-            </tr>
-            <tr>
-              <th scope="row">Saturday</th>
-              {% for item in saturday %}
-                <td>{{ item.name }}</td>
-                <td>{{ item.morning_time }}</td>
-                <td>{{ item.evening_time }}</td>
-              {% endfor %}
-            </tr>
-            <tr>
-              <th scope="row">Sunday</th>
-              {% for item in sunday %}
-                <td>{{ item.name }}</td>
-                <td>{{ item.morning_time }}</td>
-                <td>{{ item.evening_time }}</td>
-              {% endfor %}
-            </tr>
+            {% endfor %}
           </tbody>
         </table>
       </div>
@@ -90,6 +48,8 @@
       </div>
     </div>
 </div>
+
+
 
 
 
