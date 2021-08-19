@@ -3,7 +3,7 @@ from .models import Post
 
 
 class PostAdmin(admin.ModelAdmin):
-    list_display = ('title', 'slug', 'status','created_on')
+    list_display = ('title', 'slug', 'status', 'created_on')
 
     list_filter = ("status",)
 
@@ -11,7 +11,7 @@ class PostAdmin(admin.ModelAdmin):
 
     prepopulated_fields = {'slug': ('title',)}
 
-    ordering = ('created_on',)
+    ordering = ('-created_on',)
 
 
 admin.site.register(Post, PostAdmin)
