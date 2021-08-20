@@ -153,12 +153,148 @@ I felt this colors were subtle, and warm without providing too much a contrast a
 
 ### Font 
 
+I decided to use 'Open Sans' as the main font for this website. This font is used on all body text besides headings. I chose Open Sans because of its simplicity, elegance, and versatility. It's an easy-to-read font, but I also feel it has some character. 
+
+For the headings, I decided to use 'Montserrat'. I chose this font becuase it paired well with Open Sans, and also maintained the simplicity and elegance that Open Sans provided. 
 
 
 ### Icons 
 
+I initially decided to use a lot of icons throughout the website, however as development continued, I felt that the icon were distracting. For example, I first had an icon for the Account nav-item, but I felt the navigation bar looked cleaner without the icon. 
 
+I have utilized icons sparingly throughout the website. On the All Products page, I used a calendar icon to indicate a link to the Timetable page. 
+
+I have utilized Font Awesome's Social Media icons to display the yoga studio's social media accounts. These are located in the footer of the website. When a user clicks the icon, a new tab opens, directing them to the relevant social media website. Currently, these links do not direct to a real profile as the project was built for a fictional yoga studio.
+
+I have also used Font Awesome's hamburger bars for the navigation menu on mobile devices. 
 
 ## Features
 
+
+### Current Features
+
+The website features a fully functional e-commerce store to book yoga classes, pasword-protected profiles, a dynamic timetable to display current offered yoga classes, a fully functional blog to display posts, news and updates. 
+
+In addition, the website was developed with a mobile-first approach and is fully responsive across all devices. 
+
+I have provided more details on the features of the website below:
+
+#### The Navigation Menu
+
+The navigation menu is consistent for all users, except for one small difference. Admin users have an extra menu item in the Account dropdown called 'Class Management'. This link directs admin users to a form which allows them to create a new yoga class.
+
+The navigation menu is divided into 6 nav-items:
+
+- Home: which links users back to the homepage.
+- Classes: which is a dropdown menu to display the yoga classes categories (Beginner and Advanced classes).
+- Timetable: which links users to a dynamic timetable which displays the days and times yoga classes are offered.
+- Blog: which links users to the blog page, to view all blog posts. 
+- Account: which is a dropdown menu that displays 'Register and Login' when a user isn't currently logged in. When a user is logged in, it displays 'Sign Out and My Profile'. The 'My Profile' directs users to their own profile page, where they can view their order history, and add/edit/remove their personal information. 
+
+The final navigation link, the Shopping Cart, is utilized as an icon. I have decided to use an icon here, and push it to the right-hand side of the screen to separate it from the other navigation links. I have also added a counter to the icon, which displays the number of items currently in the shopping cart. When a user clicks on the Shopping Cart icon, they are directed to the shopping cart page, where they can view/edit/remove items currently in their cart.
+
+
+#### The Footer Section 
+
+Each page contains a footer, which has a basic site map that displays links for the following pages:
+- Home
+- Classes
+- Timetable
+- Blog 
+
+The footer also contains social media links for the website's social media accounts. 
+
+I have also created a search bar in the footer to allow users to quickly search for yoga classes. When a user searches for a yoga classes, they are directed to the products page and shown the relevant results, otherwise, they are informed that they search criteria provided no results. 
+
+
+
+#### Purchasing Products
+
+The main feature of this website was the sale and promoting of yoga classes. I have split this into multiple parts; the all products page, the individual product page, the shopping cart, the checkout page, and the booking confirmation. 
+
+##### All Products Page 
+
+##### Individual Products Page
+
+##### The Shopping Cart Page
+
+##### The Checkout Page
+
+##### The Booking Confirmation Page
+
+
+#### Timetable Page
+
+
+#### Blog Page
+
+
+#### User Profiles
+
+There are a number of pages related to a User's account, and I have explained them below. 
+
+##### Register Page
+
+##### Login Page
+
+##### Individual Profile Page
+
+
+#### Admin Profiles
+
+##### Product Management
+
+###### Adding Products
+
+###### Editing Products
+
+###### Deleting Products
+
+##### Blog Management
+
+###### Adding Blog Posts
+
+###### Editing Blog Posts
+
+###### Deleting Blog Posts
+
+
+### Future Features
+
+In the future, I would like to optimize the booking system for yoga classes by implementing an interactive calendar, which will allow users to choose a class and times. 
+
+In addition, I would like to implement a tracking system to display to users how many sessions they have left from a class they have booked. For instance, some products offer 10 sessions, and I'd like to have a system where after each session attended, its reflected on their profile how many sessions are remaining. 
+
+
+## Database Information
+
+
+## Troubleshooting
+
+
+## Technologies Used
+
+
+## Testing
+
+
+## Deployment
+
+
+### Heroku Deployment 
+
+
+## Credits 
+
+
+### Images 
+
+
+### Text 
+
+
+## References for Code
+
+
+## Acknowledgements
 
