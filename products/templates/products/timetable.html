@@ -15,9 +15,9 @@
         <table class="table">
           <thead>
             <tr class="table-heading">
-              <th scope="col">Day</th>
-              <th scope="col"></th>
               <th scope="col">Class</th>
+              <th scope="col"></th>
+              <th scope="col">Day</th>
               <th scope="col">Morning Time</th>
               <th scope="col">Evening Time</th>
             </tr>
@@ -25,9 +25,9 @@
           <tbody>
             {% for product in products %}
             <tr>
-              <th cope="row">{{ product.get_day_display }}</th>
+              <th><a href="{% url 'product_info' product.id %}" class="timetable-link">{{ product.name }}</a></th>
               <td></td>
-              <td><a href="{% url 'product_info' product.id %}" class="timetable-link">{{ product.name }}</a></td>
+              <td scope="row">{{ product.get_day_display }}</td>
               <td>{{ product.morning_time }}</td>
               <td>{{ product.evening_time }}</td>
             </tr>
