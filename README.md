@@ -214,7 +214,33 @@ The main feature of this website was the sale and promoting of yoga classes. I h
 
 ##### All Products Page 
 
+All Products Page
+
+The all products page features all available yoga class a user can purchase. 
+
+I decided to display the products in individual cards. 
+
+At first, I wanted to create an alterating col-12 with a complimentary alternating background-color for each product. 
+
+However, it resulted in users having to scroll a lot when viewing all the products offered. I felt this wasn't a great user experience, and felt the conciseness that bootstrap cards offered was much preferred from a UI and UX standpoint. 
+
+The product cards are filled with basic information including the name of the class, the price, a tagline to briefly describe the essence of a class. When a user hovers over a card, a box shadow effect is triggered, and if a user clicks on the card, they are directed to an individual product page where they can purchase the class, and read more information about the particular class.
+
+In addition, if an admin user is logged in, the product cards also display an edit/delete button to allow quick product management. 
+
+The all products page, also features a filtering system, where users can filter the products displayed by their categories (advanced classes or beginner classes).
+
+The all products page also features a sorting system where users can sort products by ascending/descending price/category/name
+
 ##### Individual Products Page
+
+The individual products page is created mostly with template tags, to allow the variety of information in each product to be displayed correctly. 
+
+The page features a larger size of the product image, a product description, and information regarding the product's price, day, and times. 
+
+The page also features a link to the timetable page, for users to look at other times which may suit them, and which classes best suit their time schedule.
+
+Finally, the page also features an add to cart button, and a button which redirects users back to the all products page. 
 
 ##### The Shopping Cart Page
 
