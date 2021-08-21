@@ -593,3 +593,9 @@ input[name='query']::placeholder {
     border-color: #dc3545;
     border-radius: 0;
 }
+
+
+.end-of-blog-post {
+    display: flex;
+    justify-content: flex-end;
+}
