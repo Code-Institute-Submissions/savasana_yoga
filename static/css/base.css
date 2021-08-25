@@ -5,8 +5,22 @@
     margin: 0px;
 } */
 
+html, body {
+    height: 100%;
+}
+
 body {
+    display: flex;
+    flex-direction: column;
     font-family: 'Open Sans', sans-serif;
+}
+
+.content {
+    flex: 1 0 auto;
+}
+
+.footer {
+    flex-shrink: 0;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -56,29 +70,28 @@ h1, h2, h3, h4, h5, h6 {
     font-size: 28px;
 }
 
-.book-today-btn {
-    background: #68B0AB;
-    color: white;
+.book-today-btn { 
+    background: #2a9d8f;
+    color: #fff;
 }
 
 .back-btn {
     background: #b0686d;
-    color: #FAF9F9;
+    color: #fff;
 }
 
 .back-btn:hover,
 .back-btn:active,
 .back-btn:focus {
-    background: transparent;
-    color: #b0686d;
-    border-color: #b0686d;
+    background: #8E5358;
+    color: #fff;
 }
 
 .book-today-btn:hover,
 .book-today-btn:active,
 .book-today-btn:focus {
-    background: #F2CC8F;
-    color: #212529;
+    background: #264653;
+    color: #fff;
 }
 
 .navbar-custom {
@@ -407,6 +420,10 @@ footer.custom-footer {
     background-color: #efefef;
 }
 
+.footer {
+    margin-bottom:0px !important;
+}
+
 .site-map {
     display: flex;
     flex-flow: column;
@@ -479,7 +496,7 @@ footer.custom-footer {
 
 .allauth-form-inner-content input {
     border-color: #000;
-    border-radius: 0;
+    border-radius: 1;
 }
 
 .allauth-form-inner-content label:not([for='id_remember']) {
@@ -502,34 +519,44 @@ footer.custom-footer {
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
-    background-color: #68B0AB;
-    border: 1px solid #000;
+    background-color: #2a9d8f;
     padding: .375rem .75rem;
     font-size: 1rem;
     line-height: 1.5;
-    border-radius: 0;
+    border-radius: .25rem;
+    border: 1px solid transparent;
 
     /* standard bootstrap btn transitions */
     transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
 }
 
+
 .allauth-form-inner-content button:hover,
 .allauth-form-inner-content input[type='submit']:hover {	
-	color: #fff;
-    background-color: #222;
-    border-color: #222;
+	background: #264653; 
+    color: #fff;
 }
 
 .allauth-form-inner-content a {
 	color: #17a2b8; /* text-info */
 }
 
+.allauth-form-inner-content a.back-btn {
+    background-color: #b0686d;
+    color: #fff;
+}
+
+.allauth-form-inner-content a.back-btn:hover,
+.allauth-form-inner-content a.back-btn:active,
+.allauth-form-inner-content a.back-btn:focus {
+    background: #8E5358;
+    color: #fff;
+}
+
 
 input[name='query']::placeholder {
     color: #aab7c4;
 }
-
-
 
 
 
