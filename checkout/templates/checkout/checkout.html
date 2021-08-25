@@ -61,12 +61,12 @@
            <p>Please fill out the form to book your classes</p>
            <form action="{% url 'checkout' %}" method="POST" id="payment-form">
                {% csrf_token %}
-               <fieldset class="mb-2">
+               <fieldset class="mb-2 px-2">
                    <legend class="fieldset-label mb-1">Details</legend>
                     {{ order_form.full_name | as_crispy_field }}
                     {{ order_form.email | as_crispy_field }}
                </fieldset>
-               <fieldset class="mb-2">
+               <fieldset class="mb-2 px-2">
                 <legend class="fieldset-label mb-1 w-auto">Info</legend>
                     {{ order_form.phone_number | as_crispy_field }}
                     {{ order_form.street_address1 | as_crispy_field }}
@@ -76,7 +76,7 @@
                     {{ order_form.postcode | as_crispy_field }}
                     {{ order_form.country | as_crispy_field }}
 
-                    <div class="form-check form-check-inline">
+                    <div class="form-check form-check-inline checkout-form-check ">
                         {% if user.is_authenticated %}
                             <label class="form-check-label" for="id-save-info">Save this information to my profile</label>
                             <input class="form-check-input" type="checkbox" id="id-save-info" name="save-info" checked>
@@ -89,7 +89,7 @@
                     </div>
 
                 </fieldset>
-                <fieldset class="">
+                <fieldset class="px-2">
                     <legend class="fieldset-label w-auto">Payment</legend>
                     <!-- A Stripe card element will go here -->
                     <div class="mb-3" id="card-element"></div>

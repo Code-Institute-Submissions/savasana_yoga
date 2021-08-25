@@ -94,6 +94,7 @@ h1, h2, h3, h4, h5, h6 {
     color: #fff;
 }
 
+
 .navbar-custom {
     background-color: #FAF9F9;
 }
@@ -254,6 +255,13 @@ a.navbar-brand:focus {
     cursor: pointer;
 }
 
+a.remove-item {
+    float: right;
+}
+
+a.update-link {
+    float: left;
+}
 
 .product-card-list-item {
     border: none;
@@ -380,10 +388,13 @@ a.navbar-brand:focus {
     white-space: nowrap;
 }
 
+i.fa-lock, i.fa-chevron-left {
+    color: #fff;
+}
 
 
 .qty_input {
-    border: none;
+    border: 1px solid #000;
     padding-left:10px;
     width:45px;
     text-align:center
@@ -625,4 +636,22 @@ input[name='query']::placeholder {
 .end-of-blog-post {
     display: flex;
     justify-content: flex-end;
+}
+
+
+
+@media (max-width: 991px) {
+
+    .btn.book-today-btn,
+    .btn.back-btn {
+        padding: .375rem .375rem;
+    }
+
+    .btn.book-today-btn.btn-lg,
+    .btn.back-btn.btn-lg {
+        padding: .375rem .375rem;
+        font-size: .75rem;
+    }
+
+   
 }
