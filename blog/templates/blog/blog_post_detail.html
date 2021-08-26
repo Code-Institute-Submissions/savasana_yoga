@@ -15,10 +15,8 @@
         <div class="col-sm-12 col-md-8 offset-md-2 col-lg-10 offset-lg-1">
             <p>{{ blog_post.content|linebreaks }}</p>
         </div>
-        <div class="col-sm-12 col-md-8 offset-md-2 col-lg-10 offset-lg-1 my-2 end-of-blog-post">
-            <a href="{% url 'view_blog' %}" class="btn back-btn">View All Posts</a>
-        </div>
     </div>
+    <br>
     <div class="row">
         <div class="col-sm-12 col-md-8 offset-md-2 col-lg-10 offset-lg-1">
             <div class="lead">
@@ -30,12 +28,14 @@
     <div class="row">
         {% if comments %}
             <div class="col-sm-12 col-md-8 offset-md-2 col-lg-10 offset-lg-1 my-2 card">
-                
                     {% for comment in comments %}
                         <div class="card-body">
                             <div class="comments">
                                 <p>
-                                    <strong>{{ comment.name }}</strong>
+                                    <span class="icon">
+                                        <i class="fas fa-user"></i>
+                                    </span>
+                                    <span><strong>{{ comment.name }}</span></strong> 
                                     <span class=" text-muted">
                                         - {{ comment.created_on }}
                                     </span>
@@ -43,8 +43,6 @@
                                 <p>
                                     {{ comment.body | linebreaks }}
                                 </p>
-                        
-                                
                             </div>
                         </div>
                     {% endfor %}
@@ -52,7 +50,7 @@
             </div>
         {% else %}
             <div class="col-sm-12 col-md-8 offset-md-2 col-lg-10 offset-lg-1 my-2">
-                <h6>There are currently no comments for this post.</h6>
+                <h6 class="comment-heading">There are currently no comments for this post.</h6>
             </div>
         {% endif %}
         <div class="col-sm-12 col-md-8 offset-md-2 col-lg-10 offset-lg-1 my-4 card">
@@ -62,7 +60,7 @@
                         Your comment is awaiting admin approval.
                     </div>
                 {% else %}
-                    <h6 class="logo-font">Leave a comment</h6>
+                    <h6 class="comment-heading">Leave a comment</h6>
                     <form method="POST" class="mt-4">
                         {{ comment_form | crispy }}
                         {% csrf_token %}
@@ -70,6 +68,15 @@
                     </form>
                 {% endif %}
             </div>
+        </div>
+        <div class="col-sm-12 col-md-8 offset-md-2 col-lg-10 offset-lg-1 my-2 end-of-blog-post">
+            <a href="{% url 'view_blog' %}" class="btn back-btn">
+                <span class="icon">
+                    <i class="fas fa-chevron-left"></i>
+                </span>
+                <span>View All Posts</span>
+            </a>
+               
         </div>
     </div>
 </div>
