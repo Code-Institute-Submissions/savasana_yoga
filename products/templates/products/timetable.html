@@ -3,41 +3,46 @@
 
 
 {% block content %}
-<div class="container">
+<div class="container container-fluid">
     <div class="row">
         <div class="col-sm-12">
-            <h2 class="text-center my-3">Savasana Class Timetable</h2>
-            <hr>
+          <hr>
+          <h2 class="text-center my-3 logo-font">Savasana Class Timetable</h2>
+          <hr>
         </div>
     </div>
     <div class="row">
-      <div class="table-responsive my-4">
-        <table class="table">
-          <thead>
-            <tr class="table-heading">
-              <th scope="col">Class</th>
-              <th scope="col"></th>
-              <th scope="col">Day</th>
-              <th scope="col">Morning Time</th>
-              <th scope="col">Evening Time</th>
-            </tr>
-          </thead>
-          <tbody>
-            {% for product in products %}
-            <tr>
-              <th><a href="{% url 'product_info' product.id %}" class="timetable-link">{{ product.name }}</a></th>
-              <td></td>
-              <td scope="row">{{ product.get_day_display }}</td>
-              <td>{{ product.morning_time }}</td>
-              <td>{{ product.evening_time }}</td>
-            </tr>
-            {% empty %}
-            <tr>
-              <td>There are currently no classes</td>
-            </tr>
-            {% endfor %}
-          </tbody>
-        </table>
+      <div class="card mt-2 mb-4">
+        <div class="card-body">
+          <div class="table-responsive my-4">
+            <table class="table table-sm table-borderless">
+              <thead class="table-light">
+                <tr class="table-heading">
+                  <th scope="col" class="timetable-heading">Class</th>
+                  <th scope="col"></th>
+                  <th scope="col" class="timetable-heading">Day</th>
+                  <th scope="col"></th>
+                  <th scope="col" class="timetable-heading">Time</th>
+                </tr>
+              </thead>
+              <tbody>
+                {% for product in products %}
+                <tr>
+                  <th><a href="{% url 'product_info' product.id %}" class="timetable-link timetable-font">{{ product.name }}</a></th>
+                  <td></td>
+                  <td scope="row" class="timetable-font">{{ product.get_day_display }}</td>
+                  <td></td>
+                  <td scope="row" class="timetable-font">{{ product.class_time }}</td>
+                </tr>
+                {% empty %}
+                <tr>
+                  <td>There are currently no classes</td>
+                </tr>
+                {% endfor %}
+              </tbody>
+            </table>
+          </div>
+        </div>
       </div>
     </div>
     <div class="row">

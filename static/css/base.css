@@ -655,3 +655,18 @@ input[name='query']::placeholder {
 
    
 }
+
+.timetable-font {
+    font-weight: 500;
+}
+
+@media (max-width: 576px) {
+    .timetable-font {
+        font-size: 13px
+    }
+
+    .timetable-heading {
+        font-size: 15px
+    }
+   
+}

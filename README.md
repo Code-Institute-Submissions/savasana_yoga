@@ -92,15 +92,11 @@ The secondary goal of the website, is to promote Savasana's Yoga Studo by drivin
 
 The Scope and features of this project were based on a personal interest in the practice of yoga. 
 
-When I first became interested in yoga, I found it difficult to find a place with a number of different types of classes, flexible booking systems?? - and the ability to filter classes based on difficulty levels. 
+When I first became interested in yoga, I found it difficult to find a place with a number of different types of classes, and an easy-to-understand website where I can check which classes are on at certain times, and which classes best suit my experience level.
 
 This resulted in a feeling of being overwhelemed, and unsure what to book/attend. 
 
-As a result, I created Savasana Yoga to faciliate an easy-to-navigate and easy to understand website, that offers a wide variety of classes, promotes a flexible booking system, and allows the filtering of classes based on a user's experience level. 
-
-With this in mind, I decided to forego a popular feature when it comes to booking classes: set time slots. Instead of the traditional booking system of 'You booked Example Class at 8pm'. Instead, a class is offered twice a day; in the morning, and in the evenings. Many people have changing schedules due to family commitments, and work. So, I wanted it to be possible for a user to book a class, and freely decide if they'll attend the morning class on week 1, and the evening class on week 2 etc. 
-
-I have reiterated this philosophy a number of times throughout the website, and also placed this information on the checkout_success page, as well as in the email booking confirmation.
+As a result, I created Savasana Yoga to faciliate an easy-to-navigate and easy to understand website, that offers a wide variety of classes, and allows the filtering of classes based on a user's experience level.
 
 
 ## Structure 
