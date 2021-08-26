@@ -1,7 +1,9 @@
 from django.db import models
 from django.core.validators import MaxValueValidator, MinValueValidator
+import datetime
 
 # Create your models here.
+
 
 class Category(models.Model):
     class Meta:
@@ -35,8 +37,7 @@ class Product(models.Model):
     category = models.ForeignKey('Category', null=True, blank=True, on_delete=models.SET_NULL)
     name = models.CharField(max_length=250)
     day = models.CharField(max_length=10, choices=DAYS_OF_THE_WEEK, default='1')
-    morning_time = models.TimeField(auto_now=False, auto_now_add=False, null=True, blank=True)
-    evening_time = models.TimeField(auto_now=False, auto_now_add=False, null=True, blank=True)
+    class_time = models.TimeField(auto_now=False, auto_now_add=False, default=datetime.time(10, 0))
     description = models.TextField()
     tagline = models.CharField(max_length=250, null=True, blank=True)
     price = models.DecimalField(max_digits=6, decimal_places=2)

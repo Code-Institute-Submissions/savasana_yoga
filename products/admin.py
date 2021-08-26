@@ -8,8 +8,7 @@ class ProductAdmin(admin.ModelAdmin):
     list_display = (
         'name',
         'day',
-        'morning_time',
-        'evening_time',
+        'class_time',
         'category',
         'price',
         'image',
