@@ -26,49 +26,52 @@
         </div>
     </div>
     <div class="row">
-        {% if comments %}
-            <div class="col-sm-12 col-md-8 offset-md-2 col-lg-10 offset-lg-1 my-2 card">
-                    {% for comment in comments %}
-                        <div class="card-body">
-                            <div class="comments">
-                                <p>
-                                    <span class="icon">
-                                        <i class="fas fa-user"></i>
-                                    </span>
-                                    <span><strong>{{ comment.name }}</span></strong> 
-                                    <span class=" text-muted">
-                                        - {{ comment.created_on }}
-                                    </span>
-                                </p>
-                                <p>
-                                    {{ comment.body | linebreaks }}
-                                </p>
-                            </div>
-                        </div>
-                    {% endfor %}
-                
+        {% for comment in comments %}
+            <div class="col-sm-12 col-md-8 offset-md-2 col-lg-10 offset-lg-1 my-2 card comment-card">
+                <div class="card-body">
+                    <div class="comments">
+                        <p>
+                            <span class="icon">
+                                <i class="fas fa-user"></i>
+                            </span>
+                            <span><strong>{{ comment.name }}</span></strong> 
+                            <span class=" text-muted">
+                                - {{ comment.created_on }}
+                            </span>
+                        </p>
+                        <p>
+                            {{ comment.body | linebreaks }}
+                        </p>
+                    </div>
+                </div> 
             </div>
-        {% else %}
-            <div class="col-sm-12 col-md-8 offset-md-2 col-lg-10 offset-lg-1 my-2">
-                <h6 class="comment-heading">There are currently no comments for this post.</h6>
-            </div>
-        {% endif %}
-        <div class="col-sm-12 col-md-8 offset-md-2 col-lg-10 offset-lg-1 my-4 card">
-            <div class="card-body">
-                {% if new_comment %}
+            {% endfor %}
+            {% if new_comment %}
+                <div class="col-sm-12 col-md-8 offset-md-2 col-lg-10 offset-lg-1 my-3">
                     <div class="alert alert-success header-font" role="alert">
                         Your comment is awaiting admin approval.
                     </div>
+                </div>
                 {% else %}
+                <div class="col-sm-12 col-md-8 offset-md-2 col-lg-10 offset-lg-1 mt-5 mb-1">
                     <h6 class="comment-heading">Leave a comment</h6>
-                    <form method="POST" class="mt-4">
-                        {{ comment_form | crispy }}
-                        {% csrf_token %}
-                        <button type="submit" class="btn book-today-btn mx-auto">Submit</button>
-                    </form>
-                {% endif %}
-            </div>
-        </div>
+                </div>
+                
+                <div class="col-sm-12 col-md-8 offset-md-2 col-lg-10 offset-lg-1 mt-1 mb-3 card comment-card">
+                    <div class="card-body">
+                        <form method="POST" class="mt-4">
+                            {{ comment_form | crispy }}
+                            {% csrf_token %}
+                            <button type="submit" class="btn book-today-btn mx-auto">
+                                <span>Submit</span>
+                                <span class="icon">
+                                    <i class="fas fa-paper-plane text-white"></i>
+                                </span>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            {% endif %}
         <div class="col-sm-12 col-md-8 offset-md-2 col-lg-10 offset-lg-1 my-2 end-of-blog-post">
             <a href="{% url 'view_blog' %}" class="btn back-btn">
                 <span class="icon">
