@@ -11,6 +11,11 @@
             
             <small> <p class="text-muted blog-info">By: {{ blog_post.author }} <br> Posted: {{ blog_post.created_on }} </p></small>
             <hr>
+            {% if request.user.is_superuser %}
+                <small class="me-3">
+                    <a href="{% url 'edit_blog_post' blog_post.id %}">Edit Blog Post</a> 
+                </small>
+            {% endif %}
         </div>
         <div class="col-sm-12 col-md-8 offset-md-2 col-lg-10 offset-lg-1">
             <p>{{ blog_post.content|linebreaks }}</p>
