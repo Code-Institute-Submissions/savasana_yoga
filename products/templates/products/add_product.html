@@ -4,15 +4,18 @@
 {% block content %}
     <div class="container">
         <div class="row">
-            <div class="col-12 col-md-6">
-                <h2 class="logo-font my-3 py-2">Class Management</h2>
-                <h5 class="text-muted">Add a Yoga Class</h5>
+            <div class="col-sm-12 col-md-8 offset-md-2 col-lg-10 offset-lg-1">
                 <hr>
+                <h2 class="logo-font my-3 py-2 text-center">Class Management</h2>
+                <hr>
+                <p class="lead text-center">
+                    Add a Yoga Class
+                </p>
             </div>
         </div>
 
         <div class="row">
-            <div class="col-12 col-md-6">
+            <div class="col-sm-12 col-md-8 offset-md-2 col-lg-10 offset-lg-1">
                 <form method="POST" action="{% url 'add_product' %}" class="form my-2" enctype="multipart/form-data">
                     {% csrf_token %}
                     {% for field in form %}

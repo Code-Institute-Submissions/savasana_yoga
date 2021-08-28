@@ -13,11 +13,12 @@
     <div class="container">
         <div class="row">
             <div class="col-md-8 mx-auto my-auto text-center">
-                <h3 class="mt-3 pt-3 heading-text">Classes</h3>
                 <hr>
-                <p class="lead">
+                <h2 class="logo-font heading-text">Classes</h2>
+                <hr>
+                <p class="lead mt-2">
                     <i class="far fa-calendar-alt text-muted"></i>
-                    <a href="{% url 'view_timetable' %}" class="timetable-link">
+                    <a href="{% url 'view_timetable' %}" class="timetable-link mt-2">
                         View Timetable
                     </a>
                 </p>
@@ -102,12 +103,34 @@
                                         </p>
                                     </div>
                                     {% if request.user.is_superuser %}
-                                        <small class="me-3">
-                                            <a href="{% url 'edit_product' product.id %}">Edit</a> | 
-                                            <a class="text-danger" href="{% url 'delete_product' product.id %}">Delete</a>
-                                        </small>
+                                        <a href="{% url 'edit_product' product.id %}" class="btn btn-sm btn-outline-secondary me-2">Edit</a>
+                                        <!-- Button trigger modal -->
+                                        <button type="button" class="btn btn-sm btn-outline-danger" data-bs-toggle="modal" 
+                                        data-bs-target="#deleteProduct-{{ product.id }}">
+                                            Delete
+                                        </button>
+
+
+                                        <!-- Modal -->
+                                        <div class="modal fade" id="deleteProduct-{{ product.id }}" tabindex="-1" aria-labelledby="deleteProductLabel-{{ product.id }}" aria-hidden="true">
+                                            <div class="modal-dialog">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title" id="deleteProductLabel">Delete Confirmation</h5>
+                                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <p>Are you sure you want to delete <strong>{{ product.name }}</strong>? This action is cannot be undone.</p>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                                                    <a href="{% url 'delete_product' product.id %}" class="btn btn-danger">Delete</a>
+                                                </div>
+                                            </div>
+                                            </div>
+                                        </div>
+
                                     {% endif %}
-                            
                                 </div>
                                
                             </div>

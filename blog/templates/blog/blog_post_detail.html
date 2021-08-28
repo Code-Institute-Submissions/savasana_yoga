@@ -13,9 +13,9 @@
             <hr>
             {% if request.user.is_superuser %}
                 
-                <a href="{% url 'edit_blog_post' blog_post.id %}" class="btn btn-warning">Edit Blog Post</a>
+                <a href="{% url 'edit_blog_post' blog_post.id %}" class="btn btn-sm btn-outline-secondary me-2">Edit Blog Post</a>
                 <!-- Button trigger modal -->
-                <button type="button" class="btn btn-primary" data-bs-toggle="modal" 
+                <button type="button" class="btn btn-sm btn-outline-danger" data-bs-toggle="modal" 
                             data-bs-target="#deleteBlogPost-{{ blog_post.id }}">
                     Delete
                 </button>

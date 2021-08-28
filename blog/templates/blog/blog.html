@@ -1,33 +1,16 @@
 {% extends "base.html" %}
 {% load static %}
 
-{% block page_header %}
-    <div class="container header-container">
-        <div class="row">
-            <div class="col"></div>
-        </div>
-    </div>
-{% endblock %}
 
 {% block content %}
 <div class="container">
     <div class="row">
         <div class="col-sm-12">
-            <h2 class="text-center my-3">Savasana Blog</h2>
+            <hr>
+            <h2 class="logo-font text-center my-3">Savasana Blog</h2>
             <hr>
         </div>
-        <div class="col-sm-12">
-            {% if request.user.is_superuser %}
-                <small class="me-3">
-                    <a href="{% url 'add_blog_post' %}">Add Blog Post</a>
-                </small>
-            {% endif %}
-        </div>
-        
     </div>
-
-    
-
 
     {% for posts in blog_posts %}
     <div class="row my-3">
