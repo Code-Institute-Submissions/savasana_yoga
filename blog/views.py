@@ -60,6 +60,8 @@ def add_blog_post(request):
     if request.method == 'POST':
         form = PostForm(request.POST, request.FILES)
         if form.is_valid():
+            blog_post = form.save(commit=False)
+            blog_post.author = request.user
             blog_post = form.save()
             messages.success(request, 'Successfully added post!')
             return redirect(reverse('blog_post_detail', args=[blog_post.id]))
@@ -96,8 +98,7 @@ def edit_blog_post(request, blog_post_id):
         else:
             messages.error(
                     request,
-                    'Failed to update the blog post.\
-                    Please ensure the form is valid.')
+                    'Failed to update the blog post. Please ensure the form is valid.')
     else:
         form = PostForm(instance=blog_post)
         messages.info(request, f'You are editing {blog_post.title}')
