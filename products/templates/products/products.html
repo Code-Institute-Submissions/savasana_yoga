@@ -77,7 +77,7 @@
                             {% endif %}  
                                 <div class="card-body mb-0 pb-0">
                                     <a href="{% url 'product_info' product.id %}" class="product-heading-text-link">
-                                        <p class="card-text lead">{{ product.name }}</p>
+                                        <p class="card-text lead product-link">{{ product.name }}</p>
                                     </a>
                                   
                                 {% if product.tagline %}

@@ -333,7 +333,7 @@ a.update-link {
 
 .message-container {
     position: fixed;
-    top: 72px;
+    top: 55px;
     right: 15px;
     z-index: 99999999999;
 }
@@ -347,12 +347,74 @@ a.update-link {
     height: 2px;
 }
 
+.toast-header {
+    background-color: #f7f7f7;
+}
+
 .cart-notification-wrapper {
     height: 100px;
     overflow-x: hidden;
     overflow-y: auto;
 }
 
+.bg-success {
+    background-color: #2a9d8f !important;
+}
+
+.btn-toast {
+    display: flex;
+    justify-content: center;
+}
+
+.toast-header .btn-close {
+    margin-right: 1px;
+    margin-left: auto;
+}
+
+/* from CSS-tricks.com: https://css-tricks.com/snippets/css/css-triangle/ */
+.arrow-up {
+    width: 0; 
+    height: 0; 
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent; 
+    border-bottom: 10px solid black;
+    position: absolute;
+    top: -9px;
+    right: 43px;
+}
+
+/* Convenience classes - colors copied from Bootstrap */
+.arrow-primary {
+    border-bottom-color: #007bff !important;
+}
+
+.arrow-secondary {
+    border-bottom-color: #6c757d !important;
+}
+
+.arrow-success {
+    border-bottom-color: #2a9d8f !important;
+}
+
+.arrow-danger {
+    border-bottom-color: #dc3545 !important;
+}
+
+.arrow-warning {
+    border-bottom-color: #ffc107 !important;
+}
+
+.arrow-info {
+    border-bottom-color: #17a2b8 !important;
+}
+
+.arrow-light {
+    border-bottom-color: #f8f9fa !important;
+}
+
+.arrow-dark {
+    border-bottom-color: #343a40 !important;
+}
 
 /* @media (min-width:100px) and (max-width: 800px) {
     .dropdown-menu.products-dropdown-menu.show {
@@ -388,17 +450,23 @@ a.update-link {
     white-space: nowrap;
 }
 
+.qty_input {
+    border: 1px solid #000;
+    padding-left:10px;
+    width:45px;
+    text-align: center;
+}
+
+.qty-product-page {
+    border: none;
+}
+
 i.fa-lock, i.fa-chevron-left {
     color: #fff;
 }
 
 
-.qty_input {
-    border: 1px solid #000;
-    padding-left:10px;
-    width:45px;
-    text-align:center
-}
+
 
 
 .qty_input:hover, .qty_input:focus, 
@@ -708,4 +776,25 @@ a.btn.blog-post-btn {
 
 .comment-card {
     background-color: #efefef;
+}
+
+
+.product-link {
+    
+}
+
+
+.product-link {
+    text-decoration: none;
+    color: #444c54;
+}
+
+.product-link:hover, .product-link:focus {
+    color: #444c54;
+    text-decoration: underline;
+}
+
+
+.font-weight-bold {
+    font-weight: 600;
 }
