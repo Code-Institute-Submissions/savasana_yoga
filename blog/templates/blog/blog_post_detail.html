@@ -7,10 +7,12 @@
 <div class="container">
     <div class="row">
         <div class="col-sm-12 col-md-8 offset-md-2 col-lg-10 offset-lg-1">
-            <h3 class="blog-heading mt-4 mb-3">{{ blog_post.title }}</h3>
-            
-            <small> <p class="text-muted blog-info">By: {{ blog_post.author }} <br> Posted: {{ blog_post.created_on }} </p></small>
-            <hr>
+            <h3 class="blog-heading logo-font mt-4 mb-3">{{ blog_post.title }}</h3>
+            <small>
+                <p class="text-muted blog-info">
+                    By: {{ blog_post.author }} <br> Posted: {{ blog_post.created_on }} 
+                </p>
+            </small>
             {% if request.user.is_superuser %}
                 
                 <a href="{% url 'edit_blog_post' blog_post.id %}" class="btn btn-sm btn-outline-secondary me-2">Edit Blog Post</a>
@@ -39,6 +41,13 @@
                     </div>
                 </div>
             {% endif %}
+            <hr>
+            
+        </div>
+        <div class="col-sm-12 col-md-8 offset-md-2 my-2 pb-2">
+            {% if blog_post.image %}        
+                <img src="{{ blog_post.image.url }}" class="img-fluid rounded-2" alt="{{ blog_post.name }}">                                  
+            {% endif %}  
         </div>
         <div class="col-sm-12 col-md-8 offset-md-2 col-lg-10 offset-lg-1">
             <p>{{ blog_post.content|linebreaks }}</p>
@@ -54,6 +63,7 @@
         </div>
     </div>
     <div class="row">
+
         {% for comment in comments %}
             <div class="col-sm-12 col-md-8 offset-md-2 col-lg-10 offset-lg-1 my-2 card comment-card">
                 <div class="card-body">
@@ -62,7 +72,7 @@
                             <span class="icon">
                                 <i class="fas fa-user"></i>
                             </span>
-                            <span><strong>{{ comment.name }}</span></strong> 
+                            <span><strong>{{ comment.author }}</strong></span> 
                             <span class=" text-muted">
                                 - {{ comment.created_on }}
                             </span>
@@ -71,46 +81,68 @@
                             {{ comment.body | linebreaks }}
                         </p>
                     </div>
-                </div> 
+                </div>
             </div>
-            {% endfor %}
-            {% if new_comment %}
-                <div class="col-sm-12 col-md-8 offset-md-2 col-lg-10 offset-lg-1 my-3">
-                    <div class="alert alert-success header-font" role="alert">
-                        Your comment is awaiting admin approval.
-                    </div>
-                </div>
-                {% else %}
-                <div class="col-sm-12 col-md-8 offset-md-2 col-lg-10 offset-lg-1 mt-5 mb-1">
-                    <h6 class="comment-heading">Leave a comment</h6>
-                </div>
+        {% endfor %}
+            {% if request.user.is_superuser %}
+                <div class="col-sm-12 col-md-8 offset-md-2 col-lg-10 offset-lg-1 my-5">
                 
-                <div class="col-sm-12 col-md-8 offset-md-2 col-lg-10 offset-lg-1 mt-1 mb-3 card comment-card">
-                    <div class="card-body">
-                        <form method="POST" class="mt-4">
-                            {{ comment_form | crispy }}
-                            {% csrf_token %}
-                            <button type="submit" class="btn book-today-btn mx-auto">
-                                <span>Submit</span>
-                                <span class="icon">
-                                    <i class="fas fa-paper-plane text-white"></i>
-                                </span>
-                            </button>
-                        </form>
-                    </div>
+                    {% for comment in awaiting_approval_comments %}
+                    <h6 class="text-center">Awaiting Approval</h6>
+                        <p>
+                            <span class="icon">
+                                <i class="fas fa-user"></i>
+                            </span>
+                            <span><strong>{{ comment.author }}</strong></span> 
+                            <span class=" text-muted">
+                                - {{ comment.created_on }}
+                            </span>
+                        </p>
+                        <p>
+                            {{ comment.body | linebreaks }}
+                            <a class="btn btn-danger btn-sm mx-1" href="{% url 'comment_remove' comment.id  %}">Remove</a>
+                            <a class="btn btn-primary btn-sm mx-1" href="{% url 'comment_approve' comment.id %}">Approve</a>
+                        </p>
+                        
+                    {% endfor %}
+                   
                 </div>
             {% endif %}
-        <div class="col-sm-12 col-md-8 offset-md-2 col-lg-10 offset-lg-1 my-2 end-of-blog-post">
-            <a href="{% url 'view_blog' %}" class="btn back-btn">
-                <span class="icon">
-                    <i class="fas fa-chevron-left"></i>
-                </span>
-                <span>View All Posts</span>
-            </a>
-               
+    </div>
+
+
+    <div class="col-sm-12 col-md-8 offset-md-2 col-lg-10 offset-lg-1 mt-5 mb-1">
+        <h6 class="comment-heading">Leave a comment</h6>
+    </div>
+    
+    <div class="col-sm-12 col-md-8 offset-md-2 col-lg-10 offset-lg-1 mt-1 mb-3 card comment-card">
+        <div class="card-body">
+            <form method="POST" class="mt-4">
+                {{ comment_form | crispy }}
+                {% csrf_token %}
+                <button type="submit" class="btn book-today-btn mx-auto">
+                    <span>Submit</span>
+                    <span class="icon">
+                        <i class="fas fa-paper-plane text-white"></i>
+                    </span>
+                </button>
+            </form>
         </div>
     </div>
+    <div class="col-sm-12 col-md-8 offset-md-2 col-lg-10 offset-lg-1 my-2 end-of-blog-post">
+        <a href="{% url 'view_blog' %}" class="btn back-btn">
+            <span class="icon">
+                <i class="fas fa-chevron-left"></i>
+            </span>
+            <span>View All Posts</span>
+        </a>
+           
+    </div>
 </div>
-  
+</div>
+
+       
+       
+    
 
 {% endblock %}
