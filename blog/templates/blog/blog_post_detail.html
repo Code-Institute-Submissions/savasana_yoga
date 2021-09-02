@@ -80,6 +80,10 @@
                         <p>
                             {{ comment.body | linebreaks }}
                         </p>
+                        {% if request.user.is_superuser or request.user.is_comment.author %}
+                            <a class="btn btn-danger btn-sm mx-1" href="{% url 'comment_remove' comment.id  %}">Remove</a>
+                            <a class="btn btn-primary btn-sm mx-1" href="{% url 'edit_comment' comment.id %}">Edit</a>
+                        {% endif %}
                     </div>
                 </div>
             </div>
@@ -118,8 +122,8 @@
     <div class="col-sm-12 col-md-8 offset-md-2 col-lg-10 offset-lg-1 mt-1 mb-3 card comment-card">
         <div class="card-body">
             <form method="POST" class="mt-4">
-                {{ comment_form | crispy }}
                 {% csrf_token %}
+                {{ comment_form | crispy }}
                 <button type="submit" class="btn book-today-btn mx-auto">
                     <span>Submit</span>
                     <span class="icon">

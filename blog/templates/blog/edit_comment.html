@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 col-md-8 offset-md-2 col-lg-10 offset-lg-1">
+                <hr>
+                <h2 class="logo-font my-3 py-2 text-center">Edit Comment</h2>
+                <hr>
+            </div>
+        </div>
+      
+        <div class="col-sm-12 col-md-8 offset-md-2 col-lg-10 offset-lg-1 mt-1 mb-3 card comment-card">
+            <div class="card-body">
+                <form method="POST" action="{% url 'edit_comment' comment.id %}" class="form my-2" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    {% for field in form %}
+                        {{ field | as_crispy_field }}
+                    {% endfor %}
+                    <div class="text-right">
+                        <a class="btn back-btn rounded-1" href="{% url 'view_blog' %}">Cancel</a>
+                        <button class="btn book-today-btn rounded-1" type="submit">Edit Comment</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock %}

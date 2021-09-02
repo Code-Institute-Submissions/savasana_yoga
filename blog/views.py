@@ -164,3 +164,34 @@ def comment_remove(request, comment_id):
         messages.error(request, 'It is not possible to delete comments you did not create!')
         return redirect(reverse('view_blog'))
 
+
+@login_required
+def edit_comment(request, comment_id):
+    
+    comment = get_object_or_404(Comment, pk=comment_id)
+
+    if request.user == comment.author or request.user.is_superuser:
+        if request.method == 'POST':
+            form = CommentForm(request.POST, instance=comment)
+            if form.is_valid():
+                form.save()
+                messages.success(
+                            request,
+                            'Your comment has been successfully edited')
+                return redirect(reverse('view_blog'))
+            else:
+                messages.error(request, 'Unable to edit this comment. Please ensure the form is valid.')
+        else:
+            form = CommentForm(instance=comment)
+
+        template = 'blog/edit_comment.html'
+
+        context = {
+            'form': form,
+            'comment': comment,
+        }
+
+        return render(request, template, context)
+    else:
+        messages.error(request, 'You cannot do that !')
+        return redirect(reverse('view_blog'))
