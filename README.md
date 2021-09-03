@@ -21,7 +21,7 @@ The main goal of this website is to promote the practice of yoga, highlight it's
 
 The website also features a blog, which promotes the benefits of yoga, provides announcements for the yoga studio, and allows users to comment on blog posts. 
 
-Finally, the website also provides admin features to manage the yoga classes, by editing, deleting and adding new classes, and blog posts.
+Finally, the website also provides admin features to manage the yoga classes, by editing, deleting and adding new classes, and blog posts, by adding, editing, and removing blog posts, as well as the ability to moderate by approving or removing pending user comments.
 
 
 ## User Stories
@@ -29,11 +29,14 @@ Finally, the website also provides admin features to manage the yoga classes, by
 * I want a website that allows me to book yoga classes.
 * I want to receive an email confirmation after booking a class.
 * I would like a blog to read more about the yoga studio, and yoga in general.
-* I would like the ability to comment on blog posts.  
+* I would like the ability to comment on blog posts.
+* I would like the ability to edit or remove comments I make on a blog post.
 * I want the ability to filter classes between difficulty levels.
+* I want the ability to view a timetable or schedule for yoga classes.
 * I want a website that is easily accessed on my mobile phone and tablet. 
 * I want a website that is easy to understand and navigate.
-* I want to have my own profile to store my information, and view my order history. 
+* I want to have my own profile to store my information.
+* I want to view my order history on my profile.  
 * I want my profile to be password protected.
 * I would like to be able to follow the website's social media accounts.
 
@@ -240,12 +243,44 @@ Finally, the page also features an add to cart button, and a button which redire
 
 ##### The Shopping Cart Page
 
+If a user clicks on the shopping cart icon, they are directed to the shopping cart page. If there are no items in a user's cart, they are present with text that indicates an empty cart, and a button to direct them back to view yoga classes.
+
+If a user has added items to the shopping cart, they are presented a table with the following information:
+- Product Info: Which displays the product's Image, Name, and Timetable information. 
+- Price: Which displays the products base price. 
+- Quantity: Which features a form control to allow users to increase or decrease the quantity of a product. This row also contains two action links: 'Update' which when clicked, updates the the price and cart to reflect a new quantity number, and 'Remove' which when clicked, removes the product from the cart. 
+- Subtotal: Which calculates the total price of a product(including the quantity)
+
+The page is fully responsive across all devices, and the layout changes from a table to a more grid based layout to optimize a mobile experience. 
+
+The page also features two buttons, a 'back-to-classes' button which links to the products page, and a 'secure checkout' button which links users to the checkout page, to complete their order. 
+
 ##### The Checkout Page
 
-##### The Booking Confirmation Page
+The checkout page features a form for users to input their information including Name, Address, Phone Number and Card details. I have used Stripe to help faciliate the payments on the website. 
+
+The form also features a checkbox to save the information on the form to a user's profile. So they do not have to enter this information every time they make a purchase. 
+
+The checkout form also avails of django's country-field to allow for a dropdown-menu of all countries. 
+
+The page features two buttons; a button to re-adjust their shopping cart, and a button to submit and complete their order. 
+
+When a user submits their order, they are presented with a loading overlay to indicate that their action is currently being processed. 
+
+##### The Checkout Success Page
+
+When a user successfully completes a booking, they are automatically directed to the booking confirmation page. They are also presented with a toast that states their order was a success, and that an email will be sent to their account with the order information. 
+
+On the Checkout-Success page, a user is presented with a confirmation of their booking. including the order information: Order Number, and Order Date. The contents of their order: Including the product's name, and timetable information. 
+
+They are also presented with their personal information: Address, Phone NUmber, Postal Code, Country as well as the billing information, which displays the total amount their card was charged. 
 
 
 #### Timetable Page
+
+The timtable page is automatically updated to reflect the current products in the database. A user can see all current yoga classes, and the day and time the class is offered. 
+
+
 
 
 #### Blog Page
