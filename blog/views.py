@@ -18,7 +18,10 @@ def view_blog(request):
 
 
 def blog_post_detail(request, blog_post_id):
-    """ A view to return an individual blog post """
+    """ A view to return an individual blog post
+        and  to allow comments to be posted to individual
+        blog posts.
+    """
 
     blog_post = get_object_or_404(Post, pk=blog_post_id)
 
@@ -43,7 +46,7 @@ def blog_post_detail(request, blog_post_id):
             new_comment.save()
     else:
         comment_form = CommentForm()
-    
+
     context = {
         'blog_post': blog_post,
         'comments': comments,
@@ -57,7 +60,7 @@ def blog_post_detail(request, blog_post_id):
 
 @login_required
 def add_blog_post(request):
-    """ Add a post to the blog """
+    """ Add a new post to the blog """
 
     if not request.user.is_superuser:
         messages.error(request, 'Sorry, only store owners can do that.')
@@ -75,7 +78,7 @@ def add_blog_post(request):
             messages.error(request, 'Failed to add post. Please ensure the form is valid.')
     else:
         form = PostForm()
-     
+   
     template = 'blog/add_blog_post.html'
     context = {
         'form': form,
@@ -87,7 +90,7 @@ def add_blog_post(request):
 @login_required
 def edit_blog_post(request, blog_post_id):
     """
-    Edit a blog post.
+    A view to allow superuser to edit blog posts
     """
 
     if not request.user.is_superuser:
@@ -120,6 +123,9 @@ def edit_blog_post(request, blog_post_id):
 
 @login_required
 def delete_blog_post(request, blog_post_id):
+    """
+    A view to allow deletion of blog posts
+    """
 
     blog_post = get_object_or_404(Post, pk=blog_post_id)
 
@@ -129,13 +135,16 @@ def delete_blog_post(request, blog_post_id):
         return redirect(reverse('view_blog'))
 
     else:
-
         messages.error(request, 'You cannot do that !')
         return redirect(reverse('view_blog'))
 
 
 @login_required
 def comment_approve(request, comment_id):
+    """
+    A view to allow superuser to approve pending comments
+    left by users.
+    """
 
     comment = get_object_or_404(Comment, pk=comment_id)
 
@@ -151,6 +160,10 @@ def comment_approve(request, comment_id):
 
 @login_required
 def comment_remove(request, comment_id):
+    """
+    A view to allow superuser or comment author to remove comments
+    left by users.
+    """
 
     comment = get_object_or_404(Comment, pk=comment_id)
 
@@ -167,6 +180,9 @@ def comment_remove(request, comment_id):
 
 @login_required
 def edit_comment(request, comment_id):
+    """
+    A view to allow superuser or comment author to edit comments
+    """
     
     comment = get_object_or_404(Comment, pk=comment_id)
 
