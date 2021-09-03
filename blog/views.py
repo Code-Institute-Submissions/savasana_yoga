@@ -44,6 +44,8 @@ def blog_post_detail(request, blog_post_id):
             new_comment.author = request.user
             # Save the comment to the database
             new_comment.save()
+            messages.success(request, 'Your comment is awaiting moderation!')
+            return redirect(reverse('blog_post_detail', args=[blog_post.id]))
     else:
         comment_form = CommentForm()
 

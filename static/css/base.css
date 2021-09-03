@@ -95,6 +95,11 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 
+.comment-actions {
+    display: flex;
+    justify-content: flex-end;
+}
+
 .navbar-custom {
     background-color: #FAF9F9;
 }
