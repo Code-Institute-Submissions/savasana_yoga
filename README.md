@@ -206,114 +206,131 @@ The footer also contains social media links for the website's social media accou
 I have also created a search bar in the footer to allow users to quickly search for yoga classes. When a user searches for a yoga classes, they are directed to the products page and shown the relevant results, otherwise, they are informed that they search criteria provided no results. 
 
 
+#### Home App
 
-#### Purchasing Products
+This app acts as the home page, and informs that user about the content and purpose of the website. This app contains a hero image, a call to action button to view products. 
 
-The main feature of this website was the sale and promoting of yoga classes. I have split this into multiple parts; the all products page, the individual product page, the shopping cart, the checkout page, and the booking confirmation. 
+This page also features an 'about' section which informs the users of the yoga studio's philosophy. 
 
-##### All Products Page 
+Finally, the page also features three product cards which are filtered by the beginner category to quickly showcase to the user that beginner friendly classes that are offered. 
 
-All Products Page
+In addition, the home page displays the latest blog post to encourage readers to visit the studio's blog. 
 
-The all products page features all available yoga class a user can purchase. 
+#### Products App
 
-I decided to display the products in individual cards. 
+This app facilitaes the feature to all users to see all products offered by the yoga studio. This app allows users to also view more information about a product, by visiting the product detail page. 
 
-At first, I wanted to create an alterating col-12 with a complimentary alternating background-color for each product. 
+Finally, this app also allows admin users to create, edit, and delete all products in the database.
 
-However, it resulted in users having to scroll a lot when viewing all the products offered. I felt this wasn't a great user experience, and felt the conciseness that bootstrap cards offered was much preferred from a UI and UX standpoint. 
 
-The product cards are filled with basic information including the name of the class, the price, a tagline to briefly describe the essence of a class. When a user hovers over a card, a box shadow effect is triggered, and if a user clicks on the card, they are directed to an individual product page where they can purchase the class, and read more information about the particular class.
+##### All Products Page
 
-In addition, if an admin user is logged in, the product cards also display an edit/delete button to allow quick product management. 
+This page displays all product currently being offered. A user has the ability to sort products both in ascending and descending by name, price and category. 
 
-The all products page, also features a filtering system, where users can filter the products displayed by their categories (advanced classes or beginner classes).
+A user also has the ability to filter products by category (for instance, beginner or advanced classes)
 
-The all products page also features a sorting system where users can sort products by ascending/descending price/category/name
+Finally, a user is able to search for products by name, category or a keyword search via a product's description in the search bar in the footer which is displayed on every page. 
 
-##### Individual Products Page
+##### Individual Product Page
 
 The individual products page is created mostly with template tags, to allow the variety of information in each product to be displayed correctly. 
 
-The page features a larger size of the product image, a product description, and information regarding the product's price, day, and times. 
+The page features a larger size of the product image, a product description, and information regarding the product's price, and timetable information. 
 
 The page also features a link to the timetable page, for users to look at other times which may suit them, and which classes best suit their time schedule.
 
 Finally, the page also features an add to cart button, and a button which redirects users back to the all products page. 
 
-##### The Shopping Cart Page
+#### Class Management
 
-If a user clicks on the shopping cart icon, they are directed to the shopping cart page. If there are no items in a user's cart, they are present with text that indicates an empty cart, and a button to direct them back to view yoga classes.
+If the user logged in is an admin user, they will have access to the dropdown menu item 'Class Management' in the Account navigation item, which allows a user to create a new product for users to purchase. 
 
-If a user has added items to the shopping cart, they are presented a table with the following information:
-- Product Info: Which displays the product's Image, Name, and Timetable information. 
-- Price: Which displays the products base price. 
-- Quantity: Which features a form control to allow users to increase or decrease the quantity of a product. This row also contains two action links: 'Update' which when clicked, updates the the price and cart to reflect a new quantity number, and 'Remove' which when clicked, removes the product from the cart. 
-- Subtotal: Which calculates the total price of a product(including the quantity)
+In addition, when an admin user is viewing the All Products page, they are shown two buttons on each product card: 'Edit' and 'Remove'. The Edit link directs the user to a Product form to edit the current product. 
 
-The page is fully responsive across all devices, and the layout changes from a table to a more grid based layout to optimize a mobile experience. 
-
-The page also features two buttons, a 'back-to-classes' button which links to the products page, and a 'secure checkout' button which links users to the checkout page, to complete their order. 
-
-##### The Checkout Page
-
-The checkout page features a form for users to input their information including Name, Address, Phone Number and Card details. I have used Stripe to help faciliate the payments on the website. 
-
-The form also features a checkbox to save the information on the form to a user's profile. So they do not have to enter this information every time they make a purchase. 
-
-The checkout form also avails of django's country-field to allow for a dropdown-menu of all countries. 
-
-The page features two buttons; a button to re-adjust their shopping cart, and a button to submit and complete their order. 
-
-When a user submits their order, they are presented with a loading overlay to indicate that their action is currently being processed. 
-
-##### The Checkout Success Page
-
-When a user successfully completes a booking, they are automatically directed to the booking confirmation page. They are also presented with a toast that states their order was a success, and that an email will be sent to their account with the order information. 
-
-On the Checkout-Success page, a user is presented with a confirmation of their booking. including the order information: Order Number, and Order Date. The contents of their order: Including the product's name, and timetable information. 
-
-They are also presented with their personal information: Address, Phone NUmber, Postal Code, Country as well as the billing information, which displays the total amount their card was charged. 
+The 'Remove' link triggers a modal to confirm that the admin user wishes to delete the product from the database. A product is only deleted once the user confirms this action. 
 
 
-#### Timetable Page
+#### Cart App
+
+This app provides users with the functionality to add products to the shopping cart, allows users to adjust their shopping cart by changing the quanitity of items, as well as the ability to remove items from their cart.
+
+Each time an action is performed by the user for instance, adding an item to the cart, adjusting the quantity, or removing an item, a toast is triggered and a preview of their shopping cart is displayed. The preview provides users with the names, images, and price of an item as well as the total price of their current shopping cart. 
+
+#### Checkout App
+
+The Checkout App provides users with the functionality to securely purchase the items in their shopping cart. To allow for a secure and streamlined purchasing experience I have used Stripe.
+
+If a user is currently logged in, the checkout information will be populated from their profile (provided that they have filled out their profile information). Otherwise, a user has the ability to either save the checkout information to the profile, or to create an account. 
+
+To create a truly streamlined experience for users when navigating the checkout app, it is also possible to purchase products without creating an account. 
+
+Once a user has clicked the 'Complete Order' button, a loading overlay animation is triggerd to indicate to the user that the payment is in process. 
+
+Once this is completed, a user is automatically directed to the Checkout Success page, where they are notified that a confirmation email has been sent to their email address, as well as provided with a summary of their order. 
+
+#### Profile App
+
+The Profile App provides users with the functionality to store their information to speed up the checkout process, as well as a place to edit their previously saved personal information. In addition, the profile page also users to view their order history. Finally, if a user has a registerd account, they can leave comments on blog posts.
+
+##### Register 
+A user can create a profile app by clicking on the dropdown-menu link 'Register' in the navigation link 'Account'. 
+
+When registering an account, a user must input a username, their email address and a password. The password field needs to be entered twice in order to avoid typos. 
+
+Once a user registers, they are sent a verification/confirmation email, with a link. Once a user confirms their email address, the account is created, and they can access their profile page.
+
+##### Log In
+
+If a user already has created an account, they can sign into their profile by using the 'Login' link.
+
+To do so, a user needs to enter their email address or username and their password. 
+
+If the form is valid, and the information is correct the user is redirected to their profile page, which contains their saved personal information as well as order history, if any purchases have been made.
+
+##### Logging Out
+
+A user can quickly log out by selecting the sign out option in the and Account Dropdown menu on the navigation menu. 
+
+#### Blog App
+
+The Blog App provides functionality to admin users to create, edit and delete blog posts for the website. 
+
+For users, this app provides a place where they can read blog posts, and leave comments if they wish. 
+
+##### All Blog Posts Page
+
+The main blog page features a snippet of each blog post in the form of a Bootstrap card. Each card features a blog title, information about when it was created, and the name of the author. The blog post cards also features a unique snippet of text, to give a brief summary of the blog post. Each card features a button which directs users to the blog detail page, where they can read the full blog, and leave comments.
+
+The blog page is dynamically updated always display blogs that have been created, and it displays the latest blog first.
+
+##### The Blog Post Detail Page
+
+This page allows users to view the full blog post, as well as user comments. 
+
+Any user with a registered account, and currently logged in can leave a comment on a blog post. A user is also able to edit, and delete comments they have created. A modal confirmation is trigged if a user tries to delete a comment, to confirm that this action is permanent, and to confirm if they wish to delete their comment. 
+
+A user with an admin account, can edit and remove the blog post. Like all action which may remove an item from the database, a modal is triggerd to confirm the action.
+
+Both the edit blog (for admin users) and the edit comment (for admin users or comment author) is redirected to a form, for the user to complete to finally edit the blog post or comment. 
+
+If a user wishes to leave a comment, they can do so in the text box beneath the blog post. Once they have submitted their comment, a message is displayed to the user that their comment is awaiting moderation. 
+
+I have choosed to employ this feature to prevent spam, and ensure that comments are relevant to the content. 
+
+If an admin user is logged in and viewing the blog post detail page, all comments awaiting approval are displayed, and an admin user has the ability to either approve or deny a pending comment. 
+
+If a pending comment is approved, it is displayed under the blog post, and if is denied, the comment is removed from the database. 
+
+#### Timetable App
+
+The Timetable App provides users with the ability to view all yoga classes time and day's offered. This allows users to choose a class which best suits their own schedule. Each class in the timetable has a link which directs users to the product detail page of the specific class.
 
 The timtable page is automatically updated to reflect the current products in the database. A user can see all current yoga classes, and the day and time the class is offered. 
 
+The timteable is designed with a a bootstrap table, with added media queries for smaller devices. The timetable is created with for loops to always reflect the current offered products. 
 
 
-
-#### Blog Page
-
-
-#### User Profiles
-
-There are a number of pages related to a User's account, and I have explained them below. 
-
-##### Register Page
-
-##### Login Page
-
-##### Individual Profile Page
-
-
-#### Admin Profiles
-
-##### Product Management
-
-###### Adding Products
-
-###### Editing Products
-
-###### Deleting Products
-
-##### Blog Management
-
-###### Adding Blog Posts
-
-###### Editing Blog Posts
-
-###### Deleting Blog Posts
+All features have been manually tested in a variety of ways. Which can be read in more detail here:
 
 
 ### Future Features
@@ -321,6 +338,8 @@ There are a number of pages related to a User's account, and I have explained th
 In the future, I would like to optimize the booking system for yoga classes by implementing an interactive calendar, which will allow users to choose a class and times. 
 
 In addition, I would like to implement a tracking system to display to users how many sessions they have left from a class they have booked. For instance, some products offer 10 sessions, and I'd like to have a system where after each session attended, its reflected on their profile how many sessions are remaining. 
+
+Finally, I would to further streamline the log in and register experience for users by allowing users to log in via Social Media.
 
 
 ## Database Information
@@ -334,6 +353,7 @@ In addition, I would like to implement a tracking system to display to users how
 
 ## Testing
 
+All testing can be view here: 
 
 ## Deployment
 
@@ -346,12 +366,15 @@ In addition, I would like to implement a tracking system to display to users how
 
 ### Images 
 
+All Images were sourced from Unsplash and Pexels.
 
 ### Text 
 
+All text was written by myself.
 
 ## References for Code
 
 
 ## Acknowledgements
+
 
