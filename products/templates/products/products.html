@@ -1,13 +1,6 @@
 {% extends "base.html" %}
 {% load static %}
 
-{% block page_header %}
-    <div class="container header-container">
-        <div class="row">
-            <div class="col"></div>
-        </div>
-    </div>
-{% endblock %}
 
 {% block content %}
     <div class="container">
@@ -16,16 +9,10 @@
                 <hr>
                 <h2 class="logo-font heading-text">Classes</h2>
                 <hr>
-                <p class="lead mt-2">
-                    <i class="far fa-calendar-alt text-muted"></i>
-                    <a href="{% url 'view_timetable' %}" class="timetable-link mt-2">
-                        View Timetable
-                    </a>
-                </p>
             </div>
         </div>
         <div class="row py-2">
-            <div class="col-12 col-md-4 my-auto order-md-last d-flex justify-content-center justify-content-md-end">
+            <div class="col-12 col-md-6 my-auto order-md-last d-flex justify-content-center justify-content-md-end">
                 <!-- From Boutique Ado Project to display sort selector -->
                 <div class="sort-select-wrapper">
                     <select id="sort-selector" class="custom-select custom-select-sm rounded-0 border border-{% if current_sorting != 'None_None' %}info{% else %}black{% endif %}">
@@ -39,13 +26,7 @@
                     </select>
                 </div>
             </div>
-            <div class="col-12 col-md-4 my-auto text-center">
-                <ul class="list-inline my-auto pt-2">
-                    <li class="list-inline-item mx-auto"><span><a href="{% url 'products' %}?category=beginner_class" class="muted-anchor-link">Beginner</a> | </span></li>
-                    <li class="list-inline-item mx-auto"><span><a href="{% url 'products' %}?category=advanced_class" class="muted-anchor-link">Advanced</a></span></li>
-                </ul>
-            </div>
-            <div class="col-12 col-md-4 order-md-first ">
+            <div class="col-12 col-md-6 order-md-first ">
                 <p class="text-muted mt-3 text-center float-md-start">
                     {% if search_term or current_categories or current_sorting != 'None_None' %}
                         <span class="small"><a href="{% url 'products' %}" class="muted-anchor-link">All Classes</a> | </span>
@@ -55,9 +36,7 @@
                 </p>
             </div>
         </div>
-        <div class="row">
-            
-        </div>
+        
         <hr>
         <div class="row">
             <div class="product-container col my-2">

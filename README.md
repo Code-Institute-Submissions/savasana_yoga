@@ -344,6 +344,9 @@ Finally, I would to further streamline the log in and register experience for us
 
 ## Database Information
 
+A wireframe for the database was created on dbdiagram.io to help in providing an overview of what will be needed for the Django models. 
+
+When creating the database in Django the database used was sqlite3.
 
 ## Troubleshooting
 
