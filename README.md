@@ -346,12 +346,45 @@ Finally, I would to further streamline the log in and register experience for us
 
 A wireframe for the database was created on dbdiagram.io to help in providing an overview of what will be needed for the Django models. 
 
-When creating the database in Django the database used was sqlite3.
+When developing the website in Django the database used was SQLite. 
 
 ## Troubleshooting
 
+Throughout the developement of the website, I encountered a number of problems which through trial & error, or research solutions were found. 
+
+I have documented these issues below.
+
+
+
 
 ## Technologies Used
+
+* This website was developed using [HTML5](https://en.wikipedia.org/wiki/HTML5), [CSS3](https://en.wikipedia.org/wiki/CSS), [JavaScript](https://en.wikipedia.org/wiki/JavaScript) , and [Python](https://en.wikipedia.org/wiki/Python_(programming_language))
+* [Django](https://www.djangoproject.com/), a Python framework to render pages, speed up development and avoid repeated code.
+* [jQuery](https://jquery.com/) was used to simplify JavaScript code.
+* The fonts used in this website were imported from [Google Fonts](https://fonts.google.com/).
+* [SQLite](https://www.sqlite.org/index.html) was used to manage the database during the development phase of the project.
+* [PostgreSQL](https://www.postgresql.org/) was used to manage the database once the project had been deployed to Heroku.
+* [AWS](https://aws.amazon.com/) was used to store static and media files.
+* [Stripe](https://stripe.com/) was used to process and manage card payments.
+* [Crispy Forms](https://django-crispy-forms.readthedocs.io/en/latest/) was used to quickly render forms.
+* [All Auth](https://django-allauth.readthedocs.io/en/latest/installation.html) was used to create the login and register functionality.
+* I used [Font Awesome](https://fontawesome.com/) for all icons.
+I used [Unsplash](https://unsplash.com/) and [Pexels](https://www.pexels.com/) to source images used on the website.
+* [Bootstrap 5](https://getbootstrap.com/) was used to structure the layout of the website and maintaining layout and responsiveness to tablet and mobile devices. I linked Bootstrap to the HTML document via [CDN](https://www.bootstrapcdn.com/).
+* This website was initially designed with wireframes using [Balsamiq](https://balsamiq.com/). 
+* [Git](https://git-scm.com/) version control was used to store the version of files and track the development progress. 
+* The IDE used to work on this project was [Gitpod](https://www.gitpod.io/). 
+* [Github](https://github.com/) was used to manage Git repositories.
+* [Heroku](https://www.heroku.com/) was used to deploy the website.
+* HTML code was validated with [W3C](https://validator.w3.org/). 
+* [W3C CSS](https://jigsaw.w3.org/css-validator/) was used to check the validity of the CSS code in this project. 
+* [Jshint](https://jshint.com/) was used to test the validity of JavaScript code. 
+* [PEP8Online](http://pep8online.com/) was used to check Python code to ensure it met PEP8 requirements.
+* [Google Lighthouse](https://developers.google.com/web/tools/lighthouse#devtools) was used to check that the website is user-friendly.
+* [Google Mobile-Friendly Test](https://search.google.com/test/mobile-friendly) to test the website on mobiles. 
+* [Favicon.io](https://favicon.io/) was used for the website's favicon.
+* [ResponsiveDesign](http://ami.responsivedesign.is/) was used to display the README's Overview Image.
 
 
 ## Testing
