@@ -1,9 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600&display=swap');
 
-/* .container-fluid {
-    padding: 0px;
-    margin: 0px;
-} */
+
+/* -- Main Body Styles -- */
 
 html, body {
     height: 100%;
@@ -19,86 +17,25 @@ body {
     flex: 1 0 auto;
 }
 
-.footer {
-    flex-shrink: 0;
+.logo-font {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    font-style: italic;
+    color: #212529;
+    /* font-size: 28px; */
 }
 
 h1, h2, h3, h4, h5, h6 {
     font-family: 'Montserrat', sans-serif;
 }
 
-.logo-font {
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 400;
-    font-style: italic;
-}
 
-.home-image-container {
-    padding: 0px;
-    margin: 0px;
-}
-
-/* body {
-    height: calc(100vh - 164px);
-    color: #555;
-} */
-
-.homepage_background_image {
-    height: 600px;
-    max-width: 100%;
-
-    background: url('/static/images/homepage_background_image.png') no-repeat bottom;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-    
-}
-
-/* from Bulma and Code Institue Boutique Ado */
-.icon {
-    align-items: center;
-    display: inline-flex;
-    justify-content: center;
-    height: 1.5rem;
-    width: 1.5rem;
-    color: #212529;
-}
-
-.logo-font {
-    color: #212529;
-    font-size: 28px;
-}
-
-.book-today-btn { 
-    background: #2a9d8f;
-    color: #fff;
-}
-
-.back-btn {
-    background: #b0686d;
-    color: #fff;
-}
-
-.back-btn:hover,
-.back-btn:active,
-.back-btn:focus {
-    background: #8E5358;
-    color: #fff;
-}
-
-.book-today-btn:hover,
-.book-today-btn:active,
-.book-today-btn:focus {
-    background: #264653;
-    color: #fff;
+.font-weight-bold {
+    font-weight: 600;
 }
 
 
-.comment-actions {
-    display: flex;
-    justify-content: flex-end;
-}
+/* -- Navbar -- */
 
 .navbar-custom {
     background-color: #FAF9F9;
@@ -127,32 +64,6 @@ a.navbar-brand:focus {
     flex-flow: row;
 }
 
-
-
-/* Media Queries */
-
-/* fixed top navbar only on medium and up */
-/* @media (min-width: 992px) {
-    .fixed-top-desktop-only {
-        position: fixed;
-        top: 0;
-        right: 0;
-        left: 0;
-        z-index: 1030;
-    }
-
-     .header-container {
-        padding-top: 164px;
-    } 
-} */
-
-
-.call-to-action {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
 .dropdown-menu {
     background-color: #FAF9F9;
 }
@@ -169,103 +80,192 @@ a.navbar-brand:focus {
     margin-right: 50px;
 }
 
-
-/* .mobile-header-icons {
-    margin-bottom: 0px;
-    display: flex;
-    align-items: baseline;
-}
- */
-.product-info-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
-.heading-text {
-   
-}
-
-/* .navbar {
-    position: relative;
-}
-.navbar-brand {
-    position: absolute;
-    left: 50%;
-    margin-left: -50px !important; 
-    display: block;
-} */
-
-
-
-/* navbar  */
-
-
 .navbar-toggler:focus,
 .navbar-toggler:active,
 .navbar-toggler-icon:focus {
     box-shadow: 0 0 0 1px #000;
 }
 
-
-/* .dropdown-menu {
-    width: auto;
-} */
-
-/* .dropdown-heading {
-    text-decoration: none;
-    text-underline-position: below;
-} */
-
-/* .dropdown-heading:active, .dropdown-heading:hover, .dropdown-heading:focus {
-    text-decoration: underline;
-    color: #000;
-} */
-
-/* .products-dropdown-menu {
-    width: auto;
-    height: auto;
-    padding: 20px 50px 50px 50px;
-} */
-
-/* ul.dropdown-menu.products-dropdown-menu.show {
-    display: flex;
-    justify-content: space-evenly;
-    margin-top: 0px;
-    border-top: transparent;
-} */
-
-/* .dropdown-header {
-    font-size: 20px;
-} */
-
-/* .dropdown-nav-items {
-    width: auto;
-} */
-
-
-/* .dropdown-menu.search-dropdown.show {
-    padding-top: 0px;
+.navbar-toggler {
+    margin-left: 5px;
 }
- */
 
-.empty-shopping-cart {
+
+/* -- Footer -- */
+
+.footer {
+    flex-shrink: 0;
+}
+
+footer.custom-footer {
+    width: 100%;
+    background-color: #efefef;
+}
+
+.footer {
+    margin-bottom:0px !important;
+}
+
+.site-map {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+}
+
+.social-media-icons {
+    display: flex;
+    flex-flow: column;
+}
+
+.container.footer {
+    max-width: 100%;
+}
+
+.social-media-link {
+    width: fit-content;
+}
+
+.icons {
+    color: #212529;
+}
+
+.icons:hover {
+    transform: scale(1.2);
+}
+
+.footer-link {
+    color: #212529;
+    text-decoration: none;
+    width: fit-content;
+}
+.footer-link:hover {
+    color: #212529;
+    text-decoration: underline;
+}
+
+.btn-search {
+    border: 1px solid #212529;
+    background-color: #fff;
+}
+
+.btn-search:focus {
+    border: 1px solid #212529;
+    box-shadow: none;
+    outline: none;
+}
+
+.search-icon:hover,
+.search-icon:focus {
+    transform: scale(1.2);
+}
+
+input[name='query']::placeholder {
+    color: #aab7c4;
+}
+
+
+
+/* -- Home Page */
+
+.home-image-container {
+    padding: 0px;
+    margin: 0px;
+}
+
+.homepage_background_image {
+    height: 600px;
+    max-width: 100%;
+
+    background: url('/static/images/homepage_background_image.png') no-repeat bottom;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    
+}
+
+.call-to-action {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-.update-link,
-.remove-item {
-    cursor: pointer;
+
+#about .col-12,
+#about .col-md-6 {
+    padding: 0;
+    background-color: #efefef;
+    
 }
 
-a.remove-item {
-    float: right;
+.about-img{
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
 }
 
-a.update-link {
-    float: left;
+.about-text h2 {
+    font-weight: 600;
+    letter-spacing: 0.1em;
+}
+
+.about-text {
+    line-height: 2.5;
+    font-weight: 500;
+    background-color: #efefef;
+}
+
+
+/* -- Icons -- */
+
+/* from Bulma and Code Institue Boutique Ado */
+.icon {
+    align-items: center;
+    display: inline-flex;
+    justify-content: center;
+    height: 1.5rem;
+    width: 1.5rem;
+    color: #212529;
+}
+
+i.fa-lock, i.fa-chevron-left {
+    color: #fff;
+}
+
+
+/* -- Buttons -- */
+
+.book-today-btn { 
+    background: #2a9d8f;
+    color: #fff;
+}
+
+.book-today-btn:hover,
+.book-today-btn:active,
+.book-today-btn:focus {
+    background: #264653;
+    color: #fff;
+}
+
+.back-btn {
+    background: #b0686d;
+    color: #fff;
+}
+
+.back-btn:hover,
+.back-btn:active,
+.back-btn:focus {
+    background: #8E5358;
+    color: #fff;
+}
+
+
+/* -- Products -- */
+
+.product-info-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .product-card-list-item {
@@ -293,11 +293,107 @@ a.update-link {
     color:#212529;
 }
 
-
 .card {
     height: 100%;
     
 }
+
+.qty-product-page {
+    border: none;
+}
+
+.category-link {
+    text-decoration: none;
+}
+
+.category-link:hover, .category-link:focus {
+    text-decoration: underline;
+}
+
+.product-link {
+    text-decoration: none;
+    color: #444c54;
+}
+
+.product-link:hover, .product-link:focus {
+    color: #444c54;
+    text-decoration: underline;
+}
+
+
+/* -- Product Form -- */
+
+.btn-file {
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-file input[type="file"] {
+    position: absolute;
+    top: 0;
+    right: 0;
+    min-width: 100%;
+    min-height: 100%;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.custom-checkbox .custom-control-label::before {
+    border-radius: 0;
+    border-color: #dc3545;
+}
+
+.custom-checkbox .custom-control-input:checked~.custom-control-label::before {
+    background-color: #dc3545;
+    border-color: #dc3545;
+    border-radius: 0;
+}
+
+
+/* -- Shopping Cart -- */
+
+.empty-shopping-cart {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.update-link,
+.remove-item {
+    cursor: pointer;
+}
+
+a.remove-item {
+    float: right;
+}
+
+a.update-link {
+    float: left;
+}
+
+.qty-adjust {
+    display: inline-flex;
+    align-items: center;
+    border: 1px solid #000;
+    white-space: nowrap;
+}
+
+.qty_input {
+    border: 1px solid #000;
+    padding-left:10px;
+    width:45px;
+    text-align: center;
+}
+
+.qty_input:hover, .qty_input:focus, 
+.decrement-qty:hover, .decrement-qty:focus, 
+.increment-qty:hover, .increment-qty:focus {
+    box-shadow: none;
+    text-decoration: none;
+}
+
+
+/* -- Shopping Cart Icon -- */
 
 .badge {
     padding-left: 9px;
@@ -307,7 +403,6 @@ a.update-link {
     border-radius: 9px;
 }
   
-
 #CartCounter {
     font-size: 12px;
     background: #68B0AB;
@@ -316,6 +411,49 @@ a.update-link {
     vertical-align: top;
     margin-left: -3px;
     margin-bottom: 7px;
+}
+
+
+/* -- Blog -- */
+
+.comment-actions {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.end-of-blog-post {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.comment-heading {
+    font-weight: 400;
+    font-size: 20px;
+}
+
+a.btn.blog-post-btn {
+    float: right;
+}
+
+.comment-card {
+    background-color: #efefef;
+}
+
+
+/* Timetable  */
+
+.timetable-link {
+    text-decoration: none;
+    color: #212529;
+}
+
+.timetable-link:hover, .timetable-link:focus {
+    color: #212529;
+    text-decoration: underline;
+}
+
+.timetable-font {
+    font-weight: 500;
 }
 
 .category-badge {
@@ -335,6 +473,9 @@ a.update-link {
 .muted-anchor-link:hover {
     color:#6c757d
 }
+
+
+/* -- Message Toasts -- */
 
 .message-container {
     position: fixed;
@@ -376,7 +517,7 @@ a.update-link {
     margin-left: auto;
 }
 
-/* from CSS-tricks.com: https://css-tricks.com/snippets/css/css-triangle/ */
+/* -- from CSS-tricks.com: https://css-tricks.com/snippets/css/css-triangle/ -- */
 .arrow-up {
     width: 0; 
     height: 0; 
@@ -388,7 +529,7 @@ a.update-link {
     right: 43px;
 }
 
-/* Convenience classes - colors copied from Bootstrap */
+/* -- Convenience classes - colors copied from Bootstrap -- */
 .arrow-primary {
     border-bottom-color: #007bff !important;
 }
@@ -421,18 +562,8 @@ a.update-link {
     border-bottom-color: #343a40 !important;
 }
 
-/* @media (min-width:100px) and (max-width: 800px) {
-    .dropdown-menu.products-dropdown-menu.show {
-      display: flex;
-      flex-flow: column;
-    }
-} */
 
-/* .nav-link-icons {
-    display: flex;
-    justify-content: flex-end;
-} */
-
+/* -- Media Queries -- */
 
 @media (min-width:100px) and (max-width: 992px) {
     .navbar-collapse {
@@ -440,138 +571,39 @@ a.update-link {
     }
 } 
 
-
-.navbar-toggler {
-    margin-left: 5px;
-}
-
-
-
-
-.qty-adjust {
-    display: inline-flex;
-    align-items: center;
-    border: 1px solid #000;
-    white-space: nowrap;
-}
-
-.qty_input {
-    border: 1px solid #000;
-    padding-left:10px;
-    width:45px;
-    text-align: center;
-}
-
-.qty-product-page {
-    border: none;
-}
-
-i.fa-lock, i.fa-chevron-left {
-    color: #fff;
-}
-
-
-
-
-
-.qty_input:hover, .qty_input:focus, 
-.decrement-qty:hover, .decrement-qty:focus, 
-.increment-qty:hover, .increment-qty:focus {
-    box-shadow: none;
-    text-decoration: none;
-}
-
-.category-link {
-    text-decoration: none;
-}
-
-.category-link:hover, .category-link:focus {
-    text-decoration: underline;
-}
-
-.timetable-link {
-    text-decoration: none;
-    color: #212529;
-}
-
-.timetable-link:hover, .timetable-link:focus {
-    color: #212529;
-    text-decoration: underline;
-}
-
-footer.custom-footer {
-    width: 100%;
-    background-color: #efefef;
-}
-
-.footer {
-    margin-bottom:0px !important;
-}
-
-.site-map {
-    display: flex;
-    flex-flow: column;
-    justify-content: center;
-}
-
-.social-media-icons {
-    display: flex;
-    flex-flow: column;
-}
-
-.container.footer {
-    max-width: 100%;
-}
-
 @media (min-width: 1200px) {
     .container {
       max-width: 80%;
     }
   }
 
-.social-media-link {
-    width: fit-content;
+@media (max-width: 991px) {
+
+    .btn.book-today-btn,
+    .btn.back-btn {
+        padding: .375rem .375rem;
+    }
+
+    .btn.book-today-btn.btn-lg,
+    .btn.back-btn.btn-lg {
+        padding: .375rem .375rem;
+        font-size: .75rem;
+    }
 }
 
-.icons {
-    color: #212529;
-}
+@media (max-width: 576px) {
+    .timetable-font {
+        font-size: 13px
+    }
 
-.icons:hover {
-    transform: scale(1.2);
-}
-
-.footer-link {
-    color: #212529;
-    text-decoration: none;
-    width: fit-content;
-}
-.footer-link:hover {
-    color: #212529;
-    text-decoration: underline;
-}
-
-.btn-search {
-    border: 1px solid #212529;
-    background-color: #fff;
-}
-
-.btn-search:focus {
-    border: 1px solid #212529;
-    box-shadow: none;
-    outline: none;
-}
-
-.search-icon:hover,
-.search-icon:focus {
-    transform: scale(1.2);
+    .timetable-heading {
+        font-size: 15px
+    }
+   
 }
 
 
-
-
-
-/* Allauth form formatting */
+/* -- Allauth form formatting -- */
 
 .allauth-form-inner-content p {
     margin-top: 1.5rem; /* mt-4 */
@@ -614,7 +646,6 @@ footer.custom-footer {
     transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
 }
 
-
 .allauth-form-inner-content button:hover,
 .allauth-form-inner-content input[type='submit']:hover {	
 	background: #264653; 
@@ -635,167 +666,4 @@ footer.custom-footer {
 .allauth-form-inner-content a.back-btn:focus {
     background: #8E5358;
     color: #fff;
-}
-
-
-input[name='query']::placeholder {
-    color: #aab7c4;
-}
-
-
-
-.site-mission {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    text-align: center;
-}
-
-
-.mission-heading {
-    font-weight: 400;
-}
-
-
-
-/* @media (min-width: 1200px) {
-    .home-page-images {
-        max-width: 456px;
-        max-height: 364px;
-    }
-  } */
-
-
-.timetable-link {
-    color:#212529;
-}
-
-.timetable-link:hover, .timetable-link:focus {
-    color:#212529;
-    text-decoration: underline;
-}
-
-
-
-/* Product Form */
-
-.btn-file {
-    position: relative;
-    overflow: hidden;
-}
-
-.btn-file input[type="file"] {
-    position: absolute;
-    top: 0;
-    right: 0;
-    min-width: 100%;
-    min-height: 100%;
-    opacity: 0;
-    cursor: pointer;
-}
-
-.custom-checkbox .custom-control-label::before {
-    border-radius: 0;
-    border-color: #dc3545;
-}
-
-.custom-checkbox .custom-control-input:checked~.custom-control-label::before {
-    background-color: #dc3545;
-    border-color: #dc3545;
-    border-radius: 0;
-}
-
-
-.end-of-blog-post {
-    display: flex;
-    justify-content: flex-end;
-}
-
-
-
-@media (max-width: 991px) {
-
-    .btn.book-today-btn,
-    .btn.back-btn {
-        padding: .375rem .375rem;
-    }
-
-    .btn.book-today-btn.btn-lg,
-    .btn.back-btn.btn-lg {
-        padding: .375rem .375rem;
-        font-size: .75rem;
-    }
-
-   
-}
-
-.timetable-font {
-    font-weight: 500;
-}
-
-.comment-heading {
-    font-weight: 400;
-    font-size: 20px;
-}
-
-@media (max-width: 576px) {
-    .timetable-font {
-        font-size: 13px
-    }
-
-    .timetable-heading {
-        font-size: 15px
-    }
-   
-}
-
-
-#about .col-12,
-#about .col-md-6 {
-    padding: 0;
-    background-color: #efefef;
-    
-}
-
-
-.about-img{
-    object-fit: cover;
-    width: 100%;
-    height: 100%;
-}
-
-.about-text h2 {
-    font-weight: 600;
-    letter-spacing: 0.1em;
-}
-
-.about-text {
-    line-height: 2.5;
-    font-weight: 500;
-    background-color: #efefef;
-}
-
-a.btn.blog-post-btn {
-    float: right;
-}
-
-.comment-card {
-    background-color: #efefef;
-}
-
-
-
-.product-link {
-    text-decoration: none;
-    color: #444c54;
-}
-
-.product-link:hover, .product-link:focus {
-    color: #444c54;
-    text-decoration: underline;
-}
-
-
-.font-weight-bold {
-    font-weight: 600;
 }
