@@ -354,83 +354,7 @@ When developing the website in Django the database used was SQLite.
 
 Throughout the developement of the website, I encountered a number of problems and issues. Through research, and trial and error, solutions were found, or in some cases other ideas were instead implemented.
 
-I have documented these issues below.
-
-1. The first major hurdle I faced when developing this project, was the product counter for the shopping cart icon. 
-    I wanted the cart icon to dispaly to the user the amount of items currently in their cart in the form of a small badge number. 
-
-    I initially added the number of products with django templating {{ product_count }} inside a span, and tried to style this to my liking. The issue I faced, was the I was unable to get the product counter to sit exactly where I wanted it to (at the top-right of the cart icon). Upon researching different ideas and implementations on StackOverflow, I found a post which assisted with the placement and css of this feature. 
-
-    The trick was to use the css placement 'vertical-align:top;'. The StackOverflow post can be found [here](https://stackoverflow.com/questions/51304169/how-to-put-the-number-at-top-right-corner-of-cart-icon)
-
-    With the css created, and the django templating with {{ product_count }} the desired result was achieved.
-
-2. When creating the Timetable page, I wanted to display the days of the week in the following order: Monday to Sunday. When I initially created the page, the data was ordered by the latest entry, and the days of the week were not ordered. I felt this was not a good UI. One possible solution to this was to remove the products and input them in an order so the latest entry would be Monday, then Tuesday. However this did would not resolve the issue, and if a new product was created the unordered days of the week would be present. 
-
-To solve this, I re-created the days of the week choices in the Product Model. 
-
-```
-    DAYS_OF_THE_WEEK = [
-        ('1', 'Monday'),
-        ('2', 'Tuesday'),
-        ('3', 'Wednesday'),
-        ('4', 'Thursday'),
-        ('5', 'Friday'),
-        ('6', 'Saturday'),
-        ('7', 'Sunday')
-    ]
-```
-
-Then I added a Meta Class to the Product Model: 
-
-```
-class Meta:
-        ordering = ['day']
-
-```
-
-This allowed me to have all products displayed by the days of the week. 
-
-
-3. I faced another issue with the Timetable page when trying to display the days of the week. As I had re-arranged the choice field for the days of the week, when I was creating the Timetable page, and used the django templates to target and display these days using {{ product.day }} the days of the week were displayed as '1', '2', '3', etc rather than the values of 'Monday', 'Tuesday' etc. 
-
-I searched through the Django documentation, I came across the get_FOO_display() method. To better understand how to use this method in django templates, I researched this method on StackOverflow, and found the following post: https://stackoverflow.com/questions/4320679/django-display-choice-value
-
-From this post, I learnt that I could target the choices field values by using 
-
-```
-{{ product.get_day_display }}
-```
-
-3. I wanted to implement a maximum and minimum value for the number of sessions a yoga class could have. 
-
-Upon researching how to implement these restrictions for the Product Model, I came across the following validators on Django's official documentation, which can be seen [here](https://docs.djangoproject.com/en/3.2/ref/validators/#maxvaluevalidator)
-
-This provided me with the correct validation logic to implement the restrictions I desired. 
-
-4. When I was initially creating the website, I had two apps for products: I had an app for Yoga Workshops, and I had a app for Products (books, yoga equipment etc). I felt that this resulted in a lot of duplicated code, and templates. As a result, I decided to completely remove the Workshop App, and merged the model into the Product Model. I then separated the different types of products by categories. 
-
-However, I also felt that the project had began to lose focus. I thought the promoting of the yoga studio, and the yoga classes were far more important than the selling of yoga equipment/books etc. I finally decided to completely remove all products that were not yoga classes, and by doing so, the website felt much more focused.
-
-5. I had a persistent issue with excessive overflow with some containers. As a result, the home image didn't fit as I would like it to. I initially removed the padding and margins from the container-fluid. Doing so created created overflow for other container-fluid sections, so the solution was to target the specfic container where the image was placed. 
-
-
-```
-.home-image-container {
-    padding: 0px;
-    margin: 0px;
-}
-```
-
-In addition, there was still some excessive overflow, and I opened chrome dev tools, and targetted the excessive overflow section of the home page, and saw that there was a missing div in closing the about section container. I added the necessary closing div, and the issue was solved.
-
-6. I had an issue when creating the navigation bar, specifically with utilizing the icons for the shopping cart, and profile. I wanted to keep the navbar brand visible on mobile devices, however, When using both the profile icon, and cart icon, resulted in a squashed experience. There was very little space between the navbar brand and the icons, and the only way to create space between these items was to place the icons in the mobile dropdown menu, or else on a new line below the navbar brand. 
-
-I decided to remove the profile icon, and instead place it as a nav-link 'Account'. This allowed me to keep the navbar-brand and the shopping cart icon on mobile devices.
-
-
-7. 
-
+I have documented these issues in the testing.md file under the title 'General Troubleshooting'. This can be seen [here]()
 
 ## Technologies Used
 
@@ -484,6 +408,15 @@ All Images were sourced from Unsplash and Pexels.
 All text was written by myself.
 
 ## References for Code
+
+1. To assist with implementing the comment feature for the blog app, I credit [Django Central](https://djangocentral.com/creating-comments-system-with-django/)
+
+2. To assist with implementing blog comment moderation, I credit [here](https://tutorial-extensions.djangogirls.org/en/homework_create_more_models)
+
+3. To help understand how to filter blog posts, I credit the following post on StackOverflow, which can be seen [here](https://stackoverflow.com/questions/23928866/only-show-the-latest-3-posts-in-django)
+
+The content in the link is different from the code I used, but this was used as a reference and a starting point to get the desired results. 
+
 
 
 ## Acknowledgements
