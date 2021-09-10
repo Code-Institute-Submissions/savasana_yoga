@@ -417,6 +417,16 @@ All text was written by myself.
 
 The content in the link is different from the code I used, but this was used as a reference and a starting point to get the desired results. 
 
+4. To help in creating the footer for the website, I referenced this article on css-tricks, which can be viewed [here](https://css-tricks.com/couple-takes-sticky-footer/) 
+
+5. To help in implementing validators for the Product Model, I referenced Django's official documentation, which can be seen [here](https://docs.djangoproject.com/en/3.2/ref/validators/#maxvaluevalidator)
+
+6. To better understand how to use the values of the choice field in models, I credit this post on StackOverflow. You can view this [here](https://stackoverflow.com/questions/4320679/django-display-choice-value)
+
+7. To assist with the shopping cart product counter, I credit a post on StackOverflow. The StackOverflow post can be found [here](https://stackoverflow.com/questions/51304169/how-to-put-the-number-at-top-right-corner-of-cart-icon)
+
+8. To assist with the creation of the blog app, I credit the following article from Django Central. The article can be found [here](https://djangocentral.com/building-a-blog-application-with-django/)
+
 
 
 ## Acknowledgements
