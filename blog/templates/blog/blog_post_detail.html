@@ -114,12 +114,13 @@
             </div>
             </div>
         {% endfor %}
+
             {% if request.user.is_superuser %}
                 
-                    {% if awaiting_approval_comments.count > 0 %}
-                        <h6 class="text-center my-2">Awaiting Approval</h6>
+                {% if awaiting_approval_comments.count > 0 %}
+                    <h6 class="text-center my-2">Awaiting Approval</h6>
 
-                        {% for comment in awaiting_approval_comments %}
+                    {% for comment in awaiting_approval_comments %}
                         <div class="col-sm-12 col-md-8 offset-md-2 col-lg-10 offset-lg-1 my-2 card">
                             <div class="card-body">
                                 <div class="comments">
@@ -164,16 +165,16 @@
                                 </div>
                             </div>
                         </div>
-                        {% endfor %}
-                    {% else %}
-                        <div class="col-sm-12 col-md-8 offset-md-2 col-lg-10 offset-lg-1 my-2">
-                            <hr>
-                            <h5 class="text-center comment-heading">There are currently no comments to moderate</h5>
-                            <hr>
-                        </div>
-                    {% endif %}
-                </div>
-            {% endif %}
+                    {% endfor %}
+                {% else %}
+                    <div class="col-sm-12 col-md-8 offset-md-2 col-lg-10 offset-lg-1 my-2">
+                        <hr>
+                        <h5 class="text-center comment-heading">There are currently no comments to moderate</h5>
+                        <hr>
+                    </div>
+                {% endif %}
+            </div>
+        {% endif %}
 </div>
 
 <div class="container">
