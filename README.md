@@ -413,9 +413,7 @@ All text was written by myself.
 
 2. To assist with implementing blog comment moderation, I credit [here](https://tutorial-extensions.djangogirls.org/en/homework_create_more_models)
 
-3. To help understand how to filter blog posts, I credit the following post on StackOverflow, which can be seen [here](https://stackoverflow.com/questions/23928866/only-show-the-latest-3-posts-in-django)
-
-The content in the link is different from the code I used, but this was used as a reference and a starting point to get the desired results. 
+3. To help understand how to filter blog posts, I credit the following post on StackOverflow, which can be seen [here](https://stackoverflow.com/questions/23928866/only-show-the-latest-3-posts-in-django). The content in the link is different from the code I used, but this was used as a reference and a starting point to get the desired results. 
 
 4. To help in creating the footer for the website, I referenced this article on css-tricks, which can be viewed [here](https://css-tricks.com/couple-takes-sticky-footer/) 
 
