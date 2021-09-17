@@ -298,7 +298,7 @@ i.fa-lock, i.fa-chevron-left {
     
 }
 
-.qty-product-page {
+.qty_input.qty-product-page {
     border: none;
 }
 
@@ -439,6 +439,16 @@ a.btn.blog-post-btn {
     background-color: #efefef;
 }
 
+.add-blog-post-link {
+    text-decoration: none;
+    color: #212529;
+}
+
+.add-blog-post-link:hover, .add-blog-post-link:focus {
+    text-decoration: underline;
+    color: #212529;
+}
+
 
 /* Timetable  */
 
@@ -451,6 +461,7 @@ a.btn.blog-post-btn {
     color: #212529;
     text-decoration: underline;
 }
+
 
 .timetable-font {
     font-weight: 500;

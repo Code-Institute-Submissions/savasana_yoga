@@ -31,8 +31,10 @@
                     {% if search_term or current_categories or current_sorting != 'None_None' %}
                         <span class="small"><a href="{% url 'products' %}" class="muted-anchor-link">All Classes</a> | </span>
                     {% endif %}
-                    {{ products|length }} Classes {% if search_term %} found for
-                    <strong>"{{ search_term }}"</strong>{% endif %}
+                    {{ products|length }} Classes
+                    {% if search_term %} 
+                        found for <strong>"{{ search_term }}"</strong>
+                    {% endif %}
                 </p>
             </div>
         </div>
