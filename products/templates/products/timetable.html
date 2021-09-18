@@ -26,18 +26,19 @@
                 </tr>
               </thead>
               <tbody>
+                <!-- Displays the name, days and times for yoga classes -->
                 {% for product in products %}
-                <tr>
-                  <th><a href="{% url 'product_info' product.id %}" class="timetable-link timetable-font">{{ product.name }}</a></th>
-                  <td></td>
-                  <td scope="row" class="timetable-font">{{ product.get_day_display }}</td>
-                  <td></td>
-                  <td scope="row" class="timetable-font">{{ product.class_time }}</td>
-                </tr>
+                  <tr>
+                    <th><a href="{% url 'product_info' product.id %}" class="timetable-link timetable-font">{{ product.name }}</a></th>
+                    <td></td>
+                    <td scope="row" class="timetable-font">{{ product.get_day_display }}</td>
+                    <td></td>
+                    <td scope="row" class="timetable-font">{{ product.class_time }}</td>
+                  </tr>
                 {% empty %}
-                <tr>
-                  <td>There are currently no classes</td>
-                </tr>
+                  <tr>
+                    <td>There are currently no classes</td>
+                  </tr>
                 {% endfor %}
               </tbody>
             </table>
@@ -47,15 +48,11 @@
     </div>
     <div class="row">
       <div class="col-sm-12 text-center">
-        <a href="{% url 'products' %}" class="btn cta-btn rounded-1">
+        <a href="{% url 'products' %}" class="btn book-today-btn rounded-1">
           View Classes
         </a>
       </div>
     </div>
 </div>
-
-
-
-
 
 {% endblock %}

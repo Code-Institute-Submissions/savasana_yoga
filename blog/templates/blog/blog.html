@@ -8,19 +8,19 @@
         <div class="col-sm-12">
             <hr>
             <h2 class="logo-font text-center my-3">Savasana Blog</h2>
+            <!-- Displays Add Blog Post button for admin users -->
             {% if request.user.is_superuser %}
-            <div class="col-sm-12 text-center"> 
-                <a href="{% url 'add_blog_post' %}" class="add-blog-post-link">
-                    Add Blog Post <i class="fas fa-pencil-alt ms-1"></i>
-                </a>
-            </div>
-               
+                <div class="col-sm-12 text-center"> 
+                    <a href="{% url 'add_blog_post' %}" class="add-blog-post-link">
+                        Add Blog Post <i class="fas fa-pencil-alt ms-1"></i>
+                    </a>
+                </div>
             {% endif %}
             <hr>
         </div>
-        
     </div>
 
+    <!-- Displays all blog posts -->
     {% for posts in blog_posts %}
     <div class="row my-3">
         <div class="col-sm-12 col-md-8 offset-md-2 mb-2">
@@ -29,7 +29,7 @@
                     <h5 class="card-title">{{ posts.title }}</h5>
                     <small> <p class="text-muted blog-info">By: {{ posts.author }} <br> Posted: {{ posts.created_on }} </p></small>
                     <p class="blog-post-snippet">{{ posts.snippet }}</p>
-                    <a href="{% url 'blog_post_detail' posts.id  %}" class="btn btn-sm cta-btn blog-post-btn mt-2">Read More</a>
+                    <a href="{% url 'blog_post_detail' posts.id  %}" class="btn btn-sm book-today-btn blog-post-btn mt-2">Read More</a>
                 </div>
             </div>
         </div>

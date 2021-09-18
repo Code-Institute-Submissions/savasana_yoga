@@ -16,6 +16,7 @@
 
         <div class="row">
             <div class="col-sm-12 col-md-8 offset-md-2 col-lg-10 offset-lg-1">
+                <!-- Form to edit a blog post -->
                 <form method="POST" action="{% url 'edit_blog_post' blog_post.id %}" class="form my-2" enctype="multipart/form-data">
                     {% csrf_token %}
                     {% for field in form %}
@@ -27,7 +28,7 @@
                     {% endfor %}
                     <div class="text-right">
                         <a class="btn back-btn rounded-1" href="{% url 'view_blog' %}">Cancel</a>
-                        <button class="btn cta-btn rounded-1" type="submit">Edit Blog</button>
+                        <button class="btn book-today-btn rounded-1" type="submit">Edit Blog</button>
                         <a href="{% url 'delete_blog_post' blog_post.id %}">Delete Blog Post</a>
                     </div>
                 </form>
@@ -37,6 +38,7 @@
 {% endblock %}
 
 {% block postloadjs %}
+<!-- JS to provide text to indicate what new image will be set to -->
     {{ block.super }}
     <script type="text/javascript">
         $('#new-image').change(function() {

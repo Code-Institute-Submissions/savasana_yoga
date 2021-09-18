@@ -29,7 +29,6 @@
                                 <small class="text-muted text-decoration-underline">Order Info:</small>
                             </div>
                         </div>
-    
                         <div class="row">
                             <div class="col-12 col-md-4">
                                 <p class="mt-1 mb-0 font-weight-bold">Order Number:</p>
@@ -38,7 +37,6 @@
                                 <p class="mt-0">{{ order.order_number }}</p>
                             </div>
                         </div>
-    
                         <div class="row">
                             <div class="col-12 col-md-4">
                                 <p class="mt-1 mb-0 font-weight-bold">Order Date:</p>
@@ -47,27 +45,25 @@
                                 <p class="mt-0">{{ order.date }}</p>
                             </div>
                         </div>
-    
                         <div class="row">
                             <div class="col">
                                 <small class="text-muted text-decoration-underline">Order Details:</small>
                             </div>
                         </div>
-
-    
+                        <!-- Displays items purchased in order summary -->
                         {% for item in order.lineitems.all %}
-                        <div class="row">
-                            <div class="col-12 col-md-4">
-                                <p class="small mt-1 mb-2">
-                                    <strong>{{ item.product.name }}</strong>
-                                    <br>
-                                    {{ item.product.get_day_display }}'s at {{ item.product.class_time }}
-                                </p>
+                            <div class="row">
+                                <div class="col-12 col-md-4">
+                                    <p class="small mt-1 mb-2">
+                                        <strong>{{ item.product.name }}</strong>
+                                        <br>
+                                        {{ item.product.get_day_display }}'s at {{ item.product.class_time }}
+                                    </p>
+                                </div>
+                                <div class="col-12 col-md-8 text-md-start">
+                                    <p class="small mb-0">{{ item.quantity }} @ €{{ item.product.price }}</p>
+                                </div>
                             </div>
-                            <div class="col-12 col-md-8 text-md-start">
-                                <p class="small mb-0">{{ item.quantity }} @ €{{ item.product.price }}</p>
-                            </div>
-                        </div>
                         {% endfor %}
     
                         <div class="row">
@@ -103,14 +99,14 @@
                         </div>
     
                         {% if order.street_address2 %}
-                        <div class="row">
-                            <div class="col-12 col-md-4">
-                                <p class="mb-0 font-weight-bold">Address 2</p>
+                            <div class="row">
+                                <div class="col-12 col-md-4">
+                                    <p class="mb-0 font-weight-bold">Address 2</p>
+                                </div>
+                                <div class="col-12 col-md-8 text-md-start">
+                                    <p class="mb-0">{{ order.street_address1 }}</p>
+                                </div>
                             </div>
-                            <div class="col-12 col-md-8 text-md-start">
-                                <p class="mb-0">{{ order.street_address1 }}</p>
-                            </div>
-                        </div>
                         {% endif %}
     
                         {% if order.county %}
@@ -134,14 +130,14 @@
                         </div>
     
                         {% if order.postcode %}
-                        <div class="row">
-                            <div class="col-12 col-md-4">
-                                <p class="mb-0 font-weight-bold">Postal Code</p>
+                            <div class="row">
+                                <div class="col-12 col-md-4">
+                                    <p class="mb-0 font-weight-bold">Postal Code</p>
+                                </div>
+                                <div class="col-12 col-md-8 text-md-start">
+                                    <p class="mb-0">{{ order.postcode }}</p>
+                                </div>
                             </div>
-                            <div class="col-12 col-md-8 text-md-start">
-                                <p class="mb-0">{{ order.postcode }}</p>
-                            </div>
-                        </div>
                         {% endif %}
     
                         <div class="row">
@@ -179,7 +175,7 @@
                     <span>Back to Profile</span>
                 </a>
             {% else %}
-                <a href="{% url 'view_blog' %}" class="btn cta-btn my-2">
+                <a href="{% url 'view_blog' %}" class="btn book-today-btn my-2">
                     <span>View Blog</span>
                 </a>
             {% endif %}

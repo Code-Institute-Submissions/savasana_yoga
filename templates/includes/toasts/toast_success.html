@@ -5,8 +5,9 @@
     <div class="toast-header">
         <strong>Success!</strong>
         <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
-
     </div>
+    
+    <!-- Toast body to display product info, price and link to checkout -->
     <div class="toast-body">
         <div class="row">
             <div class="col">
@@ -43,7 +44,7 @@
                         </p>
                     </em>
                     <hr>
-                    <a href="{% url 'view_cart' %}" class="btn btn-toast cta-btn rounded-1">
+                    <a href="{% url 'view_cart' %}" class="btn btn-toast book-today-btn rounded-1">
                         <span>Checkout</span>
                         <span class="icon">
                             <i class="fas fa-lock fa-sm"></i>

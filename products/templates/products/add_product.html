@@ -16,6 +16,7 @@
 
         <div class="row">
             <div class="col-sm-12 col-md-8 offset-md-2 col-lg-10 offset-lg-1">
+                <!-- Form to add a new product to the database -->
                 <form method="POST" action="{% url 'add_product' %}" class="form my-2" enctype="multipart/form-data">
                     {% csrf_token %}
                     {% for field in form %}
@@ -27,7 +28,7 @@
                     {% endfor %}
                     <div class="text-right">
                         <a class="btn back-btn rounded-1" href="{% url 'products' %}">Cancel</a>
-                        <button class="btn cta-btn rounded-1" type="submit">Add Class</button>
+                        <button class="btn book-today-btn rounded-1" type="submit">Add Class</button>
                     </div>
                 </form>
             </div>            
@@ -35,6 +36,7 @@
     </div>
 {% endblock %}
 
+<!-- JS to prodive text snippet to indicate what new product image will be -->
 {% block postloadjs %}
     {{ block.super }}
     <script type="text/javascript">

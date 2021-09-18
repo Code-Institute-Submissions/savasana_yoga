@@ -80,7 +80,7 @@ def add_blog_post(request):
             messages.error(request, 'Failed to add post. Please ensure the form is valid.')
     else:
         form = PostForm()
-   
+  
     template = 'blog/add_blog_post.html'
     context = {
         'form': form,
@@ -185,7 +185,7 @@ def edit_comment(request, comment_id):
     """
     A view to allow superuser or comment author to edit comments
     """
-    
+
     comment = get_object_or_404(Comment, pk=comment_id)
 
     if request.user == comment.author or request.user.is_superuser:
