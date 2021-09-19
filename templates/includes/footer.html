@@ -1,7 +1,7 @@
 <div class="container-fluid footer-container pt-4 pb-4">
     <div class="row pb-2">
         <!-- Basic Site Map -->
-        <div class="col-lg-4 col-md-4 col-sm-4 site-map">
+        <div class="col-lg-3 col-md-4 col-sm-4 site-map">
             <h5 class="mb-2 mt-3">Site Map</h5>
             <a class="footer-link" href="{% url 'home' %}">Home</a>
             <a class="footer-link" href="{% url 'products' %}">Classes</a>
@@ -9,7 +9,7 @@
             <a class="footer-link" href="{% url 'view_blog' %}">Blog</a>
         </div>
         <!-- Social Media Links -->
-        <div class="col-lg-4 col-md-4 col-sm-4 social-media-icons">
+        <div class="col-lg-3 col-md-4 col-sm-4 social-media-icons">
             <h5 class=" mb-2 mt-3">Social Media</h5>
             <a class="social-media-link" target="_blank" href="https://www.instagram.com/">
                 <i class="icons fab fa-instagram fa-lg"></i>
@@ -24,8 +24,14 @@
                 <i class="icons fab fa-pinterest fa-lg"></i>
             </a>
         </div>
+
+        <div class="col-lg-3 col-md-4 col-sm-4">
+            <h5 class="mb-2 mt-3">Location:</h5>
+            <span>978 Linden Avenue, Cork City, Ireland</span>
+        </div>
+        
         <!-- Search feature for Classes -->
-        <div class="col-lg-4 col-md-4 col-sm-12">
+        <div class="col-lg-3 col-md-4 col-sm-6">
             <h5 class="mb-2 mt-3">Browse Classes</h5>
             
             <form method="GET" action="{% url 'products' %}">
@@ -41,5 +47,6 @@
                 </div>
             </form>
         </div>
+        
     </div>
 </div>
