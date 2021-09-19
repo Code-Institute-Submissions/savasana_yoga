@@ -235,14 +235,14 @@ i.fa-lock, i.fa-chevron-left {
 
 /* -- Buttons -- */
 
-.book-today-btn { 
+.cta-btn { 
     background: #2a9d8f;
     color: #fff;
 }
 
-.book-today-btn:hover,
-.book-today-btn:active,
-.book-today-btn:focus {
+.cta-btn:hover,
+.cta-btn:active,
+.cta-btn:focus {
     background: #264653;
     color: #fff;
 }
@@ -590,12 +590,12 @@ a.btn.blog-post-btn {
 
 @media (max-width: 991px) {
 
-    .btn.book-today-btn,
+    .btn.cta-btn,
     .btn.back-btn {
         padding: .375rem .375rem;
     }
 
-    .btn.book-today-btn.btn-lg,
+    .btn.cta-btn.btn-lg,
     .btn.back-btn.btn-lg {
         padding: .375rem .375rem;
         font-size: .75rem;
