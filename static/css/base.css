@@ -687,7 +687,7 @@ a.btn.blog-post-btn {
     height: 100vh;
     max-width: 100%;
 
-    background: url('/static/images/error-404.png') no-repeat bottom;
+    background: url('/static/images/error-404.png') no-repeat center;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
