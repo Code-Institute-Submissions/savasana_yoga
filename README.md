@@ -392,9 +392,203 @@ All testing can be viewed here:
 
 ## Deployment
 
+Requirements:
+An IDE to write your code. For this project, I used a cloud-based IDE; Gitpod.
+Git for version control.
+Python3
+Django
+PIP to install your Python3 packages.
+Stripe to faliciate payments.
+Cloud storage to host your images and static files. For this project, I used AWS.
+
+
+Local Deployment
+
+1. Clone from Github
+
+If you wish to deploy this project locally on your IDE, you can do so by clicking the 'Download Code' button on this repository : https://github.com/TomC2311/savasana-yoga.git.
+
+Alternatively, you can clone this repostiroy on your command line by running the following code $ git clone https://github.com/TomC2311/savasana-yoga.git.
+
+2. Installing necessary Python requirements. 
+
+In order for this to project to work once you have clone the repository, you need to run the following command, to install the required modules. 
+
+pip3 install -r requirements.txt
+
+
+3. Environment variabless
+
+If you're using Gitpod as an IDE, you will need to store your environmental variables in Gitpod's settings. 
+
+You can do this by navigating to the 'Workspaces' page, and then clicking on 'Settings'. Here you will see a section titled 'Environment Variables'
+
+As Gitpod is used when developing a project, you will want to set the 'DEVELOPMENT' variable to 'True'
+
+The remaning variable values will be left blank in this example, but you should enter your value, and not share them with others. 
+
+'SECRET_KEY', 'YOUR_SECRET_KEY'
+'STRIPE_PUBLIC_KEY', 'YOUR_STRIPE_PUBLIC KEY'
+'STRIPE_SECRET_KEY', 'YOUR_STRIPE_SECRET_KEY'
+'STRIPE_WH_SECRET', 'YOUR_STRIPE_WH_SECRET_KEY'
+
+4. Migrating the Database models
+
+The next step it to migrate your models, and to set up the Database. 
+
+Run the following commands to do so:
+
+Python3 manage.py makemigrations
+
+Python3 manage.py migrate
+
+5. Creating a SuperUser 
+
+In order to access the admin site of a django website, you will need an admin account. 
+
+To create one, you can run the following command, and input your information when prompted. 
+
+Python3 manage.py createsuperuser
+
+6. Run the project
+
+To run the project locally, you can enter the following command:
+
+python3 manage.py runserver 
+
+this will open a server through Gitpod, and you are now running the project locally. 
 
 ### Heroku Deployment 
 
+If you wish to deploy the project to Heroku, there are additional steps needed. I will document these below. 
+
+1. Sign up, or login to Heroku. 
+
+Head to https://heroku.com/ and log in to your account. If you do not have an account, then create one. 
+
+2. Creating a new app
+
+Go to Dashboard, and click the button titled 'New'.
+
+Select the option 'Create new app'
+Choose your Heroku app name. It must be noted, that you should use a dash ('-') rather than spaces, and all lowercase letters.
+
+For the region option, click the closest region. In my case, this was 'Europe'
+
+Click the button 'Create App'.
+
+Navigate to the Resource tab and create a free Postgres database.
+
+3. Linking the database to the IDE
+
+The DATABASE_URL variable is automatically created. You can view this in the 'Settings' tab, under the option 'Config Vars'.
+
+Copy the value of your DATABASE_URL. You will need to temporaily add it to your IDE environment variables. 
+
+2. Prepare the database
+
+The DATABASE_URL variable was automatically created in the Settings< Config Vars section. Copy its value and temporarily add it to your environment variables in your IDE or your env.py.
+
+3. Updating Environment Variables
+
+Under the 'Settings' tab, click on the 'Config Vars' option, and input the following information. Similar to the environment varibles on Gitpod, or your own IDE, the values are unique to you. 
+
+
+'DATABASE_URL', 'YOUR_DATABASE_URL'
+'SECRET_KEY', 'YOUR_SECRET_KEY'
+'STRIPE_PUBLIC_KEY', 'YOUR_STRIPE_PUBLIC_KEY'
+'STRIPE_SECRET_KEY', 'YOUR_STRIPE_SECRET_KEY>'
+'STRIPE_WH_SECRET', 'YOUR_STRIPE_WH_SECRET'
+'AWS_ACCESS_KEY_ID', 'YOUR_AWS_KEY_ID'
+'AWS_SECRET_ACCESS_KEY', 'YOUR_AWS_SECRET_ACCESS_KEY'
+'USE_AWS', 'True'
+
+4. Migrating DATA to Postgres
+
+Its not possible to migrate your data to Heroku's Postgres database. 
+
+You can do so by entering the following commands. 
+
+Python3 manage.py makemigrations
+Python3 manage.py migrate
+
+When I was developing this app, I populated the SQLlite database with very few items just in order to test everything was working as expected. As a result, I re-populated the the data for the products/blog etc after the project was deployed to Heroku. 
+
+
+5. Create a Superuser
+
+Similar to the local deployment, you will need to create a super user to access the django admin panel. 
+
+To do so, enter the following code in the command line:
+
+python3 manage.py createsuperuser
+
+6. Creating your Procfile
+
+In your IDE, create a new file entitled 'Procfile'.
+
+Open this file, and add the following: 
+
+"web: gunicorn YOUR-APP-NAME.wsgi:application"
+
+6. Initial Push to Github
+
+Once the following steps have been taken, then push the changed files to Github. 
+
+You can this by with the following commands: 
+
+git add . 
+git commit -m "Your commit message"
+git push
+
+7. Removing the temporary DATABASE_URL
+
+Once your code has been push to Github. Head back to your IDE, and remove the DATABASE_URL environmental variable you had previously set. 
+
+8. Login in to Heroku CLI
+
+If your IDE does not have HEROKU CLI install, please install it. 
+
+Once HEROKU CLI is installed, run the following code to log in to your account: 
+
+heroku login -i
+
+9. Update Django's settings. 
+In your settings.py file, add your Heroku app's hostname to your 'ALLOWED HOSTS'. 
+
+
+10. Connect Github repository to Heroku. 
+
+The next step is to connect your Heroku app to your Github repository. You can choose to use the Heroku CLI to connect your app, or you can set up Automatic Deployment from your Github repository. For this project, I chose to set up Automatic Deployment from Github.
+
+In the 'Deployment Method' section, click on the Github option.
+Beneath this section, ensure that your Github profile name is selected in the input box below.
+Search for the name of your Github repository.
+Once your repository has been found, click on the connect button.
+
+11. Ensure that static files are added to your Cloud based storage. 
+
+For this project, I have used AWS S3 bucket. In my S3 bucks, I created a Media and Static folder, and added the media and static files to their respective folders. 
+
+This allows the media and static files to be collected, and uploaded once the app is deployed to Heroku. 
+
+12. Final Push to Heroku. 
+
+14. Push to Heroku
+
+Similar to the previous steps about pushing to Heroku, in your IDE use the following commands to commit and push your files to Github, as well as to Heroku. 
+
+git add . 
+git commit -m "Your commit message"
+git push
+
+The project is now running on Heroku, and you can view the build by heading to the 'Activity' tab on your Heroku app. 
+
+You can view the live website by clicking on the 'Open App button' on your Heroku page.
+
+You can also view it by heading to 
+
+https://YOUR-APP-NAME.herokuapp.com/
 
 ## Credits 
 
