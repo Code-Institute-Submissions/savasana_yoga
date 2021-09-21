@@ -5,14 +5,15 @@
     <div class="container error-container">
         <div class="row">
             <div class="col-sm-12 col-md-8 offset-md-2 mb-2 text-center">
-                <h1 class="pt-3text-center">Oops</h1>
-                
-                <p class="mt-3 lead">Error 500, something went wrong!
+                <h1 class="mt-3 text-center">Oops! </h1>
+                <h2 class="mt-3 text-center">Error 404, something went wrong!
                     <br>
-                    Click the button to return to the home page.
-                </p>
+                    The page you're looking for no longer exists. 
+                </h2>
+                <div class="text-center">
                     <a href="{% url 'home' %}" class="btn cta-btn">Return Home</a>
+                </div> 
             </div>
         </div>
-    </div>   
+    </div> 
 {% endblock %}

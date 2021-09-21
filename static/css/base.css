@@ -679,22 +679,3 @@ a.btn.blog-post-btn {
     color: #fff;
 }
 
-
-/* Error Pages */
-
-
-.error-container {
-    height: 100vh;
-    max-width: 100%;
-
-    background: url('/static/images/error-404.png') no-repeat center;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-}
-
-.homepage_background_image {
-
-    
-}
