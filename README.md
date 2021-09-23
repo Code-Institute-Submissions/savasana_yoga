@@ -494,6 +494,7 @@ The DATABASE_URL variable was automatically created in the Settings< Config Vars
 Under the 'Settings' tab, click on the 'Config Vars' option, and input the following information. Similar to the environment varibles on Gitpod, or your own IDE, the values are unique to you. 
 
 
+```
 'DATABASE_URL', 'YOUR_DATABASE_URL'
 'SECRET_KEY', 'YOUR_SECRET_KEY'
 'STRIPE_PUBLIC_KEY', 'YOUR_STRIPE_PUBLIC_KEY'
@@ -502,6 +503,7 @@ Under the 'Settings' tab, click on the 'Config Vars' option, and input the follo
 'AWS_ACCESS_KEY_ID', 'YOUR_AWS_KEY_ID'
 'AWS_SECRET_ACCESS_KEY', 'YOUR_AWS_SECRET_ACCESS_KEY'
 'USE_AWS', 'True'
+```
 
 4. Migrating DATA to Postgres
 
