@@ -31,7 +31,7 @@
                                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                             </div>
                             <div class="modal-body">
-                                <p>Are you sure you want to delete <strong>{{ blog_post.name }}</strong>? This action is cannot be undone.</p>
+                                <p>Are you sure you want to delete <strong>{{ blog_post.title }}</strong>? This action is cannot be undone.</p>
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
@@ -186,10 +186,10 @@
         <!-- Form for users to leave a comment -->
         <div class="col-sm-12 col-md-8 offset-md-2 col-lg-10 offset-lg-1 mt-1 mb-3 card comment-card">
             <div class="card-body">
-                <form method="POST" class="mt-4">
+                <form method="POST" class="mt-4" id="comment-form">
                     {% csrf_token %}
                     {{ comment_form | crispy }}
-                    <button type="submit" class="btn cta-btn mx-auto">
+                    <button type="submit" class="btn cta-btn mx-auto" id="submit_button">
                         <span>Submit</span>
                         <span class="icon">
                             <i class="fas fa-paper-plane text-white"></i>
@@ -209,4 +209,16 @@
     </div>
 </div>
 
+{% endblock %}
+
+
+{% block postloadjs %}
+<!-- JS to disable submit button after a user submit comment -->
+    {{ block.super }}
+    <script type="text/javascript">
+       $('#comment-form').submit( function(event) {
+            // disable to avoid double submission
+            $('#submit_button').attr('disabled', true);
+        });
+    </script>
 {% endblock %}
