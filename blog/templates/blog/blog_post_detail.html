@@ -181,30 +181,16 @@
 <div class="container">
     <div class="row">
         <div class="col-sm-12 col-md-8 offset-md-2 col-lg-10 offset-lg-1 mt-3 mb-1">
-            <h6 class="comment-heading">Leave a comment</h6>
-        </div>
-        <!-- Form for users to leave a comment -->
-        <div class="col-sm-12 col-md-8 offset-md-2 col-lg-10 offset-lg-1 mt-1 mb-3 card comment-card">
-            <div class="card-body">
-                <form method="POST" class="mt-4" id="comment-form">
-                    {% csrf_token %}
-                    {{ comment_form | crispy }}
-                    <button type="submit" class="btn cta-btn mx-auto" id="submit_button">
-                        <span>Submit</span>
-                        <span class="icon">
-                            <i class="fas fa-paper-plane text-white"></i>
-                        </span>
-                    </button>
-                </form>
-            </div>
-        </div>
-        <div class="col-sm-12 col-md-8 offset-md-2 col-lg-10 offset-lg-1 my-2 end-of-blog-post">
-            <a href="{% url 'view_blog' %}" class="btn back-btn">
-                <span class="icon">
-                    <i class="fas fa-chevron-left"></i>
-                </span>
-                <span>View All Posts</span>
-            </a>
+                <a href="{% url 'add_blog_post_comment' blog_post.id  %}" class="btn btn cta-btn">
+                    Leave a comment <i class="fas fa-pencil-alt ms-1"></i>
+                </a>
+            
+                <a href="{% url 'view_blog' %}" class="btn back-btn blog-post-btn">
+                    <span class="icon">
+                        <i class="fas fa-chevron-left"></i>
+                    </span>
+                    <span>View All Posts</span>
+                </a>
         </div>
     </div>
 </div>
