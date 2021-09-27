@@ -1,32 +1,30 @@
 # Savasana Yoga
 
-Savasana Yoga is a website to promote the benefits of yoga. The aim of this website is to promote, discover and book yoga classes offered by Savasana Yoga Studio. 
+Savasana Yoga is a website to promote the benefits of yoga. This website aims to promote, discover and book yoga classes offered by Savasana Yoga Studio. 
 
-[You can view the live project here]()
+[You can view the live project here](https://tomc-savasana-yoga.herokuapp.com/)
 
 ![Website Overview]()
 
 ## Overview
 
-A website for people who wish to practice yoga, and book yoga classes. The website also offers people the opportunity to learn more about the benefits of practicing yoga via blog entry posts.
+An e-commerce website for people who want to practice yoga, and purchase yoga classes. The website also offers people the opportunity to learn more about the benefits of practicing yoga via blog posts.
 
-The website is built with django and has an e-commerce focus, to faciliate the booking of classes. The website maintains responsiveness across all devices; desktop, tablet, and mobile. 
+The website is developed with a mobile-first approach as most users now visit a website via their mobile. The website maintains responsiveness across all devices; desktop, tablet, and mobile. 
 
-The website was built with a mobile-first approach as most users now visit website via their mobile.
+The website is built with Django and features a fully functional e-commerce store, to allow users to purchase yoga classes. The website provides the ability for a user to create a profile, which facilitates a smoother booking process, and the ability to view their order history. 
 
-The website features a fully functional e-commerce store, to allow users to purchase yoga classes. The website also features a register and login form, to allow users to create their own profile, which allows for a quicker booking process, and allow a user to view their order history. 
+The main goal of this website is to promote the practice of yoga, highlight its benefits, and offer classes for both beginner and advanced yogis. The website also features a blog, which promotes the benefits of yoga, provides announcements for the yoga studio, and allows users to comment on blog posts. 
 
-
-The main goal of this website is to promote the practice of yoga, highlight it's benefits, and offer classes for both beginner and advanced yogis.
-
-The website also features a blog, which promotes the benefits of yoga, provides announcements for the yoga studio, and allows users to comment on blog posts. 
-
-Finally, the website also provides admin features to manage the yoga classes, by editing, deleting and adding new classes, and blog posts, by adding, editing, and removing blog posts, as well as the ability to moderate by approving or removing pending user comments.
+Finally, the website also provides admin features to manage yoga classes, by editing, deleting, and adding new classes, and blog posts, adding, editing, and removing blog posts, as well as the ability to moderate by approving or removing pending user comments.
 
 
 ## User Stories
 
 * I want a website that allows me to book yoga classes.
+* I want a website that provides me information about the yoga classes
+* I want to be able to book multiple classes
+* I want to be able to review and change my cart before purchasing classes
 * I want to receive an email confirmation after booking a class.
 * I would like a blog to read more about the yoga studio, and yoga in general.
 * I would like the ability to comment on blog posts.
@@ -35,82 +33,77 @@ Finally, the website also provides admin features to manage the yoga classes, by
 * I want the ability to view a timetable or schedule for yoga classes.
 * I want a website that is easily accessed on my mobile phone and tablet. 
 * I want a website that is easy to understand and navigate.
-* I want to have my own profile to store my information.
+* I want to have my profile to store my information.
 * I want to view my order history on my profile.  
 * I want my profile to be password protected.
 * I would like to be able to follow the website's social media accounts.
+* I would like to be able to search for classes.
 
 ## Project Goals
 
 * I want to promote the yoga classes offered by Savasana Yoga Studio.
 * I want to allow users to book yoga classes.
 * I want to grow the website's social media presence. 
-* I want users to be able to create their own profile, and view their order history.
+* I want users to be able to create their profile and view their order history.
 * I want users to understand and navigate the website upon their first visit. 
 * I want users to be able to filter classes based on difficulty level.
 * I want to promote the benefits of yoga, and the studio's classes via blog posts.
 * I want to allow users to comment on blog posts.
+* I want to moderate the comments on blog posts.
 * I want to be able to store all bookings in a database. 
 * I want to allow users to view the days and times for yoga classes.
 
 
-## UX 
+## UX
 
-
-The practice of yoga can have many benefits, including stress management, relieiving anxiety, improving quality of sleep, fitness and flexibility. I created this website to help promote the practice of yoga, and facilitate a place where people can book yoga classes offered by Savasana Yoga Studio.
-
+The practice of yoga can have many benefits, including stress management, relieving anxiety, improving quality of sleep, fitness, and flexibility. I created this website to help promote yoga and facilitate a place where people can book yoga classes offered by Savasana Yoga Studio. 
 
 ## Strategy 
 
+The goal of this website is to offer accessible yoga classes for beginners and advanced yoga enthusiasts. The website was built with a focus on newcomers to yoga, to make yoga seem less intimidating and showcase the variety of yoga classes offered.
 
-The goal of this website it to offer accesible yoga classes for beginners and advanced yoga enthuastis. The website was built with a focus towards newcomers to yoga, in order to make yoga seem less intimiatding and showcase the variety of yoga classes offered.
-
-The secondary goal of the website, is to promote Savasana's Yoga Studo by driving users to the studio's social media accounts, and promoting the studio on the website via the blog.
-
+The secondary goal of the website is to promote Savasana's Yoga Studio by driving users to the studio's social media accounts and promoting the studio on the website via the blog.
 
 ### Business Goals: 
 
-* Promote booking of variety of yoga classes offered.
-* A simple and easy to navigate website with a clear purpose.
+* Promote booking of a variety of yoga classes offered.
+* A simple and easy-to-navigate website with a clear purpose.
 * Mobile-first design to increase ease of use for those without PCs.
-* Increase web-presence to grow the brand via blog and social media accounts.
-
+* Increase web presence to grow the brand via the blog and social media accounts.
 
 ### User Goals: 
 
 * Searching for a yoga class to book.
-* Clear outlines of yoga class difficulty levels.
+* Ability to purchase yoga classes.
+* Clear distinction of yoga class difficulty levels.
 * A profile to save my information and order history.
 * A blog to read about yoga, and comment to share my thoughts.
 * Mobile-friendly website as the majority of users browses via mobile. 
 * An easy-to-understand and navigate website. 
 * A website that allows me to filter yoga classes via difficulty.
-* A password protected profile.
+* A password-protected profile.
 * To follow the website's social media accounts. 
 * To view the days and times for offered yoga classes.
-
 
 
 ## Scope 
 
 The Scope and features of this project were based on a personal interest in the practice of yoga. 
 
-When I first became interested in yoga, I found it difficult to find a place with a number of different types of classes, and an easy-to-understand website where I can check which classes are on at certain times, and which classes best suit my experience level.
+When I first became interested in yoga, I found it challenging to find a place with several different types of yoga classes. I also found it challenging to find an easy-to-understand website where I can check which yoga classes are on at certain times, and which classes best suit my experience level.
 
-This resulted in a feeling of being overwhelemed, and unsure what to book/attend. 
-
-As a result, I created Savasana Yoga to faciliate an easy-to-navigate and easy to understand website, that offers a wide variety of classes, and allows the filtering of classes based on a user's experience level.
+With this in mind, I felt overwhelmed and unsure of what to book/attend. As a result, I created Savasana Yoga to facilitate an easy-to-navigate and easy-to-understand website, that offers a wide variety of classes and allows the filtering of yoga classes based on a user's experience level.
 
 
 ## Structure 
 
-I feel its very important to provide users with a simple, and easy-to-navigate experience and interface. The goal of the website was to feel professional, approachable and promote a user's confidence when navigating throughout the website. 
+An important aspect of a successful website is to provide users with a simple, and easy-to-navigate experience and interface. The goal of the website was to feel professional, approachable and promote a user's confidence when navigating throughout the website. 
 
 The home page features a large image, a blurb on the benefits of yoga, a call-to-action button to encourage users to book a class, and some information about the yoga studio itself. 
 
 I have also created a footer, which allows for quick navigation via a basic site map. I have also populated the footer with social media links, and a search bar to quickly search for yoga classes. 
 
-As there are a number of pages in this website, I have provided a summary of each page in the 'Features' section below.
+As there are several pages on this website, I wrote a summary of each page in the 'Features' section below.
 
 
 ## Skeleton 
@@ -122,44 +115,41 @@ All wireframes were created using Balsamiq.
 
 ### Images
 
-There are two main aspects of image use throughout this app. Static and Dynamic images. 
+There are two main aspects of images used throughout this app; Static and Dynamic images. 
 
 1. Static Images 
 - The first is by storing images in a static folder. I have stored the home page images here, as they will not be altered.
 
-I choose this landing page image, as the photo is quite zoomed out, and allows a lot of space, and breathing room on the left-hand and right-hand side of the person in the image. I also choose to use this image because it had a lot of white in it, and I wanted the home page to match the background colors of the website; greys and whites.  
+I choose this landing page image, as the photo is quite zoomed out, and allows a lot of space, and breathing room on the left-hand and right-hand sides of the person in the image. I also choose to use this image because it had a lot of white in it, and I wanted the home page to match the background colors of the website; greys and whites.  
 
-2. Dynmaic Images
+2. Dynamic Images
 - All product images are stored via AWS. 
 
-Since a user with admin privileages can edit, add, and remove products, the images can be changed. I decided to use AWS to host the images, so each time an image is updated in the database it is reflected on Heroku. In addition, storing the images on AWS avoids the risk of the images being removed once the website is deployed and running on Heroku.
-
-
+Since a user with admin privileges can edit, add, and remove products, I decided to use AWS to host the images. Each time an image is updated in the database it is reflected on Heroku. In addition, storing the images on AWS avoids the risk of the images being removed once the website is deployed and running on Heroku.
 
 ### Colours
 
-Yoga is a relaxing and sometimes viewed as an elegant form of excercise. I wanted to maintain that philosophy when developing the website. I personally felt that using very little color, was a way of achieving this. 
+Yoga is relaxing and sometimes viewed as an elegant form of exercise. I wanted to maintain that philosophy when developing the website. I felt that using little colour, was a way of achieving this. 
 
-I decided to keep the background-color and the navigation bar the same type of white (#).
+I decided to keep the background color and the navigation bar the same type of white (#).
 
-In order to split the screen space up, and offer a bit of diversity, while still maintaining the feel of a clean, relaxing and elegant look, I used an off-grey(#) for the footer. I felt this added some variety, and also complimented the white background-color. 
+To split the screen space up, and offer a bit of diversity, while still maintaining the feel of a clean, relaxing, and elegant look, I used an off-grey(#) for the footer. I felt this added some variety and also complimented the white background color. 
 
 For the buttons, I have decided to use two different kinds. 
 
-I opted to use a a light blue (#) for the booking and checkout buttons. And a red (#) for the back buttons. 
-I felt this colors were subtle, and warm without providing too much a contrast and boldness from the white background-color.
+I opted to use a light blue (#) for the booking and checkout buttons. And a red (#) for the back buttons. 
+I felt these colors were subtle, and warm without providing too much contrast and boldness from the white background color.
 
 
 ### Font 
 
-I decided to use 'Open Sans' as the main font for this website. This font is used on all body text besides headings. I chose Open Sans because of its simplicity, elegance, and versatility. It's an easy-to-read font, but I also feel it has some character. 
+I decided to use 'Open Sans' as the main font for this website. The font is used on all body text besides headings. I chose Open Sans because of its simplicity, elegance, and versatility. It's an easy-to-read font, but I also feel it has some character. 
 
-For the headings, I decided to use 'Montserrat'. I chose this font becuase it paired well with Open Sans, and also maintained the simplicity and elegance that Open Sans provided. 
-
+For the headings, I decided to use 'Montserrat'. I decided to use this font as it complimented the simplicity and elegance that Open Sans provided. 
 
 ### Icons 
 
-I initially decided to use a lot of icons throughout the website, however as development continued, I felt that the icon were distracting. For example, I first had an icon for the Account nav-item, but I felt the navigation bar looked cleaner without the icon. 
+I initially decided to use a lot of icons throughout the website, however as development continued, I felt that the icon was distracting. For example, I first had an icon for the Account nav-item, but I felt the navigation bar looked cleaner without the icon. 
 
 I have utilized icons sparingly throughout the website. On the All Products page, I used a calendar icon to indicate a link to the Timetable page. 
 
@@ -169,10 +159,9 @@ I have also used Font Awesome's hamburger bars for the navigation menu on mobile
 
 ## Features
 
-
 ### Current Features
 
-The website features a fully functional e-commerce store to book yoga classes, pasword-protected profiles, a dynamic timetable to display current offered yoga classes, a fully functional blog to display posts, news and updates. 
+The website features a fully functional e-commerce store to book yoga classes, password-protected profiles, a dynamic timetable to display currently offered yoga classes, a fully functional blog to display posts, news, and updates. 
 
 In addition, the website was developed with a mobile-first approach and is fully responsive across all devices. 
 
@@ -180,18 +169,17 @@ I have provided more details on the features of the website below:
 
 #### The Navigation Menu
 
-The navigation menu is consistent for all users, except for one small difference. Admin users have an extra menu item in the Account dropdown called 'Class Management'. This link directs admin users to a form which allows them to create a new yoga class.
+The navigation menu is consistent for all users, except for one small difference. Admin users have an extra menu item in the Account dropdown called 'Class Management'. This link directs admin users to a form that allows them to create a new yoga class.
 
-The navigation menu is divided into 6 nav-items:
+The navigation menu is divided into 6 nav items:
 
-- Home: which links users back to the homepage.
-- Classes: which is a dropdown menu to display the yoga classes categories (Beginner and Advanced classes).
-- Timetable: which links users to a dynamic timetable which displays the days and times yoga classes are offered.
-- Blog: which links users to the blog page, to view all blog posts. 
-- Account: which is a dropdown menu that displays 'Register and Login' when a user isn't currently logged in. When a user is logged in, it displays 'Sign Out and My Profile'. The 'My Profile' directs users to their own profile page, where they can view their order history, and add/edit/remove their personal information. 
+- Home: links users back to the homepage.
+- Classes: this is a dropdown menu to display the yoga classes categories (Beginner and Advanced classes).
+- Timetable: this links users to a dynamic timetable that displays the days and times yoga classes are offered.
+- Blog: this links users to the blog page, to view all blog posts. 
+- Account: this is a dropdown menu that displays 'Register and Login' when a user isn't currently logged in. When a user is logged in, it displays 'Sign Out and My Profile'. The 'My Profile' directs users to their profile page, where they can view their order history, and add/edit/remove their personal information. 
 
 The final navigation link, the Shopping Cart, is utilized as an icon. I have decided to use an icon here, and push it to the right-hand side of the screen to separate it from the other navigation links. I have also added a counter to the icon, which displays the number of items currently in the shopping cart. When a user clicks on the Shopping Cart icon, they are directed to the shopping cart page, where they can view/edit/remove items currently in their cart.
-
 
 #### The Footer Section 
 
@@ -203,79 +191,77 @@ Each page contains a footer, which has a basic site map that displays links for 
 
 The footer also contains social media links for the website's social media accounts. 
 
-I have also created a search bar in the footer to allow users to quickly search for yoga classes. When a user searches for a yoga classes, they are directed to the products page and shown the relevant results, otherwise, they are informed that they search criteria provided no results. 
+I have also created a search bar in the footer to allow users to quickly search for yoga classes. When a user searches for yoga classes, they are directed to the products page and shown the relevant results, otherwise, they are informed that the search criteria provided no results. 
 
 
 #### Home App
 
-This app acts as the home page, and informs that user about the content and purpose of the website. This app contains a hero image, a call to action button to view products. 
+This app acts as the home page and informs the user about the content and purpose of the website. This app contains a hero image, a call to action button to view products. 
 
 This page also features an 'about' section which informs the users of the yoga studio's philosophy. 
 
-Finally, the page also features three product cards which are filtered by the beginner category to quickly showcase to the user that beginner friendly classes that are offered. 
+Finally, the page also features three product cards which are filtered by the beginner category to quickly showcase to the user the beginner-friendly classes that are offered. 
 
 In addition, the home page displays the latest blog post to encourage readers to visit the studio's blog. 
 
 #### Products App
 
-This app facilitaes the feature to all users to see all products offered by the yoga studio. This app allows users to also view more information about a product, by visiting the product detail page. 
+This app facilitates the feature to all users to see all products offered by the yoga studio. This app allows users to also view more information about a product, by visiting the product detail page. 
 
 Finally, this app also allows admin users to create, edit, and delete all products in the database.
 
 
 ##### All Products Page
 
-This page displays all product currently being offered. A user has the ability to sort products both in ascending and descending by name, price and category. 
+This page displays all products currently being offered. A user can sort products both in ascending and descending by name, price, and category. 
 
-A user also has the ability to filter products by category (for instance, beginner or advanced classes)
+A user also can filter products by category (for instance, beginner or advanced classes)
 
-Finally, a user is able to search for products by name, category or a keyword search via a product's description in the search bar in the footer which is displayed on every page. 
-
+Finally, a user can search for products by name, category, or keyword search via a product's description in the search bar in the footer which is displayed on every page. 
 ##### Individual Product Page
 
 The individual products page is created mostly with template tags, to allow the variety of information in each product to be displayed correctly. 
 
 The page features a larger size of the product image, a product description, and information regarding the product's price, and timetable information. 
 
-The page also features a link to the timetable page, for users to look at other times which may suit them, and which classes best suit their time schedule.
+The page also features a link to the timetable page, for users to look at other times which may suit them, and which classes the best suit their time schedule.
 
-Finally, the page also features an add to cart button, and a button which redirects users back to the all products page. 
+Finally, the page also features an add to cart button and a button that redirects users back to the all products page. 
 
 #### Class Management
 
-If the user logged in is an admin user, they will have access to the dropdown menu item 'Class Management' in the Account navigation item, which allows a user to create a new product for users to purchase. 
+If the user logged in as an admin user, they will have access to the dropdown menu item 'Class Management' in the Account navigation item, which allows a user to create a new product for users to purchase. 
 
 In addition, when an admin user is viewing the All Products page, they are shown two buttons on each product card: 'Edit' and 'Remove'. The Edit link directs the user to a Product form to edit the current product. 
 
 The 'Remove' link triggers a modal to confirm that the admin user wishes to delete the product from the database. A product is only deleted once the user confirms this action. 
 
-
 #### Cart App
 
-This app provides users with the functionality to add products to the shopping cart, allows users to adjust their shopping cart by changing the quanitity of items, as well as the ability to remove items from their cart.
+This app provides users with the functionality to add products to the shopping cart, allows users to adjust their shopping cart by changing the number of items, as well as the ability to remove items from their cart.
 
-Each time an action is performed by the user for instance, adding an item to the cart, adjusting the quantity, or removing an item, a toast is triggered and a preview of their shopping cart is displayed. The preview provides users with the names, images, and price of an item as well as the total price of their current shopping cart. 
+Each time an action is performed by the user, for instance, adding an item to the cart, adjusting the quantity, or removing an item, a toast is triggered and a preview of their shopping cart is displayed. The preview provides users with the names, images, and price of an item as well as the total price of their current shopping cart. 
 
 #### Checkout App
 
 The Checkout App provides users with the functionality to securely purchase the items in their shopping cart. To allow for a secure and streamlined purchasing experience I have used Stripe.
 
-If a user is currently logged in, the checkout information will be populated from their profile (provided that they have filled out their profile information). Otherwise, a user has the ability to either save the checkout information to the profile, or to create an account. 
+If a user is currently logged in, the checkout information will be populated from their profile (provided that they have filled out their profile information). Otherwise, a user can either save the checkout information to the profile or create an account. 
 
 To create a truly streamlined experience for users when navigating the checkout app, it is also possible to purchase products without creating an account. 
 
-Once a user has clicked the 'Complete Order' button, a loading overlay animation is triggerd to indicate to the user that the payment is in process. 
+Once a user has clicked the 'Complete Order' button, a loading overlay animation is triggered to indicate to the user that the payment is in process. 
 
-Once this is completed, a user is automatically directed to the Checkout Success page, where they are notified that a confirmation email has been sent to their email address, as well as provided with a summary of their order. 
+Once this is completed, a user is directed to the Checkout Success page, where they're notified that a confirmation email has been sent to their email address, as well as provided with a summary of their order. 
 
 #### Profile App
 
-The Profile App provides users with the functionality to store their information to speed up the checkout process, as well as a place to edit their previously saved personal information. In addition, the profile page also users to view their order history. Finally, if a user has a registerd account, they can leave comments on blog posts.
+The Profile App provides users with the functionality to store their information to speed up the checkout process, as well as a place to edit their previously saved personal information. In addition, the profile page also users to view their order history. Finally, if a user has a registered account, they can leave comments on blog posts.
 
 ##### Register 
 A user can create an account by clicking on the dropdown-menu link 'Register' in the navigation link 'Account'. 
 
-When registering an account, a user must input a username, their email address and a password. The password field needs to be entered twice in order to avoid typos. 
+When registering an account, a user must input a username, email address, and password. The password field needs to be entered twice to avoid typos. 
 
 Once a user registers, they are sent a verification/confirmation email, with a link. Once a user confirms their email address, the account is created, and they can access their profile page.
 
@@ -289,7 +275,7 @@ If the form is valid, and the information is correct the user is redirected to t
 
 ##### Logging Out
 
-A user can quickly log out by selecting the sign out option in the and Account Dropdown menu on the navigation menu. 
+A user can quickly log out by selecting the sign-out option in the and Account Dropdown menu on the navigation menu. 
 
 #### Blog App
 
@@ -299,9 +285,9 @@ For users, this app provides a place where they can read blog posts, and leave c
 
 ##### All Blog Posts Page
 
-The main blog page features a snippet of each blog post in the form of a Bootstrap card. Each card features a blog title, information about when it was created, and the name of the author. The blog post cards also features a unique snippet of text, to give a brief summary of the blog post. Each card features a button which directs users to the blog detail page, where they can read the full blog, and leave comments.
+The main blog page features a snippet of each blog post in the form of a Bootstrap card. Each card features a blog title, information about when it was created, and the name of the author. The blog postcards also feature a unique snippet of text, to give a summary of the blog post. Each card features a button that directs users to the blog detail page, where they can read the full blog, and leave comments.
 
-The blog page is dynamically updated always display blogs that have been created, and it displays the latest blog first.
+The blog page is dynamically updated always displays blogs that have been created, and it displays the latest blog first.
 
 ##### The Blog Post Detail Page
 
@@ -309,28 +295,28 @@ This page allows users to view the full blog post, as well as user comments.
 
 Any user with a registered account, and currently logged in can leave a comment on a blog post. A user is also able to edit, and delete comments they have created. A modal confirmation is trigged if a user tries to delete a comment, to confirm that this action is permanent, and to confirm if they wish to delete their comment. 
 
-A user with an admin account, can edit and remove the blog post. Like all action which may remove an item from the database, a modal is triggerd to confirm the action.
+A user with an admin account can edit and remove the blog post. Like all actions which may remove an item from the database, a modal is triggered to confirm the action.
 
-Both the edit blog (for admin users) and the edit comment (for admin users or comment author) is redirected to a form, for the user to complete to finally edit the blog post or comment. 
+Both the edit blog (for admin users) and the edit comment (for admin users or comment author) are redirected to a form, for the user to complete to finally edit the blog post or comment. 
 
 If a user wishes to leave a comment, they can do so in the text box beneath the blog post. Once they have submitted their comment, a message is displayed to the user that their comment is awaiting moderation. 
 
-I have choosed to employ this feature to prevent spam, and ensure that comments are relevant to the content. 
+I have chosen to employ this feature to prevent spam, and ensure that comments are relevant to the content. 
 
-If an admin user is logged in and viewing the blog post detail page, all comments awaiting approval are displayed, and an admin user has the ability to either approve or deny a pending comment. 
+If an admin user is logged in and viewing the blog post detail page, all comments awaiting approval are displayed, and an admin user can either approve or deny a pending comment. 
 
 If a pending comment is approved, it is displayed under the blog post, and if is denied, the comment is removed from the database. 
 
 #### Timetable App
 
-The Timetable App provides users with the ability to view all yoga classes time and day's offered. This allows users to choose a class which best suits their own schedule. Each class in the timetable has a link which directs users to the product detail page of the specific class.
+The Timetable App provides users with the ability to view all yoga classes times and days offered. This allows users to choose a class that best suits their schedule. Each class in the timetable has a link that directs users to the product detail page of the specific class.
 
-The timtable page is automatically updated to reflect the current products in the database. A user can see all current yoga classes, and the day and time the class is offered. 
+The timetable page is automatically updated to reflect the current products in the database. A user can see all current yoga classes, and the day and time the class is offered. 
 
-The timteable is designed with a a bootstrap table, with added media queries for smaller devices. The timetable is created with for loops to always reflect the current offered products. 
+The timetable is designed with a bootstrap table, with added media queries for smaller devices. The timetable is created with for loops to always reflect the currently offered products. 
 
 
-All features have been manually tested in a variety of ways. Which can be read in more detail here:
+All features have been manually tested in a variety of ways. This can be read in more detail here:
 
 
 ### Future Features
@@ -339,9 +325,9 @@ In the future, I would like to optimize the booking system for yoga classes by i
 
 I would also like to optimize the timetable page so a user can sort the Timetable by class name, times rather than the default sorting of days of the week. 
 
-In addition, I would like to implement a tracking system to display to users how many sessions they have left from a class they have booked. For instance, some products offer 10 sessions, and I'd like to have a system where after each session attended, its reflected on their profile how many sessions are remaining. 
+In addition, I would like to implement a tracking system to display to users how many sessions they have left from a class they have booked. For instance, some products offer 10 sessions, and I'd like to have a system where after each session is attended, it's reflected on their profile how many sessions are remaining. 
 
-Finally, I would to further streamline the log in and register experience for users by allowing users to log in via Social Media.
+Finally, I would to further streamline the log-in and register experience for users by allowing users to log in via Social Media.
 
 
 ## Database Information
@@ -352,14 +338,14 @@ When developing the website in Django the database used was SQLite.
 
 ## Troubleshooting
 
-Throughout the developement of the website, I encountered a number of problems and issues. Through research, and trial and error, solutions were found, or in some cases other ideas were instead implemented.
+Throughout the development of the website, I encountered several problems and issues. Through research, and trial and error, solutions were found, or in some cases, other ideas were instead implemented.
 
 I have documented these issues in the testing.md file under the title 'General Troubleshooting'. This can be seen [here]()
 
 ## Technologies Used
 
 * This website was developed using [HTML5](https://en.wikipedia.org/wiki/HTML5), [CSS3](https://en.wikipedia.org/wiki/CSS), [JavaScript](https://en.wikipedia.org/wiki/JavaScript) , and [Python](https://en.wikipedia.org/wiki/Python_(programming_language))
-* [Django](https://www.djangoproject.com/), a Python framework to render pages, speed up development and avoid repeated code.
+* [Django](https://www.djangoproject.com/), a Python framework to render pages, speed up development, and avoid repeated code.
 * [jQuery](https://jquery.com/) was used to simplify JavaScript code.
 * The fonts used in this website were imported from [Google Fonts](https://fonts.google.com/).
 * [SQLite](https://www.sqlite.org/index.html) was used to manage the database during the development phase of the project.
@@ -388,7 +374,7 @@ I used [Unsplash](https://unsplash.com/) and [Pexels](https://www.pexels.com/) t
 
 ## Testing
 
-All testing can be viewed here: 
+All testing can be viewed here: [here](./docs/testing/testing.md).
 
 ## Deployment
 
@@ -398,26 +384,24 @@ Git for version control.
 Python3
 Django
 PIP to install your Python3 packages.
-Stripe to faliciate payments.
+Stripe to facilitate payments.
 Cloud storage to host your images and static files. For this project, I used AWS.
-
 
 Local Deployment
 
 1. Clone from Github
 
-If you wish to deploy this project locally on your IDE, you can do so by clicking the 'Download Code' button on this repository : https://github.com/TomC2311/savasana-yoga.git.
+If you wish to deploy this project locally on your IDE, you can do so by clicking the 'Download Code' button on this repository: https://github.com/TomC2311/savasana-yoga.git.
 
-Alternatively, you can clone this repostiroy on your command line by running the following code $ git clone https://github.com/TomC2311/savasana-yoga.git.
+Alternatively, you can clone this repository on your command line by running the following code $ git clone https://github.com/TomC2311/savasana-yoga.git.
 
 2. Installing necessary Python requirements. 
 
-In order for this to project to work once you have clone the repository, you need to run the following command, to install the required modules. 
+For this project to work once you have cloned the repository, you need to run the following command, to install the required modules. 
 
 pip3 install -r requirements.txt
 
-
-3. Environment variabless
+3. Environment variables
 
 If you're using Gitpod as an IDE, you will need to store your environmental variables in Gitpod's settings. 
 
@@ -425,7 +409,7 @@ You can do this by navigating to the 'Workspaces' page, and then clicking on 'Se
 
 As Gitpod is used when developing a project, you will want to set the 'DEVELOPMENT' variable to 'True'
 
-The remaning variable values will be left blank in this example, but you should enter your value, and not share them with others. 
+The remaining variable values will be left blank in this example, but you should enter your value, and not share them with others. 
 
 'SECRET_KEY', 'YOUR_SECRET_KEY'
 'STRIPE_PUBLIC_KEY', 'YOUR_STRIPE_PUBLIC KEY'
@@ -434,7 +418,7 @@ The remaning variable values will be left blank in this example, but you should 
 
 4. Migrating the Database models
 
-The next step it to migrate your models, and to set up the Database. 
+The next step is to migrate your models and to set up the Database. 
 
 Run the following commands to do so:
 
@@ -444,7 +428,7 @@ Python3 manage.py migrate
 
 5. Creating a SuperUser 
 
-In order to access the admin site of a django website, you will need an admin account. 
+To access the admin site of a Django website, you will need an admin account. 
 
 To create one, you can run the following command, and input your information when prompted. 
 
@@ -462,7 +446,7 @@ this will open a server through Gitpod, and you are now running the project loca
 
 If you wish to deploy the project to Heroku, there are additional steps needed. I will document these below. 
 
-1. Sign up, or login to Heroku. 
+1. Sign up, or log in to Heroku. 
 
 Head to https://heroku.com/ and log in to your account. If you do not have an account, then create one. 
 
@@ -483,7 +467,7 @@ Navigate to the Resource tab and create a free Postgres database.
 
 The DATABASE_URL variable is automatically created. You can view this in the 'Settings' tab, under the option 'Config Vars'.
 
-Copy the value of your DATABASE_URL. You will need to temporaily add it to your IDE environment variables. 
+Copy the value of your DATABASE_URL. You will need to temporarily add it to your IDE environment variables. 
 
 2. Prepare the database
 
@@ -491,7 +475,7 @@ The DATABASE_URL variable was automatically created in the Settings< Config Vars
 
 3. Updating Environment Variables
 
-Under the 'Settings' tab, click on the 'Config Vars' option, and input the following information. Similar to the environment varibles on Gitpod, or your own IDE, the values are unique to you. 
+Under the 'Settings' tab, click on the 'Config Vars' option, and input the following information. Similar to the environment variables on Gitpod, or your IDE, the values are unique to you. 
 
 
 ```
@@ -507,19 +491,19 @@ Under the 'Settings' tab, click on the 'Config Vars' option, and input the follo
 
 4. Migrating DATA to Postgres
 
-Its not possible to migrate your data to Heroku's Postgres database. 
+It's not possible to migrate your data to Heroku's Postgres database. 
 
 You can do so by entering the following commands. 
 
 Python3 manage.py makemigrations
 Python3 manage.py migrate
 
-When I was developing this app, I populated the SQLlite database with very few items just in order to test everything was working as expected. As a result, I re-populated the the data for the products/blog etc after the project was deployed to Heroku. 
+When I was developing this app, I populated the SQLlite database with very few items just to test everything was working as expected. As a result, I re-populated the data for the products/blog, etc after the project was deployed to Heroku. 
 
 
 5. Create a Superuser
 
-Similar to the local deployment, you will need to create a super user to access the django admin panel. 
+Similar to the local deployment, you will need to create a superuser to access the Django admin panel. 
 
 To do so, enter the following code in the command line:
 
@@ -537,7 +521,7 @@ Open this file, and add the following:
 
 Once the following steps have been taken, then push the changed files to Github. 
 
-You can this by with the following commands: 
+You can do this by with the following commands: 
 
 git add . 
 git commit -m "Your commit message"
@@ -547,7 +531,7 @@ git push
 
 Once your code has been push to Github. Head back to your IDE, and remove the DATABASE_URL environmental variable you had previously set. 
 
-8. Login in to Heroku CLI
+8. Login into Heroku CLI
 
 If your IDE does not have HEROKU CLI install, please install it. 
 
@@ -568,9 +552,9 @@ Beneath this section, ensure that your Github profile name is selected in the in
 Search for the name of your Github repository.
 Once your repository has been found, click on the connect button.
 
-11. Ensure that static files are added to your Cloud based storage. 
+11. Ensure that static files are added to your Cloud-based storage. 
 
-For this project, I have used AWS S3 bucket. In my S3 bucks, I created a Media and Static folder, and added the media and static files to their respective folders. 
+For this project, I have used the AWS S3 bucket. In my S3 bucks, I created a Media and Static folder and added the media and static files to their respective folders. 
 
 This allows the media and static files to be collected, and uploaded once the app is deployed to Heroku. 
 
@@ -597,7 +581,7 @@ https://YOUR-APP-NAME.herokuapp.com/
 
 ### Images 
 
-All Images were sourced from Unsplash and Pexels.
+All images were sourced from Unsplash and Pexels.
 
 ### Text 
 
@@ -611,7 +595,7 @@ All text was written by myself.
 
 3. To help understand how to filter blog posts, I credit the following post on StackOverflow, which can be seen [here](https://stackoverflow.com/questions/23928866/only-show-the-latest-3-posts-in-django). The content in the link is different from the code I used, but this was used as a reference and a starting point to get the desired results. 
 
-4. To help in creating the footer for the website, I referenced this article on css-tricks, which can be viewed [here](https://css-tricks.com/couple-takes-sticky-footer/) 
+4. To help in creating the footer for the website, I referenced this article on CSS-tricks, which can be viewed [here](https://css-tricks.com/couple-takes-sticky-footer/) 
 
 5. To help in implementing validators for the Product Model, I referenced Django's official documentation, which can be seen [here](https://docs.djangoproject.com/en/3.2/ref/validators/#maxvaluevalidator)
 
