@@ -81,7 +81,7 @@
                                 {{ comment.body | linebreaks }}
                             </p>
                             <!-- Allows comment author or admin to edit and delete comments -->
-                            {% if request.user.is_superuser or request.user.is_comment.author %}
+                            {% if request.user.is_superuser or request.user == comment.author %}
                             <div class="comment-actions">
                                 <a class="btn btn-sm btn-outline-secondary mx-1" href="{% url 'edit_comment' comment.id %}">Edit</a>
                                 <!-- Button trigger modal -->

@@ -65,7 +65,8 @@ def add_blog_post_comment(request, blog_post_id):
             messages.info(request, 'Your comment is awaiting moderation!')
             return redirect(reverse('blog_post_detail', args=[blog_post.id]))
 
-        else: messages.error(request,'Something went wrong. Please try again.')
+        else:
+            messages.error(request, 'Something went wrong. Please try again.')
 
     else:
         comment_form = CommentForm()
