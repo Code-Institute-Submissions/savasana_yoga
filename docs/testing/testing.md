@@ -652,73 +652,56 @@ The test was successful and correctly displays a message to users that no result
     * Result: .
 
 
-
 ## Testing User Stories
 
 * Test: I want a website that allows me to book yoga classes.
-    * Result: User have the ability to add yoga classes to the shopping cart and purchase these classes via the checkout form.
-    
+    * Result: Users can add yoga classes to the shopping cart and purchase these classes via the checkout form.
+    * 
 
 * Test: I want a website that provides me information about the yoga classes.
-    * Result: Each yoga class has a description that provides information on the class, as well as a category attached to the class to inform user of its difficulty level. In addition, each product card provides days and times of the particular yoga class.
+    * Result: Each yoga class has a description that provides information on the class, as well as a category attached to the class to inform the user of its difficulty level. In addition, each product card provides days and times of the particular yoga class.
 
 * Test: I want to be able to book multiple classes.
-    * Result: A user can to increase the quantity of each product in their shopping cart. In addition, a user is able to purchase multiple yoga classes at a time.
-
+    * Result: A user can increase the quantity of each product in their shopping cart. In addition, a user can purchase multiple yoga classes at a time.
 
 * Test: I want to be able to review and change my cart before purchasing classes.
-    * Result: A user can to increase or decrease the quantity of each product, and a user can also remove a product from their shopping cart.
+    * Result: A user can increase or decrease the quantity of each product, and a user can also remove a product from their shopping cart.
 
 * Test: I want to receive an email confirmation after booking a class.
     * Result: Each time a user completes the checkout form, they receive a confirmation email regarding their recent purchase.
 
-
 * Test: I would like a blog to read more about the yoga studio, and yoga in general.
-    * Result: The website features a blog app so users can read more about the yoga studio, and other yoga related information.
-
+    * Result: The website features a blog app so users can read more about the yoga studio, and other yoga-related information.
 
 * Test: I would like the ability to comment on blog posts.
-    * Result: A logged in user can leave a comment on any blog post.
+    * Result: A logged-in user can leave a comment on any blog post.
 
 * Test: I would like the ability to edit or remove comments I make on a blog post.
-    * Result: A logged in user can edit and remove the published comments they have made.
-
+    * Result: A logged-in user can edit and remove the published comments they have made.
 
 * Test: I want the ability to filter classes between difficulty levels.
     * Result: A user can filter classes by categories, which are the difficulty levels for all yoga classes offered.
 
-
 * Test: I want the ability to view a timetable or schedule for yoga classes.
     * Result: A user can see all the times and days for yoga classes offered on the timetable page.
 
-
-* Test: I want a website that is easily accessed on my mobile phone and tablet. 
+* Test: I want a website that is easily accessed on my mobile phone and tablet.
     * Result: The website was developed with a mobile-first approach and is responsive across all devices.
 
-
 * Test: I want a website that is easy to understand and navigate.
-    * Result: All links are clearly indicated, and icons are used where possible to help a user identify different pieces of information. In addition, many links are clearly stated and related to their purpose. Finally, a user can quickly navigate to different pages via the navigation bar or via the site map in the footer. Throughout the website, there are call to action buttons, as well as back button to allow a user to move between pages without using the browser buttons.
+    * Result: All links are indicated, and icons are used where possible to help a user identify different pieces of information. In addition, many links are clearly stated and related to their purpose. Finally, a user can quickly navigate to different pages via the navigation bar or the site map in the footer. Throughout the website, there are call-to-action buttons, as well as a back button to allow a user to move between pages without using the browser buttons.
 
-
-* Test: I want to have my own profile to store my information.
+* Test: I want to have my profile store my information.
     * Result: Each user that creates an account, can store their personal information on their profile.
 
-
-* Test: I want to view my order history on my profile.  
+* Test: I want to view my order history on my profile.
     * Result: Every time a user completes the checkout process, the order is saved on their profile, and the user can view these orders as often as they want.
-    
 
-* Test: I want my profile to be password protected.  
-    * Result: A user is unable to create an account without completing the sign up form which requires a password. All accounts are password protected.
-
+* Test: I want my profile to be password protected.
+    * Result: A user is unable to create an account without completing the signup form which requires a password. All accounts are password protected.
 
 * Test: I would like to be able to follow the website's social media accounts.
     * Result: A user can follow the website's social media accounts by locating the social media icons in the footer. These are shown on every page, and when clicked, will open a new tab of the website's social media account.
 
-
 * Test: I would like to be able to search for classes.
-    * Result: On every page, in the footer, there is a search bar. This allows users to quickly search for different yoga classes via category, name or keywords from a classes' description.
-
-
-
-
+    * Result: On every page, in the footer, there is a search bar. This allows users to quickly search for different yoga classes via category, name, or keywords from a classes' description.
