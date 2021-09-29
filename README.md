@@ -28,7 +28,7 @@ Finally, the website also provides admin features to manage yoga classes, by edi
 * I want to receive an email confirmation after booking a class.
 * I would like a blog to read more about the yoga studio, and yoga in general.
 * I would like the ability to comment on blog posts.
-* I would like the ability to edit or remove comments I make on a blog post.
+* I would like the ability to remove comments I make on a blog post.
 * I want the ability to filter classes between difficulty levels.
 * I want the ability to view a timetable or schedule for yoga classes.
 * I want a website that is easily accessed on my mobile phone and tablet. 
@@ -297,7 +297,11 @@ Any user with a registered account, and currently logged in can leave a comment 
 
 A user with an admin account can edit and remove the blog post. Like all actions which may remove an item from the database, a modal is triggered to confirm the action.
 
-Both the edit blog (for admin users) and the edit comment (for admin users or comment author) are redirected to a form, for the user to complete to finally edit the blog post or comment. 
+Both the edit blog (for admin users) and the edit comment (for admin users) are redirected to a form, for the user to complete to finally edit the blog post or comment. 
+
+If a comment is approved, the user can delete the comment if they wish to do so.  I have decided to remove the edit feature for all non-admin users.
+
+The reason being, if a user wants to edit their comment, they could bypass the moderation system or their comment would need to be placed in the moderation queue again. I felt that both options were not ideal for the website and ultimately decided that an edit functionality did not fit the blog model I was aiming for
 
 If a user wishes to leave a comment, they can do so in the text box beneath the blog post. Once they have submitted their comment, a message is displayed to the user that their comment is awaiting moderation. 
 

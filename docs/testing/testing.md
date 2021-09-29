@@ -631,6 +631,11 @@ The test was successful and correctly displays a message to users that no result
 * Test: Comment counter does not count comments that are pending moderation
     * Result: Confirmed that the comment counter only counts comments which have been approved by an admin. The comment counter does not take into account comments which are currently in moderation 
 
+* Test: Whether a non-admin user can remove another user's comments.
+    * Result: A non-admin user can not remove another user's comments. 
+
+* Test: Whether a non-admin user can remove comments they created.
+    * Result: A non-admin user can remove comments they created.
 
 #### Blog App Validation 
 
@@ -676,8 +681,9 @@ The test was successful and correctly displays a message to users that no result
 * Test: I would like the ability to comment on blog posts.
     * Result: A logged-in user can leave a comment on any blog post.
 
-* Test: I would like the ability to edit or remove comments I make on a blog post.
-    * Result: A logged-in user can edit and remove the published comments they have made.
+* Test: I would like the ability to remove comments I make on a blog post.
+    * Result: A logged-in user can remove the published comments they have made.
+
 
 * Test: I want the ability to filter classes between difficulty levels.
     * Result: A user can filter classes by categories, which are the difficulty levels for all yoga classes offered.
