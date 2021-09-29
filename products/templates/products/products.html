@@ -8,6 +8,11 @@
             <div class="col-md-8 mx-auto my-auto text-center">
                 <hr>
                 <h2 class="logo-font heading-text">Classes</h2>
+                {% for c in current_categories %}
+                    <a class="text-decoration-none mx-1" href="{% url 'products' %}?category={{ c.name }}">
+                        <span class="p-2 badge category-badge border border-dark rounded-pill">{{ c.friendly_name }}</span>
+                    </a>
+                {% endfor %}
                 <hr>
             </div>
         </div>
