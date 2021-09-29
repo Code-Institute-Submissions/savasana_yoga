@@ -42,45 +42,6 @@ def blog_post_detail(request, blog_post_id):
 
 
 @login_required
-def add_blog_post_comment(request, blog_post_id):
-    """
-    A view to allow users to add a comment to a blog
-    """
-
-    blog_post = get_object_or_404(Post, pk=blog_post_id)
-
-    # Comment posted
-    if request.method == 'POST':
-        comment_form = CommentForm(request.POST)
-
-        if comment_form.is_valid():
-            # Create Comment object but don't save to database yet
-            new_comment = comment_form.save(commit=False)
-            # Assign the current post to the comment
-            new_comment.post = blog_post
-            # Assign the user in session as the comment author
-            new_comment.author = request.user
-            # Save the comment to the database
-            new_comment.save()
-            messages.info(request, 'Your comment is awaiting moderation!')
-            return redirect(reverse('blog_post_detail', args=[blog_post.id]))
-
-        else:
-            messages.error(request, 'Something went wrong. Please try again.')
-
-    else:
-        comment_form = CommentForm()
-
-    template = 'blog/add_blog_comment.html'
-    context = {
-        'comment_form': comment_form,
-        'blog_post': blog_post,
-    }
-
-    return render(request, template, context)
-
-
-@login_required
 def add_blog_post(request):
     """ Add a new post to the blog """
 
@@ -162,6 +123,45 @@ def delete_blog_post(request, blog_post_id):
 
 
 @login_required
+def add_blog_post_comment(request, blog_post_id):
+    """
+    A view to allow users to add a comment to a blog
+    """
+
+    blog_post = get_object_or_404(Post, pk=blog_post_id)
+
+    # Comment posted
+    if request.method == 'POST':
+        comment_form = CommentForm(request.POST)
+
+        if comment_form.is_valid():
+            # Create Comment object but don't save to database yet
+            new_comment = comment_form.save(commit=False)
+            # Assign the current post to the comment
+            new_comment.post = blog_post
+            # Assign the user in session as the comment author
+            new_comment.author = request.user
+            # Save the comment to the database
+            new_comment.save()
+            messages.info(request, 'Your comment is awaiting moderation!')
+            return redirect(reverse('blog_post_detail', args=[blog_post.id]))
+
+        else:
+            messages.error(request, 'Something went wrong. Please try again.')
+
+    else:
+        comment_form = CommentForm()
+
+    template = 'blog/add_blog_comment.html'
+    context = {
+        'comment_form': comment_form,
+        'blog_post': blog_post,
+    }
+
+    return render(request, template, context)
+
+
+@login_required
 def comment_approve(request, comment_id):
     """
     A view to allow superuser to approve pending comments
@@ -208,7 +208,7 @@ def edit_comment(request, comment_id):
 
     comment = get_object_or_404(Comment, pk=comment_id)
 
-    if request.user == comment.author or request.user.is_superuser:
+    if request.user.is_superuser:
         if request.method == 'POST':
             form = CommentForm(request.POST, instance=comment)
             if form.is_valid():
