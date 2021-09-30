@@ -4,7 +4,7 @@ Savasana Yoga is a website to promote the benefits of yoga. This website aims to
 
 [You can view the live project here](https://tomc-savasana-yoga.herokuapp.com/)
 
-![Website Overview]()
+![Website Overview](./docs/wireframes/website-overview.png)
 
 ## Overview
 
