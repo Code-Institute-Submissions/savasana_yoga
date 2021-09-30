@@ -108,31 +108,23 @@ As there are several pages on this website, I wrote a summary of each page in th
 
 ## Skeleton 
 
-All wireframes were created using Balsamiq.
+All wireframes were created using Balsamiq. Some design aspects of the website has changed from the initial wireframe, for example the use of images in the blog snippets. Although the wireframes provided an outline, I made some creative choices throughout the development cycle.
 
-* [Home Page Desktop](./docs/wireframes/home-page-desktop.png)
-* [Home Page Tablet](./docs/wireframes/home-page-tablet.png)
-* [Home Page Mobile](./docs/wireframes/home-page-mobile.png)
+Note: To open links in a new tab please use CTRL+click (on Windows and Linux) or CMD+click (on macOS).
 
-* [Product Page Desktop](./docs/wireframes/products-page-desktop.png)
-* [Product Page Tablet](./docs/wireframes/products-page-tablet.png)
-* [Product Page Mobile](./docs/wireframes/products-page-mobile.png)
+All wireframes were created using Balsamiq. 
 
-* [Product Detail Page Desktop](./docs/wireframes/product-detail-desktop.png)
-* [Product Detail Page Tablet](./docs/wireframes/product-detail-tablet.png)
-* [Product Detail Page Mobile](./docs/wireframes/product-detail-mobile.png)
+Home Page | Products Page | Product Detail Page
+------------ | ------------- | ------------
+[Home Page Desktop](./docs/wireframes/home-page-desktop.png) | [Product Page Desktop](./docs/wireframes/products-page-desktop.png) | [Product Detail Page Desktop](./docs/wireframes/product-detail-desktop.png)
+[Home Page Tablet](./docs/wireframes/home-page-tablet.png) | [Product Page Tablet](./docs/wireframes/products-page-tablet.png) | [Product Detail Page Tablet](./docs/wireframes/product-detail-tablet.png)
+[Home Page Mobile](./docs/wireframes/home-page-mobile.png) | [Product Page Mobile](./docs/wireframes/products-page-mobile.png) | [Product Detail Page Mobile](./docs/wireframes/product-detail-mobile.png)
 
-* [Blog Page Desktop](./docs/wireframes/blog-page-desktop.png)
-* [Blog Page Tablet](./docs/wireframes/blog-page-tablet.png)
-* [Blog Page Mobile](./docs/wireframes/blog-page-mobile.png)
-
-* [Blog Detail Desktop](./docs/wireframes/blog-detail-desktop.png)
-* [Blog Detail Tablet](./docs/wireframes/blog-detail-tablet.png)
-* [Blog Detail Mobile](./docs/wireframes/blog-detail-mobile.png)
-
-* [User Profile Desktop](./docs/wireframes/user-profile-desktop.png)
-* [User Profile Tablet](./docs/wireframes/user-profile-tablet.png)
-* [User Profile Mobile](./docs/wireframes/user-profile-mobile.png)
+Blog Page | Blog Detail Page | User Profile Page
+------------ | ------------- | ------------
+[Blog Page Desktop](./docs/wireframes/blog-page-desktop.png) | [Blog Detail Desktop](./docs/wireframes/blog-detail-desktop.png)| [User Profile Desktop](./docs/wireframes/user-profile-desktop.png)
+[Blog Page Tablet](./docs/wireframes/blog-page-tablet.png) | [Blog Detail Tablet](./docs/wireframes/blog-detail-tablet.png) | [User Profile Tablet](./docs/wireframes/user-profile-tablet.png)
+[Blog Page Mobile](./docs/wireframes/blog-page-mobile.png) | [Blog Detail Mobile](./docs/wireframes/blog-detail-mobile.png) | [User Profile Mobile](./docs/wireframes/user-profile-mobile.png)
 
 
 ## Surface 
@@ -213,7 +205,7 @@ Each page contains a footer, which has a basic site map that displays links for 
 - Timetable
 - Blog 
 
-The footer also contains social media links for the website's social media accounts. 
+The footer contains social media links for the website's social media accounts. When each icon is clicked, they open a new tab to direct the user to the relevant social media website.
 
 I have also created a search bar in the footer to allow users to quickly search for yoga classes. When a user searches for yoga classes, they are directed to the products page and shown the relevant results, otherwise, they are informed that the search criteria provided no results. 
 
@@ -234,15 +226,15 @@ This app facilitates the feature to all users to see all products offered by the
 
 Finally, this app also allows admin users to create, edit, and delete all products in the database.
 
-
-##### All Products Page
+1. All Products Page
 
 This page displays all products currently being offered. A user can sort products both in ascending and descending by name, price, and category. 
 
 A user also can filter products by category (for instance, beginner or advanced classes)
 
 Finally, a user can search for products by name, category, or keyword search via a product's description in the search bar in the footer which is displayed on every page. 
-##### Individual Product Page
+
+2. Individual Product Page
 
 The individual products page is created mostly with template tags, to allow the variety of information in each product to be displayed correctly. 
 
@@ -252,13 +244,21 @@ The page also features a link to the timetable page, for users to look at other 
 
 Finally, the page also features an add to cart button and a button that redirects users back to the all products page. 
 
-#### Class Management
+3. Class Management
 
 If the user logged in as an admin user, they will have access to the dropdown menu item 'Class Management' in the Account navigation item, which allows a user to create a new product for users to purchase. 
 
 In addition, when an admin user is viewing the All Products page, they are shown two buttons on each product card: 'Edit' and 'Remove'. The Edit link directs the user to a Product form to edit the current product. 
 
 The 'Remove' link triggers a modal to confirm that the admin user wishes to delete the product from the database. A product is only deleted once the user confirms this action. 
+
+4. Timetable Page
+
+The Timetable page provides users with the ability to view all yoga classes times and days offered. This allows users to choose a class that best suits their schedule. Each class in the timetable has a link that directs users to the product detail page of the specific class.
+
+The timetable page is automatically updated to reflect the current products in the database. A user can see all current yoga classes, and the day and time the class is offered. 
+
+The timetable is designed with a bootstrap table, with added media queries for smaller devices. The timetable is created with for loops to always reflect the currently offered products. 
 
 #### Cart App
 
@@ -282,14 +282,14 @@ Once this is completed, a user is directed to the Checkout Success page, where t
 
 The Profile App provides users with the functionality to store their information to speed up the checkout process, as well as a place to edit their previously saved personal information. In addition, the profile page also users to view their order history. Finally, if a user has a registered account, they can leave comments on blog posts.
 
-##### Register 
+1. Register 
 A user can create an account by clicking on the dropdown-menu link 'Register' in the navigation link 'Account'. 
 
 When registering an account, a user must input a username, email address, and password. The password field needs to be entered twice to avoid typos. 
 
 Once a user registers, they are sent a verification/confirmation email, with a link. Once a user confirms their email address, the account is created, and they can access their profile page.
 
-##### Log In
+2. Log In
 
 If a user already has created an account, they can sign into their profile by using the 'Login' link.
 
@@ -297,7 +297,7 @@ To do so, a user needs to enter their email address or username and their passwo
 
 If the form is valid, and the information is correct the user is redirected to their profile page, which contains their saved personal information as well as order history, if any purchases have been made.
 
-##### Logging Out
+3. Logging Out
 
 A user can quickly log out by selecting the sign-out option in the and Account Dropdown menu on the navigation menu. 
 
@@ -307,13 +307,13 @@ The Blog App provides functionality to admin users to create, edit and delete bl
 
 For users, this app provides a place where they can read blog posts, and leave comments if they wish. 
 
-##### All Blog Posts Page
+1. All Blog Posts Page
 
 The main blog page features a snippet of each blog post in the form of a Bootstrap card. Each card features a blog title, information about when it was created, and the name of the author. The blog postcards also feature a unique snippet of text, to give a summary of the blog post. Each card features a button that directs users to the blog detail page, where they can read the full blog, and leave comments.
 
 The blog page is dynamically updated always displays blogs that have been created, and it displays the latest blog first.
 
-##### The Blog Post Detail Page
+2. The Blog Post Detail Page
 
 This page allows users to view the full blog post, as well as user comments. 
 
@@ -335,16 +335,8 @@ If an admin user is logged in and viewing the blog post detail page, all comment
 
 If a pending comment is approved, it is displayed under the blog post, and if is denied, the comment is removed from the database. 
 
-#### Timetable App
 
-The Timetable App provides users with the ability to view all yoga classes times and days offered. This allows users to choose a class that best suits their schedule. Each class in the timetable has a link that directs users to the product detail page of the specific class.
-
-The timetable page is automatically updated to reflect the current products in the database. A user can see all current yoga classes, and the day and time the class is offered. 
-
-The timetable is designed with a bootstrap table, with added media queries for smaller devices. The timetable is created with for loops to always reflect the currently offered products. 
-
-
-All features have been manually tested in a variety of ways. This can be read in more detail here:
+All features have been manually tested in a variety of ways. This can be read in more detail [here]()
 
 
 ### Future Features
@@ -366,9 +358,7 @@ Once the project was deployed to Heroku, the databased used was PostgreSQL.
 
 A wireframe for the database was created on dbdiagram.io to help in providing an overview of what will be needed for the Django models.
 
-![here](./docs/wireframes/database-wireframe)
-
-
+![here](./docs/wireframes/database-wireframe.png)
 
 
 ## Troubleshooting
