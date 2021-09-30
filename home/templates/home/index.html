@@ -64,7 +64,7 @@
             <div class="product-container col my-2">
                 <div class="row">
                     {% for product in products %}
-                        <div class="col-sm-12 col-md-6 col-lg-4 col-xl-4 py-4 px-3">
+                        <div class="col-sm-12 col-md-4 col-lg-4 col-xl-4 py-4 px-2">
                             <div class="card product-card border">
                             {% if product.image %}
                                 <a href="{% url 'product_info' product.id %}">
@@ -142,4 +142,19 @@
             </div>
         </div>
     </div>
+{% endblock %}
+
+{% block postloadjs %}
+    {{ block.super }}
+
+    <script>
+        $('.product-card').hover(
+            function () {
+                $(this).addClass("card-hover");
+            },
+            function () {
+                $(this).removeClass("card-hover");
+            }
+        );
+    </script>
 {% endblock %}

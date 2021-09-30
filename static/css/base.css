@@ -615,6 +615,21 @@ a.btn.blog-post-btn {
 }
 
 
+@media (max-width: 576px) {
+    .homepage_background_image {
+        height: 500px;
+        max-width: 100%;
+    
+        background: url('/static/images/homepage_background_image.png') no-repeat bottom;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+        
+    }
+}
+
+
 /* -- Allauth form formatting -- */
 
 .allauth-form-inner-content p {
