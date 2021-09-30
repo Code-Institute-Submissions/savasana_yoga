@@ -358,7 +358,7 @@ Once the project was deployed to Heroku, the databased used was PostgreSQL.
 
 A wireframe for the database was created on dbdiagram.io to help in providing an overview of what will be needed for the Django models.
 
-![here](./docs/wireframes/database-wireframe.png)
+![here](./docs/wireframes/databases-wireframe.png)
 
 
 ## Troubleshooting
