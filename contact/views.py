@@ -14,7 +14,7 @@ def contact(request):
     if request.method == 'POST':
         contact_form = ContactForm(request.POST)
         if contact_form.is_valid():
-            user_email = contact_form.cleaned_data['email_address'],
+            user_email = contact_form.cleaned_data['email_address']
             subject = (" Message Received: " + contact_form.cleaned_data['subject'])
             body = render_to_string(
                 'contact/emails//email_received_body.txt',
@@ -25,11 +25,11 @@ def contact(request):
                 body,
                 settings.DEFAULT_FROM_EMAIL,
                 [user_email]
-            ) 
-            
+            )
+
             contact_form.save()
             messages.info(request, 'Message sent successfully !')
-            return redirect(reverse('home'))
+            return redirect(reverse('contact'))
         else:
             messages.error(request, 'There was a problem with your message. Please try again.')
 
