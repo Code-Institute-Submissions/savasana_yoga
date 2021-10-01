@@ -1,1 +1,0 @@
-Email Received for your inquiry regarding {{ contact.subject }}
