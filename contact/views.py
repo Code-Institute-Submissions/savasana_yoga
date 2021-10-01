@@ -13,23 +13,21 @@ def contact(request):
    
     if request.method == 'POST':
         contact_form = ContactForm(request.POST)
+        user_message = request.POST.get('message')
+        subject = request.POST.get('subject')
+        first_name = request.POST.get('first_name')
+        last_name = request.POST.get('last_name')
+        user_email = request.POST.get('user_email')
+
         if contact_form.is_valid():
-            user_email = contact_form.cleaned_data['email_address']
-            first_name = contact_form.cleaned_data['first_name']
-            last_name = contact_form.cleaned_data['last_name']
-            subject = contact_form.cleaned_data['subject']
-            message = contact_form.cleaned_data['message']
-            body = render_to_string(
-                    'contact/emails/email_received_body.txt',
-                    {'contact_email': settings.DEFAULT_FROM_EMAIL})
 
             send_mail(
                 subject,
-                body,
+                user_message,
                 settings.DEFAULT_FROM_EMAIL,
                 [user_email]
             )
-                
+   
             contact_form.save()
             messages.info(request, 'Message sent successfully !')
             return redirect(reverse('contact'))
