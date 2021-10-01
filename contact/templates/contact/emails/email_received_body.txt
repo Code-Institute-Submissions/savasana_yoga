@@ -1,4 +1,4 @@
-Hi {{ first_name }},
+Hi there,
 
 We have just received your email and will get back to you as soon as possible!
 
