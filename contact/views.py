@@ -13,9 +13,6 @@ def contact(request):
 
     if request.method == 'POST':
         contact_form = ContactForm(request.POST)
-        user_message = request.POST.get('message')
-        subject = request.POST.get('subject')
-        user_email = request.POST.get('user_email')
 
         if contact_form.is_valid():
             user_email = contact_form.cleaned_data['email_address']
