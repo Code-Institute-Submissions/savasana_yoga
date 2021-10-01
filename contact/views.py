@@ -30,7 +30,7 @@ def contact(request):
    
             contact_form.save()
             messages.info(request, 'Message sent successfully !')
-            return redirect(reverse('contact'))
+            return redirect(reverse('contact_success'))
 
         else:
             messages.error(request, 'There was a problem with your message. Please try again.')
@@ -43,3 +43,8 @@ def contact(request):
     }
 
     return render(request, 'contact/contact.html', context)
+
+
+def contact_success(request):
+
+    return render(request, 'contact/contact_success.html')
