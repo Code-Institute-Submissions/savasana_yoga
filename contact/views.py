@@ -28,7 +28,7 @@ def contact(request):
             )
 
             contact_form.save()
-            messages.success(request, 'Message sent successfully !')
+            messages.info(request, 'Your message has been sent!')
             return redirect(reverse('contact'))
 
         else:
