@@ -1,0 +1,13 @@
+Hi there, 
+
+You have received an email inquiry via the contact form on Savasana Yoga. 
+
+The message is from {{ first_name }} {{ last_name }}. You can reply to their email at {{ sender_email }}
+
+{{ first_name }}'s inquiry:
+
+{{ message }}
+
+Namaste, 
+
+Savasana Yoga
