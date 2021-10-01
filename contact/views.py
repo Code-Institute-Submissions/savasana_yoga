@@ -24,14 +24,11 @@ def contact(request):
                     {'contact_email': settings.DEFAULT_FROM_EMAIL})
 
             send_mail(
-                    subject,
-                    body,
-                    first_name,
-                    last_name,
-                    message,
-                    settings.DEFAULT_FROM_EMAIL,
-                    [user_email]
-                )
+                subject,
+                body,
+                settings.DEFAULT_FROM_EMAIL,
+                [user_email]
+            )
                 
             contact_form.save()
             messages.info(request, 'Message sent successfully !')
