@@ -1,0 +1,66 @@
+<!-- Displays 3 beginner classes -->
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12 text-center mt-3 mb-1">
+            <h2 class="logo-font">Getting Started</h2>
+            <hr>
+        </div>
+        <div class="product-container col my-2">
+            <div class="row">
+                {% for product in products %}
+                    <div class="col-sm-12 col-md-4 col-lg-4 col-xl-4 py-4 px-2">
+                        <div class="card product-card border">
+                        {% if product.image %}
+                            <a href="{% url 'product_info' product.id %}">
+                                <img src="{{ product.image.url }}" class="img-fluid card-img-top card-img" alt="{{ product.name }}">
+                            </a>
+                        {% else %}
+                            <a href="{% url 'product_info' product.id %}">
+                                <img src="{{ MEDIA_URL }}noimage.png" class="img-fluid card-img-top" alt="{{ product.name }}">
+                            </a>
+                        {% endif %}  
+                            <div class="card-body mb-0 pb-0">
+                                <a href="{% url 'product_info' product.id %}" class="product-heading-text-link">
+                                    <p class="card-text lead product-link">{{ product.name }}</p>
+                                </a> 
+                            {% if product.tagline %}
+                                <p class="card-text blockquote-footer mt-2"><em>{{ product.tagline }}</em></p>
+                            {% endif %}
+                            </div>
+                            <div class="card-footer bg-transparent border-0">
+                                <div class="d-flex flex-column mb-1 mt-1">
+                                    {% if product.category %}
+                                        <p>
+                                            <small>
+                                                <a class="text-muted category-link" href="{% url 'products' %}?category={{ product.category.name }}">
+                                                    {{ product.category.friendly_name }}
+                                                </a>
+                                            </small>
+                                        
+                                    {% endif %}
+                                    <p class="text-muted">
+                                        <small>
+                                        Sessions: {{ product.number_of_sessions }}
+                                        </small> 
+                                    </p>
+                                    <p>
+                                        <small>
+                                            €{{ product.price }}
+                                        </small> 
+                                    </p>
+                                    <p>
+                                        <small>
+                                            <a href="{% url 'product_info' product.id %}" class="btn btn-sm btn-outline-secondary">
+                                                View Class
+                                            </a>
+                                        </small> 
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
