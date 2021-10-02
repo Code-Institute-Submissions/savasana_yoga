@@ -3,6 +3,25 @@
 ## Project Testing 
 
 
+### Base Code
+
+#### Base HTML 
+
+#### Base CSS
+
+CSS Validation
+
+* Test: Check the base.css file, and ensure no errors are present.
+    * Result: I checked the main css file (base.css) by using W3C CSS Validator. No errors were found.
+* Note: There were 13 warnings; 
+
+    11 of which were related to an unknown vender extension for -webkit-background-size, -moz-background-size and -o-background-size. I decided to ignore these warnings. 
+
+    The two remaining warnings were 
+    * Imported style sheets are not checked in direct input and file upload modes. Which I felt was also OK to ignore. 
+    * Same color for background-color and border-color for the custom checkbox. This was intended, and so I chose to ignore this warning too. 
+
+
 ### Navbar 
 
 * Test: I checked all navbar links work as expected, and direct to the correct page. 
@@ -328,6 +347,10 @@ The test was successful and correctly displays a message to users that no result
 
 
 #### Checkout App Validation 
+
+* Test: Check the checkout.css file and ensure no errors exist.
+    * Result: No errors were found.
+        * Note: One warning was found, related to an unknown vender extension. I also chose to ignore this warning. 
 
 * Test: HTML markup for the the following pages using W3Validator:
 1. 
