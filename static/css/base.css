@@ -21,7 +21,6 @@ body {
     font-weight: 400;
     font-style: italic;
     color: #212529;
-    /* font-size: 28px; */
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -161,7 +160,6 @@ footer.custom-footer {
 input[name='query']::placeholder {
     color: #aab7c4;
 }
-
 
 
 /* -- Home Page */
@@ -638,7 +636,7 @@ a.btn.blog-post-btn {
 
 .allauth-form-inner-content input {
     border-color: #000;
-    border-radius: 1;
+    border-radius: 1px;
 }
 
 .allauth-form-inner-content label:not([for='id_remember']) {
