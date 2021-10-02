@@ -336,6 +336,10 @@ If an admin user is logged in and viewing the blog post detail page, all comment
 If a pending comment is approved, it is displayed under the blog post, and if is denied, the comment is removed from the database. 
 
 
+#### Contact App
+
+This app allows users to send a message to the administrators of the website. It's a simple contact form with fields for the user's first name, last name, email address, subject, and message. Once the message is sent,  an email is sent to the user to inform them that their message has been sent and to expect a reply shortly.
+
 All features have been manually tested in a variety of ways. This can be read in more detail [here]()
 
 
@@ -509,7 +513,36 @@ To help with understanding how to approve or deny comments, I used a tutorial wh
 
 When an admin is viewing a blog post, they can see if there are any pending comments awaiting admin approval, and they can approve or deny these pending comments from the blog post page.
 
-This allowed me to create an on-site moderation functionality. 
+This allowed me to create an on-site moderation functionality.
+
+11. I experienced some issues when creating the Contact app. I created each app before deployment. However, this app was created after I had deployed it to Heroku. Once I created the contact app locally and tested it locally, I committed my changed and pushed it to Github. I then tested the contact form on Heroku. 
+
+The form was rendered as expected, however once submitting the form I was redirected to the 500 error page. To debug this issue, I switched DEBUG to True and repeated the previous steps. After submitting the form, I received the following error message "Relation does not exist". I logged in to the admin section of the website, and when clicking on the Contact Forms, I was directed to the error again. 
+
+I knew then that the contact app had not migrated to Heroku. The fix was to force run the models migrating to Heroku
+
+```
+heroku run python3 manage.py migrate --plan
+```
+
+I could see the contact app in the pending changes and so I entered the command 
+
+```
+heroku run python3 manage.py migrate 
+```
+
+I turned DEBUG to off and repeated the steps above. The contact form was submitted as intended, and the data was stored in the database. 
+
+
+12. When testing the contact form, I noticed that users could submit the form multiple times by repeatedly clicking the submit button while the form was being submitted. To fix this I created a JavaScript script to disable the submit button when the form was being submitted. This allowed the form to be submitted once and avoided the possibility of being submitted multiple times by rapid clicks. 
+
+```
+$('#contact-form').submit( function(event) {
+    // disable to avoid double submission
+    $('#submit_button').attr('disabled', true);
+});
+```
+
 
 ## Technologies Used
 

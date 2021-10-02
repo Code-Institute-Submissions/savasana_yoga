@@ -19,6 +19,10 @@
 
     * Result: Social media icons grow in size when hovered, and when clicked a new tab is opened which directs users to the correct social media website. 
 
+* Test: If the site map links direct users to the correct page.
+
+    * Result: Each link in the site map correctly directs users to relevant page. 
+
 * Test: Search Bar correctly searches for products relating to name, category, or description. 
 
     * Result: Search functionality correctly identifies a user's search parameters by querying results via name, category, or description. 
@@ -487,6 +491,49 @@ The test was successful and correctly displays a message to users that no result
     * Result: A non-admin user can remove comments they created.
 
 #### Blog App Validation 
+
+* Test: HTML markup for the the following pages using W3Validator:
+1. 
+
+    * Result: . 
+
+(Image)
+
+* Test: I have also tested the App's URL via Django Unit Testing.
+
+    * Result: . 
+
+(Image)
+
+* Test: Checked the code using gitpod's python validator and pep8.
+
+    * Result: .
+
+
+### Contact App
+
+* Test: To attempt to submit the form without an email address.
+
+    * Result: Unable to submit the form without an email address. 
+
+* Test: To attempt to submit the form with characters that exceed the max length in the name, email, and subject fields.
+
+    * Result: Unable to submit the form if the characters exceed the max length.
+
+* Test: To check whether a user receives an email to confirm their message was sent.
+
+    * Result: The user successfully receives an email after they have submitted the contact form.
+
+* Test: Whether the information in the contact form is accurate and saved in the database.
+
+    * Result: The information in the contact form is stored in the database, and correctly matches the information the user placed in the form.
+
+* Test: Whether the contact page loads the correct template and has the correct URL.
+
+    * Result: The contact page loads the correct template and has the correct URL.
+
+
+#### Contact App Validation 
 
 * Test: HTML markup for the the following pages using W3Validator:
 1. 
