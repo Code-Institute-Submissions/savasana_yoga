@@ -1,0 +1,6 @@
+<!-- Displays image if there is a blog post image -->
+{% if blog_post.image %}
+    <div class="col-sm-12 col-md-8 offset-md-2 my-2 pb-2">      
+        <img src="{{ blog_post.image.url }}" class="img-fluid rounded-2" alt="{{ blog_post.name }}">                                  
+    </div>
+{% endif %}
