@@ -112,9 +112,9 @@ The test was successful and correctly displays a message to users that no result
 
     * Result: Confirmed that information for each product in the admin database matches the information displayed on the product cards.
 
-* Test: Product detail page rendered the correct product.
+* Test: Product Info page rendered the correct product.
 
-    * Result: Correct product displayed in product detail page. 
+    * Result: Correct product displayed in product Info page. 
 
 * Test: To check the responsiveness of product cards on smaller devices.
 
@@ -193,7 +193,7 @@ The test was successful and correctly displays a message to users that no result
 
     * Result: Newly added products correctly display on intended pages, and in the database.
 
-* Test: Ensure that an edited product is displayed on the all_products page, product_detail page, and displays in the timetable with the updated information
+* Test: Ensure that an edited product is displayed on the all_products page, product_info page, and displays in the timetable with the updated information
 
     * Result: Edited products display on intended pages with correct updated information.
 
@@ -268,8 +268,7 @@ The test was successful and correctly displays a message to users that no result
     * Result: Product do not remain in the shopping cart once a user logs out of their account.
 
 * Test: Check whether the cart counter accurately reflects the number of products in the cart.
-    * Result: The cart counter correctly displays the number of items in a cart.
-    Note: The cart counter does not, as intended account for the quantity of a product, just the number of whole products. 
+    * Result: The cart counter correctly displays the number of items in a cart. 
 
 * Test: Ensure checkout button leads to checkout page and form.
     * Result: I confirmed that when clicking the 'checkout' button users are directed to the checkout form.

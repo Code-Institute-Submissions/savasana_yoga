@@ -114,11 +114,11 @@ Note: To open links in a new tab please use CTRL+click (on Windows and Linux) or
 
 All wireframes were created using Balsamiq. 
 
-Home Page | Products Page | Product Detail Page
+Home Page | Products Page | Product Info Page
 ------------ | ------------- | ------------
-[Home Page Desktop](./docs/wireframes/home-page-desktop.png) | [Product Page Desktop](./docs/wireframes/products-page-desktop.png) | [Product Detail Page Desktop](./docs/wireframes/product-detail-desktop.png)
-[Home Page Tablet](./docs/wireframes/home-page-tablet.png) | [Product Page Tablet](./docs/wireframes/products-page-tablet.png) | [Product Detail Page Tablet](./docs/wireframes/product-detail-tablet.png)
-[Home Page Mobile](./docs/wireframes/home-page-mobile.png) | [Product Page Mobile](./docs/wireframes/products-page-mobile.png) | [Product Detail Page Mobile](./docs/wireframes/product-detail-mobile.png)
+[Home Page Desktop](./docs/wireframes/home-page-desktop.png) | [Product Page Desktop](./docs/wireframes/products-page-desktop.png) | [Product Info Page Desktop](./docs/wireframes/product-detail-desktop.png)
+[Home Page Tablet](./docs/wireframes/home-page-tablet.png) | [Product Page Tablet](./docs/wireframes/products-page-tablet.png) | [Product Info Page Tablet](./docs/wireframes/product-detail-tablet.png)
+[Home Page Mobile](./docs/wireframes/home-page-mobile.png) | [Product Page Mobile](./docs/wireframes/products-page-mobile.png) | [Product Info Page Mobile](./docs/wireframes/product-detail-mobile.png)
 
 Blog Page | Blog Detail Page | User Profile Page
 ------------ | ------------- | ------------
@@ -222,7 +222,7 @@ In addition, the home page displays the latest blog post to encourage readers to
 
 #### Products App
 
-This app facilitates the feature to all users to see all products offered by the yoga studio. This app allows users to also view more information about a product, by visiting the product detail page. 
+This app facilitates the feature to all users to see all products offered by the yoga studio. This app allows users to also view more information about a product, by visiting the product info page. 
 
 Finally, this app also allows admin users to create, edit, and delete all products in the database.
 
@@ -254,7 +254,7 @@ The 'Remove' link triggers a modal to confirm that the admin user wishes to dele
 
 4. Timetable Page
 
-The Timetable page provides users with the ability to view all yoga classes times and days offered. This allows users to choose a class that best suits their schedule. Each class in the timetable has a link that directs users to the product detail page of the specific class.
+The Timetable page provides users with the ability to view all yoga classes times and days offered. This allows users to choose a class that best suits their schedule. Each class in the timetable has a link that directs users to the product info page of the specific class.
 
 The timetable page is automatically updated to reflect the current products in the database. A user can see all current yoga classes, and the day and time the class is offered. 
 
