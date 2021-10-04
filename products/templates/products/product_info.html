@@ -13,11 +13,13 @@
                 {% endif %}
                 
                 {% if product.category %}
-                        <span><p class="small">
+                    <p class="small">
+                        <span>
                             <a class="text-muted" href="{% url 'products' %}?category={{ product.category.name }}">
                                 {{ product.category.friendly_name }}
                             </a>
-                        </p></span>
+                        </span>
+                    </p>
                 {% endif %}
                 <hr>
             </div>
@@ -54,7 +56,9 @@
                             <i class="far fa-calendar-alt"></i> View Timetables
                         </a>
                     </p>
-                    <strong><p class="my-1 pb-1 text-sm-start">€{{ product.price }}</p></strong>
+                    <p class="my-1 pb-1 text-sm-start">
+                        <strong>€{{ product.price }}</strong>
+                    </p>
 
                     <!-- Allows admin user to edit and delete a product -->
                     {% if request.user.is_superuser %}
