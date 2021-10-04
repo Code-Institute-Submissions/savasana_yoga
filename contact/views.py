@@ -43,7 +43,3 @@ def contact(request):
 
     return render(request, 'contact/contact.html', context)
 
-
-def contact_success(request):
-
-    return render(request, 'contact/contact_success.html')
