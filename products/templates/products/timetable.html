@@ -30,10 +30,10 @@
                 {% for product in products %}
                   <tr>
                     <th><a href="{% url 'product_info' product.id %}" class="timetable-link timetable-font">{{ product.name }}</a></th>
-                    <td></td>
-                    <td scope="row" class="timetable-font">{{ product.get_day_display }}</td>
-                    <td></td>
-                    <td scope="row" class="timetable-font">{{ product.class_time }}</td>
+                      <td></td>
+                      <th scope="row" class="timetable-font">{{ product.get_day_display }}</th>
+                      <td></td>
+                      <th scope="row" class="timetable-font">{{ product.class_time }}</th>
                   </tr>
                 {% empty %}
                   <tr>
