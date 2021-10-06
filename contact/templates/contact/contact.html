@@ -36,7 +36,7 @@
 {% block postloadjs %}
 <!-- JS to disable submit button after a user submits contact form -->
     {{ block.super }}
-    <script type="text/javascript">
+    <script>
        $('#contact-form').submit( function(event) {
             // disable to avoid double submission
             $('#submit_button').attr('disabled', true);

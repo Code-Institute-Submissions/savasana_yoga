@@ -4,7 +4,6 @@
         <div class="col-sm-12 col-md-8 offset-md-2 col-lg-10 offset-lg-1 my-2 card comment-card">
             <div class="card-body">
                 <div class="comments">
-                    <p>
                         <span class="icon">
                             <i class="fas fa-user"></i>
                         </span>
@@ -12,10 +11,9 @@
                         <span class=" text-muted">
                             - {{ comment.created_on }}
                         </span>
-                    </p>
-                    <p>
-                        {{ comment.body | linebreaks }}
-                    </p>
+
+                    {{ comment.body | linebreaks }}
+                    
                     <!-- Allows comment author or admin to edit and delete comments -->
                     {% if request.user.is_superuser or request.user == comment.author %}
                         <div class="comment-actions">

@@ -44,7 +44,7 @@
 {% block postloadjs %}
 <!-- JS to disable submit button after a user submit comment -->
     {{ block.super }}
-    <script type="text/javascript">
+    <script>
        $('#comment-form').submit( function(event) {
             // disable to avoid double submission
             $('#submit_button').attr('disabled', true);

@@ -29,28 +29,6 @@
                     <div class="text-right">
                         <a class="btn back-btn rounded-1 mr-1" href="{% url 'view_blog' %}">Cancel</a>
                         <button class="btn cta-btn rounded-1 mr-1" type="submit">Edit Blog</button>
-                        <!-- Button trigger modal -->
-                        <button type="button" class="btn btn btn-outline-danger" data-bs-toggle="modal" 
-                            data-bs-target="#deleteBlogPost-{{ blog_post.id }}">Delete
-                        </button>
-                
-                    <!-- Modal -->
-                    <div class="modal fade" id="deleteBlogPost-{{ blog_post.id }}" tabindex="-1" aria-labelledby="deleteBlogPostLabel-{{ blog_post.id }}" aria-hidden="true">
-                        <div class="modal-dialog">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <h5 class="modal-title" id="deleteBlogPostLabel">Delete Confirmation</h5>
-                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                </div>
-                                <div class="modal-body">
-                                    <p>Are you sure you want to delete <strong>{{ blog_post.title }}</strong>? This action is cannot be undone.</p>
-                                </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-                                    <a href="{% url 'delete_blog_post' blog_post.id %}" class="btn btn-danger">Delete</a>
-                                </div>
-                            </div>
-                        </div>
                     </div>
                 </form>
             </div>            
@@ -61,7 +39,7 @@
 {% block postloadjs %}
 <!-- JS to provide text to indicate what new image will be set to -->
     {{ block.super }}
-    <script type="text/javascript">
+    <script>
         $('#new-image').change(function() {
             var file = $('#new-image')[0].files[0];
             $('#filename').text(`Image will be set to: ${file.name}`);
