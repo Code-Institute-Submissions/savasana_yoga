@@ -2,14 +2,9 @@
 
 ## Project Testing 
 
+### Validation 
 
-### Base Code
-
-#### Base HTML 
-
-#### Base CSS
-
-CSS Validation
+1. CSS Validation
 
 * Test: Check the base.css file, and ensure no errors are present.
     * Result: I checked the main css file (base.css) by using W3C CSS Validator. No errors were found.
@@ -79,15 +74,11 @@ The test was successful and correctly displays a message to users that no result
 
 * Test: HTML markup for the index.html page, using W3Validator. 
 
-    * Result: No errors were found. 
-
-(Image)
+    * Result: No errors or warnings were found. 
 
 * Test: I have also tested the Home App URL via Django Unit Testing.
 
     * Result: No errors were found. 
-
-(Image)
 
 * Test: Checked the home app code using gitpod's python validator and pep8.
 
@@ -210,22 +201,18 @@ The test was successful and correctly displays a message to users that no result
 
 #### Product App Validation 
 
-* Test: HTML markup for the the following pages using W3Validator:
-1. 
-
-    * Result: . 
-
-(Image)
+* Test: HTML for all pages in the Product App using the W3Validator.
+    * Result: No errors or warnings found.
 
 * Test: I have also tested the App's URL via Django Unit Testing.
 
-    * Result: . 
+    * Result: No errors found. 
 
 (Image)
 
-* Test: Checked the code using gitpod's python validator and pep8.
+* Test: Checked the code using gitpod's python validator, via the command python3 -m flake8 and as well as PEP8 Online Validator.
 
-    * Result: .
+    * Result: 1 error in the Product views file due to the search query line being too long. 
 
 ### Shopping Cart
 
@@ -276,25 +263,20 @@ The test was successful and correctly displays a message to users that no result
 
 #### Cart App Validation 
 
-* Test: HTML markup for the the following pages using W3Validator:
-1. 
-
-    * Result: . 
-
-(Image)
+* Test: HTML using W3Validator:
+    * Result: No errors or warnings found.
 
 * Test: I have also tested the App's URL via Django Unit Testing.
 
-    * Result: . 
+    * Result: No errors found.
 
 (Image)
 
-* Test: Checked the code using gitpod's python validator and pep8.
+* Test: Checked the code using gitpod's python validator, via the command python3 -m flake8 and as well as PEP8 Online Validator.
 
-    * Result: .
+    * Result: No errors found. 
 
 ### Checkout App
-
 
 * Test: Unit test the Checkout App URLs. 
     * Result: No errors were found. All checkout URLs are correct. 
@@ -351,22 +333,19 @@ The test was successful and correctly displays a message to users that no result
     * Result: No errors were found.
         * Note: One warning was found, related to an unknown vender extension. I also chose to ignore this warning. 
 
-* Test: HTML markup for the the following pages using W3Validator:
-1. 
+* Test: HTML all pages in the Checkout App using W3Validator
 
-    * Result: . 
-
-(Image)
+    * Result: No errors or warnings found.
 
 * Test: I have also tested the App's URL via Django Unit Testing.
 
-    * Result: . 
+    * Result: No errors found.
 
 (Image)
 
-* Test: Checked the code using gitpod's python validator and pep8.
+* Test: Checked the code using gitpod's python validator, via the command python3 -m flake8 and as well as PEP8 Online Validator.
 
-    * Result: .
+    * Result: 2 errors in the  webhook hander file due to lines being too long. Unable to make line shorter without breaking the code. 
 
 ### Profile 
 
@@ -388,22 +367,17 @@ The test was successful and correctly displays a message to users that no result
 
 #### Profile App Validation 
 
-* Test: HTML markup for the the following pages using W3Validator:
-1. 
-
-    * Result: . 
-
-(Image)
+* Test: HTML using W3Validator:
+    * Result: No errors or warnings found.
 
 * Test: I have also tested the App's URL via Django Unit Testing.
-
-    * Result: . 
+    * Result: No errors found.
 
 (Image)
 
-* Test: Checked the code using gitpod's python validator and pep8.
+* Test: Checked the code using gitpod's python validator, via the command python3 -m flake8 and as well as PEP8 Online Validator.
 
-    * Result: .
+    * Result: No errors found. 
 
 ### Sign In and Sign Out Form
 
@@ -426,22 +400,13 @@ The test was successful and correctly displays a message to users that no result
 
 #### Sign In and Sign Out Page Validation 
 
-* Test: HTML markup for the the following pages using W3Validator:
-1. 
-
-    * Result: . 
-
-(Image)
+* Test: HTML Sign In and Sign out pages using W3Validator:
+    * Result: No errors or warnings found.
 
 * Test: I have also tested the App's URL via Django Unit Testing.
-
-    * Result: . 
+    * Result: No errors found.
 
 (Image)
-
-* Test: Checked the code using gitpod's python validator and pep8.
-
-    * Result: .
 
 ### Blog
 
@@ -514,22 +479,17 @@ The test was successful and correctly displays a message to users that no result
 
 #### Blog App Validation 
 
-* Test: HTML markup for the the following pages using W3Validator:
-1. 
-
-    * Result: . 
-
-(Image)
+* Test: HTML for all pages in Blog App using W3Validator:
+    * Result: No errors or warnings found.
 
 * Test: I have also tested the App's URL via Django Unit Testing.
-
-    * Result: . 
+    * Result: No errors found.
 
 (Image)
 
-* Test: Checked the code using gitpod's python validator and pep8.
+* Test: Checked the code using gitpod's python validator, via the command python3 -m flake8 and as well as PEP8 Online Validator.
 
-    * Result: .
+    * Result: No errors found. 
 
 
 ### Contact App
@@ -557,22 +517,17 @@ The test was successful and correctly displays a message to users that no result
 
 #### Contact App Validation 
 
-* Test: HTML markup for the the following pages using W3Validator:
-1. 
-
-    * Result: . 
-
-(Image)
+* Test: HTML markup for the contact page using W3Validator:
+    * Result: No errors or warnings found. 
 
 * Test: I have also tested the App's URL via Django Unit Testing.
-
-    * Result: . 
+    * Result: No errors found.
 
 (Image)
 
-* Test: Checked the code using gitpod's python validator and pep8.
+* Test: Checked the code using gitpod's python validator, via the command python3 -m flake8 and as well as PEP8 Online Validator.
 
-    * Result: .
+    * Result: No errors found.
 
 
 ## Testing User Stories
@@ -644,3 +599,4 @@ The test was successful and correctly displays a message to users that no result
 * Test: I would like to be able to search for classes.
     * Result: On every page, in the footer, there is a search bar. This allows users to quickly search for different yoga classes via category, name, or keywords from a classes' description.
         * You can view this [here](./user_stories/user-story-searchbar.png) 
+
