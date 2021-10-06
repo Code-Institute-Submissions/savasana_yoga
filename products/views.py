@@ -9,8 +9,11 @@ from .forms import ProductForm
 
 # Create your views here.
 
+
 def all_products(request):
-    """ A view to display all products, including sorting and search queries """
+    """ A view to display all products,
+        including sorting and search queries
+    """
 
     products = Product.objects.all()
     query = None
@@ -46,9 +49,9 @@ def all_products(request):
                 messages.error(request, "You didn't search for anything!")
                 return redirect(reverse('products'))
 
-            queries = Q(name__icontains=query) | Q(description__icontains=query) | Q(category__friendly_name__icontains=query) 
+            queries = Q(name__icontains=query) | Q(description__icontains=query) | Q(category__friendly_name__icontains=query)
             products = products.filter(queries)
-    
+
     current_sorting = f'{sort}_{direction}'
 
     context = {
@@ -87,10 +90,11 @@ def add_product(request):
             messages.info(request, 'Successfully added product!')
             return redirect(reverse('product_info', args=[product.id]))
         else:
-            messages.error(request, 'Failed to add product. Please ensure the form is valid.')
+            messages.error(request, 'Failed to add product. \
+                Please ensure the form is valid.')
     else:
         form = ProductForm()
-     
+
     template = 'products/add_product.html'
     context = {
         'form': form,
@@ -114,7 +118,8 @@ def edit_product(request, product_id):
             messages.info(request, 'Successfully updated product!')
             return redirect(reverse('product_info', args=[product.id]))
         else:
-            messages.error(request, 'Failed to update product. Please ensure the form is valid.')
+            messages.error(request, 'Failed to update product.\
+                 Please ensure the form is valid.')
     else:
         form = ProductForm(instance=product)
         messages.info(request, f'You are editing {product.name}')
@@ -134,7 +139,7 @@ def delete_product(request, product_id):
     if not request.user.is_superuser:
         messages.error(request, 'Sorry, only store owners can do that.')
         return redirect(reverse('home'))
-        
+
     product = get_object_or_404(Product, pk=product_id)
     product.delete()
     messages.info(request, 'Product deleted!')
@@ -150,5 +155,5 @@ def view_timetable(request,):
     context = {
         'products': products,
     }
-  
+
     return render(request, template, context)

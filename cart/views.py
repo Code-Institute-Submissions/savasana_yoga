@@ -1,4 +1,6 @@
-from django.shortcuts import render, redirect, reverse, HttpResponse, get_object_or_404
+from django.shortcuts import (
+    render, redirect, reverse, HttpResponse, get_object_or_404
+)
 
 from django.contrib import messages
 
@@ -14,10 +16,11 @@ def view_cart(request):
 
 
 def add_to_cart(request, item_id):
-    """ A view to add quantity of an item to the shopping cart 
+    """ A view to add quantity of an item to the shopping cart
         Submits form to this view incl quantity and item_id
-        Creates cart variable if it doesn't exist, or gets it from the session, 
-        Either adds the item to the cart, if it doesn't exist, or updates the quantity if it already exists,
+        Creates cart variable if it doesn't exist, or gets it from the session,
+        Either adds the item to the cart, if it doesn't exist, or updates the
+        quantity if it already exists.
         Finally overwrites the cart variable with the new updated cart
     """
     product = get_object_or_404(Product, pk=item_id)
@@ -27,7 +30,9 @@ def add_to_cart(request, item_id):
 
     if item_id in list(cart.keys()):
         cart[item_id] += quantity
-        messages.success(request, f'Updated {product.name} quantity to {cart[item_id]}')
+        messages.success(
+            request, f'Updated {product.name} quantity to {cart[item_id]}'
+        )
     else:
         cart[item_id] = quantity
         messages.success(request, f'Added {product.name} to your cart')
@@ -45,7 +50,9 @@ def adjust_cart(request, item_id):
 
     if quantity > 0:
         cart[item_id] = quantity
-        messages.success(request, f'Updated {product.name} quantity to {cart[item_id]}')
+        messages.success(
+            request, f'Updated {product.name} quantity to {cart[item_id]}'
+        )
     else:
         cart.pop(item_id)
         messages.success(request, f'Removed {product.name} from your cart')

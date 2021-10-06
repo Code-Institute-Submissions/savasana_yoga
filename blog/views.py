@@ -25,7 +25,8 @@ def blog_post_detail(request, blog_post_id):
 
     blog_post = get_object_or_404(Post, pk=blog_post_id)
 
-    awaiting_approval_comments = blog_post.comments.filter(approved_comment=False)
+    awaiting_approval_comments = blog_post.comments.filter(
+        approved_comment=False)
 
     comments = blog_post.comments.filter(approved_comment=True)
 
@@ -58,10 +59,12 @@ def add_blog_post(request):
             messages.info(request, 'Successfully added post!')
             return redirect(reverse('blog_post_detail', args=[blog_post.id]))
         else:
-            messages.error(request, 'Failed to add post. Please ensure the form is valid.')
+            messages.error(
+                request, 'Failed to add post.\
+                    Please ensure the form is valid.')
     else:
         form = PostForm()
-  
+
     template = 'blog/add_blog_post.html'
     context = {
         'form': form,
@@ -90,7 +93,8 @@ def edit_blog_post(request, blog_post_id):
         else:
             messages.error(
                     request,
-                    'Failed to update the blog post. Please ensure the form is valid.')
+                    'Failed to update the blog post.\
+                        Please ensure the form is valid.')
     else:
         form = PostForm(instance=blog_post)
         messages.info(request, f'You are editing {blog_post.title}')
@@ -196,7 +200,9 @@ def comment_remove(request, comment_id):
 
     else:
 
-        messages.error(request, 'It is not possible to delete comments you did not create!')
+        messages.error(
+            request,
+            'It is not possible to delete comments you did not create!')
         return redirect(reverse('view_blog'))
 
 
@@ -218,7 +224,10 @@ def edit_comment(request, comment_id):
                             'Comment has been successfully edited')
                 return redirect(reverse('view_blog'))
             else:
-                messages.error(request, 'Unable to edit this comment. Please ensure the form is valid.')
+                messages.error(
+                    request,
+                    'Unable to edit this comment.\
+                        Please ensure the form is valid.')
         else:
             form = CommentForm(instance=comment)
 

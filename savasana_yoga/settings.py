@@ -40,7 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'django.contrib.sites',  # creates proper callback urls when logging in via social media
+    'django.contrib.sites',  # creates callback urls for login via social media
     'allauth',
     'allauth.account',  # allows basic user accounts - log in, log out etc
     'allauth.socialaccount',  # allows log in via social media
@@ -86,7 +86,7 @@ TEMPLATES = [
             'context_processors': [
                 'django.template.context_processors.debug',
                 'django.template.context_processors.request',
-                'django.contrib.auth.context_processors.auth',  # required by allauth - allows access to http objects in templates
+                'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
                 'django.template.context_processors.media',
                 'cart.contexts.cart_contents',
@@ -113,11 +113,11 @@ SITE_ID = 1
 
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
-ACCOUNT_AUTHENTICATION_METHOD = 'username_email'  # allows authentication by email or username
-ACCOUNT_EMAIL_REQUIRED = True  # requires email to register for the website
-ACCOUNT_EMAIL_VERIFICATION = 'mandatory'  # enables email verification to register to the website
-ACCOUNT_SIGNUP_EMAIL_ENTER_TWICE = True  # ensures that user enters their email twice when registering
-ACCOUNT_USERNAME_MIN_LENGTH = 4  # sets the min length of a username
+ACCOUNT_AUTHENTICATION_METHOD = 'username_email'
+ACCOUNT_EMAIL_REQUIRED = True
+ACCOUNT_EMAIL_VERIFICATION = 'mandatory'
+ACCOUNT_SIGNUP_EMAIL_ENTER_TWICE = True
+ACCOUNT_USERNAME_MIN_LENGTH = 4
 LOGIN_URL = '/accounts/login/'
 LOGIN_REDIRECT_URL = '/'
 
@@ -188,7 +188,7 @@ if 'USE_AWS' in os.environ:
         'Expires': 'Thu, 31 Dec 2099 20:00:00 GMT',
         'CacheControl': 'max-age=94608000',
     }
-    
+
     # Bucket Config
     AWS_STORAGE_BUCKET_NAME = 'tomc-savasana-yoga'
     AWS_S3_REGION_NAME = 'eu-west-1'

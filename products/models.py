@@ -34,14 +34,26 @@ class Product(models.Model):
         ('7', 'Sunday')
     ]
 
-    category = models.ForeignKey('Category', null=True, blank=True, on_delete=models.SET_NULL)
+    category = models.ForeignKey(
+        'Category', null=True, blank=True,
+        on_delete=models.SET_NULL)
     name = models.CharField(max_length=250)
-    day = models.CharField(max_length=10, choices=DAYS_OF_THE_WEEK, default='1')
-    class_time = models.TimeField(auto_now=False, auto_now_add=False, default=datetime.time(10, 0))
+    day = models.CharField(
+        max_length=10,
+        choices=DAYS_OF_THE_WEEK,
+        default='1')
+    class_time = models.TimeField(
+        auto_now=False,
+        auto_now_add=False,
+        default=datetime.time(10, 0))
     description = models.TextField()
-    tagline = models.CharField(max_length=250, null=True, blank=True)
+    tagline = models.CharField(
+        max_length=250, null=True,
+        blank=True)
     price = models.DecimalField(max_digits=6, decimal_places=2)
-    number_of_sessions = models.IntegerField(validators=[MaxValueValidator(50), MinValueValidator(1)], default=10)
+    number_of_sessions = models.IntegerField(
+        validators=[MaxValueValidator(50),
+                    MinValueValidator(1)], default=10)
     image_url = models.URLField(max_length=1024, null=True, blank=True)
     image = models.ImageField(null=True, blank=True)
 

@@ -1,4 +1,6 @@
-from django.shortcuts import render, redirect, reverse, get_object_or_404, HttpResponse
+from django.shortcuts import (
+    render, redirect, reverse, get_object_or_404, HttpResponse
+)
 from django.core.mail import send_mail
 from django.template.loader import render_to_string
 from django.conf import settings
@@ -32,7 +34,8 @@ def contact(request):
             return redirect(reverse('contact'))
 
         else:
-            messages.error(request, 'There was a problem with your message. Please try again.')
+            messages.error(request, 'There was a problem with your message.\
+                 Please try again.')
 
     else:
         contact_form = ContactForm()
@@ -42,4 +45,3 @@ def contact(request):
     }
 
     return render(request, 'contact/contact.html', context)
-
