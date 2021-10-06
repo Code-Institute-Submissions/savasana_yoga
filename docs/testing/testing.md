@@ -1,8 +1,16 @@
 # Savasana Yoga - Testing 
 
+
 ## Project Testing 
 
-### Validation 
+### Automated Testing
+
+I tested this project via Google Lighthouse and all pages have passed the tests for Performance, Accessibility, Best Practices and
+SEO.
+
+I have also tested this project via Google's Mobile Friendly Test. The project had passed the test, and declared a mobile friendly website.
+
+### CSS Validation 
 
 1. CSS Validation
 
@@ -528,6 +536,7 @@ The test was successful and correctly displays a message to users that no result
 * Test: Checked the code using gitpod's python validator, via the command python3 -m flake8 and as well as PEP8 Online Validator.
 
     * Result: No errors found.
+
 
 
 ## Testing User Stories
