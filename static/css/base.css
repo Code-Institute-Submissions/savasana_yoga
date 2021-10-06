@@ -357,6 +357,10 @@ i.fa-lock, i.fa-chevron-left {
     border-radius: 0;
 }
 
+a.checkout-profile-link {
+    color: #212529;
+}
+
 
 /* -- Shopping Cart -- */
 
