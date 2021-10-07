@@ -81,17 +81,22 @@ The test was successful and correctly displays a message to users that no result
 #### Home App Validation 
 
 * Test: HTML markup for the index.html page, using W3Validator. 
-
     * Result: No errors or warnings were found. 
 
-* Test: I have also tested the Home App URL via Django Unit Testing.
-
-    * Result: No errors were found. 
-
 * Test: Checked the home app code using gitpod's python validator and pep8.
-
     * Result: No errors found.
 
+* Test: I have also tested the Home App URL via Django Unit Testing.
+    * Result: No errors were found. 
+
+    ```
+    class TestUrls(TestCase):
+
+        def test_home_url_is_resolved(self):
+            url = reverse('home')
+            print(resolve(url))
+            self.assertEquals(resolve(url).func, index)   
+    ```
 
 ### Products
 
@@ -212,15 +217,56 @@ The test was successful and correctly displays a message to users that no result
 * Test: HTML for all pages in the Product App using the W3Validator.
     * Result: No errors or warnings found.
 
-* Test: I have also tested the App's URL via Django Unit Testing.
-
-    * Result: No errors found. 
-
-(Image)
 
 * Test: Checked the code using gitpod's python validator, via the command python3 -m flake8 and as well as PEP8 Online Validator.
-
     * Result: 1 error in the Product views file due to the search query line being too long. 
+
+
+* Test: I have also tested the App's URL via Django Unit Testing.
+    * Result: No errors found.
+
+```
+
+class TestUrls(TestCase):
+
+    def test_products_url_is_resolved(self):
+        url = reverse('products')
+        print(resolve(url))
+        self.assertEquals(resolve(url).func, all_products)
+
+
+    def test_products_url_product_detail(self):
+        url = reverse('product_info', args=[1])
+        print(resolve(url))
+        self.assertEquals(resolve(url).func, product_info)
+
+
+    def test_products_url_add_product(self):
+        url = reverse('add_product')
+        print(resolve(url))
+        self.assertEquals(resolve(url).func, add_product)
+
+
+    def test_products_url_edit_product(self):
+        url = reverse('edit_product', args=[1])
+        print(resolve(url))
+        self.assertEquals(resolve(url).func, edit_product)
+
+
+    def test_products_url_delete_product(self):
+        url = reverse('delete_product', args=[1])
+        print(resolve(url))
+        self.assertEquals(resolve(url).func, delete_product)
+
+
+    def test_products_url_timetable(self):
+        url = reverse('view_timetable')
+        print(resolve(url))
+        self.assertEquals(resolve(url).func, view_timetable)
+        
+
+```
+
 
 ### Shopping Cart
 
@@ -274,15 +320,41 @@ The test was successful and correctly displays a message to users that no result
 * Test: HTML using W3Validator:
     * Result: No errors or warnings found.
 
-* Test: I have also tested the App's URL via Django Unit Testing.
 
-    * Result: No errors found.
-
-(Image)
 
 * Test: Checked the code using gitpod's python validator, via the command python3 -m flake8 and as well as PEP8 Online Validator.
-
     * Result: No errors found. 
+
+* Test: I have also tested the App's URL via Django Unit Testing.
+    * Result: No errors found.
+
+```
+class TestUrls(TestCase):
+
+    def test_cart_url_is_resolved(self):
+        url = reverse('view_cart')
+        print(resolve(url))
+        self.assertEquals(resolve(url).func, view_cart)
+
+
+    def test_cart_url_add_to_cart(self):
+        url = reverse('add_to_cart', args=[1])
+        print(resolve(url))
+        self.assertEquals(resolve(url).func, add_to_cart)
+
+
+    def test_cart_url_adjust_cart(self):
+        url = reverse('adjust_cart', args=[1])
+        print(resolve(url))
+        self.assertEquals(resolve(url).func, adjust_cart)
+
+
+    def test_cart_url_remove_from_cart(self):
+        url = reverse('remove_from_cart', args=[1])
+        print(resolve(url))
+        self.assertEquals(resolve(url).func, remove_from_cart)
+
+```
 
 ### Checkout App
 
@@ -342,18 +414,33 @@ The test was successful and correctly displays a message to users that no result
         * Note: One warning was found, related to an unknown vender extension. I also chose to ignore this warning. 
 
 * Test: HTML all pages in the Checkout App using W3Validator
-
     * Result: No errors or warnings found.
 
-* Test: I have also tested the App's URL via Django Unit Testing.
+* Test: Checked the code using gitpod's python validator, via the command python3 -m flake8 and as well as PEP8 Online Validator.
+    * Result: 2 errors in the  webhook hander file due to lines being too long. Unable to make line shorter without breaking the code.
 
+* Test: I have also tested the App's URL via Django Unit Testing.
     * Result: No errors found.
 
-(Image)
+```
+class TestUrls(TestCase):
 
-* Test: Checked the code using gitpod's python validator, via the command python3 -m flake8 and as well as PEP8 Online Validator.
+    def test_checkout_url_is_resolved(self):
+        url = reverse('checkout')
+        print(resolve(url))
+        self.assertEquals(resolve(url).func, checkout)
 
-    * Result: 2 errors in the  webhook hander file due to lines being too long. Unable to make line shorter without breaking the code. 
+    def test_checkout_url_checkout_success(self):
+        url = reverse('checkout_success', args=[1])
+        print(resolve(url))
+        self.assertEquals(resolve(url).func, checkout_success)
+
+    def test_checkout_url_cache_checkout_data(self):
+        url = reverse('cache_checkout_data')
+        print(resolve(url))
+        self.assertEquals(resolve(url).func, cache_checkout_data)
+
+``` 
 
 ### Profile 
 
@@ -378,14 +465,27 @@ The test was successful and correctly displays a message to users that no result
 * Test: HTML using W3Validator:
     * Result: No errors or warnings found.
 
+* Test: Checked the code using gitpod's python validator, via the command python3 -m flake8 and as well as PEP8 Online Validator.
+    * Result: No errors found. 
+
 * Test: I have also tested the App's URL via Django Unit Testing.
     * Result: No errors found.
 
-(Image)
+```
+class TestUrls(TestCase):
 
-* Test: Checked the code using gitpod's python validator, via the command python3 -m flake8 and as well as PEP8 Online Validator.
+    def test_profiles_url_is_resolved(self):
+        url = reverse('profile')
+        print(resolve(url))
+        self.assertEquals(resolve(url).func, profile)
 
-    * Result: No errors found. 
+
+    def test_profiles_url_order_history(self):
+        url = reverse('order_history', args=[1])
+        print(resolve(url))
+        self.assertEquals(resolve(url).func, order_history)
+
+```
 
 ### Sign In and Sign Out Form
 
@@ -413,8 +513,6 @@ The test was successful and correctly displays a message to users that no result
 
 * Test: I have also tested the App's URL via Django Unit Testing.
     * Result: No errors found.
-
-(Image)
 
 ### Blog
 
@@ -490,14 +588,64 @@ The test was successful and correctly displays a message to users that no result
 * Test: HTML for all pages in Blog App using W3Validator:
     * Result: No errors or warnings found.
 
+* Test: Checked the code using gitpod's python validator, via the command python3 -m flake8 and as well as PEP8 Online Validator.
+    * Result: No errors found. 
+
 * Test: I have also tested the App's URL via Django Unit Testing.
     * Result: No errors found.
 
-(Image)
 
-* Test: Checked the code using gitpod's python validator, via the command python3 -m flake8 and as well as PEP8 Online Validator.
+```
 
-    * Result: No errors found. 
+class TestUrls(TestCase):
+
+    def test_blog_url_is_resolved(self):
+        url = reverse('view_blog')
+        print(resolve(url))
+        self.assertEquals(resolve(url).func, view_blog)
+
+
+    def test_blog_url_blog_post_detail(self):
+        url = reverse('blog_post_detail', args=[1])
+        print(resolve(url))
+        self.assertEquals(resolve(url).func, blog_post_detail)
+
+
+    def test_blog_url_add_blog_post(self):
+        url = reverse('add_blog_post')
+        print(resolve(url))
+        self.assertEquals(resolve(url).func, add_blog_post)
+
+
+    def test_blog_url_edit_blog_post(self):
+        url = reverse('edit_blog_post', args=[1])
+        print(resolve(url))
+        self.assertEquals(resolve(url).func, edit_blog_post)
+
+
+    def test_blog_url_delete_blog_post(self):
+        url = reverse('delete_blog_post', args=[1])
+        print(resolve(url))
+        self.assertEquals(resolve(url).func, delete_blog_post)
+
+
+    def test_blog_url_comment_approve(self):
+        url = reverse('comment_approve', args=[1])
+        print(resolve(url))
+        self.assertEquals(resolve(url).func, comment_approve)
+
+
+    def test_blog_url_comment_remove(self):
+        url = reverse('comment_remove', args=[1])
+        print(resolve(url))
+        self.assertEquals(resolve(url).func, comment_remove)
+
+    def test_blog_url_edit_comment(self):
+        url = reverse('edit_comment', args=[1])
+        print(resolve(url))
+        self.assertEquals(resolve(url).func, edit_comment)
+
+```
 
 
 ### Contact App
@@ -528,14 +676,12 @@ The test was successful and correctly displays a message to users that no result
 * Test: HTML markup for the contact page using W3Validator:
     * Result: No errors or warnings found. 
 
+* Test: Checked the code using gitpod's python validator, via the command python3 -m flake8 and as well as PEP8 Online Validator.
+    * Result: No errors found.
+
 * Test: I have also tested the App's URL via Django Unit Testing.
     * Result: No errors found.
 
-(Image)
-
-* Test: Checked the code using gitpod's python validator, via the command python3 -m flake8 and as well as PEP8 Online Validator.
-
-    * Result: No errors found.
 
 
 
