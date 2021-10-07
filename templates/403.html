@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+    <div class="container error-container">
+        <div class="row">
+            <div class="col-sm-12 col-md-8 offset-md-2 mb-2 text-center">
+                <h1 class="mt-5 mb-1 text-center">Oops! </h1>
+                <p class="mt-3 mb-1 lead text-center">Error 403, something went wrong!
+                    <br>
+                    You're unable to access this page.
+                </p>
+                <div class="text-center mt-3 mb-1">
+                    <a href="{% url 'home' %}" class="btn cta-btn">Return Home</a>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
