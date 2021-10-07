@@ -629,6 +629,8 @@ All text was written by myself.
 
 8. To assist with the creation of the blog app, I credit the following article from Django Central. The article can be found [here](https://djangocentral.com/building-a-blog-application-with-django/)
 
+9. To assist with understanding how to create a contact app, I credit an article found on twilio. The article can be found [here](https://www.twilio.com/blog/build-contact-form-python-django-twilio-sendgrid)
+
 
 
 ## Acknowledgements
