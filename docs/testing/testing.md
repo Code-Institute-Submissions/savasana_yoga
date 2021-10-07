@@ -213,7 +213,7 @@ The test was successful and correctly displays a message to users that no result
 
 
 * Test: Checked the code using gitpod's python validator, via the command python3 -m flake8 and as well as PEP8 Online Validator.
-    * Result: 1 error in the Product views file due to the search query line being too long. 
+    * Result: No errors found.
 
 
 * Test: I have also tested the App's URL via Django Unit Testing.
