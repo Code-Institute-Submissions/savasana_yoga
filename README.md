@@ -147,21 +147,21 @@ Since a user with admin privileges can edit, add, and remove products, I decided
 
 Yoga is relaxing and sometimes viewed as an elegant form of exercise. I wanted to maintain that philosophy when developing the website. I felt that using little colour, was a way of achieving this. 
 
-I decided to keep the background color and the navigation bar the same type of white (#).
+I decided to style the navigation bar an off-white(#FAF9F9) to compliment the background-color of the website.
 
-To split the screen space up, and offer a bit of diversity, while still maintaining the feel of a clean, relaxing, and elegant look, I used an off-grey(#) for the footer. I felt this added some variety and also complimented the white background color. 
+To split the screen space up, and offer a bit of diversity, while still maintaining the feel of a clean, relaxing, and elegant look, I used an off-grey(#efefef) for the footer. I felt this added some variety and also complimented the white background color. 
 
 For the buttons, I have decided to use two different kinds. 
 
-I opted to use a light blue (#) for the booking and checkout buttons. And a red (#) for the back buttons. 
+I opted to use a light blue (#2a9d8f) for the booking and checkout buttons. And a red (#b0686d) for the back buttons. 
 I felt these colors were subtle, and warm without providing too much contrast and boldness from the white background color.
 
 
 ### Font 
 
-I decided to use 'Open Sans' as the main font for this website. The font is used on all body text besides headings. I chose Open Sans because of its simplicity, elegance, and versatility. It's an easy-to-read font, but I also feel it has some character. 
+I decided to use 'Montserrat' as the main font for this website. The font is used on all body text besides headings. I chose Open Sans because of its simplicity, elegance, and versatility. It's an easy-to-read font, but I also feel it has some character. 
 
-For the headings, I decided to use 'Montserrat'. I decided to use this font as it complimented the simplicity and elegance that Open Sans provided. 
+For the headings, I decided to use 'Proza Libre'. I decided to use this font as it complimented the simplicity and elegance that Montserrat provided. I also chose to use this font, as Montserrat is quite simple, I wanted to add extra character and style to the headings throughout the website. 
 
 ### Icons 
 
@@ -605,7 +605,7 @@ https://YOUR-APP-NAME.herokuapp.com/
 
 ### Images 
 
-All images were sourced from Unsplash and Pexels.
+All images were sourced from [Unsplash](https://unsplash.com/) and [Pexels](https://www.pexels.com/).
 
 ### Text 
 
