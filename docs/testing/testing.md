@@ -1,11 +1,8 @@
 # Savasana Yoga - Testing 
 
-
 ## Project Testing 
 
 ### CSS Validation 
-
-1. CSS Validation
 
 * Test: Check the base.css file, and ensure no errors are present.
     * Result: I checked the main css file (base.css) by using W3C CSS Validator. No errors were found.
@@ -19,7 +16,7 @@
 
 ### JavaScript Validation
 
-1. I tested each JavaScript script in JSHint. No errors were found in any of the JS scripts used.
+I tested each JavaScript script in JSHint. No errors were found in any of the JS scripts used.
 
 ### Navbar 
 
@@ -712,211 +709,220 @@ I have documented these issues below.
 
 2. When creating the Timetable page, I wanted to display the days of the week in the following order: Monday to Sunday. When I initially created the page, the data was ordered by the latest entry, and the days of the week were not ordered. I felt this was not a good UI. One possible solution to this was to remove the products and input them in order so the latest entry would be Monday, then Tuesday. However this did would not resolve the issue, and if a new product was created the unordered days of the week would be present. 
 
-To solve this, I re-created the days of the week choices in the Product Model. 
+    To solve this, I re-created the days of the week choices in the Product Model. 
 
-```
-    DAYS_OF_THE_WEEK = [
-        ('1', 'Monday'),
-        ('2', 'Tuesday'),
-        ('3', 'Wednesday'),
-        ('4', 'Thursday'),
-        ('5', 'Friday'),
-        ('6', 'Saturday'),
-        ('7', 'Sunday')
-    ]
-```
+    ```
+        DAYS_OF_THE_WEEK = [
+            ('1', 'Monday'),
+            ('2', 'Tuesday'),
+            ('3', 'Wednesday'),
+            ('4', 'Thursday'),
+            ('5', 'Friday'),
+            ('6', 'Saturday'),
+            ('7', 'Sunday')
+        ]
+    ```
 
-Then I added a MetaClass to the Product Model: 
+    Then I added a MetaClass to the Product Model: 
 
-```
-class Meta:
-        ordering = ['day']
+    ```
+    class Meta:
+            ordering = ['day']
 
-```
+    ```
 
-This allowed me to have all products displayed by the days of the week. 
-
+    This allowed me to have all products displayed by the days of the week. 
 
 3. I faced another issue with the Timetable page when trying to display the days of the week. As I had re-arranged the choice field for the days of the week, when I was creating the Timetable page and used the Django templates to target and display these days using {{ product.day }} the days of the week were displayed as '1', '2', '3', etc rather than the values of 'Monday', 'Tuesday' etc. 
 
-I searched through the Django documentation, I came across the get_FOO_display() method. To better understand how to use this method in Django templates, I researched this method on StackOverflow and found the following post: https://stackoverflow.com/questions/4320679/django-display-choice-value
+    I searched through the Django documentation, I came across the get_FOO_display() method. To better understand how to use this method in Django templates, I researched this method on StackOverflow and found the following post: https://stackoverflow.com/questions/4320679/django-display-choice-value
 
-From this post, I learned that I could target the choices field values by using 
+    From this post, I learned that I could target the choices field values by using 
 
-```
-{{ product.get_day_display }}
-```
+    ```
+    {{ product.get_day_display }}
+    ```
 
-3. I wanted to implement a maximum and minimum value for the number of sessions a yoga class could have. 
+4. I wanted to implement a maximum and minimum value for the number of sessions a yoga class could have. 
 
-Upon researching how to implement these restrictions for the Product Model, I came across the following validators on Django's official documentation, which can be seen [here](https://docs.djangoproject.com/en/3.2/ref/validators/#maxvaluevalidator)
+    Upon researching how to implement these restrictions for the Product Model, I came across the following validators on Django's official documentation, which can be seen [here](https://docs.djangoproject.com/en/3.2/ref/validators/#maxvaluevalidator)
 
-This provided me with the correct validation logic to implement the restrictions I desired. 
+    This provided me with the correct validation logic to implement the restrictions I desired. 
 
-4. When I was initially creating the website, I had two apps for products: I had an app for Yoga Workshops, and I had an app for Products (books, yoga equipment, etc). I felt that this resulted in a lot of duplicated code, and templates. As a result, I decided to completely remove the Workshop App and merged the model into the Product Model. I then separated the different types of products by categories. 
+5. When I was initially creating the website, I had two apps for products: I had an app for Yoga Workshops, and I had an app for Products (books, yoga equipment, etc). I felt that this resulted in a lot of duplicated code, and templates. As a result, I decided to completely remove the Workshop App and merged the model into the Product Model. I then separated the different types of products by categories. 
 
-However, I also felt that the project had begun to lose focus. I thought the promoting of the yoga studio, and the yoga classes were far more important than the selling of yoga equipment/books, etc. I finally decided to completely remove all products that were not yoga classes, and by doing so, the website felt much more focused.
+    However, I also felt that the project had begun to lose focus. I thought the promoting of the yoga studio, and the yoga classes were far more important than the selling of yoga equipment/books, etc. I finally decided to completely remove all products that were not yoga classes, and by doing so, the website felt much more focused.
 
-5. I had a persistent issue with excessive overflow with some containers. As a result, the home image didn't fit as I would like it to. I initially removed the padding and margins from the container-fluid. Doing so created overflow for other container-fluid sections, so the solution was to target the specific container where the image was placed. 
+6. I had a persistent issue with excessive overflow with some containers. As a result, the home image didn't fit as I would like it to. I initially removed the padding and margins from the container-fluid. Doing so created overflow for other container-fluid sections, so the solution was to target the specific container where the image was placed. 
 
 
-```
-.home-image-container {
-    padding: 0px;
-    margin: 0px;
-}
-```
+    ```
+    .home-image-container {
+        padding: 0px;
+        margin: 0px;
+    }
+    ```
 
-In addition, there was still some excessive overflow, and I opened chrome dev tools, and targetted the excessive overflow section of the home page, and saw that there was a missing div in closing the about section container. I added the necessary closing div, and the issue was solved.
+    In addition, there was still some excessive overflow, and I opened chrome dev tools, and targetted the excessive overflow section of the home page, and saw that there was a missing div in closing the about section container. I added the necessary closing div, and the issue was solved.
 
-6. I had an issue when creating the navigation bar, specifically with utilizing the icons for the shopping cart, and profile. I wanted to keep the navbar brand visible on mobile devices, however, When using both the profile icon and cart icon, resulted in a squashed experience. There was very little space between the navbar brand and the icons, and the only way to create space between these items was to place the icons in the mobile dropdown menu, or else on a new line below the navbar brand. 
+7. I had an issue when creating the navigation bar, specifically with utilizing the icons for the shopping cart, and profile. I wanted to keep the navbar brand visible on mobile devices, however, When using both the profile icon and cart icon, resulted in a squashed experience. There was very little space between the navbar brand and the icons, and the only way to create space between these items was to place the icons in the mobile dropdown menu, or else on a new line below the navbar brand. 
 
-I decided to remove the profile icon, and instead place it as a nav-link 'Account'. This allowed me to keep the navbar brand and the shopping cart icon on mobile devices.
+    I decided to remove the profile icon, and instead place it as a nav-link 'Account'. This allowed me to keep the navbar brand and the shopping cart icon on mobile devices.
 
 
-7. With regards to the timetable page, I faced several issues with how I wanted to achieve, and display this information. Initially, I created a separate app for the timetable and created the table with the currently offered classes for different days of the week. I felt this was not optimal, as if an admin wanted to remove, edit or add a yoga class, they would also have to make this change for the timetable model. I decided to remove the timetable app, and merge it with the Products app, and include the timetable data into the Product model. This created a streamlined experience for admin users to quickly update the yoga class timetable information, and for the timetable, page to always be updated and accurately reflect the current products being offered to users.
+8. With regards to the timetable page, I faced several issues with how I wanted to achieve, and display this information. Initially, I created a separate app for the timetable and created the table with the currently offered classes for different days of the week. I felt this was not optimal, as if an admin wanted to remove, edit or add a yoga class, they would also have to make this change for the timetable model. I decided to remove the timetable app, and merge it with the Products app, and include the timetable data into the Product model. This created a streamlined experience for admin users to quickly update the yoga class timetable information, and for the timetable, page to always be updated and accurately reflect the current products being offered to users.
 
-8. I was having issues with getting the footer to stay at the bottom of the page. While developing the website, I didn't encounter this problem as the content on each page was enough to push the footer to the bottom of the page. However, on some pages such as the forgotten password page, and an empty shopping cart page there would be a lot of space below the footer.
+9. I was having issues with getting the footer to stay at the bottom of the page. While developing the website, I didn't encounter this problem as the content on each page was enough to push the footer to the bottom of the page. However, on some pages such as the forgotten password page, and an empty shopping cart page there would be a lot of space below the footer.
 
-When attempting to have the footer stay at the bottom of the page, I first tried to use the class 'sticky footer', however, I did not like the UI and UX of a fixed footer on scroll. 
+    When attempting to have the footer stay at the bottom of the page, I first tried to use the class 'sticky footer', however, I did not like the UI and UX of a fixed footer on scroll. 
 
-Instead, I wanted the footer to remain at the bottom of the page, regardless of content, while also not being 'sticky' and being shown to a user at all times. 
+    Instead, I wanted the footer to remain at the bottom of the page, regardless of content, while also not being 'sticky' and being shown to a user at all times. 
 
-I found a solution on CSS-tricks, which can be seen [here](https://css-tricks.com/couple-takes-sticky-footer/) 
+    I found a solution on CSS-tricks, which can be seen [here](https://css-tricks.com/couple-takes-sticky-footer/) 
 
-I opted to use the flexbox solution, which allowed the footer to remain responsive, and dynamic. The solution was to use flex-direction column on the body, and wrap the block content in a div with flex: 1 0 auto, and use flex-shrink: 0 on the footer.
+    I opted to use the flexbox solution, which allowed the footer to remain responsive, and dynamic. The solution was to use flex-direction column on the body, and wrap the block content in a div with flex: 1 0 auto, and use flex-shrink: 0 on the footer.
 
-9. I encountered an issue when adding blog posts, the issue rested with the required field in the model 'author'. Each time, a user created a blog post, they were required to select the author. If there were more than one admin account, the admin user could select an admin user as the author of a blog post, even if they were not the account that added the blog post. I felt this was not a good design, and I wanted the author to be the user who was currently in session. 
+10. I encountered an issue when adding blog posts, the issue rested with the required field in the model 'author'. Each time, a user created a blog post, they were required to select the author. If there were more than one admin account, the admin user could select an admin user as the author of a blog post, even if they were not the account that added the blog post. I felt this was not a good design, and I wanted the author to be the user who was currently in session. 
 
-When I attempted this
+    When I attempted this
 
-```
-blog_post.author = request.user
-blog_post = form.save()
-```
+    ```
+    blog_post.author = request.user
+    blog_post = form.save()
+    ```
 
-I received an error that 'blog_post' is not defined. 
+    I received an error that 'blog_post' is not defined. 
 
 
-I did not like this and instead wanted the author to be the current user in session. 
+    I did not like this and instead wanted the author to be the current user in session. 
 
-When I tried this, I first got an error that blog_post is not defined. Upon inspection, I realized this error occurred because the 'blog_post.author' was being referenced before the saving of the form: 'blog_post = form.save()'
+    When I tried this, I first got an error that blog_post is not defined. Upon inspection, I realized this error occurred because the 'blog_post.author' was being referenced before the saving of the form: 'blog_post = form.save()'
 
-I initially thought a quick fix for this would be to simply re-arrange the code to read 
+    I initially thought a quick fix for this would be to simply re-arrange the code to read 
 
-```
-blog_post = form.save()
-blog_post.author = request.user
-```
+    ```
+    blog_post = form.save()
+    blog_post.author = request.user
+    ```
 
-This did not solve the issue, and I encountered an error that 'blog_post.author cannot be NULL as it is a required field.
+    This did not solve the issue, and I encountered an error that 'blog_post.author cannot be NULL as it is a required field.
 
-I quickly realized my mistake, and that I first need to save the form to reference the blog_post, but to not save it until after the blog_post.author is assigned as the request.user.
+    I quickly realized my mistake, and that I first need to save the form to reference the blog_post, but to not save it until after the blog_post.author is assigned as the request.user.
 
-Upon research, I found the best way to achieve this is to use the 'commit=False' method. This method was also used on the order form.
+    Upon research, I found the best way to achieve this is to use the 'commit=False' method. This method was also used on the order form.
 
-Once I re-arranged the blog code to the following:
+    Once I re-arranged the blog code to the following:
 
-```
-blog_post = form.save(Commit=False)
-blog_post.author = request.user
-blog_post = form.save()
+    ```
+    blog_post = form.save(Commit=False)
+    blog_post.author = request.user
+    blog_post = form.save()
 
-```
+    ```
 
-The blog post is first saved without being committed to the database, then the author is assigned as the current user in session. Finally, the form is saved to the database.
+    The blog post is first saved without being committed to the database, then the author is assigned as the current user in session. Finally, the form is saved to the database.
 
 
-10. When developing the blog, I faced a dilemma as to how I wanted the blog comments to function. I did not a user's comments to be posted automatically. I wanted an admin to be able to approve or deny a pending comment before being visible on the website. I felt that the content should be moderated and the focus of comments to be kept related to the content of the website: Yoga. 
+11. When developing the blog, I faced a dilemma as to how I wanted the blog comments to function. I did not a user's comments to be posted automatically. I wanted an admin to be able to approve or deny a pending comment before being visible on the website. I felt that the content should be moderated and the focus of comments to be kept related to the content of the website: Yoga. 
 
-To achieve this, I decided to place all comments in a field named 'approved_comments' with a Boolean field. In the blog views.py I set the 'approve_comments' field to False to ensure that these comments did not show. 
+    To achieve this, I decided to place all comments in a field named 'approved_comments' with a Boolean field. In the blog views.py I set the 'approve_comments' field to False to ensure that these comments did not show. 
 
-Initially, when I created this the following would happen: When a user leaves a comment on a blog post, they are alerted that their comment is awaiting admin approval. 
+    Initially, when I created this the following would happen: When a user leaves a comment on a blog post, they are alerted that their comment is awaiting admin approval. 
 
-To approve a comment, an admin user must log in to the admin panel, go to the comment database, and manually approve comments from here. 
+    To approve a comment, an admin user must log in to the admin panel, go to the comment database, and manually approve comments from here. 
 
-I felt this was not the best experience for an admin of the website, and so I wanted to be able to approve or deny pending comments from the specific blog post, on the website.
+    I felt this was not the best experience for an admin of the website, and so I wanted to be able to approve or deny pending comments from the specific blog post, on the website.
 
-To achieve this I created a new variable - awaiting_approval_comments, which stored all comments with an active=False. I then created a for loop to display all comments with these parameters. From here, I created a function to change the boolean value from false to true and linked this to the approve button. 
+    To achieve this I created a new variable - awaiting_approval_comments, which stored all comments with an active=False. I then created a for loop to display all comments with these parameters. From here, I created a function to change the boolean value from false to true and linked this to the approve button. 
 
-To help with understanding how to approve or deny comments, I used a tutorial which can be seen [here](https://tutorial-extensions.djangogirls.org/en/homework_create_more_models)
+    To help with understanding how to approve or deny comments, I used a tutorial which can be seen [here](https://tutorial-extensions.djangogirls.org/en/homework_create_more_models)
 
-When an admin is viewing a blog post, they can see if there are any pending comments awaiting admin approval, and they can approve or deny these pending comments from the blog post page.
+    When an admin is viewing a blog post, they can see if there are any pending comments awaiting admin approval, and they can approve or deny these pending comments from the blog post page.
 
-This allowed me to create an on-site moderation functionality.
+    This allowed me to create an on-site moderation functionality.
 
-11. I experienced some issues when creating the Contact app. I created each app before deployment. However, this app was created after I had deployed it to Heroku. Once I created the contact app locally and tested it locally, I committed my changed and pushed it to Github. I then tested the contact form on Heroku. 
+12. I experienced some issues when creating the Contact app. I created each app before deployment. However, this app was created after I had deployed it to Heroku. Once I created the contact app locally and tested it locally, I committed my changed and pushed it to Github. I then tested the contact form on Heroku. 
 
-The form was rendered as expected, however once submitting the form I was redirected to the 500 error page. To debug this issue, I switched DEBUG to True and repeated the previous steps. After submitting the form, I received the following error message "Relation does not exist". I logged in to the admin section of the website, and when clicking on the Contact Forms, I was directed to the error again. 
+    The form was rendered as expected, however once submitting the form I was redirected to the 500 error page. To debug this issue, I switched DEBUG to True and repeated the previous steps. After submitting the form, I received the following error message "Relation does not exist". I logged in to the admin section of the website, and when clicking on the Contact Forms, I was directed to the error again. 
 
-I knew then that the contact app had not migrated to Heroku. The fix was to force run the models migrating to Heroku
+    I knew then that the contact app had not migrated to Heroku. The fix was to force run the models migrating to Heroku
 
-```
-heroku run python3 manage.py migrate --plan
-```
+    ```
+    heroku run python3 manage.py migrate --plan
+    ```
 
-I could see the contact app in the pending changes and so I entered the command 
+    I could see the contact app in the pending changes and so I entered the command 
 
-```
-heroku run python3 manage.py migrate 
-```
+    ```
+    heroku run python3 manage.py migrate 
+    ```
 
-I turned DEBUG to off and repeated the steps above. The contact form was submitted as intended, and the data was stored in the database. 
+    I turned DEBUG to off and repeated the steps above. The contact form was submitted as intended, and the data was stored in the database. 
 
 
-12. When testing the contact form, I noticed that users could submit the form multiple times by repeatedly clicking the submit button while the form was being submitted. To fix this I created a JavaScript script to disable the submit button when the form was being submitted. This allowed the form to be submitted once and avoided the possibility of being submitted multiple times by rapid clicks. 
+13. When testing the contact form, I noticed that users could submit the form multiple times by repeatedly clicking the submit button while the form was being submitted. To fix this I created a JavaScript script to disable the submit button when the form was being submitted. This allowed the form to be submitted once and avoided the possibility of being submitted multiple times by rapid clicks. 
 
-```
-$('#contact-form').submit( function(event) {
-    // disable to avoid double submission
-    $('#submit_button').attr('disabled', true);
-});
-```
+    ```
+    $('#contact-form').submit( function(event) {
+        // disable to avoid double submission
+        $('#submit_button').attr('disabled', true);
+    });
+    ```
 
-13. I had an issue with the checkout app once I deployed the project to Heroku. When a user purchased a product, two order items were created, with one order having a grand_total of 0. 
+14. I had an issue with the checkout app once I deployed the project to Heroku. When a user purchased a product, two order items were created, with one order having a grand_total of 0. 
 
-A screenshot of the bug can be seen [here]((./testing_images/purchasing-bug.png). 
+    A screenshot of the bug can be seen [here]((./testing_images/purchasing-bug.png). 
 
-I initially thought the issue was with the webhook_handler.py file, and checked stripe events to see if I could troubleshoot the issue there. However, everything seemed fine on that end. Upon inspection, I realized there was an error in the signals.py field where both signal function were named the same. 
+    I initially thought the issue was with the webhook_handler.py file, and checked stripe events to see if I could troubleshoot the issue there. However, everything seemed fine on that end. Upon inspection, I realized there was an error in the signals.py field where both signal function were named the same. 
 
-I changed the duplicated signal 'update_on_delete'. I then re-tested the checkout process, and confirmed that everything was working as expected. I also checked the order line items in the admin panel, and could see that the order_total and grand_total had matched.
+    I changed the duplicated signal 'update_on_delete'. I then re-tested the checkout process, and confirmed that everything was working as expected. I also checked the order line items in the admin panel, and could see that the order_total and grand_total had matched.
 
-14. A site-breaking issue was found when testing the removal of products. If a product is removed while it is currently in a user's cart, each page is then shown the 404 error page. 
+15. A site-breaking issue was found when testing the removal of products. If a product is removed while it is currently in a user's cart, each page is then shown the 404 error page. 
 
-I created the following code thinking this would be a temporary fix. 
+    I created the following code thinking this would be a temporary fix. 
 
-```
- cart = request.session.get('cart', {})
-    if product_id in list(cart.keys()):
-        remove_from_cart(request, product_id)
-    product.delete()
-```
-I wanted to check if the product is currently in the cart before deleting it. If the product is in the cart, then remove the product from the cart. And then delete the product. 
+    ```
+    cart = request.session.get('cart', {})
+        if product_id in list(cart.keys()):
+            remove_from_cart(request, product_id)
+        product.delete()
+    ```
+    I wanted to check if the product is currently in the cart before deleting it. If the product is in the cart, then remove the product from the cart. And then delete the product. 
 
-However, it would not work when tested. The same error was displayed. To further debug this, I added the following print statements to the add_to_cart view
+    However, it would not work when tested. The same error was displayed. To further debug this, I added the following print statements to the add_to_cart view
 
-```
-print(item_id)
-print(cart.keys())
-```
+    ```
+    print(item_id)
+    print(cart.keys())
+    ```
 
-I realized the the code above would not work as the item_id is stored as a string. 
+    I realized the the code above would not work as the item_id is stored as a string. 
 
-I changed the code above to:
+    I changed the code above to:
 
-```
- cart = request.session.get('cart', {})
-    if str(product_id) in list(cart.keys()):
-        remove_from_cart(request, str(product_id))
-    product.delete()
+    ```
+    cart = request.session.get('cart', {})
+        if str(product_id) in list(cart.keys()):
+            remove_from_cart(request, str(product_id))
+        product.delete()
 
-```
+    ```
 
-This method has worked fine as an immediate fix to this error. However, after speaking about this issue with Code Institute's Tutors, I realized that this solution is not ideal, because if an admin deletes a product, while it is currently in the cart of a non-admin user, the user would be shown a 404 page. 
+    This method has worked fine as an immediate fix to this error. However, after speaking about this issue with Code Institute's Tutors, I realized that this solution is not ideal, because if an admin deletes a product, while it is currently in the cart of a non-admin user, the user would be shown a 404 page. 
 
-An alternative and safer solution was presented to be Code Institute's tutor Ed. Who suggested to create a copy of my cart dictionary, loop over the new dictionary and implement an except statement for when the product no longer exists. In the end, this was the approach I implemented. 
+    An alternative and safer solution was presented to be Code Institute's tutor Ed. Who suggested to create a copy of my cart dictionary, loop over the new dictionary and implement an except statement for when the product no longer exists. In the end, this was the approach I implemented. 
 
-I first created a new dictionary, looping over the key:value pairs from the cart_items dictionary. I then set the product_id variable to equal the item_id. I created a try and except statement, to check whether the product_id is in the database, and if it does not exist to remove the product from the current cart.
+    I first created a new dictionary, looping over the key:value pairs from the cart_items dictionary. To further understand this, I credit the following posts on StackOverflow [here](https://stackoverflow.com/questions/3294889/iterating-over-dictionaries-using-for-loops) and [here](https://stackoverflow.com/questions/16480420/create-a-new-dict-based-on-old-dict). 
 
-With this completed, I recreated the issue, and confirmed that it no longer redirects users to a 404 page.
+    To further understand django get_object_or_404 I credit the following post on StackOverflow [here](https://stackoverflow.com/questions/36515187/django-get-object-or-404-or-filter-exists), specifically the part of the post which breaks down this django method as:
+
+    ```
+    try:
+        my_model = MyModel.objects.get(pk=pk)
+    except:
+        raise Http404
+    ```
+    With this in mind, I set the product_id variable to equal the item_id. I created a try and except statement, to check whether the product_id is in the database, and if it does not exist to remove the product from the current cart.
+
+    With this completed, I recreated the issue, and confirmed that it no longer redirects users to a 404 page.
 
