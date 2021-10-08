@@ -343,7 +343,7 @@ For users, this app provides a place where they can read blog posts, and leave c
 
 This app allows users to send a message to the administrators of the website. It's a simple contact form with fields for the user's first name, last name, email address, subject, and message. Once the message is sent,  an email is sent to the user to inform them that their message has been sent and to expect a reply shortly.
 
-All features have been manually tested in a variety of ways. This can be read in more detail [here]()
+All features have been manually tested in a variety of ways. This can be read in more detail in the testing file [here](./docs/testing/testing.md)
 
 
 ### Future Features
