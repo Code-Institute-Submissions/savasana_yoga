@@ -929,3 +929,43 @@ A screenshot of the bug can be seen [here]((./testing_images/purchasing-bug.png)
 I initially thought the issue was with the webhook_handler.py file, and checked stripe events to see if I could troubleshoot the issue there. However, everything seemed fine on that end. Upon inspection, I realized there was an error in the signals.py field where both signal function were named the same. 
 
 I changed the duplicated signal 'update_on_delete'. I then re-tested the checkout process, and confirmed that everything was working as expected. I also checked the order line items in the admin panel, and could see that the order_total and grand_total had matched.
+
+14. A site-breaking issue was found when testing the removal of products. If a product is removed while it is currently in a user's cart, each page is then shown the 404 error page. 
+
+I created the following code thinking this would be a temporary fix. 
+
+```
+ cart = request.session.get('cart', {})
+    if product_id in list(cart.keys()):
+        remove_from_cart(request, product_id)
+    product.delete()
+```
+I wanted to check if the product is currently in the cart before deleting it. If the product is in the cart, then remove the product from the cart. And then delete the product. 
+
+However, it would not work when tested. The same error was displayed. To further debug this, I added the following print statements to the add_to_cart view
+
+```
+print(item_id)
+print(cart.keys())
+```
+
+I realized the the code above would not work as the item_id is stored as a string. 
+
+I changed the code above to:
+
+```
+ cart = request.session.get('cart', {})
+    if str(product_id) in list(cart.keys()):
+        remove_from_cart(request, str(product_id))
+    product.delete()
+
+```
+
+This method has worked fine as an immediate fix to this error. However, after speaking about this issue with Code Institute's Tutors, I realized that this solution is not ideal, because if an admin deletes a product, while it is currently in the cart of a non-admin user, the user would be shown a 404 page. 
+
+An alternative and safer solution was presented to be Code Institute's tutor Ed. Who suggested to create a copy of my cart dictionary, loop over the new dictionary and implement an except statement for when the product no longer exists. In the end, this was the approach I implemented. 
+
+I first created a new dictionary, looping over the key:value pairs from the cart_items dictionary. I then set the product_id variable to equal the item_id. I created a try and except statement, to check whether the product_id is in the database, and if it does not exist to remove the product from the current cart.
+
+With this completed, I recreated the issue, and confirmed that it no longer redirects users to a 404 page.
+
