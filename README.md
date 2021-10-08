@@ -134,12 +134,14 @@ Blog Page | Blog Detail Page | User Profile Page
 There are two main aspects of images used throughout this app; Static and Dynamic images. 
 
 1. Static Images 
-- The first is by storing images in a static folder. I have stored the home page images here, as they will not be altered.
+
+    The first is by storing images in a static folder. I have stored the home page images here, as they will not be altered.
 
     I choose this landing page image, as the photo is quite zoomed out, and allows a lot of space, and breathing room on the left-hand and right-hand sides of the person in the image. I also choose to use this image because it had a lot of white in it, and I wanted the home page to match the background colors of the website; greys and whites.  
 
 2. Dynamic Images
-    - All product images are stored via AWS. 
+
+    All product images are stored via AWS. 
 
     Since a user with admin privileges can edit, add, and remove products, I decided to use AWS to host the images. Each time an image is updated in the database it is reflected on Heroku. In addition, storing the images on AWS avoids the risk of the images being removed once the website is deployed and running on Heroku.
 
@@ -397,18 +399,18 @@ A wireframe for the database was created on dbdiagram.io to help in providing an
 
 ## Testing
 
-All testing can be viewed here: [here](./docs/testing/testing.md).
+All testing can be viewed [here](./docs/testing/testing.md).
 
 ## Deployment
 
 Requirements:
-An IDE to write your code. For this project, I used a cloud-based IDE; Gitpod.
-Git for version control.
-Python3
-Django
-PIP to install your Python3 packages.
-Stripe to facilitate payments.
-Cloud storage to host your images and static files. For this project, I used AWS.
+* An IDE to write your code. For this project, I used a cloud-based IDE; Gitpod.
+* Git for version control.
+* Python3
+* Django
+* PIP to install your Python3 packages.
+* Stripe to facilitate payments.
+* Cloud storage to host your images and static files. For this project, I used AWS.
 
 ### Local Deployment
 
