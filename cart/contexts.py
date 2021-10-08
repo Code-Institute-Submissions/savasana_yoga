@@ -1,6 +1,8 @@
 from decimal import Decimal
 from django.conf import settings
 from django.shortcuts import get_object_or_404
+from django.contrib import messages
+
 from products.models import Product
 
 
@@ -11,8 +13,20 @@ def cart_contents(request):
     product_count = 0
     cart = request.session.get('cart', {})
 
-    for item_id, quantity in cart.items():
-        product = get_object_or_404(Product, pk=item_id)
+    # Creates a new dictionary so items can be removed
+    new_cart = {k: v for k, v in cart.items()}
+
+    # loops over new dictionary and checks if product exists
+    for item_id, quantity in new_cart.items():
+        product_id = item_id
+        try:
+            product = Product.objects.get(pk=product_id)
+            # delete product from cart if no longer in database
+        except Product.DoesNotExist:
+            del cart[item_id]
+            messages.error(request, 'This product is no longer available')
+            continue
+
         total += quantity * product.price
         product_count += quantity
         cart_items.append({
@@ -22,6 +36,7 @@ def cart_contents(request):
 
         })
 
+    request.session['cart'] = cart
     grand_total = total
 
     context = {
