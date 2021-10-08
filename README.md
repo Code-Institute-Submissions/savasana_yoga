@@ -378,7 +378,7 @@ A wireframe for the database was created on dbdiagram.io to help in providing an
 * [Crispy Forms](https://django-crispy-forms.readthedocs.io/en/latest/) was used to quickly render forms.
 * [All Auth](https://django-allauth.readthedocs.io/en/latest/installation.html) was used to create the login and register functionality.
 * I used [Font Awesome](https://fontawesome.com/) for all icons.
-I used [Unsplash](https://unsplash.com/) and [Pexels](https://www.pexels.com/) to source images used on the website.
+* I used [Unsplash](https://unsplash.com/) and [Pexels](https://www.pexels.com/) to source images used on the website.
 * [Bootstrap 5](https://getbootstrap.com/) was used to structure the layout of the website and maintaining layout and responsiveness to tablet and mobile devices. I linked Bootstrap to the HTML document via [CDN](https://www.bootstrapcdn.com/).
 * This website was initially designed with wireframes using [Balsamiq](https://balsamiq.com/). 
 * [Git](https://git-scm.com/) version control was used to store the version of files and track the development progress. 
@@ -393,7 +393,6 @@ I used [Unsplash](https://unsplash.com/) and [Pexels](https://www.pexels.com/) t
 * [Google Mobile-Friendly Test](https://search.google.com/test/mobile-friendly) to test the website on mobiles. 
 * [Favicon.io](https://favicon.io/) was used for the website's favicon.
 * [ResponsiveDesign](http://ami.responsivedesign.is/) was used to display the README's Overview Image.
-
 
 ## Testing
 
@@ -602,7 +601,6 @@ https://YOUR-APP-NAME.herokuapp.com/
 
 ## Credits 
 
-
 ### Images 
 
 All images were sourced from [Unsplash](https://unsplash.com/) and [Pexels](https://www.pexels.com/).
@@ -633,7 +631,9 @@ All text was written by myself.
 
 10. To assist with understanding how to iterate over dictionaries using for loops. I credit a post on StackOverflow that can be found [here](https://stackoverflow.com/questions/3294889/iterating-over-dictionaries-using-for-loops)
 
-11. To help understand Django's get_object_or_404 method, which ultimately led me to further understand using the try and except statement in the context.py file. I credit [this](https://stackoverflow.com/questions/36515187/django-get-object-or-404-or-filter-exists) post on StackOverflow.
+11. To help understand how to create a new dictionary based on an old dictionary, I credit a post on StackOverflow that can be found [here](https://stackoverflow.com/questions/16480420/create-a-new-dict-based-on-old-dict)
+
+12. To help understand Django's get_object_or_404 method, which ultimately led me to further understand using the try and except statement in the context.py file. I credit [this](https://stackoverflow.com/questions/36515187/django-get-object-or-404-or-filter-exists) post on StackOverflow.
 
 
 ## Acknowledgements
