@@ -36,11 +36,9 @@
     * Result: Social media icons grow in size when hovered, and when clicked a new tab is opened which directs users to the correct social media website. 
 
 * Test: If the site map links direct users to the correct page.
-
     * Result: Each link in the site map correctly directs users to relevant page. 
 
 * Test: Search Bar correctly searches for products relating to name, category, or description. 
-
     * Result: Search functionality correctly identifies a user's search parameters by querying results via name, category, or description. 
 
 The search functionality was tested extensively by purposefully searching for products via their name, categories, and words used in the product description. The expected products were returned and successfully searched. 
@@ -53,23 +51,18 @@ The test was successful and correctly displays a message to users that no result
 ### Home App
 
 * Test: Responsiveness and column change when changing screen sizes. 
-
     * Result: Product cards, and about image and test change to single rows when viewed on smaller devices.
 
 * Test: Three products with a beginner category are displayed on the home page, and when clicked, direct users to the relevant product info page. 
-
     * Result: Product cards are displayed as expected, and directs users to the relevant product info page when clicked. 
 
 * Test: Latest blog post entry is displayed as a snipper to the user. 
-
     * Result: Latest blog post entry is displayed as a snippet to the user.
 
 * Test: To test whether the hover effect works on product cards displayed on Home Page. 
-* 
     * Result: When hovering product cards, the hover effect works as intended. 
 
 * Test: Tested to ensure that the index view correctly rendered the home page. 
-
     * Result: The view correctly rendered the home page. 
  
 #### Home App Validation 
@@ -95,43 +88,33 @@ The test was successful and correctly displays a message to users that no result
 ### Products
 
 * Test: To check Product App URLs via unit testing. 
-
     * Result: No errors were found.
 
 * Test: Product template to ensure that the correct page was rendered. 
-
     * Result: The correct templates were rendered for each product page. 
 
 * Test: To confirm all products in the admin database were displayed on the products page. 
-
     * Result:  I checked the number of products in the admin database, and confirmed that all products were being displayed on the all products page.
 
 * Test: To check that product information in models and admin matches displayed product information.
-
     * Result: Confirmed that information for each product in the admin database matches the information displayed on the product cards.
 
 * Test: Product Info page rendered the correct product.
-
     * Result: Correct product displayed in product Info page. 
 
 * Test: To check the responsiveness of product cards on smaller devices.
-
     * Result:  On smaller screen sizes, product cards are displayed in a column rather than a row of three.
 
 * Test: To check whether the sort selector box correctly displays intended information.
-
     * Result: Each sort option displays the product in the intended order. For example: by ascending price, descending price, etc.
 
 * Test: Hover effect on product card to check if shadow effect was triggered.
-
     * Result:  Shadow effect triggered on product cards are triggered when hovered.
 
 * Test: To confirm that the edit button on product cards works as intended. 
-
     * Result: The edit button redirects the user to the edit product page and once edited the new information is updated in both the database and on the product page. 
 
 * Test: To confirm that the delete button on product cards works as intended. 
-
     * Result: The delete button triggers the modal confirmation, and confirmed that once a product is deleted it is removed from the database and no longer displays on the website.  
 
 * Test: To ensure that edit and delete buttons can only be accessed by admin accounts.
@@ -153,57 +136,46 @@ The test was successful and correctly displays a message to users that no result
 #### Add Products and Edit Product Form
 
 * Test: To check whether Add Product form renders correctly, and displays expected fields.
-
     * Result: Add Product form renders as expected, and displays all expected fields.
 
 * Test: To check whether Edit Product form
-
     * Result: Edit Product form renders as expected, displaying all expected fields, and populates previously inputted information.
 
 * Test: To check whether any user can access the Add and Edit Products forms.
-
     * Result: Regular user account is unable to access the Add and Edit Product forms.
 
 * Test: To check if admin users can access the Add and Edit Product pages.
-
     * Result: Admin users can access the Add and Edit product form pages.
 
 * Test: Defensive Measures to prevent regular account users from accessing Add and Edit Product forms. 
-
     * Result: When a user without an admin account tries to Add or Edit a product, they are informed they do not have access to this page, and are redirected to the home page, and an alert is displayed that store owners can only perform the intended action/access the page.
     
         If a user without an admin account, and is currently not signed into an account attempts to access the add/edit product page, they are redirected to the sign-in page. 
 
 * Test: To check if an empty Add Product form can be submitted. 
-
     * Result: Form will not submit if all fields are empty. 
 
 * Test: To check if a form will submit with some required fields are correctly populated, while others left blank. 
     * Result: A form won't submit without all required fields populated.
 
 * Test: To attempt to submit a form with incorrect values. Example: a letter in the price field, a letter in the number of sessions field. 
-
     * Result: A form won't submit unless the field has the correct value. For example, a number must be entered in the price field. 
 
     Note: I have attempted the same process with the Edit Product form; deleting the previous values, and replacing them with incorrect values, and blank fields, and the form won't submit. 
 
 * Test: To check that products added via the Add Products form are stored in the database and displayed on the Products Page
-
     * Result: Newly added products correctly display on intended pages, and in the database.
 
-* Test: Ensure that an edited product is displayed on the all_products page, product_info page, and displays in the timetable with the updated information
-
+* Test: Ensure that an edited product is displayed on the all_products page, product_info page, and displays in the timetable with the updated information.
     * Result: Edited products display on intended pages with correct updated information.
 
 
 #### TimeTable 
 
 * Test: To check whether the Timetable page renders as expected and correctly displays all classes currently in the database.
-
     * Result: The Timetable renders as expected and correctly displays all classes currently in the database. 
 
 * Test: To check if Media Queries and Timetable responsiveness works as intended on smaller devices.
-
     * Result: The media query for items in the timetable changes on smaller screens, as well as the reduction of margins to ensure a better mobile experience. 
 
 #### Product App Validation 
@@ -211,16 +183,13 @@ The test was successful and correctly displays a message to users that no result
 * Test: HTML for all pages in the Product App using the W3Validator.
     * Result: No errors or warnings found.
 
-
 * Test: Checked the code using gitpod's python validator, via the command python3 -m flake8 and as well as PEP8 Online Validator.
     * Result: No errors found.
-
 
 * Test: I have also tested the App's URL via Django Unit Testing.
     * Result: No errors found.
 
 ```
-
 class TestUrls(TestCase):
 
     def test_products_url_is_resolved(self):
@@ -228,48 +197,40 @@ class TestUrls(TestCase):
         print(resolve(url))
         self.assertEquals(resolve(url).func, all_products)
 
-
     def test_products_url_product_detail(self):
         url = reverse('product_info', args=[1])
         print(resolve(url))
         self.assertEquals(resolve(url).func, product_info)
-
 
     def test_products_url_add_product(self):
         url = reverse('add_product')
         print(resolve(url))
         self.assertEquals(resolve(url).func, add_product)
 
-
     def test_products_url_edit_product(self):
         url = reverse('edit_product', args=[1])
         print(resolve(url))
         self.assertEquals(resolve(url).func, edit_product)
-
 
     def test_products_url_delete_product(self):
         url = reverse('delete_product', args=[1])
         print(resolve(url))
         self.assertEquals(resolve(url).func, delete_product)
 
-
     def test_products_url_timetable(self):
         url = reverse('view_timetable')
         print(resolve(url))
         self.assertEquals(resolve(url).func, view_timetable)
         
-
 ```
 
 
 ### Shopping Cart
 
 * Test: To check Cart App URLs via unit testing. 
-
     * Result: No errors were found.
 
 * Test: Cart template to ensure that the correct page was rendered. 
-
     * Result: The correct templates were rendered for the cart page.
 
 * Test: To test that navigation to the cart page with an empty cart displays the correct message.
@@ -308,6 +269,9 @@ class TestUrls(TestCase):
 * Test: Ensure checkout button leads to checkout page and form.
     * Result: I confirmed that when clicking the 'checkout' button users are directed to the checkout form.
 
+* Test: Check whether product currently in cart is removed from cart if product is deleted.
+    * Result: A product is automatically removed from a user's cart if product is deleted by an admin.
+
 
 #### Cart App Validation 
 
@@ -328,18 +292,15 @@ class TestUrls(TestCase):
         print(resolve(url))
         self.assertEquals(resolve(url).func, view_cart)
 
-
     def test_cart_url_add_to_cart(self):
         url = reverse('add_to_cart', args=[1])
         print(resolve(url))
         self.assertEquals(resolve(url).func, add_to_cart)
 
-
     def test_cart_url_adjust_cart(self):
         url = reverse('adjust_cart', args=[1])
         print(resolve(url))
         self.assertEquals(resolve(url).func, adjust_cart)
-
 
     def test_cart_url_remove_from_cart(self):
         url = reverse('remove_from_cart', args=[1])
@@ -471,7 +432,6 @@ class TestUrls(TestCase):
         print(resolve(url))
         self.assertEquals(resolve(url).func, profile)
 
-
     def test_profiles_url_order_history(self):
         url = reverse('order_history', args=[1])
         print(resolve(url))
@@ -482,19 +442,15 @@ class TestUrls(TestCase):
 ### Sign In and Sign Out Form
 
 * Test: To attempt to log into the account with an incorrect password and correct email address.
-
     * Result: Unable to log in and the user is displayed message that email and/or password is incorrect. 
 
 * Test: To attempt to log into the account with the correct password and incorrect email address
-
     * Result: Unable to log in and the user is displayed message that email and/or password is incorrect.
 
 * Test: To log into the account with the correct email and correct password.
-
     * Result: The user successfully logs into the account, and the message is displayed to inform them log in was successful.
 
 * Test: Sign out link directs users to sign out the form and correctly signs out the user from the session.
-
     * Result: User correctly logs out of the account, and displayed a message to confirm they have been logged out.
 
 
@@ -633,23 +589,18 @@ class TestUrls(TestCase):
 ### Contact App
 
 * Test: To attempt to submit the form without an email address.
-
     * Result: Unable to submit the form without an email address. 
 
 * Test: To attempt to submit the form with characters that exceed the max length in the name, email, and subject fields.
-
     * Result: Unable to submit the form if the characters exceed the max length.
 
 * Test: To check whether a user receives an email to confirm their message was sent.
-
     * Result: The user successfully receives an email after they have submitted the contact form.
 
 * Test: Whether the information in the contact form is accurate and saved in the database.
-
     * Result: The information in the contact form is stored in the database, and correctly matches the information the user placed in the form.
 
 * Test: Whether the contact page loads the correct template and has the correct URL.
-
     * Result: The contact page loads the correct template and has the correct URL.
 
 
