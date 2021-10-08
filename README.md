@@ -631,12 +631,16 @@ All text was written by myself.
 
 9. To assist with understanding how to create a contact app, I credit an article found on twilio. The article can be found [here](https://www.twilio.com/blog/build-contact-form-python-django-twilio-sendgrid)
 
+10. To assist with understanding how to iterate over dictionaries using for loops. I credit a post on StackOverflow that can be found [here](https://stackoverflow.com/questions/3294889/iterating-over-dictionaries-using-for-loops)
+
+11. To help understand Django's get_object_or_404 method, which ultimately led me to further understand using the try and except statement in the context.py file. I credit [this](https://stackoverflow.com/questions/36515187/django-get-object-or-404-or-filter-exists) post on StackOverflow.
 
 
 ## Acknowledgements
 
 1. Code Institute for their invaluable resources while undertaking this course.
 2. Aaron Sinnott for his time, advice and insight while undertaking all projects. 
-3. Chris Zielinkski for his continuous assistance with all things Django. 
-4. Code Institute's Slack community.
+3. Chris Zielinkski for his continuous assistance with all things Django.
+4. Special thanks to tutor Ed for this advice and approach to solving a bug with deleting products that were in the shopping cart.
+5. Code Institute's Slack community.
 
