@@ -136,12 +136,12 @@ There are two main aspects of images used throughout this app; Static and Dynami
 1. Static Images 
 - The first is by storing images in a static folder. I have stored the home page images here, as they will not be altered.
 
-I choose this landing page image, as the photo is quite zoomed out, and allows a lot of space, and breathing room on the left-hand and right-hand sides of the person in the image. I also choose to use this image because it had a lot of white in it, and I wanted the home page to match the background colors of the website; greys and whites.  
+    I choose this landing page image, as the photo is quite zoomed out, and allows a lot of space, and breathing room on the left-hand and right-hand sides of the person in the image. I also choose to use this image because it had a lot of white in it, and I wanted the home page to match the background colors of the website; greys and whites.  
 
 2. Dynamic Images
-- All product images are stored via AWS. 
+    - All product images are stored via AWS. 
 
-Since a user with admin privileges can edit, add, and remove products, I decided to use AWS to host the images. Each time an image is updated in the database it is reflected on Heroku. In addition, storing the images on AWS avoids the risk of the images being removed once the website is deployed and running on Heroku.
+    Since a user with admin privileges can edit, add, and remove products, I decided to use AWS to host the images. Each time an image is updated in the database it is reflected on Heroku. In addition, storing the images on AWS avoids the risk of the images being removed once the website is deployed and running on Heroku.
 
 ### Colours
 
@@ -228,37 +228,37 @@ Finally, this app also allows admin users to create, edit, and delete all produc
 
 1. All Products Page
 
-This page displays all products currently being offered. A user can sort products both in ascending and descending by name, price, and category. 
+    This page displays all products currently being offered. A user can sort products both in ascending and descending by name, price, and category. 
 
-A user also can filter products by category (for instance, beginner or advanced classes)
+    A user also can filter products by category (for instance, beginner or advanced classes)
 
-Finally, a user can search for products by name, category, or keyword search via a product's description in the search bar in the footer which is displayed on every page. 
+    Finally, a user can search for products by name, category, or keyword search via a product's description in the search bar in the footer which is displayed on every page. 
 
 2. Individual Product Page
 
-The individual products page is created mostly with template tags, to allow the variety of information in each product to be displayed correctly. 
+    The individual products page is created mostly with template tags, to allow the variety of information in each product to be displayed correctly. 
 
-The page features a larger size of the product image, a product description, and information regarding the product's price, and timetable information. 
+    The page features a larger size of the product image, a product description, and information regarding the product's price, and timetable information. 
 
-The page also features a link to the timetable page, for users to look at other times which may suit them, and which classes the best suit their time schedule.
+    The page also features a link to the timetable page, for users to look at other times which may suit them, and which classes the best suit their time schedule.
 
-Finally, the page also features an add to cart button and a button that redirects users back to the all products page. 
+    Finally, the page also features an add to cart button and a button that redirects users back to the all products page. 
 
 3. Class Management
 
-If the user logged in as an admin user, they will have access to the dropdown menu item 'Class Management' in the Account navigation item, which allows a user to create a new product for users to purchase. 
+    If the user logged in as an admin user, they will have access to the dropdown menu item 'Class Management' in the Account navigation item, which allows a user to create a new product for users to purchase. 
 
-In addition, when an admin user is viewing the All Products page, they are shown two buttons on each product card: 'Edit' and 'Remove'. The Edit link directs the user to a Product form to edit the current product. 
+    In addition, when an admin user is viewing the All Products page, they are shown two buttons on each product card: 'Edit' and 'Remove'. The Edit link directs the user to a Product form to edit the current product. 
 
-The 'Remove' link triggers a modal to confirm that the admin user wishes to delete the product from the database. A product is only deleted once the user confirms this action. 
+    The 'Remove' link triggers a modal to confirm that the admin user wishes to delete the product from the database. A product is only deleted once the user confirms this action. 
 
 4. Timetable Page
 
-The Timetable page provides users with the ability to view all yoga classes times and days offered. This allows users to choose a class that best suits their schedule. Each class in the timetable has a link that directs users to the product info page of the specific class.
+    The Timetable page provides users with the ability to view all yoga classes times and days offered. This allows users to choose a class that best suits their schedule. Each class in the timetable has a link that directs users to the product info page of the specific class.
 
-The timetable page is automatically updated to reflect the current products in the database. A user can see all current yoga classes, and the day and time the class is offered. 
+    The timetable page is automatically updated to reflect the current products in the database. A user can see all current yoga classes, and the day and time the class is offered. 
 
-The timetable is designed with a bootstrap table, with added media queries for smaller devices. The timetable is created with for loops to always reflect the currently offered products. 
+    The timetable is designed with a bootstrap table, with added media queries for smaller devices. The timetable is created with for loops to always reflect the currently offered products. 
 
 #### Cart App
 
@@ -282,24 +282,25 @@ Once this is completed, a user is directed to the Checkout Success page, where t
 
 The Profile App provides users with the functionality to store their information to speed up the checkout process, as well as a place to edit their previously saved personal information. In addition, the profile page also users to view their order history. Finally, if a user has a registered account, they can leave comments on blog posts.
 
-1. Register 
-A user can create an account by clicking on the dropdown-menu link 'Register' in the navigation link 'Account'. 
+1. Register
 
-When registering an account, a user must input a username, email address, and password. The password field needs to be entered twice to avoid typos. 
+    A user can create an account by clicking on the dropdown-menu link 'Register' in the navigation link 'Account'. 
 
-Once a user registers, they are sent a verification/confirmation email, with a link. Once a user confirms their email address, the account is created, and they can access their profile page.
+    When registering an account, a user must input a username, email address, and password. The password field needs to be entered twice to avoid typos. 
+
+    Once a user registers, they are sent a verification/confirmation email, with a link. Once a user confirms their email address, the account is created, and they can access their profile page.
 
 2. Log In
 
-If a user already has created an account, they can sign into their profile by using the 'Login' link.
+    If a user already has created an account, they can sign into their profile by using the 'Login' link.
 
-To do so, a user needs to enter their email address or username and their password. 
+    To do so, a user needs to enter their email address or username and their password. 
 
-If the form is valid, and the information is correct the user is redirected to their profile page, which contains their saved personal information as well as order history, if any purchases have been made.
+    If the form is valid, and the information is correct the user is redirected to their profile page, which contains their saved personal information as well as order history, if any purchases have been made.
 
 3. Logging Out
 
-A user can quickly log out by selecting the sign-out option in the and Account Dropdown menu on the navigation menu. 
+    A user can quickly log out by selecting the sign-out option in the and Account Dropdown menu on the navigation menu. 
 
 #### Blog App
 
@@ -309,31 +310,31 @@ For users, this app provides a place where they can read blog posts, and leave c
 
 1. All Blog Posts Page
 
-The main blog page features a snippet of each blog post in the form of a Bootstrap card. Each card features a blog title, information about when it was created, and the name of the author. The blog postcards also feature a unique snippet of text, to give a summary of the blog post. Each card features a button that directs users to the blog detail page, where they can read the full blog, and leave comments.
+    The main blog page features a snippet of each blog post in the form of a Bootstrap card. Each card features a blog title, information about when it was created, and the name of the author. The blog postcards also feature a unique snippet of text, to give a summary of the blog post. Each card features a button that directs users to the blog detail page, where they can read the full blog, and leave comments.
 
-The blog page is dynamically updated always displays blogs that have been created, and it displays the latest blog first.
+    The blog page is dynamically updated always displays blogs that have been created, and it displays the latest blog first.
 
 2. The Blog Post Detail Page
 
-This page allows users to view the full blog post, as well as user comments. 
+    This page allows users to view the full blog post, as well as user comments. 
 
-Any user with a registered account, and currently logged in can leave a comment on a blog post. A user is also able to edit, and delete comments they have created. A modal confirmation is trigged if a user tries to delete a comment, to confirm that this action is permanent, and to confirm if they wish to delete their comment. 
+    Any user with a registered account, and currently logged in can leave a comment on a blog post. A user is also able to edit, and delete comments they have created. A modal confirmation is trigged if a user tries to delete a comment, to confirm that this action is permanent, and to confirm if they wish to delete their comment. 
 
-A user with an admin account can edit and remove the blog post. Like all actions which may remove an item from the database, a modal is triggered to confirm the action.
+    A user with an admin account can edit and remove the blog post. Like all actions which may remove an item from the database, a modal is triggered to confirm the action.
 
-Both the edit blog (for admin users) and the edit comment (for admin users) are redirected to a form, for the user to complete to finally edit the blog post or comment. 
+    Both the edit blog (for admin users) and the edit comment (for admin users) are redirected to a form, for the user to complete to finally edit the blog post or comment. 
 
-If a comment is approved, the user can delete the comment if they wish to do so.  I have decided to remove the edit feature for all non-admin users.
+    If a comment is approved, the user can delete the comment if they wish to do so.  I have decided to remove the edit feature for all non-admin users.
 
-The reason being, if a user wants to edit their comment, they could bypass the moderation system or their comment would need to be placed in the moderation queue again. I felt that both options were not ideal for the website and ultimately decided that an edit functionality did not fit the blog model I was aiming for
+    The reason being, if a user wants to edit their comment, they could bypass the moderation system or their comment would need to be placed in the moderation queue again. I felt that both options were not ideal for the website and ultimately decided that an edit functionality did not fit the blog model I was aiming for
 
-If a user wishes to leave a comment, they can do so in the text box beneath the blog post. Once they have submitted their comment, a message is displayed to the user that their comment is awaiting moderation. 
+    If a user wishes to leave a comment, they can do so in the text box beneath the blog post. Once they have submitted their comment, a message is displayed to the user that their comment is awaiting moderation. 
 
-I have chosen to employ this feature to prevent spam, and ensure that comments are relevant to the content. 
+    I have chosen to employ this feature to prevent spam, and ensure that comments are relevant to the content. 
 
-If an admin user is logged in and viewing the blog post detail page, all comments awaiting approval are displayed, and an admin user can either approve or deny a pending comment. 
+    If an admin user is logged in and viewing the blog post detail page, all comments awaiting approval are displayed, and an admin user can either approve or deny a pending comment. 
 
-If a pending comment is approved, it is displayed under the blog post, and if is denied, the comment is removed from the database. 
+    If a pending comment is approved, it is displayed under the blog post, and if is denied, the comment is removed from the database. 
 
 
 #### Contact App
@@ -409,60 +410,68 @@ PIP to install your Python3 packages.
 Stripe to facilitate payments.
 Cloud storage to host your images and static files. For this project, I used AWS.
 
-Local Deployment
+### Local Deployment
 
 1. Clone from Github
 
-If you wish to deploy this project locally on your IDE, you can do so by clicking the 'Download Code' button on this repository: https://github.com/TomC2311/savasana-yoga.git.
+    If you wish to deploy this project locally on your IDE, you can do so by clicking the 'Download Code' button on this repository: https://github.com/TomC2311/savasana-yoga.git.
 
-Alternatively, you can clone this repository on your command line by running the following code $ git clone https://github.com/TomC2311/savasana-yoga.git.
+    Alternatively, you can clone this repository on your command line by running the following code $ git clone https://github.com/TomC2311/savasana-yoga.git.
 
 2. Installing necessary Python requirements. 
 
-For this project to work once you have cloned the repository, you need to run the following command, to install the required modules. 
-
-pip3 install -r requirements.txt
+    For this project to work once you have cloned the repository, you need to run the following command, to install the required modules. 
+    ```
+    pip3 install -r requirements.txt
+    ```
 
 3. Environment variables
 
-If you're using Gitpod as an IDE, you will need to store your environmental variables in Gitpod's settings. 
+    If you're using Gitpod as an IDE, you will need to store your environmental variables in Gitpod's settings. 
 
-You can do this by navigating to the 'Workspaces' page, and then clicking on 'Settings'. Here you will see a section titled 'Environment Variables'
+    You can do this by navigating to the 'Workspaces' page, and then clicking on 'Settings'. Here you will see a section titled 'Environment Variables'
 
-As Gitpod is used when developing a project, you will want to set the 'DEVELOPMENT' variable to 'True'
+    As Gitpod is used when developing a project, you will want to set the 'DEVELOPMENT' variable to 'True'
 
-The remaining variable values will be left blank in this example, but you should enter your value, and not share them with others. 
+    The remaining variable values will be left blank in this example, but you should enter your value, and not share them with others. 
 
-'SECRET_KEY', 'YOUR_SECRET_KEY'
-'STRIPE_PUBLIC_KEY', 'YOUR_STRIPE_PUBLIC KEY'
-'STRIPE_SECRET_KEY', 'YOUR_STRIPE_SECRET_KEY'
-'STRIPE_WH_SECRET', 'YOUR_STRIPE_WH_SECRET_KEY'
+    ```
+    'SECRET_KEY', 'YOUR_SECRET_KEY'
+    'STRIPE_PUBLIC_KEY', 'YOUR_STRIPE_PUBLIC KEY'
+    'STRIPE_SECRET_KEY', 'YOUR_STRIPE_SECRET_KEY'
+    'STRIPE_WH_SECRET', 'YOUR_STRIPE_WH_SECRET_KEY'
+    ```
 
 4. Migrating the Database models
 
-The next step is to migrate your models and to set up the Database. 
+    The next step is to migrate your models and to set up the Database. 
 
-Run the following commands to do so:
+    Run the following commands to do so:
 
-Python3 manage.py makemigrations
+    ```
+    Python3 manage.py makemigrations
 
-Python3 manage.py migrate
+    Python3 manage.py migrate
+    ```
 
 5. Creating a SuperUser 
 
-To access the admin site of a Django website, you will need an admin account. 
+    To access the admin site of a Django website, you will need an admin account. 
 
-To create one, you can run the following command, and input your information when prompted. 
+    To create one, you can run the following command, and input your information when prompted. 
 
-Python3 manage.py createsuperuser
+    ```
+    Python3 manage.py createsuperuser
+    ```
 
 6. Run the project
 
-To run the project locally, you can enter the following command:
+    To run the project locally, you can enter the following command:
+    ```
+    python3 manage.py runserver 
+    ```
 
-python3 manage.py runserver 
-
-this will open a server through Gitpod, and you are now running the project locally. 
+    this will open a server through Gitpod, and you are now running the project locally. 
 
 ### Heroku Deployment 
 
@@ -470,133 +479,137 @@ If you wish to deploy the project to Heroku, there are additional steps needed. 
 
 1. Sign up, or log in to Heroku. 
 
-Head to https://heroku.com/ and log in to your account. If you do not have an account, then create one. 
+    Head to https://heroku.com/ and log in to your account. If you do not have an account, then create one. 
 
 2. Creating a new app
 
-Go to Dashboard, and click the button titled 'New'.
+    Go to Dashboard, and click the button titled 'New'.
 
-Select the option 'Create new app'
-Choose your Heroku app name. It must be noted, that you should use a dash ('-') rather than spaces, and all lowercase letters.
+    Select the option 'Create new app'
+    Choose your Heroku app name. It must be noted, that you should use a dash ('-') rather than spaces, and all lowercase letters.
 
-For the region option, click the closest region. In my case, this was 'Europe'
+    For the region option, click the closest region. In my case, this was 'Europe'
 
-Click the button 'Create App'.
+    Click the button 'Create App'.
 
-Navigate to the Resource tab and create a free Postgres database.
+    Navigate to the Resource tab and create a free Postgres database.
 
 3. Linking the database to the IDE
 
-The DATABASE_URL variable is automatically created. You can view this in the 'Settings' tab, under the option 'Config Vars'.
+    The DATABASE_URL variable is automatically created. You can view this in the 'Settings' tab, under the option 'Config Vars'.
 
-Copy the value of your DATABASE_URL. You will need to temporarily add it to your IDE environment variables. 
+    Copy the value of your DATABASE_URL. You will need to temporarily add it to your IDE environment variables. 
 
 2. Prepare the database
 
-The DATABASE_URL variable was automatically created in the Settings< Config Vars section. Copy its value and temporarily add it to your environment variables in your IDE or your env.py.
+    The DATABASE_URL variable was automatically created in the Settings< Config Vars section. Copy its value and temporarily add it to your environment variables in your IDE or your env.py.
 
 3. Updating Environment Variables
 
-Under the 'Settings' tab, click on the 'Config Vars' option, and input the following information. Similar to the environment variables on Gitpod, or your IDE, the values are unique to you. 
+    Under the 'Settings' tab, click on the 'Config Vars' option, and input the following information. Similar to the environment variables on Gitpod, or your IDE, the values are unique to you. 
 
-
-```
-'DATABASE_URL', 'YOUR_DATABASE_URL'
-'SECRET_KEY', 'YOUR_SECRET_KEY'
-'STRIPE_PUBLIC_KEY', 'YOUR_STRIPE_PUBLIC_KEY'
-'STRIPE_SECRET_KEY', 'YOUR_STRIPE_SECRET_KEY>'
-'STRIPE_WH_SECRET', 'YOUR_STRIPE_WH_SECRET'
-'AWS_ACCESS_KEY_ID', 'YOUR_AWS_KEY_ID'
-'AWS_SECRET_ACCESS_KEY', 'YOUR_AWS_SECRET_ACCESS_KEY'
-'USE_AWS', 'True'
-```
+    ```
+    'DATABASE_URL', 'YOUR_DATABASE_URL'
+    'SECRET_KEY', 'YOUR_SECRET_KEY'
+    'STRIPE_PUBLIC_KEY', 'YOUR_STRIPE_PUBLIC_KEY'
+    'STRIPE_SECRET_KEY', 'YOUR_STRIPE_SECRET_KEY>'
+    'STRIPE_WH_SECRET', 'YOUR_STRIPE_WH_SECRET'
+    'AWS_ACCESS_KEY_ID', 'YOUR_AWS_KEY_ID'
+    'AWS_SECRET_ACCESS_KEY', 'YOUR_AWS_SECRET_ACCESS_KEY'
+    'USE_AWS', 'True'
+    ```
 
 4. Migrating DATA to Postgres
 
-It's not possible to migrate your data to Heroku's Postgres database. 
+    It's not possible to migrate your data to Heroku's Postgres database. 
 
-You can do so by entering the following commands. 
+    You can do so by entering the following commands. 
 
-Python3 manage.py makemigrations
-Python3 manage.py migrate
+    Python3 manage.py makemigrations
+    Python3 manage.py migrate
 
-When I was developing this app, I populated the SQLlite database with very few items just to test everything was working as expected. As a result, I re-populated the data for the products/blog, etc after the project was deployed to Heroku. 
+    When I was developing this app, I populated the SQLlite database with very few items just to test everything was working as expected. As a result, I re-populated the data for the products/blog, etc after the project was deployed to Heroku. 
 
 
 5. Create a Superuser
 
-Similar to the local deployment, you will need to create a superuser to access the Django admin panel. 
+    Similar to the local deployment, you will need to create a superuser to access the Django admin panel. 
 
-To do so, enter the following code in the command line:
-
-python3 manage.py createsuperuser
+    To do so, enter the following code in the command line:
+    ```
+    python3 manage.py createsuperuser
+    ```
 
 6. Creating your Procfile
 
-In your IDE, create a new file entitled 'Procfile'.
+    In your IDE, create a new file entitled 'Procfile'.
 
-Open this file, and add the following: 
-
-"web: gunicorn YOUR-APP-NAME.wsgi:application"
+    Open this file, and add the following: 
+    ```
+    "web: gunicorn YOUR-APP-NAME.wsgi:application"
+    ```
 
 6. Initial Push to Github
 
-Once the following steps have been taken, then push the changed files to Github. 
+    Once the following steps have been taken, then push the changed files to Github. 
 
-You can do this by with the following commands: 
-
-git add . 
-git commit -m "Your commit message"
-git push
+    You can do this by with the following commands: 
+    ```
+    git add . 
+    git commit -m "Your commit message"
+    git push
+    ```
 
 7. Removing the temporary DATABASE_URL
 
-Once your code has been push to Github. Head back to your IDE, and remove the DATABASE_URL environmental variable you had previously set. 
+    Once your code has been push to Github. Head back to your IDE, and remove the DATABASE_URL environmental variable you had previously set. 
 
 8. Login into Heroku CLI
 
-If your IDE does not have HEROKU CLI install, please install it. 
+    If your IDE does not have HEROKU CLI install, please install it. 
 
-Once HEROKU CLI is installed, run the following code to log in to your account: 
-
-heroku login -i
+    Once HEROKU CLI is installed, run the following code to log in to your account: 
+    ```
+    heroku login -i
+    ```
 
 9. Update Django's settings. 
-In your settings.py file, add your Heroku app's hostname to your 'ALLOWED HOSTS'. 
+    In your settings.py file, add your Heroku app's hostname to your 'ALLOWED HOSTS'. 
 
 
 10. Connect Github repository to Heroku. 
 
-The next step is to connect your Heroku app to your Github repository. You can choose to use the Heroku CLI to connect your app, or you can set up Automatic Deployment from your Github repository. For this project, I chose to set up Automatic Deployment from Github.
+    The next step is to connect your Heroku app to your Github repository. You can choose to use the Heroku CLI to connect your app, or you can set up Automatic Deployment from your Github repository. For this project, I chose to set up Automatic Deployment from Github.
 
-In the 'Deployment Method' section, click on the Github option.
-Beneath this section, ensure that your Github profile name is selected in the input box below.
-Search for the name of your Github repository.
-Once your repository has been found, click on the connect button.
+    In the 'Deployment Method' section, click on the Github option.
+    Beneath this section, ensure that your Github profile name is selected in the input box below.
+    Search for the name of your Github repository.
+    Once your repository has been found, click on the connect button.
 
 11. Ensure that static files are added to your Cloud-based storage. 
 
-For this project, I have used the AWS S3 bucket. In my S3 bucks, I created a Media and Static folder and added the media and static files to their respective folders. 
+    For this project, I have used the AWS S3 bucket. In my S3 bucks, I created a Media and Static folder and added the media and static files to their respective folders. 
 
-This allows the media and static files to be collected, and uploaded once the app is deployed to Heroku. 
+    This allows the media and static files to be collected, and uploaded once the app is deployed to Heroku. 
 
 12. Final Push to Heroku. 
 
 14. Push to Heroku
 
-Similar to the previous steps about pushing to Heroku, in your IDE use the following commands to commit and push your files to Github, as well as to Heroku. 
+    Similar to the previous steps about pushing to Heroku, in your IDE use the following commands to commit and push your files to Github, as well as to Heroku. 
+    ```
+    git add . 
+    git commit -m "Your commit message"
+    git push
+    ```
 
-git add . 
-git commit -m "Your commit message"
-git push
+    The project is now running on Heroku, and you can view the build by heading to the 'Activity' tab on your Heroku app. 
 
-The project is now running on Heroku, and you can view the build by heading to the 'Activity' tab on your Heroku app. 
+    You can view the live website by clicking on the 'Open App button' on your Heroku page.
 
-You can view the live website by clicking on the 'Open App button' on your Heroku page.
+    You can also view it by heading to 
 
-You can also view it by heading to 
-
-https://YOUR-APP-NAME.herokuapp.com/
+    https://YOUR-APP-NAME.herokuapp.com/
 
 
 ## Credits 
@@ -633,7 +646,7 @@ All text was written by myself.
 
 11. To help understand how to create a new dictionary based on an old dictionary, I credit a post on StackOverflow that can be found [here](https://stackoverflow.com/questions/16480420/create-a-new-dict-based-on-old-dict)
 
-12. To help understand Django's get_object_or_404 method, which ultimately led me to further understand using the try and except statement in the context.py file. I credit [this](https://stackoverflow.com/questions/36515187/django-get-object-or-404-or-filter-exists) post on StackOverflow.
+12. To help understand Django's get_object_or_404 method, which ultimately led me to further understand using the try and except statement in the context file. I credit [this](https://stackoverflow.com/questions/36515187/django-get-object-or-404-or-filter-exists) post on StackOverflow.
 
 
 ## Acknowledgements
