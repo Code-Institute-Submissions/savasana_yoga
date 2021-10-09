@@ -926,3 +926,7 @@ I have documented these issues below.
 
     With this completed, I recreated the issue, and confirmed that it no longer redirects users to a 404 page.
 
+
+## Known Issues
+
+1. It is not possible to remember the user's cart contents if they log out and log back in. if they log out of their account. In the    future, I would like to implement functionality that saves the cart contents when a user signs out of their profile and when they sign back in.
